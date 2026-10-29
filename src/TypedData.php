@@ -50,4 +50,14 @@ final class TypedData
         $sig=$wallet->signTypedData($types,'Permit',['name'=>$name,'version'=>$version,'chainId'=>(string)$chainId,'verifyingContract'=>$token],$message);
         return ['signature'=>$sig,'v'=>(string)hexdec(substr($sig,-2)),'r'=>'0x'.substr($sig,2,64),'s'=>'0x'.substr($sig,66,64)];
     }
+    public static function checkedPermit(Client $client,Wallet $wallet,string $token,string $name,string $version,string $spender,string $value,string $deadline): array
+    {
+        $contract=Contract::profile($token,'Token');
+        $nonce=$contract->call($client,'nonces(address)',[$wallet->address])[0];
+        $actual=$contract->call($client,'DOMAIN_SEPARATOR()')[0];
+        $types=['EIP712Domain'=>[['name'=>'name','type'=>'string'],['name'=>'version','type'=>'string'],['name'=>'chainId','type'=>'uint256'],['name'=>'verifyingContract','type'=>'address']]];
+        $expected='0x'.bin2hex(self::structHash('EIP712Domain',['name'=>$name,'version'=>$version,'chainId'=>(string)$client->network->chainId,'verifyingContract'=>$token],$types));
+        if(strtolower($actual)!==$expected)throw new \RuntimeException('Token permit domain mismatch');
+        return self::permit($wallet,$token,$client->network->chainId,$name,$version,$spender,$value,$nonce,$deadline)+['nonce'=>$nonce];
+    }
 }

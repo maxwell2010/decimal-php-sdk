@@ -2178,168 +2178,6 @@
     "mutability": "nonpayable"
   },
   {
-    "profile": "TestnetReservelessToken20261029",
-    "signature": "DOMAIN_SEPARATOR()",
-    "method": "DOMAIN_SEPARATOR_938df508",
-    "mutability": "view"
-  },
-  {
-    "profile": "TestnetReservelessToken20261029",
-    "signature": "PERMIT_TYPEHASH()",
-    "method": "PERMIT_TYPEHASH_afb8417d",
-    "mutability": "view"
-  },
-  {
-    "profile": "TestnetReservelessToken20261029",
-    "signature": "allowance(address,address)",
-    "method": "allowance_d864b7ca",
-    "mutability": "view"
-  },
-  {
-    "profile": "TestnetReservelessToken20261029",
-    "signature": "approve(address,uint256)",
-    "method": "approve_9f0bb8a9",
-    "mutability": "nonpayable"
-  },
-  {
-    "profile": "TestnetReservelessToken20261029",
-    "signature": "balanceOf(address)",
-    "method": "balanceOf_5b46f8f6",
-    "mutability": "view"
-  },
-  {
-    "profile": "TestnetReservelessToken20261029",
-    "signature": "burn(uint256)",
-    "method": "burn_308dce5f",
-    "mutability": "nonpayable"
-  },
-  {
-    "profile": "TestnetReservelessToken20261029",
-    "signature": "burnFrom(address,uint256)",
-    "method": "burnFrom_1646b13c",
-    "mutability": "nonpayable"
-  },
-  {
-    "profile": "TestnetReservelessToken20261029",
-    "signature": "burnable()",
-    "method": "burnable_5e4957f6",
-    "mutability": "view"
-  },
-  {
-    "profile": "TestnetReservelessToken20261029",
-    "signature": "cap()",
-    "method": "cap_3ecc0853",
-    "mutability": "view"
-  },
-  {
-    "profile": "TestnetReservelessToken20261029",
-    "signature": "decimals()",
-    "method": "decimals_bb844440",
-    "mutability": "view"
-  },
-  {
-    "profile": "TestnetReservelessToken20261029",
-    "signature": "eip712Domain()",
-    "method": "eip712Domain_18c03e44",
-    "mutability": "view"
-  },
-  {
-    "profile": "TestnetReservelessToken20261029",
-    "signature": "identity()",
-    "method": "identity_db4a3e42",
-    "mutability": "view"
-  },
-  {
-    "profile": "TestnetReservelessToken20261029",
-    "signature": "initialize(string,string,address,bool,bool,uint256,uint256,string)",
-    "method": "initialize_f5a51fdf",
-    "mutability": "payable"
-  },
-  {
-    "profile": "TestnetReservelessToken20261029",
-    "signature": "mint(address,uint256)",
-    "method": "mint_3950e061",
-    "mutability": "nonpayable"
-  },
-  {
-    "profile": "TestnetReservelessToken20261029",
-    "signature": "mintable()",
-    "method": "mintable_b589dd5e",
-    "mutability": "view"
-  },
-  {
-    "profile": "TestnetReservelessToken20261029",
-    "signature": "name()",
-    "method": "name_1581f81c",
-    "mutability": "view"
-  },
-  {
-    "profile": "TestnetReservelessToken20261029",
-    "signature": "nonces(address)",
-    "method": "nonces_3d75dace",
-    "mutability": "view"
-  },
-  {
-    "profile": "TestnetReservelessToken20261029",
-    "signature": "owner()",
-    "method": "owner_3fc2bcdd",
-    "mutability": "view"
-  },
-  {
-    "profile": "TestnetReservelessToken20261029",
-    "signature": "permit(address,address,uint256,uint256,uint8,bytes32,bytes32)",
-    "method": "permit_c6c5ac5c",
-    "mutability": "nonpayable"
-  },
-  {
-    "profile": "TestnetReservelessToken20261029",
-    "signature": "permitHash(address,address,uint256,uint256,uint256)",
-    "method": "permitHash_a7e7745e",
-    "mutability": "view"
-  },
-  {
-    "profile": "TestnetReservelessToken20261029",
-    "signature": "renounceOwnership()",
-    "method": "renounceOwnership_2e0a1389",
-    "mutability": "nonpayable"
-  },
-  {
-    "profile": "TestnetReservelessToken20261029",
-    "signature": "symbol()",
-    "method": "symbol_25967ca5",
-    "mutability": "view"
-  },
-  {
-    "profile": "TestnetReservelessToken20261029",
-    "signature": "totalSupply()",
-    "method": "totalSupply_a368022e",
-    "mutability": "view"
-  },
-  {
-    "profile": "TestnetReservelessToken20261029",
-    "signature": "transfer(address,uint256)",
-    "method": "transfer_3b88ef57",
-    "mutability": "nonpayable"
-  },
-  {
-    "profile": "TestnetReservelessToken20261029",
-    "signature": "transferFrom(address,address,uint256)",
-    "method": "transferFrom_4b6685e7",
-    "mutability": "nonpayable"
-  },
-  {
-    "profile": "TestnetReservelessToken20261029",
-    "signature": "transferOwnership(address)",
-    "method": "transferOwnership_f1dcac99",
-    "mutability": "nonpayable"
-  },
-  {
-    "profile": "TestnetReservelessToken20261029",
-    "signature": "withCap()",
-    "method": "withCap_c2b4bd20",
-    "mutability": "view"
-  },
-  {
     "profile": "TestnetReserveToken20261029",
     "signature": "DOMAIN_SEPARATOR()",
     "method": "DOMAIN_SEPARATOR_938df508",
@@ -2632,6 +2470,168 @@
     "signature": "updateMinTotalSupply(uint256)",
     "method": "updateMinTotalSupply_516c8b43",
     "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "DOMAIN_SEPARATOR()",
+    "method": "DOMAIN_SEPARATOR_938df508",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "PERMIT_TYPEHASH()",
+    "method": "PERMIT_TYPEHASH_afb8417d",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "allowance(address,address)",
+    "method": "allowance_d864b7ca",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "approve(address,uint256)",
+    "method": "approve_9f0bb8a9",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "balanceOf(address)",
+    "method": "balanceOf_5b46f8f6",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "burn(uint256)",
+    "method": "burn_308dce5f",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "burnFrom(address,uint256)",
+    "method": "burnFrom_1646b13c",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "burnable()",
+    "method": "burnable_5e4957f6",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "cap()",
+    "method": "cap_3ecc0853",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "decimals()",
+    "method": "decimals_bb844440",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "eip712Domain()",
+    "method": "eip712Domain_18c03e44",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "identity()",
+    "method": "identity_db4a3e42",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "initialize(string,string,address,bool,bool,uint256,uint256,string)",
+    "method": "initialize_f5a51fdf",
+    "mutability": "payable"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "mint(address,uint256)",
+    "method": "mint_3950e061",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "mintable()",
+    "method": "mintable_b589dd5e",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "name()",
+    "method": "name_1581f81c",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "nonces(address)",
+    "method": "nonces_3d75dace",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "owner()",
+    "method": "owner_3fc2bcdd",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "permit(address,address,uint256,uint256,uint8,bytes32,bytes32)",
+    "method": "permit_c6c5ac5c",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "permitHash(address,address,uint256,uint256,uint256)",
+    "method": "permitHash_a7e7745e",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "renounceOwnership()",
+    "method": "renounceOwnership_2e0a1389",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "symbol()",
+    "method": "symbol_25967ca5",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "totalSupply()",
+    "method": "totalSupply_a368022e",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "transfer(address,uint256)",
+    "method": "transfer_3b88ef57",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "transferFrom(address,address,uint256)",
+    "method": "transferFrom_4b6685e7",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "transferOwnership(address)",
+    "method": "transferOwnership_f1dcac99",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "withCap()",
+    "method": "withCap_c2b4bd20",
+    "mutability": "view"
   },
   {
     "profile": "TestnetSafe20261029",

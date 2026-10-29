@@ -9,7 +9,7 @@ TOP = {'src','abi','docs','examples','resources','tests','tools','.github'}
 FILES = {'README.md','README.ru.md','CHANGELOG.md','SECURITY.md','LICENSE','THIRD_PARTY_NOTICES.md','THIRD_PARTY_JS_LICENSE','THIRD_PARTY_NODE_LICENSE','composer.json','composer.lock','.gitignore','.gitattributes'}
 
 def sources():
-    for path in sorted(ROOT.rglob('*')):
+    for path in sorted(ROOT.rglob('*'), key=lambda p: p.relative_to(ROOT).as_posix()):
         relative=path.relative_to(ROOT)
         if not path.is_file() or any(part in {'vendor','.git','__pycache__','dist'} for part in relative.parts):continue
         if relative.parts[0] not in TOP and relative.as_posix() not in FILES:continue

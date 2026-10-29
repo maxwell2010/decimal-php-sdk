@@ -12,3 +12,11 @@ $action=new TransactionDraft($wallet->address,$address,'0','0xab');$plan=Workflo
 $prepared=(new Decimal\Client(Decimal\Network::testnet(),$rpc))->prepare($draft,2,[],'7','2');same($prepared->type,2);same($prepared->gasPrice,'7');
 rejects(fn()=>(new Decimal\Client(Decimal\Network::testnet(),$rpc))->prepare($draft,2,[],'7','2','1'));
 echo "Transport, address and workflow checks passed\n";
+$permitDomain='0x9d3162b76d84aef56dfadc8e1ee0d020c5e49c18ba6041530a5a9bf78036a7ee';
+$permitRpc=new Decimal\Rpc('http://unused',function($r)use($permitDomain){
+ $result=$r['method']==='eth_chainId'?'0x31524':(str_starts_with($r['params'][0]['data'],'0x7ecebe00')?(new Decimal\AbiCodec())->encodeParameters(['uint256'],['3']):$permitDomain);
+ return ['jsonrpc'=>'2.0','id'=>$r['id'],'result'=>$result];
+});
+$permit=Decimal\TypedData::checkedPermit(new Decimal\Client(Decimal\Network::testnet(),$permitRpc),$wallet,$address,'Test','1',$address,'5','2000000000');same($permit['nonce'],'3');
+rejects(fn()=>Decimal\TypedData::checkedPermit(new Decimal\Client(Decimal\Network::testnet(),$permitRpc),$wallet,$address,'Wrong','1',$address,'5','2000000000'));
+$scale=bcscale(7);same(Decimal\Units::parse('1.25'),'1250000000000000000');same(Decimal\Units::hex('255'),'0xff');same(Decimal\Units::decimal('0xff'),'255');bcscale($scale);

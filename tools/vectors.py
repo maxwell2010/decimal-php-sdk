@@ -26,7 +26,7 @@ def php_value(v):
     return v
 
 rows = []
-for path in sorted((ROOT / 'abi').glob('*.json')):
+for path in sorted((ROOT / 'abi').glob('*.json'), key=lambda p: p.name):
     for e in json.loads(path.read_text()):
         if e.get('type') != 'function': continue
         types = list(map(abi_type, e['inputs']))

@@ -29,7 +29,7 @@ $draft = $token->draft($wallet->address,
     ]);
 ```
 
-This helper signs caller-supplied domain/nonce values. Obtain and validate the deployed token's actual DOMAIN_SEPARATOR, nonce and version before signing. A permit is authorization and must not be logged as ordinary debug data.
+This helper signs caller-supplied domain/nonce values. `TypedData::checkedPermit` reads the nonce and validates the deployed DOMAIN_SEPARATOR before signing. Obtain and validate the deployed token's actual DOMAIN_SEPARATOR, nonce and version before signing. A permit is authorization and must not be logged as ordinary debug data.
 
 ## Safe EOA transaction
 
