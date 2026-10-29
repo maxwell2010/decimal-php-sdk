@@ -33,5 +33,5 @@ for path in sorted((ROOT / 'abi').glob('*.json')):
         sig = e['name'] + '(' + ','.join(types) + ')'
         args = list(map(value, e['inputs']))
         rows.append(dict(profile=path.stem, signature=sig, args=php_value(args), data='0x' + (keccak(text=sig)[:4] + encode(types, args)).hex()))
-(ROOT / 'tests' / 'vectors.json').write_text(json.dumps(rows, indent=2) + '\n')
+(ROOT / 'tests' / 'vectors.json').write_text(json.dumps(rows, indent=2) + '\n', newline='\n')
 print(len(rows), 'independent calldata vectors')

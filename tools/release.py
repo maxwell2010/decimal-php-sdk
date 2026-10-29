@@ -6,7 +6,7 @@ import zipfile
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 VERSION = '0.1.0-alpha.1'
 TOP = {'src','abi','docs','examples','resources','tests','tools','.github'}
-FILES = {'README.md','README.ru.md','CHANGELOG.md','SECURITY.md','LICENSE','THIRD_PARTY_NOTICES.md','THIRD_PARTY_JS_LICENSE','THIRD_PARTY_NODE_LICENSE','composer.json','composer.lock','.gitignore'}
+FILES = {'README.md','README.ru.md','CHANGELOG.md','SECURITY.md','LICENSE','THIRD_PARTY_NOTICES.md','THIRD_PARTY_JS_LICENSE','THIRD_PARTY_NODE_LICENSE','composer.json','composer.lock','.gitignore','.gitattributes'}
 
 def sources():
     for path in sorted(ROOT.rglob('*')):

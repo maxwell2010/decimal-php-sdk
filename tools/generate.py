@@ -37,10 +37,10 @@ def generate():
             lines.extend([f'    public function {name}(' + ', '.join(args) + f'): {ret}', '    { return ' + call + '; }'])
             catalog.append(dict(profile=path.stem, signature=sig, method=name, mutability=e['stateMutability']))
         lines.append('}')
-        (out / (path.stem + '.php')).write_text('\n'.join(lines) + '\n', encoding='utf-8')
-    (ROOT / 'docs' / 'operations.json').write_text(json.dumps(catalog, indent=2) + '\n')
+        (out / (path.stem + '.php')).write_text('\n'.join(lines) + '\n', encoding='utf-8', newline='\n')
+    (ROOT / 'docs' / 'operations.json').write_text(json.dumps(catalog, indent=2) + '\n', newline='\n')
     hashes = {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted((ROOT / 'abi').glob('*.json'))}
-    (ROOT / 'docs' / 'abi-hashes.json').write_text(json.dumps(hashes, indent=2) + '\n')
+    (ROOT / 'docs' / 'abi-hashes.json').write_text(json.dumps(hashes, indent=2) + '\n', newline='\n')
     print(f'{len(hashes)} ABI profiles, {len(catalog)} function bindings')
 
 if __name__ == '__main__':
