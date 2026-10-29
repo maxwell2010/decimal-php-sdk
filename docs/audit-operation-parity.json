@@ -1,0 +1,2394 @@
+{
+  "reference_note": "Local working-tree snapshots, not assertions of released upstream version equivalence. C# quoted signature occurrences are source evidence, not workflow-equivalence proof. Go operation names come from current local operation-matrix.",
+  "operations": [
+    {
+      "python_operation": "tx.approve_erc20",
+      "python_request": "Erc20ApproveRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/transactions.py",
+        "line": 802,
+        "sha256": "571e12af7013a174c1486decf540adcce3538842902aebb077944e68e698fd59"
+      },
+      "status": "abi-builder-only",
+      "php_helpers": [],
+      "php_abi_signatures": [
+        {
+          "profile": "PythonErc20",
+          "signature": "approve(address,uint256)"
+        },
+        {
+          "profile": "TestnetReserveToken20261029",
+          "signature": "approve(address,uint256)"
+        },
+        {
+          "profile": "TestnetReservelessToken20261029",
+          "signature": "approve(address,uint256)"
+        },
+        {
+          "profile": "Token",
+          "signature": "approve(address,uint256)"
+        }
+      ],
+      "go_reference_operations": [
+        "approveToken"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/Erc721Service.cs",
+          "line": 29,
+          "code": "{\"inputs\":[{\"name\":\"to\",\"type\":\"address\"},{\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[],\"type\":\"function\"},"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/Erc721Service.cs",
+          "line": 131,
+          "code": "Function(collection, \"approve\").GetData(approved, tokenId));"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Tokens/Erc20Contracts.cs",
+          "line": 59,
+          "code": "[Function(\"approve\", \"bool\")]"
+        }
+      ],
+      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+    },
+    {
+      "python_operation": "tx.send_del",
+      "python_request": "NativeTransferRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/transactions.py",
+        "line": 737,
+        "sha256": "571e12af7013a174c1486decf540adcce3538842902aebb077944e68e698fd59"
+      },
+      "status": "direct-native-helper",
+      "php_helpers": [
+        "TransactionDraft::del"
+      ],
+      "php_abi_signatures": [],
+      "go_reference_operations": [],
+      "csharp_signature_occurrences": [],
+      "semantic_boundary": "Checked helper covers its explicit profile/preconditions; variants, approvals, economic state and receipt semantics must be compared separately."
+    },
+    {
+      "python_operation": "tx.send_erc20",
+      "python_request": "Erc20TransferRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/transactions.py",
+        "line": 773,
+        "sha256": "571e12af7013a174c1486decf540adcce3538842902aebb077944e68e698fd59"
+      },
+      "status": "abi-builder-only",
+      "php_helpers": [],
+      "php_abi_signatures": [
+        {
+          "profile": "PythonErc20",
+          "signature": "transfer(address,uint256)"
+        },
+        {
+          "profile": "TestnetReserveToken20261029",
+          "signature": "transfer(address,uint256)"
+        },
+        {
+          "profile": "TestnetReservelessToken20261029",
+          "signature": "transfer(address,uint256)"
+        },
+        {
+          "profile": "Token",
+          "signature": "transfer(address,uint256)"
+        }
+      ],
+      "go_reference_operations": [
+        "transferToken"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Multisig/SafeTransactionDrafts.cs",
+          "line": 87,
+          "code": "[Function(\"transfer\", \"bool\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/DecimalNftDrafts.cs",
+          "line": 525,
+          "code": "[Function(\"transfer\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Staking/DelegationDrafts.cs",
+          "line": 374,
+          "code": "[Function(\"transfer\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Staking/NftDelegationDrafts.cs",
+          "line": 199,
+          "code": "[Function(\"transfer\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Tokens/Erc20Contracts.cs",
+          "line": 49,
+          "code": "[Function(\"transfer\", \"bool\")]"
+        }
+      ],
+      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+    },
+    {
+      "python_operation": "tx.transfer_from_erc20",
+      "python_request": "Erc20TransferFromRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/transactions.py",
+        "line": 814,
+        "sha256": "571e12af7013a174c1486decf540adcce3538842902aebb077944e68e698fd59"
+      },
+      "status": "abi-builder-only",
+      "php_helpers": [],
+      "php_abi_signatures": [
+        {
+          "profile": "PythonErc20",
+          "signature": "transferFrom(address,address,uint256)"
+        },
+        {
+          "profile": "TestnetReserveToken20261029",
+          "signature": "transferFrom(address,address,uint256)"
+        },
+        {
+          "profile": "TestnetReservelessToken20261029",
+          "signature": "transferFrom(address,address,uint256)"
+        },
+        {
+          "profile": "Token",
+          "signature": "transferFrom(address,address,uint256)"
+        }
+      ],
+      "go_reference_operations": [
+        "transferFromToken"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/Erc721Service.cs",
+          "line": 26,
+          "code": "{\"inputs\":[{\"name\":\"from\",\"type\":\"address\"},{\"name\":\"to\",\"type\":\"address\"},{\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[],\"type\":\"function\"},"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/Erc721Service.cs",
+          "line": 88,
+          "code": "Function(collection, \"transferFrom\").GetData(owner, to, tokenId));"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Tokens/Erc20Contracts.cs",
+          "line": 69,
+          "code": "[Function(\"transferFrom\", \"bool\")]"
+        }
+      ],
+      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+    },
+    {
+      "python_operation": "decimal.delegate_del",
+      "python_request": "DelegateDelRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/decimal.py",
+        "line": 979,
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
+      },
+      "status": "abi-builder-only",
+      "php_helpers": [],
+      "php_abi_signatures": [
+        {
+          "profile": "Delegation",
+          "signature": "delegateDEL(address)"
+        },
+        {
+          "profile": "Delegation",
+          "signature": "delegateDELTo(address,address)"
+        }
+      ],
+      "go_reference_operations": [
+        "delegateDEL"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Staking/DelegationDrafts.cs",
+          "line": 301,
+          "code": "[Function(\"delegateDEL\")]"
+        }
+      ],
+      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+    },
+    {
+      "python_operation": "decimal.delegate_erc20",
+      "python_request": "DelegateErc20Request",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/decimal.py",
+        "line": 1209,
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
+      },
+      "status": "abi-builder-only",
+      "php_helpers": [],
+      "php_abi_signatures": [
+        {
+          "profile": "Delegation",
+          "signature": "delegate(address,address,uint256)"
+        },
+        {
+          "profile": "Delegation",
+          "signature": "delegateByPermit(address,address,uint256,uint256,uint8,bytes32,bytes32)"
+        },
+        {
+          "profile": "Delegation",
+          "signature": "delegateTo(address,address,address,uint256)"
+        }
+      ],
+      "go_reference_operations": [
+        "delegateToken"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Staking/DelegationDrafts.cs",
+          "line": 315,
+          "code": "[Function(\"delegate\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Staking/DelegationDrafts.cs",
+          "line": 332,
+          "code": "[Function(\"delegateByPermit\")]"
+        }
+      ],
+      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+    },
+    {
+      "python_operation": "decimal.hold_del",
+      "python_request": "HoldDelRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/decimal.py",
+        "line": 1013,
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
+      },
+      "status": "abi-builder-only",
+      "php_helpers": [],
+      "php_abi_signatures": [
+        {
+          "profile": "Delegation",
+          "signature": "delegateHoldDEL(address,uint256)"
+        }
+      ],
+      "go_reference_operations": [
+        "delegateDELHold"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Staking/DelegationDrafts.cs",
+          "line": 307,
+          "code": "[Function(\"delegateHoldDEL\")]"
+        }
+      ],
+      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+    },
+    {
+      "python_operation": "decimal.hold_erc20",
+      "python_request": "HoldErc20Request",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/decimal.py",
+        "line": 1230,
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
+      },
+      "status": "abi-builder-only",
+      "php_helpers": [],
+      "php_abi_signatures": [
+        {
+          "profile": "Delegation",
+          "signature": "delegateHold(address,address,uint256,uint256)"
+        },
+        {
+          "profile": "Delegation",
+          "signature": "delegateHoldByPermit(address,address,uint256,uint256,uint256,uint8,bytes32,bytes32)"
+        }
+      ],
+      "go_reference_operations": [
+        "delegateTokenHold"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Staking/DelegationDrafts.cs",
+          "line": 323,
+          "code": "[Function(\"delegateHold\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Staking/DelegationDrafts.cs",
+          "line": 344,
+          "code": "[Function(\"delegateHoldByPermit\")]"
+        }
+      ],
+      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+    },
+    {
+      "python_operation": "decimal.hold_stake_with_reset",
+      "python_request": "HoldStakeWithResetRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/decimal.py",
+        "line": 1605,
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
+      },
+      "status": "abi-builder-only",
+      "php_helpers": [],
+      "php_abi_signatures": [
+        {
+          "profile": "Delegation",
+          "signature": "holdWithReset(address,address,uint256,uint256,uint256[])"
+        }
+      ],
+      "go_reference_operations": [
+        "holdTokenWithReset",
+        "holdNFTWithReset"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Staking/DelegationDrafts.cs",
+          "line": 449,
+          "code": "[Function(\"holdWithReset\")]"
+        }
+      ],
+      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+    },
+    {
+      "python_operation": "decimal.multisend_del",
+      "python_request": "MultisendDelRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/decimal.py",
+        "line": 1120,
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
+      },
+      "status": "partial-checked-helper",
+      "php_helpers": [
+        "Workflows::multisendDel"
+      ],
+      "php_abi_signatures": [
+        {
+          "profile": "Multicall",
+          "signature": "aggregate((address,uint256,bytes)[])"
+        }
+      ],
+      "go_reference_operations": [
+        "multiCall",
+        "multiSendToken"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Multisend/MultisendDel.cs",
+          "line": 57,
+          "code": "[Function(\"aggregate\")]"
+        }
+      ],
+      "semantic_boundary": "Checked helper covers its explicit profile/preconditions; variants, approvals, economic state and receipt semantics must be compared separately."
+    },
+    {
+      "python_operation": "decimal.multisend_erc20",
+      "python_request": "MultisendErc20Request",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/decimal.py",
+        "line": 1189,
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
+      },
+      "status": "partial-checked-helper",
+      "php_helpers": [
+        "RestrictedMultisend::plan",
+        "RestrictedMultisend::withPermit"
+      ],
+      "php_abi_signatures": [],
+      "go_reference_operations": [],
+      "csharp_signature_occurrences": [],
+      "semantic_boundary": "Explicit caller-reviewed runtime/chain/implementation binding, checked total/balance, separate allowance/reset plan or checked permit. Generic Multicall ERC20 allowance remains rejected. Reverify mutable deployment before execution.",
+      "php_explicit_signatures": [
+        "sendToken(address,address[],uint256[],bytes)",
+        "sendTokenWithPermit(address,address[],uint256[],bytes,uint256,uint8,bytes32,bytes32)"
+      ],
+      "go_source": "gosdk/restricted_multisend.go"
+    },
+    {
+      "python_operation": "decimal.pause_self_validator",
+      "python_request": "ValidatorSelfPauseRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/decimal.py",
+        "line": 1631,
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
+      },
+      "status": "abi-builder-only",
+      "php_helpers": [],
+      "php_abi_signatures": [
+        {
+          "profile": "MasterValidator",
+          "signature": "pauseSelf()"
+        },
+        {
+          "profile": "TestnetMasterValidator20261029",
+          "signature": "pauseSelf()"
+        }
+      ],
+      "go_reference_operations": [],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Validators/MasterValidatorFunctions.cs",
+          "line": 84,
+          "code": "[Function(\"pauseSelf\")]"
+        }
+      ],
+      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+    },
+    {
+      "python_operation": "decimal.pause_validator",
+      "python_request": "ValidatorPauseRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/decimal.py",
+        "line": 1669,
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
+      },
+      "status": "abi-builder-only",
+      "php_helpers": [],
+      "php_abi_signatures": [
+        {
+          "profile": "MasterValidator",
+          "signature": "pauseValidator(address)"
+        },
+        {
+          "profile": "TestnetMasterValidator20261029",
+          "signature": "pauseValidator(address)"
+        }
+      ],
+      "go_reference_operations": [
+        "pauseValidator"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Validators/MasterValidatorFunctions.cs",
+          "line": 90,
+          "code": "[Function(\"pauseValidator\")]"
+        }
+      ],
+      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+    },
+    {
+      "python_operation": "decimal.reset_stake_hold",
+      "python_request": "ResetStakeHoldRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/decimal.py",
+        "line": 1436,
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
+      },
+      "status": "abi-builder-only",
+      "php_helpers": [],
+      "php_abi_signatures": [
+        {
+          "profile": "Delegation",
+          "signature": "resetHold(address,address,address,uint256)"
+        },
+        {
+          "profile": "Delegation",
+          "signature": "resetHolds(address,address,address,uint256[])"
+        }
+      ],
+      "go_reference_operations": [
+        "stakeTokenResetHold",
+        "stakeNFTResetHold"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Staking/DelegationDrafts.cs",
+          "line": 403,
+          "code": "[Function(\"resetHold\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Staking/DelegationDrafts.cs",
+          "line": 412,
+          "code": "[Function(\"resetHolds\")]"
+        }
+      ],
+      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+    },
+    {
+      "python_operation": "decimal.stake_token_to_hold",
+      "python_request": "StakeTokenToHoldRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/decimal.py",
+        "line": 1410,
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
+      },
+      "status": "abi-builder-only",
+      "php_helpers": [],
+      "php_abi_signatures": [
+        {
+          "profile": "Delegation",
+          "signature": "hold(address,address,uint256,uint256,uint256)"
+        }
+      ],
+      "go_reference_operations": [
+        "stakeTokenToHold",
+        "stakeNFTToHold"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Staking/DelegationDrafts.cs",
+          "line": 393,
+          "code": "[Function(\"hold\")]"
+        }
+      ],
+      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+    },
+    {
+      "python_operation": "decimal.transfer_del_stake_with_reset",
+      "python_request": "TransferDelStakeWithResetRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/decimal.py",
+        "line": 1575,
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
+      },
+      "status": "abi-builder-only",
+      "php_helpers": [],
+      "php_abi_signatures": [
+        {
+          "profile": "Delegation",
+          "signature": "transferWithReset(address,address,uint256,address,uint256[])"
+        }
+      ],
+      "go_reference_operations": [
+        "transferTokenWithReset",
+        "transferNFTWithReset"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Staking/DelegationDrafts.cs",
+          "line": 438,
+          "code": "[Function(\"transferWithReset\")]"
+        }
+      ],
+      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+    },
+    {
+      "python_operation": "decimal.transfer_stake_del",
+      "python_request": "TransferStakeDelRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/decimal.py",
+        "line": 1385,
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
+      },
+      "status": "abi-builder-only",
+      "php_helpers": [],
+      "php_abi_signatures": [
+        {
+          "profile": "Delegation",
+          "signature": "transfer(address,address,uint256,address)"
+        }
+      ],
+      "go_reference_operations": [
+        "transferStakeToken",
+        "transferStakeNFT"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Multisig/SafeTransactionDrafts.cs",
+          "line": 87,
+          "code": "[Function(\"transfer\", \"bool\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/DecimalNftDrafts.cs",
+          "line": 525,
+          "code": "[Function(\"transfer\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Staking/DelegationDrafts.cs",
+          "line": 374,
+          "code": "[Function(\"transfer\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Staking/NftDelegationDrafts.cs",
+          "line": 199,
+          "code": "[Function(\"transfer\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Tokens/Erc20Contracts.cs",
+          "line": 49,
+          "code": "[Function(\"transfer\", \"bool\")]"
+        }
+      ],
+      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+    },
+    {
+      "python_operation": "decimal.transfer_stake_erc20",
+      "python_request": "TransferStakeErc20Request",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/decimal.py",
+        "line": 1360,
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
+      },
+      "status": "abi-builder-only",
+      "php_helpers": [],
+      "php_abi_signatures": [
+        {
+          "profile": "Delegation",
+          "signature": "transfer(address,address,uint256,address)"
+        }
+      ],
+      "go_reference_operations": [
+        "transferStakeToken",
+        "transferStakeNFT"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Multisig/SafeTransactionDrafts.cs",
+          "line": 87,
+          "code": "[Function(\"transfer\", \"bool\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/DecimalNftDrafts.cs",
+          "line": 525,
+          "code": "[Function(\"transfer\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Staking/DelegationDrafts.cs",
+          "line": 374,
+          "code": "[Function(\"transfer\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Staking/NftDelegationDrafts.cs",
+          "line": 199,
+          "code": "[Function(\"transfer\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Tokens/Erc20Contracts.cs",
+          "line": 49,
+          "code": "[Function(\"transfer\", \"bool\")]"
+        }
+      ],
+      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+    },
+    {
+      "python_operation": "decimal.transfer_stake_with_reset",
+      "python_request": "TransferStakeWithResetRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/decimal.py",
+        "line": 1540,
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
+      },
+      "status": "abi-builder-only",
+      "php_helpers": [],
+      "php_abi_signatures": [
+        {
+          "profile": "Delegation",
+          "signature": "transferWithReset(address,address,uint256,address,uint256[])"
+        }
+      ],
+      "go_reference_operations": [
+        "transferTokenWithReset",
+        "transferNFTWithReset"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Staking/DelegationDrafts.cs",
+          "line": 438,
+          "code": "[Function(\"transferWithReset\")]"
+        }
+      ],
+      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+    },
+    {
+      "python_operation": "decimal.unbond_del",
+      "python_request": "UnbondDelRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/decimal.py",
+        "line": 1050,
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
+      },
+      "status": "abi-builder-only",
+      "php_helpers": [],
+      "php_abi_signatures": [
+        {
+          "profile": "Delegation",
+          "signature": "withdraw(address,address,uint256)"
+        }
+      ],
+      "go_reference_operations": [
+        "withdrawStakeToken",
+        "withdrawStakeNFT"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/DecimalNftDrafts.cs",
+          "line": 506,
+          "code": "[Function(\"withdraw\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Staking/DelegationDrafts.cs",
+          "line": 357,
+          "code": "[Function(\"withdraw\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Staking/NftDelegationDrafts.cs",
+          "line": 180,
+          "code": "[Function(\"withdraw\")]"
+        }
+      ],
+      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+    },
+    {
+      "python_operation": "decimal.unbond_erc20",
+      "python_request": "UnbondErc20Request",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/decimal.py",
+        "line": 1251,
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
+      },
+      "status": "abi-builder-only",
+      "php_helpers": [],
+      "php_abi_signatures": [
+        {
+          "profile": "Delegation",
+          "signature": "withdraw(address,address,uint256)"
+        }
+      ],
+      "go_reference_operations": [
+        "withdrawStakeToken",
+        "withdrawStakeNFT"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/DecimalNftDrafts.cs",
+          "line": 506,
+          "code": "[Function(\"withdraw\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Staking/DelegationDrafts.cs",
+          "line": 357,
+          "code": "[Function(\"withdraw\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Staking/NftDelegationDrafts.cs",
+          "line": 180,
+          "code": "[Function(\"withdraw\")]"
+        }
+      ],
+      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+    },
+    {
+      "python_operation": "decimal.unpause_self_validator",
+      "python_request": "ValidatorSelfPauseRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/decimal.py",
+        "line": 1650,
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
+      },
+      "status": "abi-builder-only",
+      "php_helpers": [],
+      "php_abi_signatures": [
+        {
+          "profile": "MasterValidator",
+          "signature": "unpauseSelf()"
+        },
+        {
+          "profile": "TestnetMasterValidator20261029",
+          "signature": "unpauseSelf()"
+        }
+      ],
+      "go_reference_operations": [],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Validators/MasterValidatorFunctions.cs",
+          "line": 87,
+          "code": "[Function(\"unpauseSelf\")]"
+        }
+      ],
+      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+    },
+    {
+      "python_operation": "decimal.unpause_validator",
+      "python_request": "ValidatorPauseRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/decimal.py",
+        "line": 1690,
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
+      },
+      "status": "abi-builder-only",
+      "php_helpers": [],
+      "php_abi_signatures": [
+        {
+          "profile": "MasterValidator",
+          "signature": "unpauseValidator(address)"
+        },
+        {
+          "profile": "TestnetMasterValidator20261029",
+          "signature": "unpauseValidator(address)"
+        }
+      ],
+      "go_reference_operations": [
+        "unpauseValidator"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Validators/MasterValidatorFunctions.cs",
+          "line": 96,
+          "code": "[Function(\"unpauseValidator\")]"
+        }
+      ],
+      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+    },
+    {
+      "python_operation": "decimal.withdraw_del_stake_with_reset",
+      "python_request": "WithdrawDelStakeWithResetRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/decimal.py",
+        "line": 1496,
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
+      },
+      "status": "abi-builder-only",
+      "php_helpers": [],
+      "php_abi_signatures": [
+        {
+          "profile": "Delegation",
+          "signature": "withdrawWithReset(address,address,uint256,uint256[])"
+        }
+      ],
+      "go_reference_operations": [
+        "withdrawTokenWithReset",
+        "withdrawNFTWithReset"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Staking/DelegationDrafts.cs",
+          "line": 421,
+          "code": "[Function(\"withdrawWithReset\")]"
+        }
+      ],
+      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+    },
+    {
+      "python_operation": "decimal.withdraw_hold_del",
+      "python_request": "WithdrawHoldDelRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/decimal.py",
+        "line": 1070,
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
+      },
+      "status": "abi-builder-only",
+      "php_helpers": [],
+      "php_abi_signatures": [
+        {
+          "profile": "Delegation",
+          "signature": "withdrawHold(address,address,uint256,uint256)"
+        }
+      ],
+      "go_reference_operations": [
+        "withdrawStakeTokenHold",
+        "withdrawStakeNFTHold"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/DecimalNftDrafts.cs",
+          "line": 515,
+          "code": "[Function(\"withdrawHold\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Staking/DelegationDrafts.cs",
+          "line": 365,
+          "code": "[Function(\"withdrawHold\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Staking/NftDelegationDrafts.cs",
+          "line": 189,
+          "code": "[Function(\"withdrawHold\")]"
+        }
+      ],
+      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+    },
+    {
+      "python_operation": "decimal.withdraw_hold_erc20",
+      "python_request": "WithdrawHoldErc20Request",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/decimal.py",
+        "line": 1307,
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
+      },
+      "status": "abi-builder-only",
+      "php_helpers": [],
+      "php_abi_signatures": [
+        {
+          "profile": "Delegation",
+          "signature": "withdrawHold(address,address,uint256,uint256)"
+        }
+      ],
+      "go_reference_operations": [
+        "withdrawStakeTokenHold",
+        "withdrawStakeNFTHold"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/DecimalNftDrafts.cs",
+          "line": 515,
+          "code": "[Function(\"withdrawHold\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Staking/DelegationDrafts.cs",
+          "line": 365,
+          "code": "[Function(\"withdrawHold\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Staking/NftDelegationDrafts.cs",
+          "line": 189,
+          "code": "[Function(\"withdrawHold\")]"
+        }
+      ],
+      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+    },
+    {
+      "python_operation": "decimal.withdraw_stake_with_reset",
+      "python_request": "WithdrawStakeWithResetRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/decimal.py",
+        "line": 1463,
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
+      },
+      "status": "abi-builder-only",
+      "php_helpers": [],
+      "php_abi_signatures": [
+        {
+          "profile": "Delegation",
+          "signature": "withdrawWithReset(address,address,uint256,uint256[])"
+        }
+      ],
+      "go_reference_operations": [
+        "withdrawTokenWithReset",
+        "withdrawNFTWithReset"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Staking/DelegationDrafts.cs",
+          "line": 421,
+          "code": "[Function(\"withdrawWithReset\")]"
+        }
+      ],
+      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+    },
+    {
+      "python_operation": "token.burn",
+      "python_request": "BurnTokenRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/token.py",
+        "line": 429,
+        "sha256": "43c41a2d7b7363492ba22d1d9448620e3082d44a15577f3cf868a523cc568e94"
+      },
+      "status": "partial-checked-helper",
+      "php_helpers": [
+        "TokenService::burn"
+      ],
+      "php_abi_signatures": [
+        {
+          "profile": "TestnetReserveToken20261029",
+          "signature": "burn(uint256)"
+        },
+        {
+          "profile": "TestnetReservelessToken20261029",
+          "signature": "burn(uint256)"
+        },
+        {
+          "profile": "Token",
+          "signature": "burn(uint256)"
+        }
+      ],
+      "go_reference_operations": [
+        "burnToken"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/DecimalNftDrafts.cs",
+          "line": 457,
+          "code": "[Function(\"burn\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/DecimalNftDrafts.cs",
+          "line": 463,
+          "code": "[Function(\"burn\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/TokenEconomy/TokenEconomyDrafts.cs",
+          "line": 249,
+          "code": "[Function(\"burn\")]"
+        }
+      ],
+      "semantic_boundary": "Checked helper covers its explicit profile/preconditions; variants, approvals, economic state and receipt semantics must be compared separately."
+    },
+    {
+      "python_operation": "token.buy",
+      "python_request": "BuyTokenRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/token.py",
+        "line": 277,
+        "sha256": "43c41a2d7b7363492ba22d1d9448620e3082d44a15577f3cf868a523cc568e94"
+      },
+      "status": "abi-builder-only",
+      "php_helpers": [],
+      "php_abi_signatures": [
+        {
+          "profile": "TestnetReserveToken20261029",
+          "signature": "buy(uint256,address)"
+        },
+        {
+          "profile": "TestnetReserveToken20261029",
+          "signature": "buyExactTokenForDEL(uint256,address)"
+        },
+        {
+          "profile": "TestnetReserveToken20261029",
+          "signature": "buyTokenForExactDEL(uint256,address)"
+        },
+        {
+          "profile": "Token",
+          "signature": "buy(uint256,address)"
+        },
+        {
+          "profile": "Token",
+          "signature": "buyExactTokenForDEL(uint256,address)"
+        },
+        {
+          "profile": "Token",
+          "signature": "buyTokenForExactDEL(uint256,address)"
+        }
+      ],
+      "go_reference_operations": [
+        "buyTokenForExactDEL",
+        "buyExactTokenForDEL"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/TokenEconomy/TokenEconomyDrafts.cs",
+          "line": 204,
+          "code": "[Function(\"buy\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/TokenEconomy/TokenEconomyDrafts.cs",
+          "line": 211,
+          "code": "[Function(\"buyTokenForExactDEL\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/TokenEconomy/TokenEconomyDrafts.cs",
+          "line": 218,
+          "code": "[Function(\"buyExactTokenForDEL\")]"
+        }
+      ],
+      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+    },
+    {
+      "python_operation": "token.convert",
+      "python_request": "ConvertTokenRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/token.py",
+        "line": 317,
+        "sha256": "43c41a2d7b7363492ba22d1d9448620e3082d44a15577f3cf868a523cc568e94"
+      },
+      "status": "abi-builder-only",
+      "php_helpers": [],
+      "php_abi_signatures": [
+        {
+          "profile": "TestnetTokenCenter20261029",
+          "signature": "convert(address,address,uint256,uint256,address)"
+        },
+        {
+          "profile": "TestnetTokenCenter20261029",
+          "signature": "convert(address,address,uint256,uint256,address,uint256,uint8,bytes32,bytes32)"
+        },
+        {
+          "profile": "TokenCenter",
+          "signature": "convert(address,address,uint256,uint256,address)"
+        },
+        {
+          "profile": "TokenCenter",
+          "signature": "convert(address,address,uint256,uint256,address,uint256,uint8,bytes32,bytes32)"
+        }
+      ],
+      "go_reference_operations": [
+        "convertToken"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/TokenEconomy/TokenEconomyDrafts.cs",
+          "line": 270,
+          "code": "[Function(\"convert\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/TokenEconomy/TokenEconomyDrafts.cs",
+          "line": 280,
+          "code": "[Function(\"convert\")]"
+        }
+      ],
+      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+    },
+    {
+      "python_operation": "token.create",
+      "python_request": "CreateTokenRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/token.py",
+        "line": 481,
+        "sha256": "43c41a2d7b7363492ba22d1d9448620e3082d44a15577f3cf868a523cc568e94"
+      },
+      "status": "abi-builder-only",
+      "php_helpers": [],
+      "php_abi_signatures": [
+        {
+          "profile": "TestnetTokenCenter20261029",
+          "signature": "createToken((uint256,uint256,uint256,address,uint8,string,string,string))"
+        },
+        {
+          "profile": "TokenCenter",
+          "signature": "createToken((uint256,uint256,uint256,address,uint8,string,string,string))"
+        }
+      ],
+      "go_reference_operations": [
+        "createToken"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/TokenCreation/TokenCreationDrafts.cs",
+          "line": 128,
+          "code": "[Function(\"createToken\")]"
+        }
+      ],
+      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+    },
+    {
+      "python_operation": "token.create_reserveless",
+      "python_request": "CreateReservelessTokenRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/token.py",
+        "line": 456,
+        "sha256": "43c41a2d7b7363492ba22d1d9448620e3082d44a15577f3cf868a523cc568e94"
+      },
+      "status": "partial-checked-helper",
+      "php_helpers": [
+        "TokenService::createReserveless"
+      ],
+      "php_abi_signatures": [
+        {
+          "profile": "TestnetTokenCenter20261029",
+          "signature": "createTokenReserveless(string,string,bool,bool,uint256,uint256,string)"
+        },
+        {
+          "profile": "TokenCenter",
+          "signature": "createTokenReserveless(string,string,bool,bool,uint256,uint256,string)"
+        }
+      ],
+      "go_reference_operations": [
+        "createTokenReserveless"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/TokenCreation/TokenCreationDrafts.cs",
+          "line": 134,
+          "code": "[Function(\"createTokenReserveless\")]"
+        }
+      ],
+      "semantic_boundary": "Checked helper covers its explicit profile/preconditions; variants, approvals, economic state and receipt semantics must be compared separately."
+    },
+    {
+      "python_operation": "token.mint",
+      "python_request": "MintTokenRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/token.py",
+        "line": 441,
+        "sha256": "43c41a2d7b7363492ba22d1d9448620e3082d44a15577f3cf868a523cc568e94"
+      },
+      "status": "partial-checked-helper",
+      "php_helpers": [
+        "TokenService::mint"
+      ],
+      "php_abi_signatures": [
+        {
+          "profile": "TestnetReservelessToken20261029",
+          "signature": "mint(address,uint256)"
+        }
+      ],
+      "go_reference_operations": [],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/DecimalNftDeployedDrafts.cs",
+          "line": 66,
+          "code": "[Function(\"mintByDEL\", \"uint256\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/DecimalNftDeployedDrafts.cs",
+          "line": 73,
+          "code": "[Function(\"mintByDEL\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/DecimalNftDrafts.cs",
+          "line": 421,
+          "code": "[Function(\"mint\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/DecimalNftDrafts.cs",
+          "line": 430,
+          "code": "[Function(\"mintByETH\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/DecimalNftDrafts.cs",
+          "line": 437,
+          "code": "[Function(\"mint\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/DecimalNftDrafts.cs",
+          "line": 448,
+          "code": "[Function(\"mintByETH\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/TokenEconomy/TokenEconomyDrafts.cs",
+          "line": 143,
+          "code": "throw new NotSupportedException(\"mint(address,uint256) is absent from DecimalToken ABI at go-smart-node 9e6c6d7\");"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/TokenEconomy/TokenEconomyDrafts.cs",
+          "line": 263,
+          "code": "[Function(\"mint\")]"
+        }
+      ],
+      "semantic_boundary": "Checked helper covers its explicit profile/preconditions; variants, approvals, economic state and receipt semantics must be compared separately."
+    },
+    {
+      "python_operation": "token.sell",
+      "python_request": "SellTokenRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/token.py",
+        "line": 296,
+        "sha256": "43c41a2d7b7363492ba22d1d9448620e3082d44a15577f3cf868a523cc568e94"
+      },
+      "status": "abi-builder-only",
+      "php_helpers": [],
+      "php_abi_signatures": [
+        {
+          "profile": "TestnetReserveToken20261029",
+          "signature": "sell(uint256,uint256,address)"
+        },
+        {
+          "profile": "TestnetReserveToken20261029",
+          "signature": "sellExactTokensForDEL(uint256,uint256,address)"
+        },
+        {
+          "profile": "TestnetReserveToken20261029",
+          "signature": "sellTokensForExactDEL(uint256,uint256,address)"
+        },
+        {
+          "profile": "Token",
+          "signature": "sell(uint256,uint256,address)"
+        },
+        {
+          "profile": "Token",
+          "signature": "sellExactTokensForDEL(uint256,uint256,address)"
+        },
+        {
+          "profile": "Token",
+          "signature": "sellTokensForExactDEL(uint256,uint256,address)"
+        }
+      ],
+      "go_reference_operations": [
+        "sellTokensForExactDEL",
+        "sellExactTokensForDEL"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/TokenEconomy/TokenEconomyDrafts.cs",
+          "line": 225,
+          "code": "[Function(\"sell\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/TokenEconomy/TokenEconomyDrafts.cs",
+          "line": 233,
+          "code": "[Function(\"sellExactTokensForDEL\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/TokenEconomy/TokenEconomyDrafts.cs",
+          "line": 241,
+          "code": "[Function(\"sellTokensForExactDEL\")]"
+        }
+      ],
+      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+    },
+    {
+      "python_operation": "token.update_details",
+      "python_request": "UpdateTokenDetailsRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/token.py",
+        "line": 449,
+        "sha256": "43c41a2d7b7363492ba22d1d9448620e3082d44a15577f3cf868a523cc568e94"
+      },
+      "status": "abi-builder-only",
+      "php_helpers": [],
+      "php_abi_signatures": [
+        {
+          "profile": "TestnetReserveToken20261029",
+          "signature": "updateIdentity(string)"
+        },
+        {
+          "profile": "TestnetReserveToken20261029",
+          "signature": "updateMaxTotalSupply(uint256)"
+        },
+        {
+          "profile": "TestnetReserveToken20261029",
+          "signature": "updateMinTotalSupply(uint256)"
+        },
+        {
+          "profile": "Token",
+          "signature": "updateDetails(string,uint256)"
+        }
+      ],
+      "go_reference_operations": [
+        "updateTokenMaxTotalSupply",
+        "updateTokenMinTotalSupply"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/TokenCreation/TokenCreationDrafts.cs",
+          "line": 147,
+          "code": "[Function(\"updateDetails\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/TokenEconomy/TokenEconomyDrafts.cs",
+          "line": 255,
+          "code": "[Function(\"updateDetails\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/TokenEconomy/TokenMaintenanceDrafts.cs",
+          "line": 82,
+          "code": "[Function(\"updateIdentity\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/TokenEconomy/TokenMaintenanceDrafts.cs",
+          "line": 88,
+          "code": "[Function(\"updateMaxTotalSupply\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/TokenEconomy/TokenMaintenanceDrafts.cs",
+          "line": 94,
+          "code": "[Function(\"updateMinTotalSupply\")]"
+        }
+      ],
+      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+    },
+    {
+      "python_operation": "nft.add_del_reserve",
+      "python_request": "AddDelReserveNftRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/nft.py",
+        "line": 750,
+        "sha256": "decd239dd77803149a706f6e5177bd10b2d86ad7d7d06ae358b939e044efbb3f"
+      },
+      "status": "partial-checked-helper",
+      "php_helpers": [
+        "DeployedNft::addDelReserve"
+      ],
+      "php_abi_signatures": [
+        {
+          "profile": "ERC1155",
+          "signature": "addReserveByETH(uint256)"
+        },
+        {
+          "profile": "ERC721",
+          "signature": "addReserveByETH(uint256)"
+        },
+        {
+          "profile": "PythonErc1155",
+          "signature": "addReserveByDEL(uint256)"
+        },
+        {
+          "profile": "PythonErc721",
+          "signature": "addReserveByDEL(uint256)"
+        }
+      ],
+      "go_reference_operations": [
+        "addDELReserveNFT"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/DecimalNftDrafts.cs",
+          "line": 564,
+          "code": "[Function(\"addReserveByDEL\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/DecimalNftDrafts.cs",
+          "line": 577,
+          "code": "[Function(\"addReserveByETH\")]"
+        }
+      ],
+      "semantic_boundary": "Checked helper covers its explicit profile/preconditions; variants, approvals, economic state and receipt semantics must be compared separately."
+    },
+    {
+      "python_operation": "nft.approve",
+      "python_request": "NftApproveRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/nft.py",
+        "line": 696,
+        "sha256": "decd239dd77803149a706f6e5177bd10b2d86ad7d7d06ae358b939e044efbb3f"
+      },
+      "status": "abi-builder-only",
+      "php_helpers": [],
+      "php_abi_signatures": [
+        {
+          "profile": "ERC721",
+          "signature": "approve(address,uint256)"
+        },
+        {
+          "profile": "PythonErc721",
+          "signature": "approve(address,uint256)"
+        }
+      ],
+      "go_reference_operations": [
+        "approveNFT721"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/Erc721Service.cs",
+          "line": 29,
+          "code": "{\"inputs\":[{\"name\":\"to\",\"type\":\"address\"},{\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[],\"type\":\"function\"},"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/Erc721Service.cs",
+          "line": 131,
+          "code": "Function(collection, \"approve\").GetData(approved, tokenId));"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Tokens/Erc20Contracts.cs",
+          "line": 59,
+          "code": "[Function(\"approve\", \"bool\")]"
+        }
+      ],
+      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+    },
+    {
+      "python_operation": "nft.burn",
+      "python_request": "BurnNftRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/nft.py",
+        "line": 712,
+        "sha256": "decd239dd77803149a706f6e5177bd10b2d86ad7d7d06ae358b939e044efbb3f"
+      },
+      "status": "abi-builder-only",
+      "php_helpers": [],
+      "php_abi_signatures": [
+        {
+          "profile": "ERC1155",
+          "signature": "burn(uint256,uint256)"
+        },
+        {
+          "profile": "ERC721",
+          "signature": "burn(uint256)"
+        },
+        {
+          "profile": "PythonErc1155",
+          "signature": "burn(uint256,uint256)"
+        },
+        {
+          "profile": "PythonErc721",
+          "signature": "burn(uint256)"
+        }
+      ],
+      "go_reference_operations": [
+        "burnNFT"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/DecimalNftDrafts.cs",
+          "line": 457,
+          "code": "[Function(\"burn\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/DecimalNftDrafts.cs",
+          "line": 463,
+          "code": "[Function(\"burn\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/TokenEconomy/TokenEconomyDrafts.cs",
+          "line": 249,
+          "code": "[Function(\"burn\")]"
+        }
+      ],
+      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+    },
+    {
+      "python_operation": "nft.create_collection",
+      "python_request": "CreateNftCollectionRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/nft.py",
+        "line": 557,
+        "sha256": "decd239dd77803149a706f6e5177bd10b2d86ad7d7d06ae358b939e044efbb3f"
+      },
+      "status": "partial-checked-helper",
+      "php_helpers": [
+        "DeployedNft::createCollection",
+        "DeployedNft::createdCollection"
+      ],
+      "php_abi_signatures": [
+        {
+          "profile": "TestnetNFTCenter20261029",
+          "signature": "createDRC1155((address,string,string,string,bool,bool))"
+        },
+        {
+          "profile": "TestnetNFTCenter20261029",
+          "signature": "createDRC721((address,string,string,string,bool,bool))"
+        }
+      ],
+      "go_reference_operations": [
+        "createCollectionDRC721",
+        "createCollectionDRC1155"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/DecimalNftDeployedDrafts.cs",
+          "line": 93,
+          "code": "[Function(\"createDRC721\", \"address\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/DecimalNftDeployedDrafts.cs",
+          "line": 99,
+          "code": "[Function(\"createDRC1155\", \"address\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/DecimalNftDrafts.cs",
+          "line": 409,
+          "code": "[Function(\"createDRC721\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/DecimalNftDrafts.cs",
+          "line": 415,
+          "code": "[Function(\"createDRC1155\")]"
+        }
+      ],
+      "semantic_boundary": "Checked helper covers its explicit profile/preconditions; variants, approvals, economic state and receipt semantics must be compared separately."
+    },
+    {
+      "python_operation": "nft.delegate",
+      "python_request": "DelegateNftRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/nft.py",
+        "line": 768,
+        "sha256": "decd239dd77803149a706f6e5177bd10b2d86ad7d7d06ae358b939e044efbb3f"
+      },
+      "status": "partial-checked-helper",
+      "php_helpers": [
+        "NftService::delegate721",
+        "NftService::delegate1155"
+      ],
+      "php_abi_signatures": [
+        {
+          "profile": "DelegationNFT",
+          "signature": "delegateDRC1155(address,address,uint256,uint256)"
+        },
+        {
+          "profile": "DelegationNFT",
+          "signature": "delegateDRC1155ByPermit(address,address,uint256,uint256,uint256,uint8,bytes32,bytes32)"
+        },
+        {
+          "profile": "DelegationNFT",
+          "signature": "delegateDRC721(address,address,uint256)"
+        },
+        {
+          "profile": "DelegationNFT",
+          "signature": "delegateDRC721ByPermit(address,address,uint256,uint256,uint8,bytes32,bytes32)"
+        },
+        {
+          "profile": "PythonDelegationNft",
+          "signature": "delegateDRC721(address,address,uint256)"
+        },
+        {
+          "profile": "PythonDelegationNft",
+          "signature": "delegateDRC1155(address,address,uint256,uint256)"
+        }
+      ],
+      "go_reference_operations": [
+        "delegateDRC721",
+        "delegateDRC1155"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/DecimalNftDrafts.cs",
+          "line": 470,
+          "code": "[Function(\"delegateDRC721\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/DecimalNftDrafts.cs",
+          "line": 478,
+          "code": "[Function(\"delegateDRC1155\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Staking/NftDelegationDrafts.cs",
+          "line": 144,
+          "code": "[Function(\"delegateDRC721\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Staking/NftDelegationDrafts.cs",
+          "line": 152,
+          "code": "[Function(\"delegateDRC1155\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Staking/NftPermitDelegationDrafts.cs",
+          "line": 106,
+          "code": "[Function(\"delegateDRC721ByPermit\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Staking/NftPermitDelegationDrafts.cs",
+          "line": 115,
+          "code": "[Function(\"delegateDRC1155ByPermit\")]"
+        }
+      ],
+      "semantic_boundary": "Checked helper covers its explicit profile/preconditions; variants, approvals, economic state and receipt semantics must be compared separately."
+    },
+    {
+      "python_operation": "nft.disable_mint",
+      "python_request": "DisableMintNftRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/nft.py",
+        "line": 729,
+        "sha256": "decd239dd77803149a706f6e5177bd10b2d86ad7d7d06ae358b939e044efbb3f"
+      },
+      "status": "abi-builder-only",
+      "php_helpers": [],
+      "php_abi_signatures": [
+        {
+          "profile": "ERC1155",
+          "signature": "disableMint()"
+        },
+        {
+          "profile": "ERC721",
+          "signature": "disableMint()"
+        },
+        {
+          "profile": "PythonErc1155",
+          "signature": "disableMint()"
+        },
+        {
+          "profile": "PythonErc721",
+          "signature": "disableMint()"
+        }
+      ],
+      "go_reference_operations": [
+        "disableMintNFT"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/DecimalNftDrafts.cs",
+          "line": 590,
+          "code": "[Function(\"disableMint\")]"
+        }
+      ],
+      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+    },
+    {
+      "python_operation": "nft.hold",
+      "python_request": "HoldNftRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/nft.py",
+        "line": 776,
+        "sha256": "decd239dd77803149a706f6e5177bd10b2d86ad7d7d06ae358b939e044efbb3f"
+      },
+      "status": "abi-builder-only",
+      "php_helpers": [],
+      "php_abi_signatures": [
+        {
+          "profile": "DelegationNFT",
+          "signature": "delegateHoldDRC1155(address,address,uint256,uint256,uint256)"
+        },
+        {
+          "profile": "DelegationNFT",
+          "signature": "delegateHoldDRC721(address,address,uint256,uint256)"
+        },
+        {
+          "profile": "DelegationNFT",
+          "signature": "hold(address,address,uint256,uint256,uint256,uint256)"
+        },
+        {
+          "profile": "PythonDelegationNft",
+          "signature": "delegateHoldDRC721(address,address,uint256,uint256)"
+        },
+        {
+          "profile": "PythonDelegationNft",
+          "signature": "delegateHoldDRC1155(address,address,uint256,uint256,uint256)"
+        }
+      ],
+      "go_reference_operations": [
+        "delegateDRC721Hold",
+        "delegateDRC1155Hold",
+        "stakeNFTToHold"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/DecimalNftDrafts.cs",
+          "line": 487,
+          "code": "[Function(\"delegateHoldDRC721\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/DecimalNftDrafts.cs",
+          "line": 496,
+          "code": "[Function(\"delegateHoldDRC1155\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Staking/DelegationDrafts.cs",
+          "line": 393,
+          "code": "[Function(\"hold\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Staking/NftDelegationDrafts.cs",
+          "line": 161,
+          "code": "[Function(\"delegateHoldDRC721\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Staking/NftDelegationDrafts.cs",
+          "line": 170,
+          "code": "[Function(\"delegateHoldDRC1155\")]"
+        }
+      ],
+      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+    },
+    {
+      "python_operation": "nft.mint",
+      "python_request": "MintNftRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/nft.py",
+        "line": 577,
+        "sha256": "decd239dd77803149a706f6e5177bd10b2d86ad7d7d06ae358b939e044efbb3f"
+      },
+      "status": "partial-checked-helper",
+      "php_helpers": [
+        "DeployedNft::mint"
+      ],
+      "php_abi_signatures": [
+        {
+          "profile": "ERC1155",
+          "signature": "mint(address,uint256,uint256,string,uint256,address)"
+        },
+        {
+          "profile": "ERC1155",
+          "signature": "mintByETH(address,uint256,uint256,string)"
+        },
+        {
+          "profile": "ERC1155",
+          "signature": "mintByPermit(address,uint256,uint256,string,uint256,address,uint256,uint8,bytes32,bytes32)"
+        },
+        {
+          "profile": "ERC721",
+          "signature": "mint(address,string,uint256,address)"
+        },
+        {
+          "profile": "ERC721",
+          "signature": "mintByETH(address,string)"
+        },
+        {
+          "profile": "ERC721",
+          "signature": "mintByPermit(address,string,uint256,address,uint256,uint8,bytes32,bytes32)"
+        },
+        {
+          "profile": "PythonErc1155",
+          "signature": "mint(address,uint256,uint256,string,uint256,address)"
+        },
+        {
+          "profile": "PythonErc1155",
+          "signature": "mintByDEL(address,uint256,uint256,string)"
+        },
+        {
+          "profile": "PythonErc721",
+          "signature": "mint(address,string,uint256,address)"
+        },
+        {
+          "profile": "PythonErc721",
+          "signature": "mintByDEL(address,string)"
+        }
+      ],
+      "go_reference_operations": [
+        "mintReserveless",
+        "mintNFTWithDELReserve",
+        "mintNFTWithTokenReserve"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/DecimalNftDeployedDrafts.cs",
+          "line": 66,
+          "code": "[Function(\"mintByDEL\", \"uint256\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/DecimalNftDeployedDrafts.cs",
+          "line": 73,
+          "code": "[Function(\"mintByDEL\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/DecimalNftDrafts.cs",
+          "line": 421,
+          "code": "[Function(\"mint\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/DecimalNftDrafts.cs",
+          "line": 430,
+          "code": "[Function(\"mintByETH\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/DecimalNftDrafts.cs",
+          "line": 437,
+          "code": "[Function(\"mint\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/DecimalNftDrafts.cs",
+          "line": 448,
+          "code": "[Function(\"mintByETH\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/TokenEconomy/TokenEconomyDrafts.cs",
+          "line": 143,
+          "code": "throw new NotSupportedException(\"mint(address,uint256) is absent from DecimalToken ABI at go-smart-node 9e6c6d7\");"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/TokenEconomy/TokenEconomyDrafts.cs",
+          "line": 263,
+          "code": "[Function(\"mint\")]"
+        }
+      ],
+      "semantic_boundary": "Checked helper covers its explicit profile/preconditions; variants, approvals, economic state and receipt semantics must be compared separately."
+    },
+    {
+      "python_operation": "nft.set_approval_for_all",
+      "python_request": "NftApprovalRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/nft.py",
+        "line": 684,
+        "sha256": "decd239dd77803149a706f6e5177bd10b2d86ad7d7d06ae358b939e044efbb3f"
+      },
+      "status": "abi-builder-only",
+      "php_helpers": [],
+      "php_abi_signatures": [
+        {
+          "profile": "ERC1155",
+          "signature": "setApprovalForAll(address,bool)"
+        },
+        {
+          "profile": "ERC721",
+          "signature": "setApprovalForAll(address,bool)"
+        },
+        {
+          "profile": "PythonErc1155",
+          "signature": "setApprovalForAll(address,bool)"
+        },
+        {
+          "profile": "PythonErc721",
+          "signature": "setApprovalForAll(address,bool)"
+        }
+      ],
+      "go_reference_operations": [
+        "approveForAllNFT"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/Erc1155Service.cs",
+          "line": 27,
+          "code": "{\"inputs\":[{\"name\":\"operator\",\"type\":\"address\"},{\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"setApprovalForAll\",\"outputs\":[],\"type\":\"function\"},"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/Erc1155Service.cs",
+          "line": 104,
+          "code": "Function(collection, \"setApprovalForAll\").GetData(operatorAddress, approved));"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/Erc721Service.cs",
+          "line": 30,
+          "code": "{\"inputs\":[{\"name\":\"operator\",\"type\":\"address\"},{\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"setApprovalForAll\",\"outputs\":[],\"type\":\"function\"}"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/Erc721Service.cs",
+          "line": 138,
+          "code": "Function(collection, \"setApprovalForAll\").GetData(operatorAddress, approved));"
+        }
+      ],
+      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+    },
+    {
+      "python_operation": "nft.set_token_uri",
+      "python_request": "SetTokenUriNftRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/nft.py",
+        "line": 738,
+        "sha256": "decd239dd77803149a706f6e5177bd10b2d86ad7d7d06ae358b939e044efbb3f"
+      },
+      "status": "partial-checked-helper",
+      "php_helpers": [
+        "NftService::setTokenUri"
+      ],
+      "php_abi_signatures": [
+        {
+          "profile": "PythonErc1155",
+          "signature": "setTokenURI(uint256,string)"
+        },
+        {
+          "profile": "PythonErc721",
+          "signature": "setTokenURI(uint256,string)"
+        }
+      ],
+      "go_reference_operations": [
+        "setTokenURINFT"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/DecimalNftDrafts.cs",
+          "line": 583,
+          "code": "[Function(\"setTokenURI\")]"
+        }
+      ],
+      "semantic_boundary": "Bundled PythonErc721/PythonErc1155 source profiles contain exact setTokenURI(uint256,string). Helper restricts those profiles and simulates role checks; actual deployed ABI/runtime compatibility remains explicit."
+    },
+    {
+      "python_operation": "nft.transfer",
+      "python_request": "NftTransferRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/nft.py",
+        "line": 617,
+        "sha256": "decd239dd77803149a706f6e5177bd10b2d86ad7d7d06ae358b939e044efbb3f"
+      },
+      "status": "partial-checked-helper",
+      "php_helpers": [
+        "NftService::transfer721",
+        "NftService::transfer1155"
+      ],
+      "php_abi_signatures": [
+        {
+          "profile": "ERC1155",
+          "signature": "safeTransferFrom(address,address,uint256,uint256,bytes)"
+        },
+        {
+          "profile": "ERC721",
+          "signature": "safeTransferFrom(address,address,uint256)"
+        },
+        {
+          "profile": "ERC721",
+          "signature": "safeTransferFrom(address,address,uint256,bytes)"
+        },
+        {
+          "profile": "PythonErc1155",
+          "signature": "safeTransferFrom(address,address,uint256,uint256,bytes)"
+        },
+        {
+          "profile": "PythonErc721",
+          "signature": "safeTransferFrom(address,address,uint256)"
+        }
+      ],
+      "go_reference_operations": [
+        "transferNFT"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Multisig/SafeTransactionDrafts.cs",
+          "line": 94,
+          "code": "[Function(\"safeTransferFrom\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Multisig/SafeTransactionDrafts.cs",
+          "line": 103,
+          "code": "[Function(\"safeTransferFrom\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/DecimalNftDrafts.cs",
+          "line": 546,
+          "code": "[Function(\"safeTransferFrom\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/DecimalNftDrafts.cs",
+          "line": 554,
+          "code": "[Function(\"safeTransferFrom\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/Erc1155Service.cs",
+          "line": 28,
+          "code": "{\"inputs\":[{\"name\":\"from\",\"type\":\"address\"},{\"name\":\"to\",\"type\":\"address\"},{\"name\":\"id\",\"type\":\"uint256\"},{\"name\":\"value\",\"type\":\"uint256\"},{\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"safeTransferFrom\",\"outputs\":[],\"type\":\"f"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/Erc1155Service.cs",
+          "line": 114,
+          "code": "Function(collection, \"safeTransferFrom\").GetData(from, to, tokenId, amount, data ?? []));"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/Erc721Service.cs",
+          "line": 27,
+          "code": "{\"inputs\":[{\"name\":\"from\",\"type\":\"address\"},{\"name\":\"to\",\"type\":\"address\"},{\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"safeTransferFrom\",\"outputs\":[],\"type\":\"function\"},"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/Erc721Service.cs",
+          "line": 28,
+          "code": "{\"inputs\":[{\"name\":\"from\",\"type\":\"address\"},{\"name\":\"to\",\"type\":\"address\"},{\"name\":\"tokenId\",\"type\":\"uint256\"},{\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"safeTransferFrom\",\"outputs\":[],\"type\":\"function\"},"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/Erc721Service.cs",
+          "line": 101,
+          "code": "Function(collection, \"safeTransferFrom\").GetData(owner, to, tokenId));"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/Erc721Service.cs",
+          "line": 154,
+          "code": "[Function(\"safeTransferFrom\")]"
+        }
+      ],
+      "semantic_boundary": "Checked helper covers its explicit profile/preconditions; variants, approvals, economic state and receipt semantics must be compared separately."
+    },
+    {
+      "python_operation": "nft.transfer_batch_erc1155",
+      "python_request": "NftBatchTransferRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/nft.py",
+        "line": 644,
+        "sha256": "decd239dd77803149a706f6e5177bd10b2d86ad7d7d06ae358b939e044efbb3f"
+      },
+      "status": "abi-builder-only",
+      "php_helpers": [],
+      "php_abi_signatures": [
+        {
+          "profile": "ERC1155",
+          "signature": "safeBatchTransferFrom(address,address,uint256[],uint256[],bytes)"
+        },
+        {
+          "profile": "PythonErc1155",
+          "signature": "safeBatchTransferFrom(address,address,uint256[],uint256[],bytes)"
+        }
+      ],
+      "go_reference_operations": [
+        "transferBatchNFT1155"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/Erc1155Service.cs",
+          "line": 29,
+          "code": "{\"inputs\":[{\"name\":\"from\",\"type\":\"address\"},{\"name\":\"to\",\"type\":\"address\"},{\"name\":\"ids\",\"type\":\"uint256[]\"},{\"name\":\"values\",\"type\":\"uint256[]\"},{\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"safeBatchTransferFrom\",\"outputs\":["
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/Erc1155Service.cs",
+          "line": 128,
+          "code": "Function(collection, \"safeBatchTransferFrom\").GetData("
+        }
+      ],
+      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+    },
+    {
+      "python_operation": "nft.transfer_stake",
+      "python_request": "TransferNftStakeRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/nft.py",
+        "line": 784,
+        "sha256": "decd239dd77803149a706f6e5177bd10b2d86ad7d7d06ae358b939e044efbb3f"
+      },
+      "status": "abi-builder-only",
+      "php_helpers": [],
+      "php_abi_signatures": [
+        {
+          "profile": "DelegationNFT",
+          "signature": "transfer(address,address,uint256,uint256,address)"
+        },
+        {
+          "profile": "DelegationNFT",
+          "signature": "transferHold(address,address,uint256,uint256,uint256,address)"
+        },
+        {
+          "profile": "PythonDelegationNft",
+          "signature": "transfer(address,address,uint256,uint256,address)"
+        },
+        {
+          "profile": "PythonDelegationNft",
+          "signature": "transferHold(address,address,uint256,uint256,uint256,address)"
+        }
+      ],
+      "go_reference_operations": [
+        "transferStakeNFT",
+        "transferStakeNFTHold"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Multisig/SafeTransactionDrafts.cs",
+          "line": 87,
+          "code": "[Function(\"transfer\", \"bool\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/DecimalNftDrafts.cs",
+          "line": 525,
+          "code": "[Function(\"transfer\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/DecimalNftDrafts.cs",
+          "line": 535,
+          "code": "[Function(\"transferHold\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Staking/DelegationDrafts.cs",
+          "line": 374,
+          "code": "[Function(\"transfer\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Staking/DelegationDrafts.cs",
+          "line": 383,
+          "code": "[Function(\"transferHold\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Staking/NftDelegationDrafts.cs",
+          "line": 199,
+          "code": "[Function(\"transfer\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Staking/NftDelegationDrafts.cs",
+          "line": 209,
+          "code": "[Function(\"transferHold\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Tokens/Erc20Contracts.cs",
+          "line": 49,
+          "code": "[Function(\"transfer\", \"bool\")]"
+        }
+      ],
+      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+    },
+    {
+      "python_operation": "nft.withdraw",
+      "python_request": "WithdrawNftRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/nft.py",
+        "line": 810,
+        "sha256": "decd239dd77803149a706f6e5177bd10b2d86ad7d7d06ae358b939e044efbb3f"
+      },
+      "status": "abi-builder-only",
+      "php_helpers": [],
+      "php_abi_signatures": [
+        {
+          "profile": "DelegationNFT",
+          "signature": "withdraw(address,address,uint256,uint256)"
+        },
+        {
+          "profile": "DelegationNFT",
+          "signature": "withdrawHold(address,address,uint256,uint256,uint256)"
+        },
+        {
+          "profile": "PythonDelegationNft",
+          "signature": "withdraw(address,address,uint256,uint256)"
+        },
+        {
+          "profile": "PythonDelegationNft",
+          "signature": "withdrawHold(address,address,uint256,uint256,uint256)"
+        }
+      ],
+      "go_reference_operations": [
+        "withdrawStakeNFT",
+        "withdrawStakeNFTHold"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/DecimalNftDrafts.cs",
+          "line": 506,
+          "code": "[Function(\"withdraw\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Nft/DecimalNftDrafts.cs",
+          "line": 515,
+          "code": "[Function(\"withdrawHold\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Staking/DelegationDrafts.cs",
+          "line": 357,
+          "code": "[Function(\"withdraw\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Staking/DelegationDrafts.cs",
+          "line": 365,
+          "code": "[Function(\"withdrawHold\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Staking/NftDelegationDrafts.cs",
+          "line": 180,
+          "code": "[Function(\"withdraw\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Staking/NftDelegationDrafts.cs",
+          "line": 189,
+          "code": "[Function(\"withdrawHold\")]"
+        }
+      ],
+      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+    },
+    {
+      "python_operation": "checks.create_del",
+      "python_request": "CreateChecksDelRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/checks.py",
+        "line": 108,
+        "sha256": "f484a50a5bd98908bbd0583c6233771aa09ac07106c86d6ffb9fcdcd1fa63b45"
+      },
+      "status": "partial-checked-helper",
+      "php_helpers": [
+        "ChecksService::createDel"
+      ],
+      "php_abi_signatures": [
+        {
+          "profile": "Checks",
+          "signature": "createChecksDEL(address[],uint256,uint256,uint256)"
+        },
+        {
+          "profile": "PythonChecks",
+          "signature": "createChecksDEL(address[],uint256,uint256,uint256)"
+        }
+      ],
+      "go_reference_operations": [
+        "createChecksDEL"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Checks/ChecksService.cs",
+          "line": 240,
+          "code": "[Function(\"createChecksDEL\", \"bytes32[]\")]"
+        }
+      ],
+      "semantic_boundary": "Checked helper covers its explicit profile/preconditions; variants, approvals, economic state and receipt semantics must be compared separately."
+    },
+    {
+      "python_operation": "checks.create_token",
+      "python_request": "CreateChecksTokenRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/checks.py",
+        "line": 125,
+        "sha256": "f484a50a5bd98908bbd0583c6233771aa09ac07106c86d6ffb9fcdcd1fa63b45"
+      },
+      "status": "partial-checked-helper",
+      "php_helpers": [
+        "ChecksService::createToken"
+      ],
+      "php_abi_signatures": [
+        {
+          "profile": "Checks",
+          "signature": "createChecksToken(address[],uint256,uint256,uint256,address)"
+        },
+        {
+          "profile": "Checks",
+          "signature": "createChecksTokenByPermit(address[],uint256,uint256,uint256,address,uint256,uint8,bytes32,bytes32)"
+        },
+        {
+          "profile": "PythonChecks",
+          "signature": "createChecksToken(address[],uint256,uint256,uint256,address)"
+        },
+        {
+          "profile": "PythonChecks",
+          "signature": "createChecksTokenByPermit(address[],uint256,uint256,uint256,address,uint256,uint8,bytes32,bytes32)"
+        }
+      ],
+      "go_reference_operations": [
+        "createChecksToken"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Checks/ChecksService.cs",
+          "line": 249,
+          "code": "[Function(\"createChecksToken\", \"bytes32[]\")]"
+        },
+        {
+          "path": "csharp/src/Decimal.Web3/Checks/ChecksService.cs",
+          "line": 259,
+          "code": "[Function(\"createChecksTokenByPermit\", \"bytes32[]\")]"
+        }
+      ],
+      "semantic_boundary": "Checked helper covers its explicit profile/preconditions; variants, approvals, economic state and receipt semantics must be compared separately."
+    },
+    {
+      "python_operation": "checks.redeem",
+      "python_request": "RedeemChecksRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/checks.py",
+        "line": 156,
+        "sha256": "f484a50a5bd98908bbd0583c6233771aa09ac07106c86d6ffb9fcdcd1fa63b45"
+      },
+      "status": "partial-checked-helper",
+      "php_helpers": [
+        "ChecksService::redeem"
+      ],
+      "php_abi_signatures": [
+        {
+          "profile": "Checks",
+          "signature": "redeemChecks(bytes[],bytes32[])"
+        },
+        {
+          "profile": "PythonChecks",
+          "signature": "redeemChecks(bytes[],bytes32[])"
+        }
+      ],
+      "go_reference_operations": [
+        "redeemChecks"
+      ],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Checks/ChecksService.cs",
+          "line": 273,
+          "code": "[Function(\"redeemChecks\")]"
+        }
+      ],
+      "semantic_boundary": "Checked helper covers its explicit profile/preconditions; variants, approvals, economic state and receipt semantics must be compared separately."
+    },
+    {
+      "python_operation": "bridge.complete_transfer",
+      "python_request": "BridgeCompleteTransferRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/bridge.py",
+        "line": 121,
+        "sha256": "5c7584c470287604dba7785405eb5c4820dec91ee6eb6dbef5385c01c735ad18"
+      },
+      "status": "abi-builder-only",
+      "php_helpers": [],
+      "php_abi_signatures": [
+        {
+          "profile": "PythonBridgeV2",
+          "signature": "completeTransfer(bytes,bool)"
+        }
+      ],
+      "go_reference_operations": [],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Bridge/BridgeDrafts.cs",
+          "line": 110,
+          "code": "[Function(\"completeTransfer\")]"
+        }
+      ],
+      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+    },
+    {
+      "python_operation": "bridge.transfer_native",
+      "python_request": "BridgeTransferNativeRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/bridge.py",
+        "line": 84,
+        "sha256": "5c7584c470287604dba7785405eb5c4820dec91ee6eb6dbef5385c01c735ad18"
+      },
+      "status": "abi-builder-only",
+      "php_helpers": [],
+      "php_abi_signatures": [
+        {
+          "profile": "PythonBridgeV2",
+          "signature": "wrapAndTransferETH(bytes32,uint16,uint256,uint256)"
+        }
+      ],
+      "go_reference_operations": [],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Bridge/BridgeDrafts.cs",
+          "line": 91,
+          "code": "[Function(\"wrapAndTransferETH\")]"
+        }
+      ],
+      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+    },
+    {
+      "python_operation": "bridge.transfer_token",
+      "python_request": "BridgeTransferTokenRequest",
+      "python_source": {
+        "path": "src/decimal_web3_sdk/bridge.py",
+        "line": 99,
+        "sha256": "5c7584c470287604dba7785405eb5c4820dec91ee6eb6dbef5385c01c735ad18"
+      },
+      "status": "abi-builder-only",
+      "php_helpers": [],
+      "php_abi_signatures": [
+        {
+          "profile": "PythonBridgeV2",
+          "signature": "transferTokens(address,bytes32,uint256,uint16,uint256)"
+        }
+      ],
+      "go_reference_operations": [],
+      "csharp_signature_occurrences": [
+        {
+          "path": "csharp/src/Decimal.Web3/Bridge/BridgeDrafts.cs",
+          "line": 100,
+          "code": "[Function(\"transferTokens\")]"
+        }
+      ],
+      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+    }
+  ]
+}

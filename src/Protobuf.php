@@ -10,7 +10,7 @@ final class Protobuf
         if(!preg_match('/^(0|[1-9][0-9]*)$/D',$value)||bccomp($value,'18446744073709551615', 0)>0)throw new \InvalidArgumentException('Invalid uint64');
         $out='';do{$part=(int)bcmod($value,'128', 0);$value=bcdiv($value,'128',0);$out.=chr($part|($value==='0'?0:128));}while($value!=='0');return $out;
     }
-    private function scalar(array $f,mixed $value): array
+    private function scalar(array $f,mixed $value,int $depth=0): array
     {
         $type=$f['type'];
         if($type===1){if((!is_float($value)&&!is_int($value))||!is_finite((float)$value))throw new \InvalidArgumentException('Expected finite protobuf double');return [1,pack('e',(float)$value)];}
@@ -23,25 +23,28 @@ final class Protobuf
             elseif(str_starts_with($value,'-'))$value=bcadd(bcpow('2','64', 0),$value, 0);
             return [0,self::varint($value)];
         }
-        if($type===11)return [2,$this->encode($f['typeName'],$value)];
-        if($type===9){if(!is_string($value)||!mb_check_encoding($value,'UTF-8'))throw new \InvalidArgumentException('Invalid protobuf string');return [2,$value];}
-        if($type===12){if(!is_string($value)||!preg_match('/^0x(?:[0-9a-fA-F]{2})*$/D',$value))throw new \InvalidArgumentException('Expected hex protobuf bytes');return [2,hex2bin(substr($value,2))];}
+        if($type===11)return [2,$this->encode($f['typeName'],$value,$depth+1)];
+        if($type===9){if(is_string($value)&&strlen($value)>8*1024*1024)throw new \InvalidArgumentException('Protobuf resource limit');if(!is_string($value)||!mb_check_encoding($value,'UTF-8'))throw new \InvalidArgumentException('Invalid protobuf string');return [2,$value];}
+        if($type===12){if(is_string($value)&&strlen($value)>2+16*1024*1024)throw new \InvalidArgumentException('Protobuf resource limit');if(!is_string($value)||!preg_match('/^0x(?:[0-9a-fA-F]{2})*$/D',$value))throw new \InvalidArgumentException('Expected hex protobuf bytes');return [2,hex2bin(substr($value,2))];}
         throw new \InvalidArgumentException('Unsupported protobuf field type: '.$type);
     }
-    public function encode(string $name,array $values): string
+    public function encode(string $name,array $values,int $depth=0): string
     {
+        if($depth<0||$depth>64)throw new \InvalidArgumentException('Protobuf resource limit');
         $spec=$this->schema[ltrim($name,'/')]??throw new \InvalidArgumentException('Unknown protobuf message');$out='';$known=[];$oneofs=[];
         foreach($spec['fields'] as $field){
-            $key=$field['name'];$known[]=$key;if(!array_key_exists($key,$values))continue;
+            $key=$field['name'];$known[]=$key;if(!array_key_exists($key,$values)){if($field['required']??false)throw new \InvalidArgumentException('Missing required protobuf field');continue;}
             if($field['oneof']!==null){if(isset($oneofs[$field['oneof']]))throw new \InvalidArgumentException('Conflicting oneof fields');$oneofs[$field['oneof']]=true;}
             $list=$field['repeated']?$values[$key]:[$values[$key]];if(!is_array($list)||!array_is_list($list))throw new \InvalidArgumentException('Expected repeated list');$packed='';
-            foreach($list as $value){[$wire,$data]=$this->scalar($field,$value);
-                if($field['packed']&&$wire===0){$packed.=$data;continue;}
-                if(!$field['repeated']&&$field['oneof']===null&&(($wire===0&&$data==="\0")||($wire===2&&$data===''&&$field['type']!==11)))continue;
+            foreach($list as $value){[$wire,$data]=$this->scalar($field,$value,$depth);
+                if($field['packed']&&$wire===0){$packed.=$data;if(strlen($packed)>8*1024*1024)throw new \InvalidArgumentException('Protobuf resource limit');continue;}
+                if(!$field['repeated']&&!($field['presence']??false)&&$field['oneof']===null&&(($wire===0&&$data==="\0")||($wire===2&&$data===''&&$field['type']!==11)))continue;
                 $out.=self::varint((string)($field['number']*8+$wire)).($wire===2?self::varint((string)strlen($data)):'').$data;
+                if(strlen($out)>8*1024*1024)throw new \InvalidArgumentException('Protobuf resource limit');
             }
             if($packed!=='')$out.=self::varint((string)($field['number']*8+2)).self::varint((string)strlen($packed)).$packed;
         }
+        if(strlen($out)>8*1024*1024)throw new \InvalidArgumentException('Protobuf resource limit');
         if(array_diff(array_keys($values),$known))throw new \InvalidArgumentException('Unknown protobuf fields');return $out;
     }
     public function any(string $type,array $values): array
@@ -84,7 +87,7 @@ final class Protobuf
     /** Decode known fields strictly. Unknown fields/duplicates are rejected rather than silently discarded. */
     public function decode(string $name,string $bytes,int $depth=0): array
     {
-        if($depth>64||strlen($bytes)>8*1024*1024)throw new \InvalidArgumentException('Protobuf resource limit');
+        if($depth<0||$depth>64||strlen($bytes)>8*1024*1024)throw new \InvalidArgumentException('Protobuf resource limit');
         $spec=$this->schema[ltrim($name,'/')]??throw new \InvalidArgumentException('Unknown protobuf message');
         $byNumber=[];foreach($spec['fields'] as $f)$byNumber[$f['number']]=$f;
         $result=[];$oneofs=[];$at=0;
@@ -99,6 +102,7 @@ final class Protobuf
                 while($pos<strlen($packed))$result[$key][]=$this->readScalar($field,0,$packed,$pos,$depth);
             }else{$value=$this->readScalar($field,$wire,$bytes,$at,$depth);if($field['repeated'])$result[$key][]=$value;else $result[$key]=$value;}
         }
+        foreach($spec['fields'] as $field)if(($field['required']??false)&&!array_key_exists($field['name'],$result))throw new \InvalidArgumentException('Missing required protobuf field');
         return $result;
     }
 }

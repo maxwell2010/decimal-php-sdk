@@ -78,4 +78,12 @@ require __DIR__.'/cosmos_release.php';
 require __DIR__.'/evm_release.php';
 require __DIR__.'/transport-release.php';
 
+require __DIR__.'/audit-core.php';
+
+require __DIR__.'/audit-evm.php';
+require __DIR__.'/audit-cosmos-0-1-1.php';
+require __DIR__.'/transport_audit.php';
+
+require __DIR__.'/audit-cosmos-differential.php';
+
 echo "OK: $count checks; no remote RPC requests or blockchain broadcasts\n";

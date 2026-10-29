@@ -14,6 +14,7 @@ final readonly class VerifiedContract
     {
         $this->client->verifyChain(); $block=$this->client->rpc->call('eth_blockNumber'); Units::decimal($block);
         Deployment::verify($this->client,$this->address,$this->runtimeHash,$this->implementation,$block);
+        if($this->implementation===null && Deployment::implementation($this->client,$this->address,$block)!==null) throw new \RuntimeException('Proxy binding requires trusted implementation address and runtime hash');
         if ($this->implementation!==null) Deployment::verify($this->client,$this->implementation,$this->implementationRuntimeHash,null,$block);
         return $block;
     }

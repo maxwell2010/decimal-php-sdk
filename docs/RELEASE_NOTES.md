@@ -1,27 +1,29 @@
-# Decimal PHP SDK v0.1.0
+# Decimal PHP SDK v0.1.1
 
-First stable source release of the independent Decimal PHP SDK by MintCandy.
+Audited patch release with independent EVM, Cosmos, transport and core review. No blockchain transactions were submitted.
 
-## Install the latest stable SDK with one command
+## Fixed
+
+- Standard proxy implementation trust, Safe/beacon caller context and circular pointers.
+- WebSocket future-ID response poisoning, envelope validation, byte queue and absolute deadlines.
+- Legacy/access-list gasPrice simulation context and malformed nonce snapshots.
+- Unicode mnemonic boundary handling, protobuf resource limits, proto2 field presence/required initialization, Cosmos chain-ID and signer-list parity.
+
+## Added and verified
+
+- Source-backed restricted ERC20 multisend and NFT URI helpers.
+- Operation-level matrix for all 55 Python catalog entries against Go/C#/PHP evidence.
+- 6779 offline checks, including 2119 independent Python protobuf field-wire vectors across 393 descriptors.
+- Loopback transports, 100 cross-process nonce reservations, source reproducibility and installed-package tests.
+
+Exact scope and remaining high-level orchestration/DTO differences are recorded in docs/FINAL_AUDIT_0_1_1.md and docs/AUDIT_OPERATION_PARITY.md. Matching ABI selectors are not labeled complete business-workflow parity.
+
+## Install the latest stable SDK
 
 ```sh
 composer create-project --repository=https://github.com/maxwell2010/decimal-php-sdk/releases/latest/download/packages.json mintcandy/decimal-web3-sdk decimal-php-sdk
 ```
 
-This permanent metadata URL selects the current stable release and installs dependencies. Requires Composer 2, PHP 8.2+ and curl/bcmath/gmp/mbstring; Composer needs PHP zip or unzip/7z to extract the source archive. Use a new destination directory. Existing lockfiles remain pinned until explicitly updated.
+The permanent metadata URL installs the current stable release and dependencies in a new directory. Composer 2, PHP 8.2+ and curl/bcmath/gmp/mbstring are required; ZIP extraction needs PHP zip or unzip/7z. Existing lockfiles remain pinned until explicitly updated.
 
-Permanent source download: https://github.com/maxwell2010/decimal-php-sdk/releases/latest/download/decimal-php-sdk.zip
-
-Versioned ZIP, permanent-name ZIP, packages.json and SHA256SUMS are attached. The Composer metadata points to the immutable versioned archive and verifies its hash. Future stable tag releases pass the test matrix before updating GitHub Latest.
-
-## Included
-
-- 27 ABI profiles, 577 typed bindings and source/deployment evidence.
-- BIP39/BIP32 wallets, EIP-155/2930/1559, contract creation, checked permit, exact external signer binding, nonce coordination and fee caps.
-- Weighted Safe with typed/personal EOA, EIP-1271 and prevalidated signatures; checked delegatecall evidence.
-- Guarded NFT/staking/token/checks helpers, event decoding and verified pinned-block reads.
-- Bounded read-only RPC failover, API/indexer helpers, WebSocket notification queue and explicit reconnect.
-- 393 Cosmos schemas, all 43 pinned ValidateBasic branches, source signer ordering, validated direct signing, strict envelopes, fixed-point fees and native HTTP/2 queries/simulation.
-- English/Russian guides, independent fixtures, node policy corpora, loopback integration, concurrency and single-command installation tests.
-
-Composer audit reports no known advisories for the lockfile. No blockchain transactions were submitted. Stateless validation does not establish roles or ante/execution admission; live funded-wallet acceptance and an external cryptographic audit have not been performed. The exact supported scope is in docs/PARITY.md, docs/EVM_SCOPE.md and docs/COSMOS_VALIDATION.md.
+The permanent ZIP is https://github.com/maxwell2010/decimal-php-sdk/releases/latest/download/decimal-php-sdk.zip. Versioned ZIP, alias ZIP, packages.json and SHA256SUMS are attached. The previous 0.1.0 archive remains available unchanged.

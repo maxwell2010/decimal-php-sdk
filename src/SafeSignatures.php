@@ -39,7 +39,8 @@ final class SafeSignatures
                 $signature=$variant==='bytes32'?'isValidSignature(bytes32,bytes)':'isValidSignature(bytes,bytes)';
                 $args=[$variant==='bytes32'?$hash:'0x'.bin2hex($preimage),$sig];$types=$variant==='bytes32'?['bytes32','bytes']:['bytes','bytes'];
                 $data=$codec->encodeFunctionSignature($signature).substr($codec->encodeParameters($types,$args),2);
-                $result=$codec->decodeParameters(['bytes4'],$client->call(['to'=>$owner,'data'=>$data],$policy->block))[0];
+                // The owner is called by the Safe during execution, not by a zero-address eth_call.
+                $result=$codec->decodeParameters(['bytes4'],$client->call(['from'=>$policy->safe,'to'=>$owner,'data'=>$data],$policy->block))[0];
                 if($result!==($variant==='bytes32'?'0x1626ba7e':'0x20c13b0b'))throw new \RuntimeException('Contract signature rejected');$tail=substr($sig,2);
             }elseif($kind==='prevalidated'){
                 if($sig!=='0x')throw new \InvalidArgumentException('Prevalidated signature has no payload');

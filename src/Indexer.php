@@ -4,7 +4,7 @@ namespace Decimal;
 /** Explicit read API routes matching the Python indexer surface. Raw payloads remain available. */
 final class Indexer
 {
-    public function __construct(private readonly Api $api) {}
+    public function __construct(private readonly Api $api, private readonly ?Api $walletStakingApi=null, private readonly ?Api $rootApi=null) {}
     private static function segment(string $value): string
     { if(!preg_match('/^[A-Za-z0-9_.-]+$/D',$value)||$value==='.'||$value==='..')throw new \InvalidArgumentException('Invalid API identifier');return $value; }
     private static function height(int $height): string { if($height<0)throw new \InvalidArgumentException('Negative height');return (string)$height; }
@@ -18,12 +18,26 @@ final class Indexer
     public function addressTransactions(string $address,int $limit=50,int $offset=0): mixed { return $this->api->get('addresses/'.TransactionDraft::address($address).'/txs',Api::page($limit,$offset)); }
     public function walletBalances(string $address,int $limit=300,int $offset=0,bool $includeBank=true,bool $preferBank=true): mixed { return $this->api->get('erc20/balances/'.TransactionDraft::address($address),Api::page($limit,$offset)+['include_bank'=>(int)$includeBank,'prefer_bank'=>(int)$preferBank]); }
     public function coins(bool $withPrice=false,int $limit=100): mixed { Api::page($limit);return $this->api->get('coins',['with_price'=>(int)$withPrice,'pagination.limit'=>$limit]); }
-    public function coin(string $denom): mixed { return $this->api->get('coins/'.self::segment($denom)); }
+    public function coin(string $denom): mixed { foreach(explode('/',$denom) as $part)self::segment($part);return $this->api->get('coins/'.$denom); }
     public function coinPrices(): mixed { return $this->api->get('coins/prices'); }
     public function validator(string $validator): mixed { return $this->api->get('validators/'.self::segment($validator)); }
     public function validatorDelegations(string $validator): mixed { return $this->api->get('validators/'.self::segment($validator).'/delegations'); }
     public function walletTransfers(string $address): mixed { return $this->api->get('validators/wallet/'.TransactionDraft::address($address).'/transfer/coins'); }
     public function rewards(string $delegator): mixed { return $this->api->get('rewards/delegators/'.self::segment($delegator)); }
+    public function coinRegistry(bool $withPrice=false,int $limit=500): mixed { return $this->coins($withPrice,$limit); }
+    public function validators(): mixed { return $this->api->validators(); }
+    public function walletStakes(string $address): mixed { return $this->api->walletStakes($address); }
+    public function walletUnstakes(string $address): mixed { return $this->api->walletUnstakes($address); }
+    public function walletStakingIndex(string $address): mixed
+    {
+        if($this->walletStakingApi===null)throw new \RuntimeException('No wallet staking index URL configured');
+        return $this->walletStakingApi->get('v1/wallets/'.TransactionDraft::address($address).'/staking');
+    }
+    public function health(): mixed
+    {
+        if($this->rootApi===null)throw new \RuntimeException('No root API URL configured');
+        return $this->rootApi->get('health');
+    }
     /** Verified discovery metadata, not a claim that a withdrawal is mature on chain. */
     public function withdrawalIndex(string $relativePath,?string $minimumBlock=null): array
     {

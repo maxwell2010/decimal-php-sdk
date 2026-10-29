@@ -2,7 +2,7 @@
 
 Independent Decimal SDK by [MintCandy](https://mintcandy.ru/) and [@Maxwell2019](https://t.me/Maxwell2019). PHP 8.2+, MIT license.
 
-**v0.1.0 is the first stable source release.** Includes 27 ABI profiles, 577 generated function bindings, guarded EVM workflows, wallets, transaction signing, and source-backed Cosmos validation/signing/query codecs. The [coverage matrix](docs/PARITY.md) defines supported interfaces and deployment boundaries.
+**v0.1.1 is the audited patch release.** Includes 27 ABI profiles, 577 generated function bindings, guarded EVM workflows, wallets, transaction signing, and source-backed Cosmos validation/signing/query codecs. The [coverage matrix](docs/PARITY.md) defines supported interfaces and deployment boundaries.
 
 [Русский README](README.ru.md) | [Examples](examples) | [Release notes](CHANGELOG.md) | [Security](SECURITY.md)
 
@@ -112,3 +112,5 @@ python tools/vectors.py
 Tests use offline fixtures and injected RPC responses. They compare every bundled function's calldata and decoded inputs with Python eth-abi, signing with eth-account, and Cosmos envelope/signature bytes with the Go reference fixture. No funded-wallet acceptance test or blockchain broadcast was performed. WebSocket tests cover frame encoding and a loopback handshake/subscribe/ping/fragment/unsubscribe server, not a live provider campaign.
 
 The dependency chain containing phpseclib was removed rather than suppressing its advisory. Composer audit reports no known advisories for the current lockfile; this is not a cryptographic security audit. ABI, RLP and protobuf codecs remain subject to the boundaries in [PARITY.md](docs/PARITY.md).
+
+[Final audit: fixes and operation-level parity](docs/FINAL_AUDIT_0_1_1.md).

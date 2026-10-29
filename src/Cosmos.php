@@ -11,7 +11,7 @@ final class Cosmos
     }
     public function auth(array $signers,array $fee,string $gas): string
     {
-        if($signers===[])throw new \InvalidArgumentException('Signers required');$infos=[];$seen=[];
+        if($signers===[]||!array_is_list($signers))throw new \InvalidArgumentException('Signers required');$infos=[];$seen=[];
         foreach($signers as $s){
             if(!preg_match('/^0x0[23][0-9a-fA-F]{64}$/D',$s['publicKey']))throw new \InvalidArgumentException('Compressed public key required');
             if(isset($seen[strtolower($s['publicKey'])]))throw new \InvalidArgumentException('Duplicate Cosmos signer');$seen[strtolower($s['publicKey'])]=true;
@@ -23,7 +23,7 @@ final class Cosmos
     }
     public function signDoc(string $body,string $auth,string $chainId,string $accountNumber): string
     {
-        if($chainId===''||strlen($chainId)>128)throw new \InvalidArgumentException('Invalid Cosmos chain');
+        if($chainId==='')throw new \InvalidArgumentException('Invalid Cosmos chain');
         $this->codec->decode('cosmos.tx.v1beta1.TxBody',$body);
         $this->codec->decode('cosmos.tx.v1beta1.AuthInfo',$auth);
         return $this->codec->encode('cosmos.tx.v1beta1.SignDoc',['body_bytes'=>'0x'.bin2hex($body),'auth_info_bytes'=>'0x'.bin2hex($auth),'chain_id'=>$chainId,'account_number'=>$accountNumber]);
@@ -77,6 +77,7 @@ final class Cosmos
     /** Binds signers to source-backed message addresses before any signing occurs. */
     public function signChecked(string $body,string $chainId,array $signers,array $fee,string $gas): array
     {
+        if(!array_is_list($signers))throw new \InvalidArgumentException('Signers must be an ordered list');
         $required=$this->requiredSigners($body);
         if(count($required)!==count($signers))throw new \InvalidArgumentException('Cosmos signer count mismatch');
         foreach($signers as $i=>$signer)if(!($signer['wallet']??null) instanceof Wallet||strtolower($signer['wallet']->address)!==$required[$i])throw new \InvalidArgumentException('Cosmos signer order/address mismatch');

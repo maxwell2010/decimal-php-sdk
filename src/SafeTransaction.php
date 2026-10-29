@@ -5,7 +5,7 @@ final class SafeTransaction
 {
     public function __construct(public readonly string $safe,public readonly int $chainId,public readonly array $message)
     {
-        TransactionDraft::address($safe);if($chainId<1)throw new \InvalidArgumentException('Invalid chain');
+        if(TransactionDraft::address($safe)==='0x'.str_repeat('0',40)||$chainId<1)throw new \InvalidArgumentException('Invalid Safe domain');
         $this->hash();
         if(!in_array($message['operation'],['0','1'],true))throw new \InvalidArgumentException('Invalid Safe operation');
     }

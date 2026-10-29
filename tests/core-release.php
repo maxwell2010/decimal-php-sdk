@@ -40,7 +40,7 @@ foreach([['nonce','10000000000000000'],['gas','10000000000000000'],['tip','ff']]
 }
 $boundBlocks=[];$runtime='0x6000';$runtimeHash='0x'.kornrunner\Keccak::hash(hex2bin(substr($runtime,2)),256);
 $boundRpc=new Decimal\Rpc('http://unused',function($r)use(&$boundBlocks,$runtime){
-    $value=match($r['method']){'eth_chainId'=>'0x31524','eth_blockNumber'=>'0x10','eth_getCode'=>$runtime,'eth_call'=>(new Decimal\AbiCodec())->encodeParameters(['uint256'],['42']),default=>throw new RuntimeException('Unexpected deployment RPC')};
+    $value=match($r['method']){'eth_chainId'=>'0x31524','eth_blockNumber'=>'0x10','eth_getCode'=>$runtime,'eth_getStorageAt'=>'0x'.str_repeat('0',64),'eth_call'=>(new Decimal\AbiCodec())->encodeParameters(['uint256'],['42']),default=>throw new RuntimeException('Unexpected deployment RPC')};
     if($r['method']==='eth_call')$boundBlocks[]=$r['params'][1];
     return ['jsonrpc'=>'2.0','id'=>$r['id'],'result'=>$value];
 });

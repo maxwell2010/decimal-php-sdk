@@ -22,15 +22,17 @@ final class Client
         if($feeCap!==null) Units::uint($feeCap);
         $this->verifyChain();
         $cancellation?->throwIfCancelled();
+        $price = $maxFeePerGas ?? Units::decimal($this->rpc->call('eth_gasPrice'));
+        $cancellation?->throwIfCancelled();
         $request=$draft->rpc();
         if($type!==0)$request['accessList']=$accessList;
         if($type===2){$request['maxFeePerGas']=Units::hex($maxFeePerGas);$request['maxPriorityFeePerGas']=Units::hex($maxPriorityFee);}
+        else $request['gasPrice']=Units::hex($price);
         $this->call($request,'pending');
         $cancellation?->throwIfCancelled();
         $gas = Units::decimal($this->rpc->call('eth_estimateGas', [$request]));
         $estimate=$gas;
         $gas = bcdiv(bcadd(bcmul($gas, '110', 0), '99', 0), '100', 0);
-        $price = $maxFeePerGas ?? Units::decimal($this->rpc->call('eth_gasPrice'));
         $cancellation?->throwIfCancelled();
         $nonce = Units::decimal($this->rpc->call('eth_getTransactionCount', [$draft->from, 'pending']));
         $fee = bcmul($gas, $price, 0);

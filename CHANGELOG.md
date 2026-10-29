@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.1.1 - 2026-10-29
+
+Audited patch release. The immutable 0.1.0 release remains available.
+
+- Bind standard proxy verification to trusted implementation/runtime evidence; preserve correct Safe/beacon caller contexts and reject circular pointers.
+- Reject unsolicited WebSocket response IDs, malformed envelopes and oversized queues; enforce absolute transport deadlines.
+- Resolve gas price before legacy/access-list call/estimate so simulation uses the prepared transaction's fee context.
+- Reject structurally corrupt, duplicate or null nonce snapshots before reserving another nonce.
+- Match the Python SDK mnemonic wrapper's Unicode boundary whitespace handling and reject invalid UTF-8.
+- Bound protobuf encoding, preserve proto2 explicit-default presence, enforce required-field initialization and align chain-ID/signer-list semantics with Go.
+- Add source-backed restricted ERC20 multisend and simulated NFT URI helpers.
+- Add a 55-operation parity matrix, independent 2119-message-field protobuf fixtures and adversarial transport tests.
+
+No blockchain broadcasts were performed. Remaining high-level orchestration/DTO distinctions are explicitly recorded in docs/AUDIT_OPERATION_PARITY.md.
+
 ## 0.1.0 - 2026-10-29
 
 First stable source release, with a gated GitHub publication workflow and permanent latest installation links.

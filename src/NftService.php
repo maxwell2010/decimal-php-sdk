@@ -11,6 +11,13 @@ final class NftService
         if(TransactionDraft::address($sender)!==TransactionDraft::address($owner))throw new \RuntimeException('Sender does not own NFT');
         return $token->draft($sender,'safeTransferFrom(address,address,uint256)',[$sender,$recipient,$tokenId]);
     }
+    /** URI setters are available only in the explicitly selected Python source profiles. */
+    public function setTokenUri(string $sender,string $tokenId,string $uri,string $profile='PythonErc721'): TransactionDraft
+    {
+        if(!in_array($profile,['PythonErc721','PythonErc1155'],true))throw new \InvalidArgumentException('URI setter requires an explicit source ABI with setTokenURI');
+        $draft=Contract::profile($this->address,$profile)->draft($sender,'setTokenURI(uint256,string)',[$tokenId,$uri]);
+        $this->client->simulate($draft);return $draft;
+    }
     public function transfer1155(string $sender,string $recipient,string $tokenId,string $amount,string $data='0x',string $block='latest'): TransactionDraft
     {
         Units::uint($amount);if($amount==='0')throw new \InvalidArgumentException('Positive NFT amount required');$token=Contract::profile($this->address,'ERC1155');

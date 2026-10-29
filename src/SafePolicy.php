@@ -7,7 +7,8 @@ final readonly class SafePolicy
 {
     public function __construct(public string $safe, public int $chainId, public string $block, public string $nonce, public array $owners, public string $threshold)
     {
-        TransactionDraft::address($safe); Units::decimal($block); Units::uint($nonce); Units::uint($threshold);
+        if(TransactionDraft::address($safe)==='0x'.str_repeat('0',40)) throw new \InvalidArgumentException('Invalid Safe address');
+        Units::decimal($block); Units::uint($nonce); Units::uint($threshold);
         if ($chainId < 1 || !$owners || $threshold === '0') throw new \InvalidArgumentException('Invalid Safe policy');
         $total = '0';
         foreach ($owners as $owner => $weight) {

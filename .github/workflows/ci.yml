@@ -31,6 +31,7 @@ jobs:
       - run: git diff --exit-code -- src/Contracts docs/operations.json docs/abi-hashes.json
       - run: python tools/test_local_transports.py
       - run: python tools/test_websocket_queue.py
+      - run: python tools/test_websocket_audit.py
       - run: python tools/test_nonce_concurrency.py
       - run: python tools/test_websocket_reconnect_failure.py
       - run: python tools/test_install.py

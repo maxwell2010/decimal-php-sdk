@@ -19,10 +19,15 @@ final class Deployment
     {
         TransactionDraft::address($proxy);$client->verifyChain();$codec=new AbiCodec();
         $word=$client->rpc->call('eth_getStorageAt',[$proxy,self::IMPLEMENTATION,$block]);
-        $impl=$codec->decodeParameters(['address'],$word)[0];if($impl!=='0x'.str_repeat('0',40))return $impl;
+        $impl=$codec->decodeParameters(['address'],$word)[0];if($impl!=='0x'.str_repeat('0',40)){
+            if($impl===TransactionDraft::address($proxy))throw new \RuntimeException('Circular proxy implementation');return $impl;
+        }
         $word=$client->rpc->call('eth_getStorageAt',[$proxy,self::BEACON,$block]);$beacon=$codec->decodeParameters(['address'],$word)[0];
         if($beacon==='0x'.str_repeat('0',40))return null;
-        return $codec->decodeParameters(['address'],$client->call(['to'=>$beacon,'data'=>$codec->encodeFunctionSignature('implementation()')],$block))[0];
+        if($beacon===TransactionDraft::address($proxy))throw new \RuntimeException('Circular proxy beacon');
+        $impl=$codec->decodeParameters(['address'],$client->call(['from'=>$proxy,'to'=>$beacon,'data'=>$codec->encodeFunctionSignature('implementation()')],$block))[0];
+        if($impl==='0x'.str_repeat('0',40)||$impl===TransactionDraft::address($proxy))throw new \RuntimeException('Missing or circular beacon implementation');
+        return $impl;
     }
     public static function resolve(Client $client,string $name,string $profile='ContractCenter'): string
     {

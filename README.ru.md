@@ -2,7 +2,7 @@
 
 Независимый SDK для Decimal от [MintCandy](https://mintcandy.ru/) и [@Maxwell2019](https://t.me/Maxwell2019). PHP 8.2+, MIT.
 
-**v0.1.0 - первый стабильный исходный релиз.** Включены 27 ABI-профилей, 577 функций, кошельки mnemonic/BIP32, EVM-подпись, проверяемые сценарии Safe/NFT/staking/checks и Cosmos validation/signing/query. [Матрица покрытия](docs/PARITY.md) фиксирует поддерживаемые интерфейсы и границы совместимости.
+**v0.1.1 - обновление по результатам независимого аудита.** Включены 27 ABI-профилей, 577 функций, кошельки mnemonic/BIP32, EVM-подпись, проверяемые сценарии Safe/NFT/staking/checks и Cosmos validation/signing/query. [Матрица покрытия](docs/PARITY.md) фиксирует поддерживаемые интерфейсы и границы совместимости.
 
 ## Последняя стабильная версия одной командой
 
@@ -58,3 +58,5 @@ $signed = $wallet->sign($prepared);
 Предупреждение Composer устранено удалением зависимостей с phpseclib. Текущий composer audit не находит известных advisories. Тесты используют независимые calldata/подписи Python, схемы и Cosmos-эталоны Go/ноды, loopback-транспорты и установку из собранного архива. Транзакции в сеть при разработке не отправлялись.
 
 [English README](README.md) | [Примеры](docs/EXAMPLES.md) | [Cosmos validation](docs/COSMOS_VALIDATION.md) | [EVM scope](docs/EVM_SCOPE.md)
+
+[Итоги аудита и паритет операций](docs/FINAL_AUDIT_0_1_1.md).

@@ -27,7 +27,12 @@ final readonly class NonceManager
                 try { $raw=stream_get_contents($data,1024*1024+1); } finally { fclose($data); }
                 if($raw===false || $raw==='' || strlen($raw)>1024*1024) throw new \RuntimeException('Invalid or empty nonce reservation store; reconcile before reuse');
                 $state=json_decode($raw,true,512,JSON_THROW_ON_ERROR);
-                if(!is_array($state)) throw new \RuntimeException('Invalid nonce reservation state');
+                if(!is_array($state)||$state===[]||array_is_list($state)||json_encode($state,JSON_THROW_ON_ERROR)!==$raw) throw new \RuntimeException('Invalid nonce reservation state');
+                foreach($state as $entry=>$value) {
+                    if(!is_string($entry)||!preg_match('/^[1-9][0-9]*:0x[0-9a-f]{40}$/D',$entry)||!is_string($value)) throw new \RuntimeException('Invalid nonce reservation entry');
+                    Units::uint($value);
+                    if(bccomp($value,'18446744073709551615',0)>0) throw new \RuntimeException('Stored nonce exceeds uint64');
+                }
             }
             $next=$state[$key]??$pendingNonce;
             if(!is_string($next)) throw new \RuntimeException('Invalid stored nonce');
@@ -36,6 +41,7 @@ final readonly class NonceManager
             if(bccomp($nonce,'18446744073709551615',0)>=0) throw new \RuntimeException('Nonce exhausted');
             $state[$key]=bcadd($nonce,'1',0);
             $encoded=json_encode($state,JSON_THROW_ON_ERROR);
+            if(strlen($encoded)>1024*1024) throw new \RuntimeException('Nonce reservation store is full');
             $temporary=tempnam(dirname($this->path),'.decimal-nonce-');
             if($temporary===false) throw new \RuntimeException('Cannot create nonce reservation snapshot');
             $data=@fopen($temporary,'wb');

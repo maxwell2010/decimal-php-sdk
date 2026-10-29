@@ -1,6 +1,6 @@
 # SDK coverage and compatibility
 
-Release 0.1.0 covers the source-evidenced SDK interfaces listed below. ABI bindings, complete guarded workflows, stateless node validation and live execution are separate evidence levels. Function/schema counts are not a parity percentage or distinct transaction count.
+Release 0.1.1 covers the source-evidenced SDK interfaces listed below. ABI bindings, complete guarded workflows, stateless node validation and live execution are separate evidence levels. Function/schema counts are not a parity percentage or distinct transaction count.
 
 | Area | Released implementation and checks | Boundary |
 | --- | --- | --- |
@@ -28,3 +28,9 @@ Further evidence: [EVM_SCOPE.md](EVM_SCOPE.md), [COSMOS_VALIDATION.md](COSMOS_VA
 ## Dependency advisory resolution
 
 The old web3.php/ethereum-util dependency chain required phpseclib 2.x and triggered PKSA-12sz-bcny-pk4m. Those packages and phpseclib were removed; no audit exceptions or replacement packages hide the advisory. The SDK owns its strict ABI/RLP codecs and uses the reviewed secp256k1 dependency directly. RLP leading-zero byte preservation, independent signature recovery and malformed-envelope regression tests cover the replacement paths.
+
+## Operation-level audit
+
+The final audit compares all 55 Python catalog entries with current local Go/C# references and PHP routes. See [AUDIT_OPERATION_PARITY.md](AUDIT_OPERATION_PARITY.md) and [audit-operation-parity.json](audit-operation-parity.json). Direct helpers, partial checked helpers and ABI-only builders are explicitly different categories. Full automatic economic/staking/bridge orchestration and language-specific DTO/report equivalence are not inferred from matching selectors.
+
+0.1.1 additionally includes a codehash-bound sender-restricted ERC20 multisend planner and source-profile-restricted NFT URI helper. See [FINAL_AUDIT_0_1_1.md](FINAL_AUDIT_0_1_1.md) for concrete fixes and independent protobuf coverage.

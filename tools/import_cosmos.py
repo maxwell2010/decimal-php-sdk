@@ -35,7 +35,7 @@ def render(descriptor_path):
             packed = actual.is_packed
             fields.append(dict(name=field.name, number=field.number, type=field.type,
                 typeName=field.type_name.lstrip('.'), repeated=field.label == 3,
-                packed=packed, oneof=field.oneof_index if field.HasField('oneof_index') else None))
+                packed=packed, presence=actual.has_presence, required=actual.is_required, oneof=field.oneof_index if field.HasField('oneof_index') else None))
             if field.label == 3 and field.type in PACKABLE:
                 instance = message_factory.GetMessageClass(resolved)()
                 if field.type == 8: values = [False, True]

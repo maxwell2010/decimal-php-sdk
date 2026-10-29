@@ -28,7 +28,7 @@ $evmReader=new StakingReader($evmClient,Contract::profile($evmSafe,'Delegation')
 $evmRow=$evmReader->frozen('1',$evmOwnerA->address,'0x10');same($evmRow->active(),true);same($evmRow->matured('98'),false);same($evmRow->matured('99'),true);
 rejects(fn()=>$evmReader->frozen('1',$evmOwnerB->address,'0x10'));same($evmReader->completeChecked($evmOwnerA->address,['1'],'0x10')->to,$evmSafe);
 $evmFrozen[3]='0';rejects(fn()=>$evmReader->completeChecked($evmOwnerA->address,['1'],'0x10'));
-$evmVersion='0x6000';$evmCodeRpc=new Rpc('http://unused',function($r)use(&$evmVersion){return ['jsonrpc'=>'2.0','id'=>$r['id'],'result'=>$r['method']==='eth_chainId'?'0x31524':$evmVersion];});
+$evmVersion='0x6000';$evmCodeRpc=new Rpc('http://unused',function($r)use(&$evmVersion){return ['jsonrpc'=>'2.0','id'=>$r['id'],'result'=>$r['method']==='eth_chainId'?'0x31524':($r['method']==='eth_getStorageAt'?'0x'.str_repeat('0',64):$evmVersion)];});
 $evmBound=new VerifiedContract(new Client(Network::testnet(),$evmCodeRpc),$evmSafe,'Token','0x'.kornrunner\Keccak::hash(hex2bin('6000'),256));
 $evmVersion='0x6001';rejects(fn()=>$evmBound->draft($evmOwnerA->address,'transfer(address,uint256)',[$evmOwnerB->address,'1']));
 echo "Weighted Safe, deployment and frozen-stake checks passed\n";
