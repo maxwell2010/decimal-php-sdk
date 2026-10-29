@@ -1,6 +1,6 @@
 {
     "name": "mintcandy/decimal-web3-sdk",
-    "description": "Independent Decimal EVM and offline Cosmos SDK for PHP",
+    "description": "Independent Decimal EVM and Cosmos SDK for PHP",
     "type": "library",
     "license": "MIT",
     "require": {

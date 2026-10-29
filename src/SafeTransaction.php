@@ -18,6 +18,7 @@ final class SafeTransaction
     {
         if($threshold<1||count($signatures)<$threshold) throw new \InvalidArgumentException('Insufficient Safe signatures');
         $rows=[];foreach($signatures as $sig) {
+            $sig=SafeSignatures::validateEoa($sig);
             $address=Wallet::recover($this->hash(),$sig);
             if(isset($rows[$address])||($owners!==null&&!in_array($address,array_map('strtolower',$owners),true))) throw new \InvalidArgumentException('Duplicate or unauthorized Safe signer');
             $v=hexdec(substr($sig,-2));if($v<27)$v+=27;$rows[$address]=substr($sig,2,128).dechex($v);

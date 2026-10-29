@@ -1,0 +1,174 @@
+{
+  "/decimal.coin.v1.MsgCreateCoin": {
+    "field": "sender",
+    "hrp": "d0"
+  },
+  "/decimal.coin.v1.MsgUpdateCoin": {
+    "field": "sender",
+    "hrp": "d0"
+  },
+  "/decimal.coin.v1.MsgSendCoin": {
+    "field": "sender",
+    "hrp": "d0"
+  },
+  "/decimal.coin.v1.MsgMultiSendCoin": {
+    "field": "sender",
+    "hrp": "d0"
+  },
+  "/decimal.coin.v1.MsgBuyCoin": {
+    "field": "sender",
+    "hrp": "d0"
+  },
+  "/decimal.coin.v1.MsgSellCoin": {
+    "field": "sender",
+    "hrp": "d0"
+  },
+  "/decimal.coin.v1.MsgSellAllCoin": {
+    "field": "sender",
+    "hrp": "d0"
+  },
+  "/decimal.coin.v1.MsgBurnCoin": {
+    "field": "sender",
+    "hrp": "d0"
+  },
+  "/decimal.coin.v1.MsgRedeemCheck": {
+    "field": "sender",
+    "hrp": "d0"
+  },
+  "/decimal.legacy.v1.MsgReturnLegacy": {
+    "field": "sender",
+    "hrp": "d0"
+  },
+  "/decimal.multisig.v1.MsgCreateWallet": {
+    "field": "sender",
+    "hrp": "d0"
+  },
+  "/decimal.multisig.v1.MsgCreateTransaction": {
+    "field": "sender",
+    "hrp": "d0"
+  },
+  "/decimal.multisig.v1.MsgSignTransaction": {
+    "field": "sender",
+    "hrp": "d0"
+  },
+  "/decimal.nft.v1.MsgMintToken": {
+    "field": "sender",
+    "hrp": "d0"
+  },
+  "/decimal.nft.v1.MsgUpdateToken": {
+    "field": "sender",
+    "hrp": "d0"
+  },
+  "/decimal.nft.v1.MsgUpdateReserve": {
+    "field": "sender",
+    "hrp": "d0"
+  },
+  "/decimal.nft.v1.MsgSendToken": {
+    "field": "sender",
+    "hrp": "d0"
+  },
+  "/decimal.nft.v1.MsgBurnToken": {
+    "field": "sender",
+    "hrp": "d0"
+  },
+  "/decimal.swap.v1.MsgInitializeSwap": {
+    "field": "sender",
+    "hrp": "d0"
+  },
+  "/decimal.swap.v1.MsgRedeemSwap": {
+    "field": "sender",
+    "hrp": "d0"
+  },
+  "/decimal.swap.v1.MsgActivateChain": {
+    "field": "sender",
+    "hrp": "d0"
+  },
+  "/decimal.swap.v1.MsgDeactivateChain": {
+    "field": "sender",
+    "hrp": "d0"
+  },
+  "/decimal.validator.v1.MsgCreateValidator": {
+    "field": "operator_address",
+    "hrp": "d0valoper"
+  },
+  "/decimal.validator.v1.MsgEditValidator": {
+    "field": "operator_address",
+    "hrp": "d0valoper"
+  },
+  "/decimal.validator.v1.MsgSetOnline": {
+    "field": "validator",
+    "hrp": "d0valoper"
+  },
+  "/decimal.validator.v1.MsgSetOffline": {
+    "field": "validator",
+    "hrp": "d0valoper"
+  },
+  "/decimal.validator.v1.MsgDelegate": {
+    "field": "delegator",
+    "hrp": "d0"
+  },
+  "/decimal.validator.v1.MsgDelegateNFT": {
+    "field": "delegator",
+    "hrp": "d0"
+  },
+  "/decimal.validator.v1.MsgRedelegate": {
+    "field": "delegator",
+    "hrp": "d0"
+  },
+  "/decimal.validator.v1.MsgRedelegateNFT": {
+    "field": "delegator",
+    "hrp": "d0"
+  },
+  "/decimal.validator.v1.MsgUndelegate": {
+    "field": "delegator",
+    "hrp": "d0"
+  },
+  "/decimal.validator.v1.MsgUndelegateNFT": {
+    "field": "delegator",
+    "hrp": "d0"
+  },
+  "/decimal.validator.v1.MsgCancelRedelegation": {
+    "field": "delegator",
+    "hrp": "d0"
+  },
+  "/decimal.validator.v1.MsgCancelRedelegationNFT": {
+    "field": "delegator",
+    "hrp": "d0"
+  },
+  "/decimal.validator.v1.MsgCancelUndelegation": {
+    "field": "delegator",
+    "hrp": "d0"
+  },
+  "/decimal.validator.v1.MsgCancelUndelegationNFT": {
+    "field": "delegator",
+    "hrp": "d0"
+  },
+  "/decimal.validator.v1.MsgHaltChain": {
+    "field": "sender",
+    "hrp": "d0"
+  },
+  "/decimal.validator.v1.MsgResumeChain": {
+    "field": "sender",
+    "hrp": "d0"
+  },
+  "/decimal.validator.v1.MsgFreezeChain": {
+    "field": "sender",
+    "hrp": "d0"
+  },
+  "/decimal.validator.v1.MsgUnfreezeChain": {
+    "field": "sender",
+    "hrp": "d0"
+  },
+  "/decimal.fee.v1.MsgUpdateCoinPrices": {
+    "field": "oracle",
+    "hrp": "d0"
+  },
+  "/cosmos.upgrade.v1beta1.MsgSoftwareUpgrade": {
+    "field": "authority",
+    "hrp": "d0"
+  },
+  "/cosmos.upgrade.v1beta1.MsgCancelUpgrade": {
+    "field": "authority",
+    "hrp": "d0"
+  }
+}

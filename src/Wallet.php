@@ -2,7 +2,7 @@
 declare(strict_types=1);
 namespace Decimal;
 
-final class Wallet
+final class Wallet implements Signer
 {
     private string $privateKey;
     public readonly string $address;
@@ -18,21 +18,16 @@ final class Wallet
     {
         if (strtolower($prepared->draft->from) !== strtolower($this->address)) throw new \InvalidArgumentException('Signer does not match sender');
         $rlp = new Rlp();
-        $quantity = static fn(string $n): string => $n === '0' ? '' : Units::hex($n);
-        $fields = [$quantity($prepared->nonce), $quantity($prepared->gasPrice), $quantity($prepared->gas), $prepared->draft->to, $quantity($prepared->draft->value), $prepared->draft->data === '0x' ? '' : $prepared->draft->data];
-        $prefix='';
-        if ($prepared->type !== 0) {
-            $prefix=$prepared->type===1?'01':'02';
-            $access=array_map(static fn($r)=>[$r['address'],$r['storageKeys']],$prepared->accessList);
-            $fields=[Units::hex((string)$prepared->chainId),$quantity($prepared->nonce),...($prepared->type===2?[$quantity($prepared->maxPriorityFee),$quantity($prepared->gasPrice)]:[$quantity($prepared->gasPrice)]),$quantity($prepared->gas),$prepared->draft->to,$quantity($prepared->draft->value),$prepared->draft->data==='0x'?'':$prepared->draft->data,$access];
-        }
-        $unsigned=$prepared->type===0?[...$fields, Units::hex((string)$prepared->chainId), '', '']:$fields;
-        $hash = \kornrunner\Keccak::hash(hex2bin($prefix.$rlp->encode($unsigned)), 256);
+        $fields=$prepared->signingPayload();
+        if($prepared->type===0) $fields=array_slice($fields,0,6);
+        $prefix=$prepared->type===0?'':sprintf('%02x',$prepared->type);
+        $hash=substr($prepared->signingHash(),2);
         $ec = new \Elliptic\EC('secp256k1');
         $signature = $ec->keyFromPrivate($this->privateKey, 'hex')->sign($hash, ['canonical'=>true]);
         $v = $prepared->type===0?bcadd(bcmul((string)$prepared->chainId, '2', 0), (string)(35 + $signature->recoveryParam), 0):(string)$signature->recoveryParam;
-        return new SignedTransaction('0x'.$prefix.$rlp->encode([...$fields, $quantity($v), '0x'.$signature->r->toString(16), '0x'.$signature->s->toString(16)]), $prepared->chainId);
+        return new SignedTransaction('0x'.$prefix.$rlp->encode([...$fields, $v==='0'?'':Units::hex($v), '0x'.$signature->r->toString(16), '0x'.$signature->s->toString(16)]), $prepared->chainId);
     }
+    public function address(): string { return $this->address; }
     public function signHash(string $hash): string
     {
         if(!preg_match('/^0x[0-9a-fA-F]{64}$/D',$hash)) throw new \InvalidArgumentException('Expected 32-byte digest');

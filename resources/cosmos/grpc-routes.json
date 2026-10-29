@@ -1,0 +1,226 @@
+{
+  "cosmos.auth.v1beta1.Query/Accounts": {
+    "input": "cosmos.auth.v1beta1.QueryAccountsRequest",
+    "output": "cosmos.auth.v1beta1.QueryAccountsResponse"
+  },
+  "cosmos.auth.v1beta1.Query/Account": {
+    "input": "cosmos.auth.v1beta1.QueryAccountRequest",
+    "output": "cosmos.auth.v1beta1.QueryAccountResponse"
+  },
+  "cosmos.auth.v1beta1.Query/Params": {
+    "input": "cosmos.auth.v1beta1.QueryParamsRequest",
+    "output": "cosmos.auth.v1beta1.QueryParamsResponse"
+  },
+  "cosmos.bank.v1beta1.Query/Balance": {
+    "input": "cosmos.bank.v1beta1.QueryBalanceRequest",
+    "output": "cosmos.bank.v1beta1.QueryBalanceResponse"
+  },
+  "cosmos.bank.v1beta1.Query/AllBalances": {
+    "input": "cosmos.bank.v1beta1.QueryAllBalancesRequest",
+    "output": "cosmos.bank.v1beta1.QueryAllBalancesResponse"
+  },
+  "cosmos.bank.v1beta1.Query/TotalSupply": {
+    "input": "cosmos.bank.v1beta1.QueryTotalSupplyRequest",
+    "output": "cosmos.bank.v1beta1.QueryTotalSupplyResponse"
+  },
+  "cosmos.bank.v1beta1.Query/SupplyOf": {
+    "input": "cosmos.bank.v1beta1.QuerySupplyOfRequest",
+    "output": "cosmos.bank.v1beta1.QuerySupplyOfResponse"
+  },
+  "cosmos.bank.v1beta1.Query/Params": {
+    "input": "cosmos.bank.v1beta1.QueryParamsRequest",
+    "output": "cosmos.bank.v1beta1.QueryParamsResponse"
+  },
+  "cosmos.bank.v1beta1.Query/DenomMetadata": {
+    "input": "cosmos.bank.v1beta1.QueryDenomMetadataRequest",
+    "output": "cosmos.bank.v1beta1.QueryDenomMetadataResponse"
+  },
+  "cosmos.bank.v1beta1.Query/DenomsMetadata": {
+    "input": "cosmos.bank.v1beta1.QueryDenomsMetadataRequest",
+    "output": "cosmos.bank.v1beta1.QueryDenomsMetadataResponse"
+  },
+  "cosmos.tx.v1beta1.Service/Simulate": {
+    "input": "cosmos.tx.v1beta1.SimulateRequest",
+    "output": "cosmos.tx.v1beta1.SimulateResponse"
+  },
+  "cosmos.tx.v1beta1.Service/GetTx": {
+    "input": "cosmos.tx.v1beta1.GetTxRequest",
+    "output": "cosmos.tx.v1beta1.GetTxResponse"
+  },
+  "cosmos.tx.v1beta1.Service/GetTxsEvent": {
+    "input": "cosmos.tx.v1beta1.GetTxsEventRequest",
+    "output": "cosmos.tx.v1beta1.GetTxsEventResponse"
+  },
+  "decimal.coin.v1.Query/Coins": {
+    "input": "decimal.coin.v1.QueryCoinsRequest",
+    "output": "decimal.coin.v1.QueryCoinsResponse"
+  },
+  "decimal.coin.v1.Query/Coin": {
+    "input": "decimal.coin.v1.QueryCoinRequest",
+    "output": "decimal.coin.v1.QueryCoinResponse"
+  },
+  "decimal.coin.v1.Query/Checks": {
+    "input": "decimal.coin.v1.QueryChecksRequest",
+    "output": "decimal.coin.v1.QueryChecksResponse"
+  },
+  "decimal.coin.v1.Query/Check": {
+    "input": "decimal.coin.v1.QueryCheckRequest",
+    "output": "decimal.coin.v1.QueryCheckResponse"
+  },
+  "decimal.coin.v1.Query/Params": {
+    "input": "decimal.coin.v1.QueryParamsRequest",
+    "output": "decimal.coin.v1.QueryParamsResponse"
+  },
+  "decimal.fee.v1.Query/CoinPrices": {
+    "input": "decimal.fee.v1.QueryCoinPricesRequest",
+    "output": "decimal.fee.v1.QueryCoinPricesResponse"
+  },
+  "decimal.fee.v1.Query/CoinPrice": {
+    "input": "decimal.fee.v1.QueryCoinPriceRequest",
+    "output": "decimal.fee.v1.QueryCoinPriceResponse"
+  },
+  "decimal.fee.v1.Query/ModuleParams": {
+    "input": "decimal.fee.v1.QueryModuleParamsRequest",
+    "output": "decimal.fee.v1.QueryModuleParamsResponse"
+  },
+  "decimal.fee.v1.Query/CalculateCommission": {
+    "input": "decimal.fee.v1.QueryCalculateCommissionRequest",
+    "output": "decimal.fee.v1.QueryCalculateCommissionResponse"
+  },
+  "decimal.legacy.v1.Query/Records": {
+    "input": "decimal.legacy.v1.QueryRecordsRequest",
+    "output": "decimal.legacy.v1.QueryRecordsResponse"
+  },
+  "decimal.legacy.v1.Query/Record": {
+    "input": "decimal.legacy.v1.QueryRecordRequest",
+    "output": "decimal.legacy.v1.QueryRecordResponse"
+  },
+  "decimal.legacy.v1.Query/Check": {
+    "input": "decimal.legacy.v1.QueryCheckRequest",
+    "output": "decimal.legacy.v1.QueryCheckResponse"
+  },
+  "decimal.multisig.v1.Query/Wallets": {
+    "input": "decimal.multisig.v1.QueryWalletsRequest",
+    "output": "decimal.multisig.v1.QueryWalletsResponse"
+  },
+  "decimal.multisig.v1.Query/Wallet": {
+    "input": "decimal.multisig.v1.QueryWalletRequest",
+    "output": "decimal.multisig.v1.QueryWalletResponse"
+  },
+  "decimal.multisig.v1.Query/Transactions": {
+    "input": "decimal.multisig.v1.QueryTransactionsRequest",
+    "output": "decimal.multisig.v1.QueryTransactionsResponse"
+  },
+  "decimal.multisig.v1.Query/Transaction": {
+    "input": "decimal.multisig.v1.QueryTransactionRequest",
+    "output": "decimal.multisig.v1.QueryTransactionResponse"
+  },
+  "decimal.nft.v1.Query/Collections": {
+    "input": "decimal.nft.v1.QueryCollectionsRequest",
+    "output": "decimal.nft.v1.QueryCollectionsResponse"
+  },
+  "decimal.nft.v1.Query/CollectionsByCreator": {
+    "input": "decimal.nft.v1.QueryCollectionsByCreatorRequest",
+    "output": "decimal.nft.v1.QueryCollectionsByCreatorResponse"
+  },
+  "decimal.nft.v1.Query/Collection": {
+    "input": "decimal.nft.v1.QueryCollectionRequest",
+    "output": "decimal.nft.v1.QueryCollectionResponse"
+  },
+  "decimal.nft.v1.Query/Token": {
+    "input": "decimal.nft.v1.QueryTokenRequest",
+    "output": "decimal.nft.v1.QueryTokenResponse"
+  },
+  "decimal.nft.v1.Query/SubToken": {
+    "input": "decimal.nft.v1.QuerySubTokenRequest",
+    "output": "decimal.nft.v1.QuerySubTokenResponse"
+  },
+  "decimal.swap.v1.Query/ActiveSwaps": {
+    "input": "decimal.swap.v1.QueryActiveSwapsRequest",
+    "output": "decimal.swap.v1.QueryActiveSwapsResponse"
+  },
+  "decimal.swap.v1.Query/Swap": {
+    "input": "decimal.swap.v1.QuerySwapRequest",
+    "output": "decimal.swap.v1.QuerySwapResponse"
+  },
+  "decimal.swap.v1.Query/Pool": {
+    "input": "decimal.swap.v1.QueryPoolRequest",
+    "output": "decimal.swap.v1.QueryPoolResponse"
+  },
+  "decimal.validator.v1.Query/Validators": {
+    "input": "decimal.validator.v1.QueryValidatorsRequest",
+    "output": "decimal.validator.v1.QueryValidatorsResponse"
+  },
+  "decimal.validator.v1.Query/Validator": {
+    "input": "decimal.validator.v1.QueryValidatorRequest",
+    "output": "decimal.validator.v1.QueryValidatorResponse"
+  },
+  "decimal.validator.v1.Query/ValidatorDelegations": {
+    "input": "decimal.validator.v1.QueryValidatorDelegationsRequest",
+    "output": "decimal.validator.v1.QueryValidatorDelegationsResponse"
+  },
+  "decimal.validator.v1.Query/ValidatorRedelegations": {
+    "input": "decimal.validator.v1.QueryValidatorRedelegationsRequest",
+    "output": "decimal.validator.v1.QueryValidatorRedelegationsResponse"
+  },
+  "decimal.validator.v1.Query/ValidatorUndelegations": {
+    "input": "decimal.validator.v1.QueryValidatorUndelegationsRequest",
+    "output": "decimal.validator.v1.QueryValidatorUndelegationsResponse"
+  },
+  "decimal.validator.v1.Query/Delegations": {
+    "input": "decimal.validator.v1.QueryDelegationsRequest",
+    "output": "decimal.validator.v1.QueryDelegationsResponse"
+  },
+  "decimal.validator.v1.Query/Redelegations": {
+    "input": "decimal.validator.v1.QueryRedelegationsRequest",
+    "output": "decimal.validator.v1.QueryRedelegationsResponse"
+  },
+  "decimal.validator.v1.Query/Undelegation": {
+    "input": "decimal.validator.v1.QueryUndelegationRequest",
+    "output": "decimal.validator.v1.QueryUndelegationResponse"
+  },
+  "decimal.validator.v1.Query/DelegatorDelegations": {
+    "input": "decimal.validator.v1.QueryDelegatorDelegationsRequest",
+    "output": "decimal.validator.v1.QueryDelegatorDelegationsResponse"
+  },
+  "decimal.validator.v1.Query/DelegatorRedelegations": {
+    "input": "decimal.validator.v1.QueryDelegatorRedelegationsRequest",
+    "output": "decimal.validator.v1.QueryDelegatorRedelegationsResponse"
+  },
+  "decimal.validator.v1.Query/DelegatorUndelegations": {
+    "input": "decimal.validator.v1.QueryDelegatorUndelegationsRequest",
+    "output": "decimal.validator.v1.QueryDelegatorUndelegationsResponse"
+  },
+  "decimal.validator.v1.Query/DelegatorValidators": {
+    "input": "decimal.validator.v1.QueryDelegatorValidatorsRequest",
+    "output": "decimal.validator.v1.QueryDelegatorValidatorsResponse"
+  },
+  "decimal.validator.v1.Query/DelegatorValidator": {
+    "input": "decimal.validator.v1.QueryDelegatorValidatorRequest",
+    "output": "decimal.validator.v1.QueryDelegatorValidatorResponse"
+  },
+  "decimal.validator.v1.Query/HistoricalInfo": {
+    "input": "decimal.validator.v1.QueryHistoricalInfoRequest",
+    "output": "decimal.validator.v1.QueryHistoricalInfoResponse"
+  },
+  "decimal.validator.v1.Query/Pool": {
+    "input": "decimal.validator.v1.QueryPoolRequest",
+    "output": "decimal.validator.v1.QueryPoolResponse"
+  },
+  "decimal.validator.v1.Query/CustomCoinPrice": {
+    "input": "decimal.validator.v1.QueryCustomCoinPriceRequest",
+    "output": "decimal.validator.v1.QueryCustomCoinPriceResponse"
+  },
+  "decimal.validator.v1.Query/TotalCustomCoin": {
+    "input": "decimal.validator.v1.QueryTotalCustomCoinRequest",
+    "output": "decimal.validator.v1.QueryTotalCustomCoinResponse"
+  },
+  "decimal.validator.v1.Query/Params": {
+    "input": "decimal.validator.v1.QueryParamsRequest",
+    "output": "decimal.validator.v1.QueryParamsResponse"
+  },
+  "decimal.validator.v1.Query/EmergencyStatus": {
+    "input": "decimal.validator.v1.QueryEmergencyStatusRequest",
+    "output": "decimal.validator.v1.QueryEmergencyStatusResponse"
+  }
+}

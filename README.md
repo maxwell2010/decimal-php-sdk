@@ -2,20 +2,30 @@
 
 Independent Decimal SDK by [MintCandy](https://mintcandy.ru/) and [@Maxwell2019](https://t.me/Maxwell2019). PHP 8.2+, MIT license.
 
-**v0.1.0-alpha.1 is a preview, not a claim of full Go/Python/C# parity.** Includes 27 ABI profiles, 577 generated function bindings, EVM transaction signing and offline Cosmos codecs. Read the [coverage matrix](docs/PARITY.md) before choosing a workflow.
+**v0.1.0 is the first stable source release.** Includes 27 ABI profiles, 577 generated function bindings, guarded EVM workflows, wallets, transaction signing, and source-backed Cosmos validation/signing/query codecs. The [coverage matrix](docs/PARITY.md) defines supported interfaces and deployment boundaries.
 
 [Русский README](README.ru.md) | [Examples](examples) | [Release notes](CHANGELOG.md) | [Security](SECURITY.md)
 
-## Install without Git
+## Install the latest stable release with one command
 
-Download the source package from [GitHub Releases](https://github.com/maxwell2010/decimal-php-sdk/releases/tag/v0.1.0-alpha.1), extract it, then run Composer inside the extracted directory:
+```sh
+composer create-project --repository=https://github.com/maxwell2010/decimal-php-sdk/releases/latest/download/packages.json mintcandy/decimal-web3-sdk decimal-php-sdk
+```
+
+This permanent metadata URL selects the newest stable SDK and installs its dependencies. Run the command into a new directory. It requires Composer 2 and the PHP extensions listed below. Existing applications can register that same URL as a Composer repository, require `mintcandy/decimal-web3-sdk:^0.1`, and use `composer update mintcandy/decimal-web3-sdk --with-dependencies` for compatible updates. Existing lockfiles remain pinned until explicitly updated.
+
+The permanent [source ZIP download](https://github.com/maxwell2010/decimal-php-sdk/releases/latest/download/decimal-php-sdk.zip) also follows the latest stable release. [SHA256SUMS](https://github.com/maxwell2010/decimal-php-sdk/releases/latest/download/SHA256SUMS) verifies source assets. For reproducible builds, use versioned release URLs and retain composer.lock.
+
+## Install an archive without Git
+
+Download the source package from [GitHub Releases](https://github.com/maxwell2010/decimal-php-sdk/releases/latest), extract it, then run Composer inside the extracted directory:
 
 ```sh
 composer install --no-dev
 php examples/offline.php
 ```
 
-Requires PHP 8.2 or newer and extensions curl, bcmath, gmp and mbstring. Linux, Windows and macOS use the same sources. GitHub is the distribution source; this package is not published on Packagist. The archive includes composer.lock to pin dependencies. To use it from another project before Packagist publication, register the GitHub repository as a Composer VCS repository and require `mintcandy/decimal-web3-sdk:0.1.0-alpha.1`.
+Requires PHP 8.2 or newer and extensions curl, bcmath, gmp and mbstring. Linux, Windows and macOS use the same sources. GitHub is the distribution source; this package is not published on Packagist. The archive includes composer.lock to pin dependencies. To use it from another project before Packagist publication, register the GitHub repository as a Composer VCS repository and require `mintcandy/decimal-web3-sdk:^0.1`.
 
 On this Windows development machine gmp exists but is disabled in php.ini. Run commands without changing global settings:
 
@@ -101,4 +111,4 @@ python tools/vectors.py
 
 Tests use offline fixtures and injected RPC responses. They compare every bundled function's calldata and decoded inputs with Python eth-abi, signing with eth-account, and Cosmos envelope/signature bytes with the Go reference fixture. No funded-wallet acceptance test or blockchain broadcast was performed. WebSocket tests cover frame encoding and a loopback handshake/subscribe/ping/fragment/unsubscribe server, not a live provider campaign.
 
-The dependency chain containing phpseclib was removed rather than suppressing its advisory. Composer audit reports no known advisories for the current lockfile; this is not a cryptographic security audit. ABI, RLP and protobuf codecs remain subject to the preview limitations in [PARITY.md](docs/PARITY.md).
+The dependency chain containing phpseclib was removed rather than suppressing its advisory. Composer audit reports no known advisories for the current lockfile; this is not a cryptographic security audit. ABI, RLP and protobuf codecs remain subject to the boundaries in [PARITY.md](docs/PARITY.md).

@@ -73,4 +73,9 @@ require __DIR__.'/parity.php';
 require __DIR__.'/cosmos.php';
 require __DIR__.'/workflows.php';
 
+require __DIR__.'/core-release.php';
+require __DIR__.'/cosmos_release.php';
+require __DIR__.'/evm_release.php';
+require __DIR__.'/transport-release.php';
+
 echo "OK: $count checks; no remote RPC requests or blockchain broadcasts\n";

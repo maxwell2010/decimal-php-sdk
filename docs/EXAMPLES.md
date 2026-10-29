@@ -65,12 +65,12 @@ $message = $protobuf->any('/decimal.coin.v1.MsgSendCoin', [
 ]);
 $cosmos = new Cosmos();
 $body = $cosmos->body([$message], 'example');
-$signed = $cosmos->sign($body, 'decimal_test-1', [[
+$signed = $cosmos->signValidated($body, 'decimal_test-1', [[
     'wallet' => $wallet, 'sequence' => $sequence, 'accountNumber' => $accountNumber,
 ]], [['denom' => 'del', 'amount' => $feeAmount]], $gasLimit);
 ```
 
-Cosmos chain IDs and raw denomination amounts are separate from EVM chain IDs and DEL display units. Signers must be supplied in the message-required order. This codec validates field names and integer ranges, but does not reproduce upstream ValidateBasic, account roles, ante rules or signer extraction. Do not broadcast unvalidated schema-only messages. The signer preserves the Decimal Ethermint 65-byte signature convention evidenced by the Go reference fixture.
+Cosmos chain IDs and raw denomination amounts are separate from EVM chain IDs and DEL display units. Signers must be supplied in the message-required order. The schema codec validates field names and integer ranges. signValidated additionally checks all 43 pinned ValidateBasic policies and binds required signer order; signChecked binds signer order without stateless policy validation. Account roles, ante rules and execution are determined by the node. The signer preserves the Decimal Ethermint 65-byte signature convention evidenced by the Go reference fixture.
 
 ## WebSocket subscriptions
 
@@ -82,4 +82,20 @@ try { $notification = $socket->receive(); }
 finally { $socket->close(); }
 ```
 
-This is a blocking, experimental transport. It does not multiplex outstanding requests or reconnect/resubscribe automatically. It exposes only subscription operations; it has no transaction submission method.
+This is a blocking transport. It queues interleaved notifications and exposes explicit reconnect/resubscribe with an old-to-new remote ID map. Failed reconnect preserves subscription definitions. It does not silently retry writes and has no transaction submission method.
+
+## Concurrent nonce reservation and external signing
+
+```php
+use Decimal\{NonceManager, CallbackSigner};
+$nonces = new NonceManager($applicationStateDirectory . '/decimal-nonces.json');
+$prepared = $client->prepare($draft, nonces: $nonces);
+$external = new CallbackSigner($senderAddress, fn($tx) => $hardwareSigner($tx));
+$signed = $external->sign($prepared);
+```
+
+The callback must return the raw signed transaction or a SignedTransaction instance. Sender, chain and exact unsigned hash must match the prepared transaction. The nonce store uses a stable lock and atomic snapshots. Do not reset reservations after a timeout or an ambiguous submission; reconcile account nonce/hash state first. CancellationToken is cooperative between bounded synchronous calls.
+
+## Weighted Safe policy and mixed signatures
+
+Read SafePolicy at a pinned block, then use SafeSignatures to validate and pack typed/personal EOA signatures, explicitly selected EIP-1271 interfaces, or prevalidated approvals. The threshold uses the sum of owner weights, not the number of signatures. Guarded delegatecall additionally requires caller-reviewed target runtime and implementation evidence. See docs/EVM_SCOPE.md and tests/evm_release.php for executable examples.

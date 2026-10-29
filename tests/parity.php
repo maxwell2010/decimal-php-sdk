@@ -7,7 +7,7 @@ foreach([12,15,18,21,24] as $n) { $phrase=Mnemonic::generate($n);same(count(expl
 same(Mnemonic::validate(str_repeat('abandon ',11).'abandon'),false);
 rejects(fn()=>Mnemonic::wallet($v['mnemonic']['phrase'],-1));
 foreach($v['transactions'] as $row) {
- $p=new PreparedTransaction(TransactionDraft::del($wallet->address,$address,'0.01','hello'),202020,'0','30000','7',$row['type'],[['address'=>'0x'.str_repeat('34',20),'storageKeys'=>['0x'.str_repeat('00',32)]]],'2');
+ $p=new PreparedTransaction(TransactionDraft::del($wallet->address,$address,'0.01','hello'),202020,'0','30000','7',$row['type'],[['address'=>'0x'.str_repeat('34',20),'storageKeys'=>['0x'.str_repeat('00',32)]]],$row['type']===2?'2':'0');
  $s=$wallet->sign($p);same($s->raw,$row['raw']);same($s->hash,$row['hash']);rejects(fn()=>new Decimal\SignedTransaction($s->raw,75));
 }
 $t=$v['typed'];same(TypedData::hash($t['types'],'Mail',$t['domain'],$t['message']),$t['hash']);same($wallet->signTypedData($t['types'],'Mail',$t['domain'],$t['message']),$t['signature']);same(Decimal\Wallet::recover($t['hash'],$t['signature']),$wallet->address);

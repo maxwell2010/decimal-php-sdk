@@ -1,29 +1,27 @@
-# Decimal PHP SDK v0.1.0-alpha.1
+# Decimal PHP SDK v0.1.0
 
-Independent PHP SDK by MintCandy. Public preview with source archive and locked Composer dependencies, matching the source-package distribution style of the Python SDK.
+First stable source release of the independent Decimal PHP SDK by MintCandy.
+
+## Install the latest stable SDK with one command
+
+```sh
+composer create-project --repository=https://github.com/maxwell2010/decimal-php-sdk/releases/latest/download/packages.json mintcandy/decimal-web3-sdk decimal-php-sdk
+```
+
+This permanent metadata URL selects the current stable release and installs dependencies. Requires Composer 2, PHP 8.2+ and curl/bcmath/gmp/mbstring; Composer needs PHP zip or unzip/7z to extract the source archive. Use a new destination directory. Existing lockfiles remain pinned until explicitly updated.
+
+Permanent source download: https://github.com/maxwell2010/decimal-php-sdk/releases/latest/download/decimal-php-sdk.zip
+
+Versioned ZIP, permanent-name ZIP, packages.json and SHA256SUMS are attached. The Composer metadata points to the immutable versioned archive and verifies its hash. Future stable tag releases pass the test matrix before updating GitHub Latest.
 
 ## Included
 
-- 27 ABI profiles and 577 generated function bindings from Go/Python references, with source hashes and versioned deployment evidence.
-- English BIP39/BIP32 wallets, precise units, EIP-155/2930/1559, EIP-712 and checked permit signing.
-- Safe EOA signatures, allowance plans, DEL multisend, event decoding and proxy/beacon checks.
-- Read RPC, REST and experimental WebSocket subscriptions.
-- Offline Cosmos schemas and direct signing verified against Go reference bytes.
-- English/Russian README, advanced examples and a detailed parity matrix.
+- 27 ABI profiles, 577 typed bindings and source/deployment evidence.
+- BIP39/BIP32 wallets, EIP-155/2930/1559, contract creation, checked permit, exact external signer binding, nonce coordination and fee caps.
+- Weighted Safe with typed/personal EOA, EIP-1271 and prevalidated signatures; checked delegatecall evidence.
+- Guarded NFT/staking/token/checks helpers, event decoding and verified pinned-block reads.
+- Bounded read-only RPC failover, API/indexer helpers, WebSocket notification queue and explicit reconnect.
+- 393 Cosmos schemas, all 43 pinned ValidateBasic branches, source signer ordering, validated direct signing, strict envelopes, fixed-point fees and native HTTP/2 queries/simulation.
+- English/Russian guides, independent fixtures, node policy corpora, loopback integration, concurrency and single-command installation tests.
 
-The phpseclib dependency chain has been removed; Composer audit reports no known advisories for the lockfile. Validation includes 1916 offline checks and loopback RPC/API/WebSocket integration tests. No blockchain transactions were submitted.
-
-## Install
-
-Download `decimal-php-sdk-0.1.0-alpha.1.zip`, verify its checksum against `SHA256SUMS`, extract it, then run `composer install --no-dev` inside the package. Requires PHP 8.2+ with curl, bcmath, gmp and mbstring. Git is not required for archive installation. Packagist publication is separate.
-
-## Balance example
-
-```php
-require 'vendor/autoload.php';
-use Decimal\{Client, Network, Units};
-$address = getenv('WALLET_ADDRESS') ?: throw new RuntimeException('Set WALLET_ADDRESS');
-echo Units::format((new Client(Network::testnet()))->balance($address)), " DEL\n";
-```
-
-This is an alpha, not full Go/Python/C# parity. Complete business-workflow orchestration, upstream Cosmos ValidateBasic/ante validation, Cosmos gRPC/fee convergence and some advanced Safe policies remain incomplete. See docs/PARITY.md. Funded-wallet acceptance and an external cryptographic audit have not been performed.
+Composer audit reports no known advisories for the lockfile. No blockchain transactions were submitted. Stateless validation does not establish roles or ante/execution admission; live funded-wallet acceptance and an external cryptographic audit have not been performed. The exact supported scope is in docs/PARITY.md, docs/EVM_SCOPE.md and docs/COSMOS_VALIDATION.md.

@@ -1,0 +1,246 @@
+[
+  {
+    "type": "cosmos_proto.ScalarDescriptor",
+    "field": "field_type",
+    "packed": true,
+    "values": [
+      "0",
+      "1"
+    ],
+    "protobuf_hex": "1a020001"
+  },
+  {
+    "type": "decimal.multisig.v1.Wallet",
+    "field": "weights",
+    "packed": true,
+    "values": [
+      "0",
+      "1",
+      "2",
+      "127",
+      "128"
+    ],
+    "protobuf_hex": "1a060001027f8001"
+  },
+  {
+    "type": "decimal.multisig.v1.MsgCreateWallet",
+    "field": "weights",
+    "packed": true,
+    "values": [
+      "0",
+      "1",
+      "2",
+      "127",
+      "128"
+    ],
+    "protobuf_hex": "1a060001027f8001"
+  },
+  {
+    "type": "decimal.nft.v1.MsgUpdateReserve",
+    "field": "sub_token_ids",
+    "packed": true,
+    "values": [
+      "0",
+      "1",
+      "2",
+      "127",
+      "128"
+    ],
+    "protobuf_hex": "22060001027f8001"
+  },
+  {
+    "type": "decimal.nft.v1.MsgSendToken",
+    "field": "sub_token_ids",
+    "packed": true,
+    "values": [
+      "0",
+      "1",
+      "2",
+      "127",
+      "128"
+    ],
+    "protobuf_hex": "1a060001027f8001"
+  },
+  {
+    "type": "decimal.nft.v1.MsgBurnToken",
+    "field": "sub_token_ids",
+    "packed": true,
+    "values": [
+      "0",
+      "1",
+      "2",
+      "127",
+      "128"
+    ],
+    "protobuf_hex": "1a060001027f8001"
+  },
+  {
+    "type": "decimal.validator.v1.MsgDelegateNFT",
+    "field": "sub_token_ids",
+    "packed": true,
+    "values": [
+      "0",
+      "1",
+      "2",
+      "127",
+      "128"
+    ],
+    "protobuf_hex": "22060001027f8001"
+  },
+  {
+    "type": "decimal.validator.v1.MsgRedelegateNFT",
+    "field": "sub_token_ids",
+    "packed": true,
+    "values": [
+      "0",
+      "1",
+      "2",
+      "127",
+      "128"
+    ],
+    "protobuf_hex": "2a060001027f8001"
+  },
+  {
+    "type": "decimal.validator.v1.MsgUndelegateNFT",
+    "field": "sub_token_ids",
+    "packed": true,
+    "values": [
+      "0",
+      "1",
+      "2",
+      "127",
+      "128"
+    ],
+    "protobuf_hex": "22060001027f8001"
+  },
+  {
+    "type": "decimal.validator.v1.MsgCancelRedelegationNFT",
+    "field": "sub_token_ids",
+    "packed": true,
+    "values": [
+      "0",
+      "1",
+      "2",
+      "127",
+      "128"
+    ],
+    "protobuf_hex": "32060001027f8001"
+  },
+  {
+    "type": "decimal.validator.v1.MsgCancelUndelegationNFT",
+    "field": "sub_token_ids",
+    "packed": true,
+    "values": [
+      "0",
+      "1",
+      "2",
+      "127",
+      "128"
+    ],
+    "protobuf_hex": "2a060001027f8001"
+  },
+  {
+    "type": "decimal.validator.v1.Stake",
+    "field": "sub_token_ids",
+    "packed": true,
+    "values": [
+      "0",
+      "1",
+      "2",
+      "127",
+      "128"
+    ],
+    "protobuf_hex": "22060001027f8001"
+  },
+  {
+    "type": "decimal.validator.v1.StakeHold",
+    "field": "sub_token_ids",
+    "packed": true,
+    "values": [
+      "0",
+      "1",
+      "2",
+      "127",
+      "128"
+    ],
+    "protobuf_hex": "12060001027f8001"
+  },
+  {
+    "type": "google.protobuf.FileDescriptorProto",
+    "field": "public_dependency",
+    "packed": false,
+    "values": [
+      "0",
+      "1",
+      "2",
+      "127",
+      "128"
+    ],
+    "protobuf_hex": "500050015002507f508001"
+  },
+  {
+    "type": "google.protobuf.FileDescriptorProto",
+    "field": "weak_dependency",
+    "packed": false,
+    "values": [
+      "0",
+      "1",
+      "2",
+      "127",
+      "128"
+    ],
+    "protobuf_hex": "580058015802587f588001"
+  },
+  {
+    "type": "google.protobuf.SourceCodeInfo.Location",
+    "field": "path",
+    "packed": true,
+    "values": [
+      "0",
+      "1",
+      "2",
+      "127",
+      "128"
+    ],
+    "protobuf_hex": "0a060001027f8001"
+  },
+  {
+    "type": "google.protobuf.SourceCodeInfo.Location",
+    "field": "span",
+    "packed": true,
+    "values": [
+      "0",
+      "1",
+      "2",
+      "127",
+      "128"
+    ],
+    "protobuf_hex": "12060001027f8001"
+  },
+  {
+    "type": "google.protobuf.GeneratedCodeInfo.Annotation",
+    "field": "path",
+    "packed": true,
+    "values": [
+      "0",
+      "1",
+      "2",
+      "127",
+      "128"
+    ],
+    "protobuf_hex": "0a060001027f8001"
+  },
+  {
+    "type": "tendermint.abci.ResponseApplySnapshotChunk",
+    "field": "refetch_chunks",
+    "packed": true,
+    "values": [
+      "0",
+      "1",
+      "2",
+      "127",
+      "128"
+    ],
+    "protobuf_hex": "12060001027f8001"
+  }
+]

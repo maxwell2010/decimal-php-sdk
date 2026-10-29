@@ -1,0 +1,35 @@
+name: Publish release
+on:
+  push:
+    tags: ['v*']
+permissions:
+  contents: read
+jobs:
+  checks:
+    uses: ./.github/workflows/ci.yml
+  publish:
+    needs: checks
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.1.0
+        with:
+          python-version: '3.12'
+      - name: Check version and build source assets
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          python -c "import os,pathlib; assert os.environ['RELEASE_TAG']=='v'+pathlib.Path('VERSION').read_text().strip(), 'Tag and VERSION differ'"
+          python tools/release.py
+      - name: Publish verified assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          if [[ "$RELEASE_TAG" == *-* ]]; then
+            gh release create "$RELEASE_TAG" dist/*.zip dist/packages.json dist/SHA256SUMS --verify-tag --title "Decimal PHP SDK $RELEASE_TAG" --notes-file docs/RELEASE_NOTES.md --prerelease
+          else
+            gh release create "$RELEASE_TAG" dist/*.zip dist/packages.json dist/SHA256SUMS --verify-tag --title "Decimal PHP SDK $RELEASE_TAG" --notes-file docs/RELEASE_NOTES.md --latest
+          fi

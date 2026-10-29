@@ -1,16 +1,21 @@
 name: SDK checks
-on: [push, pull_request, workflow_dispatch]
+on:
+  push:
+    branches: ['**']
+  pull_request:
+  workflow_dispatch:
+  workflow_call:
 permissions:
   contents: read
 jobs:
   tests:
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest]
-        php: ['8.2', '8.3', '8.4']
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        php: ['8.2', '8.3', '8.4', '8.5']
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7.0.1
       - uses: shivammathur/setup-php@v2
         with:
           php-version: '${{ matrix.php }}'
@@ -19,10 +24,14 @@ jobs:
       - run: composer validate --strict
       - run: composer audit
       - run: composer test
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7.1.0
         with:
           python-version: '3.12'
       - run: python tools/generate.py
       - run: git diff --exit-code -- src/Contracts docs/operations.json docs/abi-hashes.json
       - run: python tools/test_local_transports.py
+      - run: python tools/test_websocket_queue.py
+      - run: python tools/test_nonce_concurrency.py
+      - run: python tools/test_websocket_reconnect_failure.py
+      - run: python tools/test_install.py
       - run: python tools/release.py

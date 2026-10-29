@@ -13,23 +13,33 @@ final class Client
     public function call(array $transaction, string $block = 'latest'): string
     { $this->verifyChain(); return $this->rpc->call('eth_call', [$transaction, $block]); }
     public function simulate(TransactionDraft $draft): string { return $this->call($draft->rpc(), 'pending'); }
-    public function prepare(TransactionDraft $draft, int $type=0, array $accessList=[], ?string $maxFeePerGas=null, string $maxPriorityFee='0', ?string $feeCap=null): PreparedTransaction
+    public function prepare(TransactionDraft $draft, int $type=0, array $accessList=[], ?string $maxFeePerGas=null, string $maxPriorityFee='0', ?string $feeCap=null, ?NonceManager $nonces=null, ?string $baseFeeEstimate=null, ?CancellationToken $cancellation=null): PreparedTransaction
     {
-        $this->verifyChain();
-        $this->simulate($draft);
+        $cancellation?->throwIfCancelled();
         if(!in_array($type,[0,1,2],true))throw new \InvalidArgumentException('Unsupported transaction type');
         if($type===2 && $maxFeePerGas===null)throw new \InvalidArgumentException('Explicit maximum dynamic fee required');
+        new PreparedTransaction($draft,$this->network->chainId,'0','1',$maxFeePerGas??'0',$type,$accessList,$maxPriorityFee,null,$baseFeeEstimate);
+        if($feeCap!==null) Units::uint($feeCap);
+        $this->verifyChain();
+        $cancellation?->throwIfCancelled();
         $request=$draft->rpc();
         if($type!==0)$request['accessList']=$accessList;
         if($type===2){$request['maxFeePerGas']=Units::hex($maxFeePerGas);$request['maxPriorityFeePerGas']=Units::hex($maxPriorityFee);}
+        $this->call($request,'pending');
+        $cancellation?->throwIfCancelled();
         $gas = Units::decimal($this->rpc->call('eth_estimateGas', [$request]));
+        $estimate=$gas;
         $gas = bcdiv(bcadd(bcmul($gas, '110', 0), '99', 0), '100', 0);
         $price = $maxFeePerGas ?? Units::decimal($this->rpc->call('eth_gasPrice'));
+        $cancellation?->throwIfCancelled();
         $nonce = Units::decimal($this->rpc->call('eth_getTransactionCount', [$draft->from, 'pending']));
         $fee = bcmul($gas, $price, 0);
         if($feeCap!==null && bccomp($fee,Units::uint($feeCap), 0)>0)throw new \RuntimeException('Maximum fee exceeds application cap');
         if (bccomp($this->balance($draft->from, 'pending'), bcadd($draft->value, $fee, 0), 0) < 0) throw new \RuntimeException('Insufficient balance for amount and maximum fee');
-        return new PreparedTransaction($draft, $this->network->chainId, $nonce, $gas, $price,$type,$accessList,$maxPriorityFee);
+        $cancellation?->throwIfCancelled();
+        new PreparedTransaction($draft,$this->network->chainId,$nonce,$gas,$price,$type,$accessList,$maxPriorityFee,$estimate,$baseFeeEstimate);
+        if($nonces!==null) $nonce=$nonces->reserve($this->network->chainId,$draft->from,$nonce);
+        return new PreparedTransaction($draft, $this->network->chainId, $nonce, $gas, $price,$type,$accessList,$maxPriorityFee,$estimate,$baseFeeEstimate);
     }
     public function broadcast(SignedTransaction $signed): string
     {
@@ -42,19 +52,29 @@ final class Client
     public function receipt(string $hash): ?array
     {
         if (!preg_match('/^0x[0-9a-fA-F]{64}$/D', $hash)) throw new \InvalidArgumentException('Invalid transaction hash');
-        $this->verifyChain(); return $this->rpc->call('eth_getTransactionReceipt', [$hash]);
+        $this->verifyChain();
+        $receipt=$this->rpc->call('eth_getTransactionReceipt', [$hash]);
+        if($receipt===null) return null;
+        if(!is_array($receipt)||!is_string($receipt['transactionHash']??null)||strtolower($receipt['transactionHash'])!==strtolower($hash)||!in_array($receipt['status']??null,['0x0','0x1'],true)) throw new RpcException('Malformed receipt or transaction hash mismatch');
+        return $receipt;
     }
-    public function waitReceipt(string $hash, int $timeoutSeconds = 120, int $pollMilliseconds = 1000): array
+    public function waitReceipt(string $hash, int $timeoutSeconds = 120, int $pollMilliseconds = 1000, ?CancellationToken $cancellation=null): array
     {
         if ($timeoutSeconds < 1 || $pollMilliseconds < 1) throw new \InvalidArgumentException('Invalid polling limits');
         $deadline = microtime(true) + $timeoutSeconds;
         do {
+            $cancellation?->throwIfCancelled();
             $receipt = $this->receipt($hash);
             if ($receipt !== null) {
                 if (($receipt['status'] ?? null) !== '0x1') throw new RpcException('Transaction reverted or missing status', 0, $receipt);
                 return $receipt;
             }
-            usleep($pollMilliseconds * 1000);
+            $wake=min($deadline,microtime(true)+$pollMilliseconds/1000);
+            do {
+                $cancellation?->throwIfCancelled();
+                $remaining=$wake-microtime(true);
+                if($remaining>0) usleep((int)min(100000,ceil($remaining*1000000)));
+            } while(microtime(true)<$wake);
         } while (microtime(true) < $deadline);
         throw new \RuntimeException('Receipt timeout; transaction may still be pending');
     }

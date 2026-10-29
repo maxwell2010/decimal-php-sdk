@@ -1934,7 +1934,7 @@
         "type": 14,
         "typeName": "cosmos_proto.ScalarType",
         "repeated": true,
-        "packed": false,
+        "packed": true,
         "oneof": null
       }
     ]
@@ -3413,7 +3413,7 @@
         "type": 13,
         "typeName": "",
         "repeated": true,
-        "packed": false,
+        "packed": true,
         "oneof": null
       },
       {
@@ -3651,7 +3651,7 @@
         "type": 13,
         "typeName": "",
         "repeated": true,
-        "packed": false,
+        "packed": true,
         "oneof": null
       },
       {
@@ -4270,7 +4270,7 @@
         "type": 13,
         "typeName": "",
         "repeated": true,
-        "packed": false,
+        "packed": true,
         "oneof": null
       },
       {
@@ -4313,7 +4313,7 @@
         "type": 13,
         "typeName": "",
         "repeated": true,
-        "packed": false,
+        "packed": true,
         "oneof": null
       },
       {
@@ -4356,7 +4356,7 @@
         "type": 13,
         "typeName": "",
         "repeated": true,
-        "packed": false,
+        "packed": true,
         "oneof": null
       }
     ]
@@ -5725,7 +5725,7 @@
         "type": 13,
         "typeName": "",
         "repeated": true,
-        "packed": false,
+        "packed": true,
         "oneof": null
       }
     ]
@@ -5830,7 +5830,7 @@
         "type": 13,
         "typeName": "",
         "repeated": true,
-        "packed": false,
+        "packed": true,
         "oneof": null
       }
     ]
@@ -5927,7 +5927,7 @@
         "type": 13,
         "typeName": "",
         "repeated": true,
-        "packed": false,
+        "packed": true,
         "oneof": null
       }
     ]
@@ -6050,7 +6050,7 @@
         "type": 13,
         "typeName": "",
         "repeated": true,
-        "packed": false,
+        "packed": true,
         "oneof": null
       }
     ]
@@ -6145,7 +6145,7 @@
         "type": 13,
         "typeName": "",
         "repeated": true,
-        "packed": false,
+        "packed": true,
         "oneof": null
       }
     ]
@@ -6502,7 +6502,7 @@
         "type": 13,
         "typeName": "",
         "repeated": true,
-        "packed": false,
+        "packed": true,
         "oneof": null
       },
       {
@@ -6533,7 +6533,7 @@
         "type": 13,
         "typeName": "",
         "repeated": true,
-        "packed": false,
+        "packed": true,
         "oneof": null
       },
       {
@@ -9469,7 +9469,7 @@
         "type": 13,
         "typeName": "",
         "repeated": true,
-        "packed": false,
+        "packed": true,
         "oneof": null
       },
       {

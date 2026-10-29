@@ -23,17 +23,27 @@ final class Address
         elseif(!$pad&&($bits>=$from||(($acc<<($to-$bits))&$mask)!==0))throw new \InvalidArgumentException('Invalid Bech32 padding');return $out;
     }
     public static function bech32(string $evmAddress,string $prefix='d0'): string
+    { return self::bech32Bytes(hex2bin(substr(TransactionDraft::address($evmAddress),2)),$prefix); }
+    public static function bech32Bytes(string $raw,string $prefix='d0'): string
     {
-        if(!preg_match('/^[a-z0-9]{1,40}$/D',$prefix))throw new \InvalidArgumentException('Invalid Bech32 prefix');
-        $data=self::convert(array_values(unpack('C*',hex2bin(substr(TransactionDraft::address($evmAddress),2)))),8,5,true);
+        if(strlen($raw)<1||strlen($raw)>255)throw new \InvalidArgumentException('Cosmos address must contain 1..255 bytes');
+        if(!preg_match('/^[\x21-\x7e]{1,83}$/D',$prefix)||$prefix!==strtolower($prefix))throw new \InvalidArgumentException('Invalid Bech32 prefix');
+        $data=self::convert(array_values(unpack('C*',$raw)),8,5,true);
         $mod=self::polymod([...self::expand($prefix),...$data,0,0,0,0,0,0])^1;$chars='qpzry9x8gf2tvdw0s3jn54khce6mua7l';$out=$prefix.'1';foreach($data as $v)$out.=$chars[$v];for($i=0;$i<6;++$i)$out.=$chars[($mod>>(5*(5-$i)))&31];return $out;
     }
     public static function fromBech32(string $address,string $prefix='d0'): string
     {
-        if(strlen($address)>90||$address!==strtolower($address))throw new \InvalidArgumentException('Invalid Bech32 case/length');
+        $raw=self::fromBech32Bytes($address,$prefix);
+        if(strlen($raw)!==20)throw new \InvalidArgumentException('Expected 20-byte address');return '0x'.bin2hex($raw);
+    }
+    public static function fromBech32Bytes(string $address,string $prefix='d0',bool $validateAddressLength=true): string
+    {
+        if(!preg_match('/^[\x21-\x7e]{1,83}$/D',$prefix)||$prefix!==strtolower($prefix))throw new \InvalidArgumentException('Expected lowercase Bech32 HRP');
+        if(strlen($address)>1023||($address!==strtolower($address)&&$address!==strtoupper($address)))throw new \InvalidArgumentException('Invalid Bech32 case/length');
+        $address=strtolower($address);
         $pos=strrpos($address,'1');if($pos===false||substr($address,0,$pos)!==$prefix)throw new \InvalidArgumentException('Bech32 prefix mismatch');
         $map=array_flip(str_split('qpzry9x8gf2tvdw0s3jn54khce6mua7l'));$values=[];foreach(str_split(substr($address,$pos+1)) as $c){if(!isset($map[$c]))throw new \InvalidArgumentException('Invalid Bech32 character');$values[]=$map[$c];}
         if(count($values)<6||self::polymod([...self::expand($prefix),...$values])!==1)throw new \InvalidArgumentException('Invalid Bech32 checksum');
-        $bytes=self::convert(array_slice($values,0,-6),5,8,false);if(count($bytes)!==20)throw new \InvalidArgumentException('Expected 20-byte address');return '0x'.bin2hex(pack('C*',...$bytes));
+        $bytes=self::convert(array_slice($values,0,-6),5,8,false);if($validateAddressLength&&(count($bytes)<1||count($bytes)>255))throw new \InvalidArgumentException('Expected 1..255-byte Cosmos address');return pack('C*',...$bytes);
     }
 }
