@@ -1,0 +1,56 @@
+{
+    "name": "mintcandy/decimal-web3-sdk",
+    "description": "Independent Decimal EVM and offline Cosmos SDK for PHP",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^8.2",
+        "ext-curl": "*",
+        "ext-bcmath": "*",
+        "ext-gmp": "*",
+        "ext-mbstring": "*",
+        "kornrunner/keccak": "^1.1",
+        "simplito/elliptic-php": "^1.0.12",
+        "symfony/polyfill-intl-normalizer": "^1.33"
+    },
+    "autoload": {
+        "psr-4": {
+            "Decimal\\": "src/"
+        }
+    },
+    "scripts": {
+        "test": "php tests/run.php"
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://repo.packagist.org"
+        }
+    },
+    "homepage": "https://github.com/maxwell2010/decimal-php-sdk",
+    "keywords": [
+        "decimal",
+        "blockchain",
+        "evm",
+        "sdk"
+    ],
+    "support": {
+        "issues": "https://github.com/maxwell2010/decimal-php-sdk/issues",
+        "source": "https://github.com/maxwell2010/decimal-php-sdk"
+    },
+    "authors": [
+        {
+            "name": "MintCandy",
+            "homepage": "https://mintcandy.ru/"
+        }
+    ],
+    "archive": {
+        "exclude": [
+            "/vendor",
+            "/dist",
+            "/.git",
+            "/.idea",
+            "**/__pycache__"
+        ]
+    }
+}

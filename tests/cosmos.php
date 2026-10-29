@@ -1,0 +1,21 @@
+<?php
+declare(strict_types=1);
+use Decimal\{Protobuf,Cosmos,Wallet,ReferenceOperations,Deployment,Network,Client,Rpc};
+$pb=new Protobuf();$cosmos=new Cosmos();
+$ref=json_decode(file_get_contents(dirname(__DIR__).'/resources/cosmos/reference-tx.json'),true);
+$any=$pb->any('/decimal.coin.v1.MsgSendCoin',['sender'=>'d0sender','recipient'=>'d0recipient','coin'=>['denom'=>'del','amount'=>'123']]);
+$body=$cosmos->body([$any],'reference','7');same(bin2hex($body),$ref['body']);
+$cwallet=new Wallet(str_repeat('01',32));same(substr($cwallet->publicKey(),2),$ref['public_key']);
+$auth=$cosmos->auth([['publicKey'=>$cwallet->publicKey(),'sequence'=>'9']],[['denom'=>'del','amount'=>'7']],'200000');same(bin2hex($auth),$ref['auth']);
+same(bin2hex($cosmos->signDoc($body,$auth,'decimal_test-1','11')),$ref['sign_doc']);
+$result=$cosmos->sign($body,'decimal_test-1',[['wallet'=>$cwallet,'sequence'=>'9','accountNumber'=>'11']],[['denom'=>'del','amount'=>'7']],'200000');same(substr($result['raw'],2),$ref['tx_raw']);
+foreach(json_decode(file_get_contents(dirname(__DIR__).'/resources/cosmos/inventory.json'),true) as $type)same($pb->any($type,[])['type_url'],$type);
+rejects(fn()=>$pb->any('/decimal.coin.v1.MsgSendCoin',['unknown'=>'x']));rejects(fn()=>$pb->any('/unknown.Msg',[]));
+rejects(fn()=>Protobuf::varint('18446744073709551616'));
+$transfer=ReferenceOperations::draft('transferToken','Token',$address,$wallet->address,[$address,'1']);same(substr($transfer->data,0,10),'0xa9059cbb');
+rejects(fn()=>ReferenceOperations::draft('transferToken','ERC721',$address,$wallet->address,[$address,'1']));
+rejects(fn()=>ReferenceOperations::draft('multiSendToken','Multicall',$address,$wallet->address,[]));
+$code='0x6000';$hash='0x'.kornrunner\Keccak::hash(hex2bin(substr($code,2)),256);
+$deploymentRpc=new Rpc('http://unused',fn($r)=>['jsonrpc'=>'2.0','id'=>$r['id'],'result'=>$r['method']==='eth_chainId'?'0x31524':$code]);
+Deployment::verify(new Client(Network::testnet(),$deploymentRpc),$address,$hash);rejects(fn()=>Deployment::verify(new Client(Network::testnet(),$deploymentRpc),$address,'0x'.str_repeat('00',32)));
+echo "Cosmos reference and operation checks passed\n";

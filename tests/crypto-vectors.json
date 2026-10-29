@@ -1,0 +1,69 @@
+{
+  "transactions": [
+    {
+      "type": 1,
+      "raw": "0x01f8a9830315248007827530941212121212121212121212121212121212121212872386f26fc100008568656c6c6ff838f7943434343434343434343434343434343434343434e1a0000000000000000000000000000000000000000000000000000000000000000080a0d9ac127a0002a793b5c3ac5d0a715c4b30e53f67c4028a5edd1c72a9870dec61a01ae4cab0860b1e47700840b5032e6463711d7c40cbc0713a74794c911efb6979",
+      "hash": "0x92ebe3dcffd9415151ca1cba2acf61e9a0cd15dbd0dea5c22f9d5599d20a7c9b"
+    },
+    {
+      "type": 2,
+      "raw": "0x02f8aa83031524800207827530941212121212121212121212121212121212121212872386f26fc100008568656c6c6ff838f7943434343434343434343434343434343434343434e1a0000000000000000000000000000000000000000000000000000000000000000080a05ee5c9679bd6a2bed9f94c8b1034b1f7352c98720a6ef7cf419549f65e0aaa82a0437c206ed04042ffde6477ed0d9246ccb4e263f7f0fcb67cceca97efe2d13d61",
+      "hash": "0x1a029675c946467f278428997d9fe4039e3b14020a95ff333ea1871ba80cd167"
+    }
+  ],
+  "mnemonic": {
+    "phrase": "test test test test test test test test test test test junk",
+    "addresses": [
+      "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+      "0x70997970c51812dc3a010c7d01b50e0d17dc79c8",
+      "0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc"
+    ]
+  },
+  "typed": {
+    "types": {
+      "Person": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "wallet",
+          "type": "address"
+        }
+      ],
+      "Mail": [
+        {
+          "name": "from",
+          "type": "Person"
+        },
+        {
+          "name": "to",
+          "type": "Person"
+        },
+        {
+          "name": "contents",
+          "type": "string"
+        }
+      ]
+    },
+    "domain": {
+      "name": "Ether Mail",
+      "version": "1",
+      "chainId": "1",
+      "verifyingContract": "0xCcCCccccCCCCcCCCCCCcCcCccCcCCCcCcccccccC"
+    },
+    "message": {
+      "from": {
+        "name": "Cow",
+        "wallet": "0xCD2a3d9F938E13CD947Ec05AbC7FE734Df8DD826"
+      },
+      "to": {
+        "name": "Bob",
+        "wallet": "0xbBbBBBBbbBBBbbbBbbBbbbbBBbBbbbbBbBbbBBbB"
+      },
+      "contents": "Hello, Bob!"
+    },
+    "hash": "0xbe609aee343fb3c4b28e1df9e632fca64fcfaede20f02e86244efddf30957bd2",
+    "signature": "0x25ee9afa55806b99c9709a93ab967e487ad3a7cfdc421612e68cef7a737355246000f332e3f5e9ca5942275745c8b04523e17b57ef576e8362c74458fc62a6231c"
+  }
+}

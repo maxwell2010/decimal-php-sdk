@@ -1,0 +1,3464 @@
+[
+  {
+    "profile": "Checks",
+    "signature": "createChecksDEL(address[],uint256,uint256,uint256)",
+    "method": "createChecksDEL_672aa0a5",
+    "mutability": "payable"
+  },
+  {
+    "profile": "Checks",
+    "signature": "createChecksToken(address[],uint256,uint256,uint256,address)",
+    "method": "createChecksToken_8393b0d9",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Checks",
+    "signature": "createChecksTokenByPermit(address[],uint256,uint256,uint256,address,uint256,uint8,bytes32,bytes32)",
+    "method": "createChecksTokenByPermit_edd63b56",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Checks",
+    "signature": "getImpl()",
+    "method": "getImpl_fc0160fa",
+    "mutability": "view"
+  },
+  {
+    "profile": "Checks",
+    "signature": "nonces()",
+    "method": "nonces_d55902b9",
+    "mutability": "view"
+  },
+  {
+    "profile": "Checks",
+    "signature": "owner()",
+    "method": "owner_3fc2bcdd",
+    "mutability": "view"
+  },
+  {
+    "profile": "Checks",
+    "signature": "redeemChecks(bytes[],bytes32[])",
+    "method": "redeemChecks_6c184ff5",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Checks",
+    "signature": "renounceOwnership()",
+    "method": "renounceOwnership_2e0a1389",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Checks",
+    "signature": "transferOwnership(address)",
+    "method": "transferOwnership_f1dcac99",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Checks",
+    "signature": "upgrade(address,bytes)",
+    "method": "upgrade_132856f5",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "ContractCenter",
+    "signature": "getAddress(string)",
+    "method": "getAddress_29cb726a",
+    "mutability": "view"
+  },
+  {
+    "profile": "ContractCenter",
+    "signature": "getContractAddress(string)",
+    "method": "getContractAddress_b4a213f0",
+    "mutability": "view"
+  },
+  {
+    "profile": "ContractCenter",
+    "signature": "getImpl()",
+    "method": "getImpl_fc0160fa",
+    "mutability": "view"
+  },
+  {
+    "profile": "ContractCenter",
+    "signature": "getMarkedReserve(address)",
+    "method": "getMarkedReserve_1faa14b6",
+    "mutability": "view"
+  },
+  {
+    "profile": "ContractCenter",
+    "signature": "getTotalMarkedReserve()",
+    "method": "getTotalMarkedReserve_dfaec03d",
+    "mutability": "view"
+  },
+  {
+    "profile": "ContractCenter",
+    "signature": "isMigrating()",
+    "method": "isMigrating_da3fecc9",
+    "mutability": "view"
+  },
+  {
+    "profile": "ContractCenter",
+    "signature": "isReserveMigrated((address,uint256))",
+    "method": "isReserveMigrated_3493564f",
+    "mutability": "view"
+  },
+  {
+    "profile": "ContractCenter",
+    "signature": "isReservesMigrated((address,uint256)[])",
+    "method": "isReservesMigrated_67170e3b",
+    "mutability": "view"
+  },
+  {
+    "profile": "ContractCenter",
+    "signature": "markReserve((address,uint256))",
+    "method": "markReserve_35d49e07",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "ContractCenter",
+    "signature": "markReserves((address,uint256)[])",
+    "method": "markReserves_ab5d1856",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "ContractCenter",
+    "signature": "migrateReserves()",
+    "method": "migrateReserves_5c6e4897",
+    "mutability": "payable"
+  },
+  {
+    "profile": "ContractCenter",
+    "signature": "migrateReservesPage(uint256,uint256)",
+    "method": "migrateReservesPage_b15b5717",
+    "mutability": "payable"
+  },
+  {
+    "profile": "ContractCenter",
+    "signature": "owner()",
+    "method": "owner_3fc2bcdd",
+    "mutability": "view"
+  },
+  {
+    "profile": "ContractCenter",
+    "signature": "renounceOwnership()",
+    "method": "renounceOwnership_2e0a1389",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "ContractCenter",
+    "signature": "setAddress(string,address)",
+    "method": "setAddress_8d14e404",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "ContractCenter",
+    "signature": "setContractAddress(string,address)",
+    "method": "setContractAddress_5a8a1d07",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "ContractCenter",
+    "signature": "setMigrating(bool)",
+    "method": "setMigrating_b42de450",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "ContractCenter",
+    "signature": "transferOwnership(address)",
+    "method": "transferOwnership_f1dcac99",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "ContractCenter",
+    "signature": "upgrade(address,bytes)",
+    "method": "upgrade_132856f5",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "WETH()",
+    "method": "WETH_84c24fe1",
+    "mutability": "view"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "applyPenaltiesToStakes(bytes32[])",
+    "method": "applyPenaltiesToStakes_788b0e68",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "applyPenaltiesToValidator((address,address,uint256)[])",
+    "method": "applyPenaltiesToValidator_1a5e5b45",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "autoUnbondEnqueue(address,address,uint256,address,uint256)",
+    "method": "autoUnbondEnqueue_a3512244",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "autoUnbondQueueLength()",
+    "method": "autoUnbondQueueLength_d4f66e97",
+    "mutability": "view"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "changeStake(address[],address[],uint256[],address[])",
+    "method": "changeStake_3dfda6b0",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "complete(uint256[])",
+    "method": "complete_d9be85b1",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "delegate(address,address,uint256)",
+    "method": "delegate_805bacde",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "delegateByPermit(address,address,uint256,uint256,uint8,bytes32,bytes32)",
+    "method": "delegateByPermit_c9c2f1b3",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "delegateDEL(address)",
+    "method": "delegateDEL_569c6330",
+    "mutability": "payable"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "delegateDELTo(address,address)",
+    "method": "delegateDELTo_c593ba90",
+    "mutability": "payable"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "delegateHold(address,address,uint256,uint256)",
+    "method": "delegateHold_2a861c02",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "delegateHoldByPermit(address,address,uint256,uint256,uint256,uint8,bytes32,bytes32)",
+    "method": "delegateHoldByPermit_f0344209",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "delegateHoldDEL(address,uint256)",
+    "method": "delegateHoldDEL_81f81a7c",
+    "mutability": "payable"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "delegateTo(address,address,address,uint256)",
+    "method": "delegateTo_70c2f5d6",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "forcedWithdrawal(address,address,uint256,address)",
+    "method": "forcedWithdrawal_089848e7",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "forcedWithdrawalBatch(address[],address[],uint256[],address[])",
+    "method": "forcedWithdrawalBatch_eb930fdc",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "getAutoUnbondEntry(uint256)",
+    "method": "getAutoUnbondEntry_b69d5f03",
+    "mutability": "view"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "getContractCenter()",
+    "method": "getContractCenter_69bca3eb",
+    "mutability": "view"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "getFreezeTime(uint8)",
+    "method": "getFreezeTime_8c70b76e",
+    "mutability": "view"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "getFrozenStake(uint256)",
+    "method": "getFrozenStake_9561eec7",
+    "mutability": "view"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "getFrozenStakes(uint256[])",
+    "method": "getFrozenStakes_9f3eaaf8",
+    "mutability": "view"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "getHoldStake(address,address,address,uint256)",
+    "method": "getHoldStake_90d0c921",
+    "mutability": "view"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "getHoldStakeDEL(address,address,uint256)",
+    "method": "getHoldStakeDEL_481058b0",
+    "mutability": "view"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "getHoldStakeId(address,address,address,uint256)",
+    "method": "getHoldStakeId_36174265",
+    "mutability": "pure"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "getImpl()",
+    "method": "getImpl_fc0160fa",
+    "mutability": "view"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "getStake(address,address,address)",
+    "method": "getStake_973ee776",
+    "mutability": "view"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "getStakeId(address,address,address)",
+    "method": "getStakeId_caa07c0f",
+    "mutability": "pure"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "getStakePenaltyIndex(bytes32)",
+    "method": "getStakePenaltyIndex_41a8cfef",
+    "mutability": "view"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "getStakes(bytes32[])",
+    "method": "getStakes_232623f3",
+    "mutability": "view"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "getValidatorReserve(address,address)",
+    "method": "getValidatorReserve_d477d42e",
+    "mutability": "view"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "hold(address,address,uint256,uint256,uint256)",
+    "method": "hold_79ac3b6c",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "holdWithReset(address,address,uint256,uint256,uint256[])",
+    "method": "holdWithReset_5d5dc5e6",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "migrateStakes(address[],address[],address[],address[])",
+    "method": "migrateStakes_92c844b1",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "owner()",
+    "method": "owner_3fc2bcdd",
+    "mutability": "view"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "pause()",
+    "method": "pause_2138ec0c",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "paused()",
+    "method": "paused_5c0ff0ee",
+    "mutability": "view"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "processAutoUnbond(uint256)",
+    "method": "processAutoUnbond_98031a45",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "renounceOwnership()",
+    "method": "renounceOwnership_2e0a1389",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "resetHold(address,address,address,uint256)",
+    "method": "resetHold_5c5d3de7",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "resetHolds(address,address,address,uint256[])",
+    "method": "resetHolds_d162cb1b",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "setContractCenter(address)",
+    "method": "setContractCenter_cecbece4",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "setFreezeTime(uint256,uint256)",
+    "method": "setFreezeTime_0da9829b",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "transfer(address,address,uint256,address)",
+    "method": "transfer_77749fed",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "transferHold(address,address,uint256,uint256,address)",
+    "method": "transferHold_698c6382",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "transferOwnership(address)",
+    "method": "transferOwnership_f1dcac99",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "transferWithReset(address,address,uint256,address,uint256[])",
+    "method": "transferWithReset_a3890bcc",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "unpause()",
+    "method": "unpause_8144711b",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "upgrade(address,bytes)",
+    "method": "upgrade_132856f5",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "withdraw(address,address,uint256)",
+    "method": "withdraw_45fd8373",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "withdrawHold(address,address,uint256,uint256)",
+    "method": "withdrawHold_19cc92ac",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation",
+    "signature": "withdrawWithReset(address,address,uint256,uint256[])",
+    "method": "withdrawWithReset_19aa53ad",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "DelegationNFT",
+    "signature": "applyPenaltiesToValidator((address,address,uint256)[])",
+    "method": "applyPenaltiesToValidator_1a5e5b45",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "DelegationNFT",
+    "signature": "complete(uint256[])",
+    "method": "complete_d9be85b1",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "DelegationNFT",
+    "signature": "delegateDRC1155(address,address,uint256,uint256)",
+    "method": "delegateDRC1155_8b49df8b",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "DelegationNFT",
+    "signature": "delegateDRC1155ByPermit(address,address,uint256,uint256,uint256,uint8,bytes32,bytes32)",
+    "method": "delegateDRC1155ByPermit_df900ebe",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "DelegationNFT",
+    "signature": "delegateDRC721(address,address,uint256)",
+    "method": "delegateDRC721_9513c331",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "DelegationNFT",
+    "signature": "delegateDRC721ByPermit(address,address,uint256,uint256,uint8,bytes32,bytes32)",
+    "method": "delegateDRC721ByPermit_6cc7d055",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "DelegationNFT",
+    "signature": "delegateHoldDRC1155(address,address,uint256,uint256,uint256)",
+    "method": "delegateHoldDRC1155_e4368110",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "DelegationNFT",
+    "signature": "delegateHoldDRC1155ByPermit(address,address,uint256,uint256,uint256,uint256,uint8,bytes32,bytes32)",
+    "method": "delegateHoldDRC1155ByPermit_abf5f4fb",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "DelegationNFT",
+    "signature": "delegateHoldDRC721(address,address,uint256,uint256)",
+    "method": "delegateHoldDRC721_7af1c128",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "DelegationNFT",
+    "signature": "delegateHoldDRC721ByPermit(address,address,uint256,uint256,uint256,uint8,bytes32,bytes32)",
+    "method": "delegateHoldDRC721ByPermit_aa347b37",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "DelegationNFT",
+    "signature": "getContractCenter()",
+    "method": "getContractCenter_69bca3eb",
+    "mutability": "view"
+  },
+  {
+    "profile": "DelegationNFT",
+    "signature": "getFreezeTime(uint8)",
+    "method": "getFreezeTime_8c70b76e",
+    "mutability": "view"
+  },
+  {
+    "profile": "DelegationNFT",
+    "signature": "getFrozenStake(uint256)",
+    "method": "getFrozenStake_9561eec7",
+    "mutability": "view"
+  },
+  {
+    "profile": "DelegationNFT",
+    "signature": "getFrozenStakes(uint256[])",
+    "method": "getFrozenStakes_9f3eaaf8",
+    "mutability": "view"
+  },
+  {
+    "profile": "DelegationNFT",
+    "signature": "getHoldStake(address,address,address,uint256,uint256)",
+    "method": "getHoldStake_f3839bda",
+    "mutability": "view"
+  },
+  {
+    "profile": "DelegationNFT",
+    "signature": "getHoldStakeId(address,address,address,uint256,uint256)",
+    "method": "getHoldStakeId_c8ae3c5f",
+    "mutability": "pure"
+  },
+  {
+    "profile": "DelegationNFT",
+    "signature": "getImpl()",
+    "method": "getImpl_fc0160fa",
+    "mutability": "view"
+  },
+  {
+    "profile": "DelegationNFT",
+    "signature": "getStake(address,address,address,uint256)",
+    "method": "getStake_9afa2c79",
+    "mutability": "view"
+  },
+  {
+    "profile": "DelegationNFT",
+    "signature": "getStakeId(address,address,address,uint256)",
+    "method": "getStakeId_d96d63d5",
+    "mutability": "pure"
+  },
+  {
+    "profile": "DelegationNFT",
+    "signature": "getStakePenaltyIndex(bytes32)",
+    "method": "getStakePenaltyIndex_41a8cfef",
+    "mutability": "view"
+  },
+  {
+    "profile": "DelegationNFT",
+    "signature": "getStakes(bytes32[])",
+    "method": "getStakes_232623f3",
+    "mutability": "view"
+  },
+  {
+    "profile": "DelegationNFT",
+    "signature": "getValidatorReserve(address,address,uint256)",
+    "method": "getValidatorReserve_480bee7a",
+    "mutability": "view"
+  },
+  {
+    "profile": "DelegationNFT",
+    "signature": "hold(address,address,uint256,uint256,uint256,uint256)",
+    "method": "hold_9b24b63e",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "DelegationNFT",
+    "signature": "onERC1155BatchReceived(address,address,uint256[],uint256[],bytes)",
+    "method": "onERC1155BatchReceived_79acc49f",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "DelegationNFT",
+    "signature": "onERC1155Received(address,address,uint256,uint256,bytes)",
+    "method": "onERC1155Received_5ab320ec",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "DelegationNFT",
+    "signature": "onERC721Received(address,address,uint256,bytes)",
+    "method": "onERC721Received_a1ec0770",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "DelegationNFT",
+    "signature": "owner()",
+    "method": "owner_3fc2bcdd",
+    "mutability": "view"
+  },
+  {
+    "profile": "DelegationNFT",
+    "signature": "renounceOwnership()",
+    "method": "renounceOwnership_2e0a1389",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "DelegationNFT",
+    "signature": "setContractCenter(address)",
+    "method": "setContractCenter_cecbece4",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "DelegationNFT",
+    "signature": "setFreezeTime(uint256,uint256)",
+    "method": "setFreezeTime_0da9829b",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "DelegationNFT",
+    "signature": "supportsInterface(bytes4)",
+    "method": "supportsInterface_0e2b7fe2",
+    "mutability": "view"
+  },
+  {
+    "profile": "DelegationNFT",
+    "signature": "transfer(address,address,uint256,uint256,address)",
+    "method": "transfer_14cfbff6",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "DelegationNFT",
+    "signature": "transferHold(address,address,uint256,uint256,uint256,address)",
+    "method": "transferHold_8562122d",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "DelegationNFT",
+    "signature": "transferOwnership(address)",
+    "method": "transferOwnership_f1dcac99",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "DelegationNFT",
+    "signature": "upgrade(address,bytes)",
+    "method": "upgrade_132856f5",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "DelegationNFT",
+    "signature": "withdraw(address,address,uint256,uint256)",
+    "method": "withdraw_e9d770da",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "DelegationNFT",
+    "signature": "withdrawHold(address,address,uint256,uint256,uint256)",
+    "method": "withdrawHold_49c1928e",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "ERC1155",
+    "signature": "DOMAIN_SEPARATOR()",
+    "method": "DOMAIN_SEPARATOR_938df508",
+    "mutability": "view"
+  },
+  {
+    "profile": "ERC1155",
+    "signature": "MIN_RESERVE()",
+    "method": "MIN_RESERVE_a38c31df",
+    "mutability": "view"
+  },
+  {
+    "profile": "ERC1155",
+    "signature": "addReserve(uint256,uint256)",
+    "method": "addReserve_f12bee72",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "ERC1155",
+    "signature": "addReserveByETH(uint256)",
+    "method": "addReserveByETH_e54e3c83",
+    "mutability": "payable"
+  },
+  {
+    "profile": "ERC1155",
+    "signature": "addReserveByPermit(uint256,uint256,uint256,uint8,bytes32,bytes32)",
+    "method": "addReserveByPermit_77017e6a",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "ERC1155",
+    "signature": "balanceOf(address,uint256)",
+    "method": "balanceOf_7ab6c0bc",
+    "mutability": "view"
+  },
+  {
+    "profile": "ERC1155",
+    "signature": "balanceOfBatch(address[],uint256[])",
+    "method": "balanceOfBatch_ed4db4b0",
+    "mutability": "view"
+  },
+  {
+    "profile": "ERC1155",
+    "signature": "burn(uint256,uint256)",
+    "method": "burn_d11c0faa",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "ERC1155",
+    "signature": "contractURI()",
+    "method": "contractURI_d4fd3ec0",
+    "mutability": "view"
+  },
+  {
+    "profile": "ERC1155",
+    "signature": "creator()",
+    "method": "creator_1c2bc0d9",
+    "mutability": "view"
+  },
+  {
+    "profile": "ERC1155",
+    "signature": "disableMint()",
+    "method": "disableMint_02c16e0e",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "ERC1155",
+    "signature": "exists(uint256)",
+    "method": "exists_e99473d5",
+    "mutability": "view"
+  },
+  {
+    "profile": "ERC1155",
+    "signature": "getAllowMint()",
+    "method": "getAllowMint_ab1ac195",
+    "mutability": "view"
+  },
+  {
+    "profile": "ERC1155",
+    "signature": "getNftType()",
+    "method": "getNftType_c7370d59",
+    "mutability": "pure"
+  },
+  {
+    "profile": "ERC1155",
+    "signature": "getRefundable()",
+    "method": "getRefundable_760b70aa",
+    "mutability": "view"
+  },
+  {
+    "profile": "ERC1155",
+    "signature": "getReserve(uint256)",
+    "method": "getReserve_4151555f",
+    "mutability": "view"
+  },
+  {
+    "profile": "ERC1155",
+    "signature": "initialize(string,string,string,address,bool)",
+    "method": "initialize_c8af7c35",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "ERC1155",
+    "signature": "isApprovedForAll(address,address)",
+    "method": "isApprovedForAll_67da1fb2",
+    "mutability": "view"
+  },
+  {
+    "profile": "ERC1155",
+    "signature": "mint(address,uint256,uint256,string,uint256,address)",
+    "method": "mint_d1ecc259",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "ERC1155",
+    "signature": "mintByETH(address,uint256,uint256,string)",
+    "method": "mintByETH_a2565436",
+    "mutability": "payable"
+  },
+  {
+    "profile": "ERC1155",
+    "signature": "mintByPermit(address,uint256,uint256,string,uint256,address,uint256,uint8,bytes32,bytes32)",
+    "method": "mintByPermit_f0df419b",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "ERC1155",
+    "signature": "name()",
+    "method": "name_1581f81c",
+    "mutability": "view"
+  },
+  {
+    "profile": "ERC1155",
+    "signature": "nonces(address)",
+    "method": "nonces_3d75dace",
+    "mutability": "view"
+  },
+  {
+    "profile": "ERC1155",
+    "signature": "penalty(uint256,uint256,uint16)",
+    "method": "penalty_509392fa",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "ERC1155",
+    "signature": "permit(address,address,uint256,uint8,bytes32,bytes32)",
+    "method": "permit_1b70ea62",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "ERC1155",
+    "signature": "rate(uint256)",
+    "method": "rate_fe562792",
+    "mutability": "view"
+  },
+  {
+    "profile": "ERC1155",
+    "signature": "safeBatchTransferFrom(address,address,uint256[],uint256[],bytes)",
+    "method": "safeBatchTransferFrom_1917c486",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "ERC1155",
+    "signature": "safeTransferFrom(address,address,uint256,uint256,bytes)",
+    "method": "safeTransferFrom_0875aead",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "ERC1155",
+    "signature": "setApprovalForAll(address,bool)",
+    "method": "setApprovalForAll_d97fb4c0",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "ERC1155",
+    "signature": "supportsInterface(bytes4)",
+    "method": "supportsInterface_0e2b7fe2",
+    "mutability": "view"
+  },
+  {
+    "profile": "ERC1155",
+    "signature": "symbol()",
+    "method": "symbol_25967ca5",
+    "mutability": "view"
+  },
+  {
+    "profile": "ERC1155",
+    "signature": "totalSupply()",
+    "method": "totalSupply_a368022e",
+    "mutability": "view"
+  },
+  {
+    "profile": "ERC1155",
+    "signature": "totalSupply(uint256)",
+    "method": "totalSupply_8ba70f8c",
+    "mutability": "view"
+  },
+  {
+    "profile": "ERC1155",
+    "signature": "uri(uint256)",
+    "method": "uri_31473f54",
+    "mutability": "view"
+  },
+  {
+    "profile": "ERC721",
+    "signature": "DOMAIN_SEPARATOR()",
+    "method": "DOMAIN_SEPARATOR_938df508",
+    "mutability": "view"
+  },
+  {
+    "profile": "ERC721",
+    "signature": "MIN_RESERVE()",
+    "method": "MIN_RESERVE_a38c31df",
+    "mutability": "view"
+  },
+  {
+    "profile": "ERC721",
+    "signature": "addReserve(uint256,uint256)",
+    "method": "addReserve_f12bee72",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "ERC721",
+    "signature": "addReserveByETH(uint256)",
+    "method": "addReserveByETH_e54e3c83",
+    "mutability": "payable"
+  },
+  {
+    "profile": "ERC721",
+    "signature": "addReserveByPermit(uint256,uint256,uint256,uint8,bytes32,bytes32)",
+    "method": "addReserveByPermit_77017e6a",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "ERC721",
+    "signature": "approve(address,uint256)",
+    "method": "approve_9f0bb8a9",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "ERC721",
+    "signature": "balanceOf(address)",
+    "method": "balanceOf_5b46f8f6",
+    "mutability": "view"
+  },
+  {
+    "profile": "ERC721",
+    "signature": "burn(uint256)",
+    "method": "burn_308dce5f",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "ERC721",
+    "signature": "contractURI()",
+    "method": "contractURI_d4fd3ec0",
+    "mutability": "view"
+  },
+  {
+    "profile": "ERC721",
+    "signature": "creator()",
+    "method": "creator_1c2bc0d9",
+    "mutability": "view"
+  },
+  {
+    "profile": "ERC721",
+    "signature": "disableMint()",
+    "method": "disableMint_02c16e0e",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "ERC721",
+    "signature": "getAllowMint()",
+    "method": "getAllowMint_ab1ac195",
+    "mutability": "view"
+  },
+  {
+    "profile": "ERC721",
+    "signature": "getApproved(uint256)",
+    "method": "getApproved_edc57d99",
+    "mutability": "view"
+  },
+  {
+    "profile": "ERC721",
+    "signature": "getNftType()",
+    "method": "getNftType_c7370d59",
+    "mutability": "pure"
+  },
+  {
+    "profile": "ERC721",
+    "signature": "getRefundable()",
+    "method": "getRefundable_760b70aa",
+    "mutability": "view"
+  },
+  {
+    "profile": "ERC721",
+    "signature": "getReserve(uint256)",
+    "method": "getReserve_4151555f",
+    "mutability": "view"
+  },
+  {
+    "profile": "ERC721",
+    "signature": "initialize(string,string,string,address,bool)",
+    "method": "initialize_c8af7c35",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "ERC721",
+    "signature": "isApprovedForAll(address,address)",
+    "method": "isApprovedForAll_67da1fb2",
+    "mutability": "view"
+  },
+  {
+    "profile": "ERC721",
+    "signature": "mint(address,string,uint256,address)",
+    "method": "mint_cb7459ee",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "ERC721",
+    "signature": "mintByETH(address,string)",
+    "method": "mintByETH_dec213f9",
+    "mutability": "payable"
+  },
+  {
+    "profile": "ERC721",
+    "signature": "mintByPermit(address,string,uint256,address,uint256,uint8,bytes32,bytes32)",
+    "method": "mintByPermit_dfde7210",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "ERC721",
+    "signature": "name()",
+    "method": "name_1581f81c",
+    "mutability": "view"
+  },
+  {
+    "profile": "ERC721",
+    "signature": "nonces(uint256)",
+    "method": "nonces_e7cb5f16",
+    "mutability": "view"
+  },
+  {
+    "profile": "ERC721",
+    "signature": "ownerOf(uint256)",
+    "method": "ownerOf_06f6d69b",
+    "mutability": "view"
+  },
+  {
+    "profile": "ERC721",
+    "signature": "penalty(uint256,uint16)",
+    "method": "penalty_143a2dba",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "ERC721",
+    "signature": "permit(address,uint256,uint256,uint8,bytes32,bytes32)",
+    "method": "permit_ccd41bea",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "ERC721",
+    "signature": "safeTransferFrom(address,address,uint256)",
+    "method": "safeTransferFrom_a2f5a686",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "ERC721",
+    "signature": "safeTransferFrom(address,address,uint256,bytes)",
+    "method": "safeTransferFrom_69712a94",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "ERC721",
+    "signature": "setApprovalForAll(address,bool)",
+    "method": "setApprovalForAll_d97fb4c0",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "ERC721",
+    "signature": "supportsInterface(bytes4)",
+    "method": "supportsInterface_0e2b7fe2",
+    "mutability": "view"
+  },
+  {
+    "profile": "ERC721",
+    "signature": "symbol()",
+    "method": "symbol_25967ca5",
+    "mutability": "view"
+  },
+  {
+    "profile": "ERC721",
+    "signature": "tokenURI(uint256)",
+    "method": "tokenURI_afd4e67c",
+    "mutability": "view"
+  },
+  {
+    "profile": "ERC721",
+    "signature": "transferFrom(address,address,uint256)",
+    "method": "transferFrom_4b6685e7",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "MasterValidator",
+    "signature": "addCandidate(address,string,(address,uint256))",
+    "method": "addCandidate_cdc53879",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "MasterValidator",
+    "signature": "addCandidateDEL(address,string)",
+    "method": "addCandidateDEL_14176020",
+    "mutability": "payable"
+  },
+  {
+    "profile": "MasterValidator",
+    "signature": "addPenalty(address,uint16)",
+    "method": "addPenalty_1e0d8079",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "MasterValidator",
+    "signature": "addValidator(address,string,(address,uint256))",
+    "method": "addValidator_b78c6523",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "MasterValidator",
+    "signature": "addValidatorDEL(address,string)",
+    "method": "addValidatorDEL_84b585cd",
+    "mutability": "payable"
+  },
+  {
+    "profile": "MasterValidator",
+    "signature": "addValidators((address,string)[])",
+    "method": "addValidators_ff4afc0b",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "MasterValidator",
+    "signature": "approveCandidates(address[])",
+    "method": "approveCandidates_137a3a21",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "MasterValidator",
+    "signature": "getImpl()",
+    "method": "getImpl_fc0160fa",
+    "mutability": "view"
+  },
+  {
+    "profile": "MasterValidator",
+    "signature": "getValidator(address)",
+    "method": "getValidator_a8df6df4",
+    "mutability": "view"
+  },
+  {
+    "profile": "MasterValidator",
+    "signature": "getValidatorPenalties(address)",
+    "method": "getValidatorPenalties_8c2ea922",
+    "mutability": "view"
+  },
+  {
+    "profile": "MasterValidator",
+    "signature": "getValidatorStatus(address)",
+    "method": "getValidatorStatus_156a61d1",
+    "mutability": "view"
+  },
+  {
+    "profile": "MasterValidator",
+    "signature": "isActive(address)",
+    "method": "isActive_4dda64b2",
+    "mutability": "view"
+  },
+  {
+    "profile": "MasterValidator",
+    "signature": "isMember(address)",
+    "method": "isMember_945bc63d",
+    "mutability": "view"
+  },
+  {
+    "profile": "MasterValidator",
+    "signature": "owner()",
+    "method": "owner_3fc2bcdd",
+    "mutability": "view"
+  },
+  {
+    "profile": "MasterValidator",
+    "signature": "pauseSelf()",
+    "method": "pauseSelf_918c2142",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "MasterValidator",
+    "signature": "pauseValidator(address)",
+    "method": "pauseValidator_4007efa7",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "MasterValidator",
+    "signature": "removeValidator(address)",
+    "method": "removeValidator_7756c00c",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "MasterValidator",
+    "signature": "renounceOwnership()",
+    "method": "renounceOwnership_2e0a1389",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "MasterValidator",
+    "signature": "transferOwnership(address)",
+    "method": "transferOwnership_f1dcac99",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "MasterValidator",
+    "signature": "unpauseSelf()",
+    "method": "unpauseSelf_884b2def",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "MasterValidator",
+    "signature": "unpauseValidator(address)",
+    "method": "unpauseValidator_f633b3f4",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "MasterValidator",
+    "signature": "updateValidatorMeta(address,string)",
+    "method": "updateValidatorMeta_61c3c472",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "MasterValidator",
+    "signature": "upgrade(address,bytes)",
+    "method": "upgrade_132856f5",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "MasterValidator",
+    "signature": "setRewardPerBlock(uint256)",
+    "method": "setRewardPerBlock_693f8e5c",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "MasterValidator",
+    "signature": "clearRewardPerBlock()",
+    "method": "clearRewardPerBlock_af78de0c",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "MasterValidator",
+    "signature": "getRewardPerBlock()",
+    "method": "getRewardPerBlock_19d03f1a",
+    "mutability": "view"
+  },
+  {
+    "profile": "Multicall",
+    "signature": "aggregate((address,uint256,bytes)[])",
+    "method": "aggregate_c658beae",
+    "mutability": "payable"
+  },
+  {
+    "profile": "NFTCenter",
+    "signature": "MIN_RESERVE()",
+    "method": "MIN_RESERVE_a38c31df",
+    "mutability": "view"
+  },
+  {
+    "profile": "NFTCenter",
+    "signature": "beacon(uint8)",
+    "method": "beacon_c145a9ef",
+    "mutability": "view"
+  },
+  {
+    "profile": "NFTCenter",
+    "signature": "checkToken(address)",
+    "method": "checkToken_3ab5ce5f",
+    "mutability": "view"
+  },
+  {
+    "profile": "NFTCenter",
+    "signature": "createERC1155((address,string,string,string,bool))",
+    "method": "createERC1155_223827e7",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "NFTCenter",
+    "signature": "createERC721((address,string,string,string,bool))",
+    "method": "createERC721_3d1775b0",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "NFTCenter",
+    "signature": "getContractCenter()",
+    "method": "getContractCenter_69bca3eb",
+    "mutability": "view"
+  },
+  {
+    "profile": "NFTCenter",
+    "signature": "getImplementation()",
+    "method": "getImplementation_19fa12ab",
+    "mutability": "view"
+  },
+  {
+    "profile": "NFTCenter",
+    "signature": "getNftState(address)",
+    "method": "getNftState_ca15dc4e",
+    "mutability": "view"
+  },
+  {
+    "profile": "NFTCenter",
+    "signature": "implementation(uint8)",
+    "method": "implementation_ff42ace6",
+    "mutability": "view"
+  },
+  {
+    "profile": "NFTCenter",
+    "signature": "initialize()",
+    "method": "initialize_cf705883",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "NFTCenter",
+    "signature": "owner()",
+    "method": "owner_3fc2bcdd",
+    "mutability": "view"
+  },
+  {
+    "profile": "NFTCenter",
+    "signature": "renounceOwnership()",
+    "method": "renounceOwnership_2e0a1389",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "NFTCenter",
+    "signature": "setContractCenter(address)",
+    "method": "setContractCenter_cecbece4",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "NFTCenter",
+    "signature": "transferOwnership(address)",
+    "method": "transferOwnership_f1dcac99",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "NFTCenter",
+    "signature": "upgrade(address,bytes)",
+    "method": "upgrade_132856f5",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "NFTCenter",
+    "signature": "upgradeNFT(address,uint8)",
+    "method": "upgradeNFT_ee5f18b4",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "PythonBridgeV2",
+    "signature": "wrapAndTransferETH(bytes32,uint16,uint256,uint256)",
+    "method": "wrapAndTransferETH_bb936014",
+    "mutability": "payable"
+  },
+  {
+    "profile": "PythonBridgeV2",
+    "signature": "transferTokens(address,bytes32,uint256,uint16,uint256)",
+    "method": "transferTokens_3fd9dd94",
+    "mutability": "payable"
+  },
+  {
+    "profile": "PythonBridgeV2",
+    "signature": "completeTransfer(bytes,bool)",
+    "method": "completeTransfer_02d9339c",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "PythonChecks",
+    "signature": "nonces()",
+    "method": "nonces_d55902b9",
+    "mutability": "view"
+  },
+  {
+    "profile": "PythonChecks",
+    "signature": "createChecksDEL(address[],uint256,uint256,uint256)",
+    "method": "createChecksDEL_672aa0a5",
+    "mutability": "payable"
+  },
+  {
+    "profile": "PythonChecks",
+    "signature": "createChecksToken(address[],uint256,uint256,uint256,address)",
+    "method": "createChecksToken_8393b0d9",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "PythonChecks",
+    "signature": "createChecksTokenByPermit(address[],uint256,uint256,uint256,address,uint256,uint8,bytes32,bytes32)",
+    "method": "createChecksTokenByPermit_edd63b56",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "PythonChecks",
+    "signature": "redeemChecks(bytes[],bytes32[])",
+    "method": "redeemChecks_6c184ff5",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "PythonDelegationNft",
+    "signature": "delegateDRC721(address,address,uint256)",
+    "method": "delegateDRC721_9513c331",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "PythonDelegationNft",
+    "signature": "delegateDRC1155(address,address,uint256,uint256)",
+    "method": "delegateDRC1155_8b49df8b",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "PythonDelegationNft",
+    "signature": "delegateHoldDRC721(address,address,uint256,uint256)",
+    "method": "delegateHoldDRC721_7af1c128",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "PythonDelegationNft",
+    "signature": "delegateHoldDRC1155(address,address,uint256,uint256,uint256)",
+    "method": "delegateHoldDRC1155_e4368110",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "PythonDelegationNft",
+    "signature": "withdraw(address,address,uint256,uint256)",
+    "method": "withdraw_e9d770da",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "PythonDelegationNft",
+    "signature": "withdrawHold(address,address,uint256,uint256,uint256)",
+    "method": "withdrawHold_49c1928e",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "PythonDelegationNft",
+    "signature": "transfer(address,address,uint256,uint256,address)",
+    "method": "transfer_14cfbff6",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "PythonDelegationNft",
+    "signature": "transferHold(address,address,uint256,uint256,uint256,address)",
+    "method": "transferHold_8562122d",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "PythonErc1155",
+    "signature": "balanceOf(address,uint256)",
+    "method": "balanceOf_7ab6c0bc",
+    "mutability": "view"
+  },
+  {
+    "profile": "PythonErc1155",
+    "signature": "isApprovedForAll(address,address)",
+    "method": "isApprovedForAll_67da1fb2",
+    "mutability": "view"
+  },
+  {
+    "profile": "PythonErc1155",
+    "signature": "setApprovalForAll(address,bool)",
+    "method": "setApprovalForAll_d97fb4c0",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "PythonErc1155",
+    "signature": "safeTransferFrom(address,address,uint256,uint256,bytes)",
+    "method": "safeTransferFrom_0875aead",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "PythonErc1155",
+    "signature": "safeBatchTransferFrom(address,address,uint256[],uint256[],bytes)",
+    "method": "safeBatchTransferFrom_1917c486",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "PythonErc1155",
+    "signature": "mint(address,uint256,uint256,string,uint256,address)",
+    "method": "mint_d1ecc259",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "PythonErc1155",
+    "signature": "mintByDEL(address,uint256,uint256,string)",
+    "method": "mintByDEL_0982d15b",
+    "mutability": "payable"
+  },
+  {
+    "profile": "PythonErc1155",
+    "signature": "burn(uint256,uint256)",
+    "method": "burn_d11c0faa",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "PythonErc1155",
+    "signature": "setTokenURI(uint256,string)",
+    "method": "setTokenURI_9fe0b0f3",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "PythonErc1155",
+    "signature": "addReserveByDEL(uint256)",
+    "method": "addReserveByDEL_79aaef4d",
+    "mutability": "payable"
+  },
+  {
+    "profile": "PythonErc1155",
+    "signature": "disableMint()",
+    "method": "disableMint_02c16e0e",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "PythonErc20",
+    "signature": "balanceOf(address)",
+    "method": "balanceOf_5b46f8f6",
+    "mutability": "view"
+  },
+  {
+    "profile": "PythonErc20",
+    "signature": "decimals()",
+    "method": "decimals_bb844440",
+    "mutability": "view"
+  },
+  {
+    "profile": "PythonErc20",
+    "signature": "symbol()",
+    "method": "symbol_25967ca5",
+    "mutability": "view"
+  },
+  {
+    "profile": "PythonErc20",
+    "signature": "name()",
+    "method": "name_1581f81c",
+    "mutability": "view"
+  },
+  {
+    "profile": "PythonErc20",
+    "signature": "allowance(address,address)",
+    "method": "allowance_d864b7ca",
+    "mutability": "view"
+  },
+  {
+    "profile": "PythonErc20",
+    "signature": "nonces(address)",
+    "method": "nonces_3d75dace",
+    "mutability": "view"
+  },
+  {
+    "profile": "PythonErc20",
+    "signature": "version()",
+    "method": "version_85b19fde",
+    "mutability": "view"
+  },
+  {
+    "profile": "PythonErc20",
+    "signature": "transfer(address,uint256)",
+    "method": "transfer_3b88ef57",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "PythonErc20",
+    "signature": "transferFrom(address,address,uint256)",
+    "method": "transferFrom_4b6685e7",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "PythonErc20",
+    "signature": "permit(address,address,uint256,uint256,uint8,bytes32,bytes32)",
+    "method": "permit_c6c5ac5c",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "PythonErc20",
+    "signature": "approve(address,uint256)",
+    "method": "approve_9f0bb8a9",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "PythonErc721",
+    "signature": "balanceOf(address)",
+    "method": "balanceOf_5b46f8f6",
+    "mutability": "view"
+  },
+  {
+    "profile": "PythonErc721",
+    "signature": "ownerOf(uint256)",
+    "method": "ownerOf_06f6d69b",
+    "mutability": "view"
+  },
+  {
+    "profile": "PythonErc721",
+    "signature": "isApprovedForAll(address,address)",
+    "method": "isApprovedForAll_67da1fb2",
+    "mutability": "view"
+  },
+  {
+    "profile": "PythonErc721",
+    "signature": "getApproved(uint256)",
+    "method": "getApproved_edc57d99",
+    "mutability": "view"
+  },
+  {
+    "profile": "PythonErc721",
+    "signature": "setApprovalForAll(address,bool)",
+    "method": "setApprovalForAll_d97fb4c0",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "PythonErc721",
+    "signature": "approve(address,uint256)",
+    "method": "approve_9f0bb8a9",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "PythonErc721",
+    "signature": "safeTransferFrom(address,address,uint256)",
+    "method": "safeTransferFrom_a2f5a686",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "PythonErc721",
+    "signature": "mint(address,string,uint256,address)",
+    "method": "mint_cb7459ee",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "PythonErc721",
+    "signature": "mintByDEL(address,string)",
+    "method": "mintByDEL_561a2cee",
+    "mutability": "payable"
+  },
+  {
+    "profile": "PythonErc721",
+    "signature": "burn(uint256)",
+    "method": "burn_308dce5f",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "PythonErc721",
+    "signature": "setTokenURI(uint256,string)",
+    "method": "setTokenURI_9fe0b0f3",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "PythonErc721",
+    "signature": "addReserveByDEL(uint256)",
+    "method": "addReserveByDEL_79aaef4d",
+    "mutability": "payable"
+  },
+  {
+    "profile": "PythonErc721",
+    "signature": "disableMint()",
+    "method": "disableMint_02c16e0e",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "PythonNftCenter",
+    "signature": "createERC721((address,string,string,string,bool))",
+    "method": "createERC721_3d1775b0",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "PythonNftCenter",
+    "signature": "createERC1155((address,string,string,string,bool))",
+    "method": "createERC1155_223827e7",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetContractCenter20261029",
+    "signature": "getAddress(string)",
+    "method": "getAddress_29cb726a",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetContractCenter20261029",
+    "signature": "getContractAddress(string)",
+    "method": "getContractAddress_b4a213f0",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetContractCenter20261029",
+    "signature": "getContractsWithReserve()",
+    "method": "getContractsWithReserve_153ef74e",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetContractCenter20261029",
+    "signature": "getImpl()",
+    "method": "getImpl_fc0160fa",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetContractCenter20261029",
+    "signature": "getMarkedReserve(address)",
+    "method": "getMarkedReserve_1faa14b6",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetContractCenter20261029",
+    "signature": "getTotalMarkedReserve()",
+    "method": "getTotalMarkedReserve_dfaec03d",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetContractCenter20261029",
+    "signature": "isDecimal()",
+    "method": "isDecimal_7efdfd69",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetContractCenter20261029",
+    "signature": "isMigrating()",
+    "method": "isMigrating_da3fecc9",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetContractCenter20261029",
+    "signature": "isReserveAdded(address)",
+    "method": "isReserveAdded_1d571ea8",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetContractCenter20261029",
+    "signature": "isReserveMigrated((address,uint256))",
+    "method": "isReserveMigrated_3493564f",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetContractCenter20261029",
+    "signature": "isReserveMigrationByBalance(address,uint256)",
+    "method": "isReserveMigrationByBalance_f6133690",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetContractCenter20261029",
+    "signature": "isReservesMigrated((address,uint256)[])",
+    "method": "isReservesMigrated_67170e3b",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetContractCenter20261029",
+    "signature": "markReserve((address,uint256))",
+    "method": "markReserve_35d49e07",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetContractCenter20261029",
+    "signature": "markReserves((address,uint256)[])",
+    "method": "markReserves_ab5d1856",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetContractCenter20261029",
+    "signature": "migrateReserves()",
+    "method": "migrateReserves_5c6e4897",
+    "mutability": "payable"
+  },
+  {
+    "profile": "TestnetContractCenter20261029",
+    "signature": "migrateReservesPage(uint256,uint256)",
+    "method": "migrateReservesPage_b15b5717",
+    "mutability": "payable"
+  },
+  {
+    "profile": "TestnetContractCenter20261029",
+    "signature": "migrateReservesPageWithSkipping(uint256,uint256,address[])",
+    "method": "migrateReservesPageWithSkipping_a1b1ef81",
+    "mutability": "payable"
+  },
+  {
+    "profile": "TestnetContractCenter20261029",
+    "signature": "owner()",
+    "method": "owner_3fc2bcdd",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetContractCenter20261029",
+    "signature": "renounceOwnership()",
+    "method": "renounceOwnership_2e0a1389",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetContractCenter20261029",
+    "signature": "setAddress(string,address)",
+    "method": "setAddress_8d14e404",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetContractCenter20261029",
+    "signature": "setContractAddress(string,address)",
+    "method": "setContractAddress_5a8a1d07",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetContractCenter20261029",
+    "signature": "setMigrating(bool)",
+    "method": "setMigrating_b42de450",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetContractCenter20261029",
+    "signature": "transferOwnership(address)",
+    "method": "transferOwnership_f1dcac99",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetContractCenter20261029",
+    "signature": "upgrade(address,bytes)",
+    "method": "upgrade_132856f5",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetMasterValidator20261029",
+    "signature": "addCandidate(address,string,(address,uint256))",
+    "method": "addCandidate_cdc53879",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetMasterValidator20261029",
+    "signature": "addCandidateDEL(address,string)",
+    "method": "addCandidateDEL_14176020",
+    "mutability": "payable"
+  },
+  {
+    "profile": "TestnetMasterValidator20261029",
+    "signature": "addPenalty(address,uint16)",
+    "method": "addPenalty_1e0d8079",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetMasterValidator20261029",
+    "signature": "addValidator(address,string,(address,uint256))",
+    "method": "addValidator_b78c6523",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetMasterValidator20261029",
+    "signature": "addValidatorDEL(address,string)",
+    "method": "addValidatorDEL_84b585cd",
+    "mutability": "payable"
+  },
+  {
+    "profile": "TestnetMasterValidator20261029",
+    "signature": "addValidators((address,string)[])",
+    "method": "addValidators_ff4afc0b",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetMasterValidator20261029",
+    "signature": "approveCandidates(address[])",
+    "method": "approveCandidates_137a3a21",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetMasterValidator20261029",
+    "signature": "clearRewardPerBlock()",
+    "method": "clearRewardPerBlock_af78de0c",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetMasterValidator20261029",
+    "signature": "getImpl()",
+    "method": "getImpl_fc0160fa",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetMasterValidator20261029",
+    "signature": "getRewardPerBlock()",
+    "method": "getRewardPerBlock_19d03f1a",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetMasterValidator20261029",
+    "signature": "getValidator(address)",
+    "method": "getValidator_a8df6df4",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetMasterValidator20261029",
+    "signature": "getValidatorPenalties(address)",
+    "method": "getValidatorPenalties_8c2ea922",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetMasterValidator20261029",
+    "signature": "getValidatorStatus(address)",
+    "method": "getValidatorStatus_156a61d1",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetMasterValidator20261029",
+    "signature": "isActive(address)",
+    "method": "isActive_4dda64b2",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetMasterValidator20261029",
+    "signature": "isMember(address)",
+    "method": "isMember_945bc63d",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetMasterValidator20261029",
+    "signature": "owner()",
+    "method": "owner_3fc2bcdd",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetMasterValidator20261029",
+    "signature": "pause()",
+    "method": "pause_2138ec0c",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetMasterValidator20261029",
+    "signature": "pauseSelf()",
+    "method": "pauseSelf_918c2142",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetMasterValidator20261029",
+    "signature": "pauseValidator(address)",
+    "method": "pauseValidator_4007efa7",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetMasterValidator20261029",
+    "signature": "paused()",
+    "method": "paused_5c0ff0ee",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetMasterValidator20261029",
+    "signature": "removeValidator(address)",
+    "method": "removeValidator_7756c00c",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetMasterValidator20261029",
+    "signature": "renounceOwnership()",
+    "method": "renounceOwnership_2e0a1389",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetMasterValidator20261029",
+    "signature": "setRewardPerBlock(uint256)",
+    "method": "setRewardPerBlock_693f8e5c",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetMasterValidator20261029",
+    "signature": "transferOwnership(address)",
+    "method": "transferOwnership_f1dcac99",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetMasterValidator20261029",
+    "signature": "unpause()",
+    "method": "unpause_8144711b",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetMasterValidator20261029",
+    "signature": "unpauseSelf()",
+    "method": "unpauseSelf_884b2def",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetMasterValidator20261029",
+    "signature": "unpauseValidator(address)",
+    "method": "unpauseValidator_f633b3f4",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetMasterValidator20261029",
+    "signature": "updateValidatorMeta(address,string)",
+    "method": "updateValidatorMeta_61c3c472",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetMasterValidator20261029",
+    "signature": "upgrade(address,bytes)",
+    "method": "upgrade_132856f5",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetNFTCenter20261029",
+    "signature": "beacon(uint8,bool)",
+    "method": "beacon_a1273954",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetNFTCenter20261029",
+    "signature": "checkToken(address)",
+    "method": "checkToken_3ab5ce5f",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetNFTCenter20261029",
+    "signature": "createAndMigrateBatch(((address,string,string,string,bool,bool),(string,uint256,string,bool),bytes,uint8,(address,uint256)[])[])",
+    "method": "createAndMigrateBatch_3d0c6fed",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetNFTCenter20261029",
+    "signature": "createCollectionDRC1155Migration(((address,string,string,string,bool,bool),(string,uint256,string,bool),bytes,uint8,(address,uint256)[]))",
+    "method": "createCollectionDRC1155Migration_4fa3792f",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetNFTCenter20261029",
+    "signature": "createCollectionDRC721Migration(((address,string,string,string,bool,bool),(string,uint256,string,bool),bytes,uint8,(address,uint256)[]))",
+    "method": "createCollectionDRC721Migration_eacb5a4f",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetNFTCenter20261029",
+    "signature": "createDRC1155((address,string,string,string,bool,bool))",
+    "method": "createDRC1155_361bd6f9",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetNFTCenter20261029",
+    "signature": "createDRC1155Reserveless((address,string,string,string,bool,bool))",
+    "method": "createDRC1155Reserveless_1a62e82c",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetNFTCenter20261029",
+    "signature": "createDRC721((address,string,string,string,bool,bool))",
+    "method": "createDRC721_10c82225",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetNFTCenter20261029",
+    "signature": "createDRC721Reserveless((address,string,string,string,bool,bool))",
+    "method": "createDRC721Reserveless_9b53e640",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetNFTCenter20261029",
+    "signature": "filterMigratedBalances(((string,uint256,string,bool),bytes,uint8,(address,uint256)[])[])",
+    "method": "filterMigratedBalances_a25d93c3",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetNFTCenter20261029",
+    "signature": "getContractCenter()",
+    "method": "getContractCenter_69bca3eb",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetNFTCenter20261029",
+    "signature": "getImpl()",
+    "method": "getImpl_fc0160fa",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetNFTCenter20261029",
+    "signature": "getNFTBySalt(bytes)",
+    "method": "getNFTBySalt_e684a10d",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetNFTCenter20261029",
+    "signature": "getNFTState(address)",
+    "method": "getNFTState_a3d6be2d",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetNFTCenter20261029",
+    "signature": "getNftBySalt(bytes)",
+    "method": "getNftBySalt_3d1bc608",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetNFTCenter20261029",
+    "signature": "getTokenBySymbol(string)",
+    "method": "getTokenBySymbol_ecc6e7ad",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetNFTCenter20261029",
+    "signature": "implementation(uint8,bool)",
+    "method": "implementation_c863660f",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetNFTCenter20261029",
+    "signature": "initialize()",
+    "method": "initialize_cf705883",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetNFTCenter20261029",
+    "signature": "isDecimal()",
+    "method": "isDecimal_7efdfd69",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetNFTCenter20261029",
+    "signature": "isMigrating()",
+    "method": "isMigrating_da3fecc9",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetNFTCenter20261029",
+    "signature": "owner()",
+    "method": "owner_3fc2bcdd",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetNFTCenter20261029",
+    "signature": "pause()",
+    "method": "pause_2138ec0c",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetNFTCenter20261029",
+    "signature": "paused()",
+    "method": "paused_5c0ff0ee",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetNFTCenter20261029",
+    "signature": "renounceOwnership()",
+    "method": "renounceOwnership_2e0a1389",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetNFTCenter20261029",
+    "signature": "setContractCenter(address)",
+    "method": "setContractCenter_cecbece4",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetNFTCenter20261029",
+    "signature": "transferOwnership(address)",
+    "method": "transferOwnership_f1dcac99",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetNFTCenter20261029",
+    "signature": "unpause()",
+    "method": "unpause_8144711b",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetNFTCenter20261029",
+    "signature": "upgrade(address,bytes)",
+    "method": "upgrade_132856f5",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetNFTCenter20261029",
+    "signature": "upgradeNFT(address,uint8,bool)",
+    "method": "upgradeNFT_23fb2be7",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "DOMAIN_SEPARATOR()",
+    "method": "DOMAIN_SEPARATOR_938df508",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "PERMIT_TYPEHASH()",
+    "method": "PERMIT_TYPEHASH_afb8417d",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "allowance(address,address)",
+    "method": "allowance_d864b7ca",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "approve(address,uint256)",
+    "method": "approve_9f0bb8a9",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "balanceOf(address)",
+    "method": "balanceOf_5b46f8f6",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "burn(uint256)",
+    "method": "burn_308dce5f",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "burnFrom(address,uint256)",
+    "method": "burnFrom_1646b13c",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "burnable()",
+    "method": "burnable_5e4957f6",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "cap()",
+    "method": "cap_3ecc0853",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "decimals()",
+    "method": "decimals_bb844440",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "eip712Domain()",
+    "method": "eip712Domain_18c03e44",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "identity()",
+    "method": "identity_db4a3e42",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "initialize(string,string,address,bool,bool,uint256,uint256,string)",
+    "method": "initialize_f5a51fdf",
+    "mutability": "payable"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "mint(address,uint256)",
+    "method": "mint_3950e061",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "mintable()",
+    "method": "mintable_b589dd5e",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "name()",
+    "method": "name_1581f81c",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "nonces(address)",
+    "method": "nonces_3d75dace",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "owner()",
+    "method": "owner_3fc2bcdd",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "permit(address,address,uint256,uint256,uint8,bytes32,bytes32)",
+    "method": "permit_c6c5ac5c",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "permitHash(address,address,uint256,uint256,uint256)",
+    "method": "permitHash_a7e7745e",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "renounceOwnership()",
+    "method": "renounceOwnership_2e0a1389",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "symbol()",
+    "method": "symbol_25967ca5",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "totalSupply()",
+    "method": "totalSupply_a368022e",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "transfer(address,uint256)",
+    "method": "transfer_3b88ef57",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "transferFrom(address,address,uint256)",
+    "method": "transferFrom_4b6685e7",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "transferOwnership(address)",
+    "method": "transferOwnership_f1dcac99",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetReservelessToken20261029",
+    "signature": "withCap()",
+    "method": "withCap_c2b4bd20",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "DOMAIN_SEPARATOR()",
+    "method": "DOMAIN_SEPARATOR_938df508",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "MAX_CRR()",
+    "method": "MAX_CRR_10a84436",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "MAX_TOTAL_SUPPLY()",
+    "method": "MAX_TOTAL_SUPPLY_f3c7ba70",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "MIN_CRR()",
+    "method": "MIN_CRR_cca74325",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "MIN_INITIAL_MINT()",
+    "method": "MIN_INITIAL_MINT_6990cfc2",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "MIN_RESERVE()",
+    "method": "MIN_RESERVE_a38c31df",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "MIN_TOTAL_SUPPLY()",
+    "method": "MIN_TOTAL_SUPPLY_02b6a4da",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "PERMIT_TYPEHASH()",
+    "method": "PERMIT_TYPEHASH_afb8417d",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "allowance(address,address)",
+    "method": "allowance_d864b7ca",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "approve(address,uint256)",
+    "method": "approve_9f0bb8a9",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "balanceOf(address)",
+    "method": "balanceOf_5b46f8f6",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "burn(uint256)",
+    "method": "burn_308dce5f",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "buy(uint256,address)",
+    "method": "buy_a5b98b17",
+    "mutability": "payable"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "buyExactTokenForDEL(uint256,address)",
+    "method": "buyExactTokenForDEL_16dfd027",
+    "mutability": "payable"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "buyTokenForExactDEL(uint256,address)",
+    "method": "buyTokenForExactDEL_637814aa",
+    "mutability": "payable"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "calculateBuyInput(uint256,uint256,uint256,uint256)",
+    "method": "calculateBuyInput_b0131551",
+    "mutability": "pure"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "calculateBuyInput(uint256)",
+    "method": "calculateBuyInput_00e8c110",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "calculateBuyInputBefore(uint256,uint256)",
+    "method": "calculateBuyInputBefore_0e6842c9",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "calculateBuyOutput(uint256,uint256,uint256,uint256)",
+    "method": "calculateBuyOutput_7a67108a",
+    "mutability": "pure"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "calculateBuyOutput(uint256)",
+    "method": "calculateBuyOutput_095bb7df",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "calculateBuyOutputBefore(uint256)",
+    "method": "calculateBuyOutputBefore_58f4008d",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "calculateSellInput(uint256,uint256,uint256,uint256)",
+    "method": "calculateSellInput_ad8e466b",
+    "mutability": "pure"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "calculateSellInput(uint256)",
+    "method": "calculateSellInput_9791c88c",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "calculateSellOutput(uint256,uint256,uint256,uint256)",
+    "method": "calculateSellOutput_d4a33917",
+    "mutability": "pure"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "calculateSellOutput(uint256)",
+    "method": "calculateSellOutput_5f92b4b2",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "creator()",
+    "method": "creator_1c2bc0d9",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "crr()",
+    "method": "crr_98a0f895",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "decimals()",
+    "method": "decimals_bb844440",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "eip712Domain()",
+    "method": "eip712Domain_18c03e44",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "getCurrentPrice()",
+    "method": "getCurrentPrice_cb5a7aa6",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "identity()",
+    "method": "identity_db4a3e42",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "initialize(string,string,address,uint8,uint256,uint256,uint256,string)",
+    "method": "initialize_b82ea6b8",
+    "mutability": "payable"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "maxTotalSupply()",
+    "method": "maxTotalSupply_6e0f2263",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "minTotalSupply()",
+    "method": "minTotalSupply_25c7f2dd",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "name()",
+    "method": "name_1581f81c",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "nonces(address)",
+    "method": "nonces_3d75dace",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "permit(address,address,uint256,uint256,uint8,bytes32,bytes32)",
+    "method": "permit_c6c5ac5c",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "permitHash(address,address,uint256,uint256,uint256)",
+    "method": "permitHash_a7e7745e",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "reserve()",
+    "method": "reserve_606ad618",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "sell(uint256,uint256,address)",
+    "method": "sell_024d6d90",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "sellExactTokensForDEL(uint256,uint256,address)",
+    "method": "sellExactTokensForDEL_1ea83d04",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "sellTokensForExactDEL(uint256,uint256,address)",
+    "method": "sellTokensForExactDEL_628377ec",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "symbol()",
+    "method": "symbol_25967ca5",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "totalSupply()",
+    "method": "totalSupply_a368022e",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "transfer(address,uint256)",
+    "method": "transfer_3b88ef57",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "transferFrom(address,address,uint256)",
+    "method": "transferFrom_4b6685e7",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "updateIdentity(string)",
+    "method": "updateIdentity_d625f3cb",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "updateMaxTotalSupply(uint256)",
+    "method": "updateMaxTotalSupply_9f6dd4a4",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetReserveToken20261029",
+    "signature": "updateMinTotalSupply(uint256)",
+    "method": "updateMinTotalSupply_516c8b43",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetSafe20261029",
+    "signature": "VERSION()",
+    "method": "VERSION_dbe8d8c5",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetSafe20261029",
+    "signature": "addOwnerWithThreshold((address,uint256),uint256)",
+    "method": "addOwnerWithThreshold_a429de5f",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetSafe20261029",
+    "signature": "approveHash((address,uint256,bytes,uint8,uint256,uint256,uint256,address,address,uint256))",
+    "method": "approveHash_deda133f",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetSafe20261029",
+    "signature": "approvedHashes(address,bytes32)",
+    "method": "approvedHashes_5fbd1c2d",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetSafe20261029",
+    "signature": "changeWeightThreshold(uint256)",
+    "method": "changeWeightThreshold_e68964bd",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetSafe20261029",
+    "signature": "checkNSignatures(bytes32,bytes,bytes,uint256)",
+    "method": "checkNSignatures_21d9dffd",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetSafe20261029",
+    "signature": "checkNSignatures(address,bytes32,bytes,uint256)",
+    "method": "checkNSignatures_9fffada6",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetSafe20261029",
+    "signature": "checkSignatures(bytes32,bytes,bytes)",
+    "method": "checkSignatures_ffdf4fc3",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetSafe20261029",
+    "signature": "checkSignatures(bytes32,bytes)",
+    "method": "checkSignatures_adc2aad4",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetSafe20261029",
+    "signature": "disableModule(address,address)",
+    "method": "disableModule_b5053170",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetSafe20261029",
+    "signature": "domainSeparator()",
+    "method": "domainSeparator_f1bf80e0",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetSafe20261029",
+    "signature": "enableModule(address)",
+    "method": "enableModule_cd2b762e",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetSafe20261029",
+    "signature": "execTransaction(address,uint256,bytes,uint8,uint256,uint256,uint256,address,address,bytes)",
+    "method": "execTransaction_0b0d5636",
+    "mutability": "payable"
+  },
+  {
+    "profile": "TestnetSafe20261029",
+    "signature": "execTransactionFromModule(address,uint256,bytes,uint8)",
+    "method": "execTransactionFromModule_9ae57688",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetSafe20261029",
+    "signature": "execTransactionFromModuleReturnData(address,uint256,bytes,uint8)",
+    "method": "execTransactionFromModuleReturnData_c3dcbde8",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetSafe20261029",
+    "signature": "getModulesPaginated(address,uint256)",
+    "method": "getModulesPaginated_f098fe40",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetSafe20261029",
+    "signature": "getOwners()",
+    "method": "getOwners_a6182b55",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetSafe20261029",
+    "signature": "getOwnersWithWeights()",
+    "method": "getOwnersWithWeights_e023adfb",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetSafe20261029",
+    "signature": "getStorageAt(uint256,uint256)",
+    "method": "getStorageAt_c80397ac",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetSafe20261029",
+    "signature": "getTotalWeight()",
+    "method": "getTotalWeight_5d9d40a0",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetSafe20261029",
+    "signature": "getTransactionHash(address,uint256,bytes,uint8,uint256,uint256,uint256,address,address,uint256)",
+    "method": "getTransactionHash_37971489",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetSafe20261029",
+    "signature": "getWeightThreshold()",
+    "method": "getWeightThreshold_c5281534",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetSafe20261029",
+    "signature": "isModuleEnabled(address)",
+    "method": "isModuleEnabled_bb785396",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetSafe20261029",
+    "signature": "isOwner(address)",
+    "method": "isOwner_0b492fae",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetSafe20261029",
+    "signature": "nonce()",
+    "method": "nonce_9a4ba616",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetSafe20261029",
+    "signature": "removeOwner(address,address,uint256)",
+    "method": "removeOwner_2f8c8b1e",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetSafe20261029",
+    "signature": "setFallbackHandler(address)",
+    "method": "setFallbackHandler_e23517b4",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetSafe20261029",
+    "signature": "setGuard(address)",
+    "method": "setGuard_c5f0e25e",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetSafe20261029",
+    "signature": "setModuleGuard(address)",
+    "method": "setModuleGuard_edc70e92",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetSafe20261029",
+    "signature": "setup((address,uint256)[],uint256,address,bytes,address,address,uint256,address)",
+    "method": "setup_e36ce898",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetSafe20261029",
+    "signature": "signedMessages(bytes32)",
+    "method": "signedMessages_df536baa",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetSafe20261029",
+    "signature": "simulateAndRevert(address,bytes)",
+    "method": "simulateAndRevert_05f8814c",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetSafe20261029",
+    "signature": "swapOwner(address,address,address)",
+    "method": "swapOwner_7e3ee7af",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetSafeFactory20261029",
+    "signature": "createChainSpecificProxyWithNonce(address,bytes,uint256)",
+    "method": "createChainSpecificProxyWithNonce_11f36182",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetSafeFactory20261029",
+    "signature": "createProxyWithCallback(address,bytes,uint256,address)",
+    "method": "createProxyWithCallback_2ab87cec",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetSafeFactory20261029",
+    "signature": "createProxyWithNonce(address,bytes,uint256)",
+    "method": "createProxyWithNonce_d152469d",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetSafeFactory20261029",
+    "signature": "getChainId()",
+    "method": "getChainId_1f854153",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetSafeFactory20261029",
+    "signature": "proxyCreationCode()",
+    "method": "proxyCreationCode_e798cdc2",
+    "mutability": "pure"
+  },
+  {
+    "profile": "TestnetSafeMultiSend20261029",
+    "signature": "multiSend(bytes)",
+    "method": "multiSend_cba4d91a",
+    "mutability": "payable"
+  },
+  {
+    "profile": "TestnetTokenCenter20261029",
+    "signature": "calculateBuyInput(uint256,uint256,uint256,uint256)",
+    "method": "calculateBuyInput_b0131551",
+    "mutability": "pure"
+  },
+  {
+    "profile": "TestnetTokenCenter20261029",
+    "signature": "calculateBuyOutput(uint256,uint256,uint256,uint256)",
+    "method": "calculateBuyOutput_7a67108a",
+    "mutability": "pure"
+  },
+  {
+    "profile": "TestnetTokenCenter20261029",
+    "signature": "calculateSellInput(uint256,uint256,uint256,uint256)",
+    "method": "calculateSellInput_ad8e466b",
+    "mutability": "pure"
+  },
+  {
+    "profile": "TestnetTokenCenter20261029",
+    "signature": "calculateSellOutput(uint256,uint256,uint256,uint256)",
+    "method": "calculateSellOutput_d4a33917",
+    "mutability": "pure"
+  },
+  {
+    "profile": "TestnetTokenCenter20261029",
+    "signature": "convert(address,address,uint256,uint256,address)",
+    "method": "convert_5b2597b2",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetTokenCenter20261029",
+    "signature": "convert(address,address,uint256,uint256,address,uint256,uint8,bytes32,bytes32)",
+    "method": "convert_129631f1",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetTokenCenter20261029",
+    "signature": "createToken((uint256,uint256,uint256,address,uint8,string,string,string))",
+    "method": "createToken_91a97727",
+    "mutability": "payable"
+  },
+  {
+    "profile": "TestnetTokenCenter20261029",
+    "signature": "createTokenReserveless(string,string,bool,bool,uint256,uint256,string)",
+    "method": "createTokenReserveless_143072b2",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetTokenCenter20261029",
+    "signature": "getCommissionSymbol(string)",
+    "method": "getCommissionSymbol_9a413d00",
+    "mutability": "pure"
+  },
+  {
+    "profile": "TestnetTokenCenter20261029",
+    "signature": "getContractCenter()",
+    "method": "getContractCenter_69bca3eb",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetTokenCenter20261029",
+    "signature": "getImpl()",
+    "method": "getImpl_fc0160fa",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetTokenCenter20261029",
+    "signature": "implementation()",
+    "method": "implementation_9fc9e0bd",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetTokenCenter20261029",
+    "signature": "implementationReserveless()",
+    "method": "implementationReserveless_1c96fdfd",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetTokenCenter20261029",
+    "signature": "initialize()",
+    "method": "initialize_cf705883",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetTokenCenter20261029",
+    "signature": "isTokenExists(address)",
+    "method": "isTokenExists_5397fcfc",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetTokenCenter20261029",
+    "signature": "owner()",
+    "method": "owner_3fc2bcdd",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetTokenCenter20261029",
+    "signature": "pause()",
+    "method": "pause_2138ec0c",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetTokenCenter20261029",
+    "signature": "paused()",
+    "method": "paused_5c0ff0ee",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetTokenCenter20261029",
+    "signature": "predict(address,bytes32,bytes)",
+    "method": "predict_99709a90",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetTokenCenter20261029",
+    "signature": "renounceOwnership()",
+    "method": "renounceOwnership_2e0a1389",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetTokenCenter20261029",
+    "signature": "setContractCenter(address)",
+    "method": "setContractCenter_cecbece4",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetTokenCenter20261029",
+    "signature": "tokens(string)",
+    "method": "tokens_719893ad",
+    "mutability": "view"
+  },
+  {
+    "profile": "TestnetTokenCenter20261029",
+    "signature": "transferOwnership(address)",
+    "method": "transferOwnership_f1dcac99",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetTokenCenter20261029",
+    "signature": "unpause()",
+    "method": "unpause_8144711b",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetTokenCenter20261029",
+    "signature": "upgrade(address,bytes)",
+    "method": "upgrade_132856f5",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetTokenCenter20261029",
+    "signature": "upgradeToken(address)",
+    "method": "upgradeToken_04602fc3",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TestnetTokenCenter20261029",
+    "signature": "upgradeTokenReserveless(address)",
+    "method": "upgradeTokenReserveless_e4a3e13a",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Token",
+    "signature": "CREATOR_ROLE()",
+    "method": "CREATOR_ROLE_e4198641",
+    "mutability": "view"
+  },
+  {
+    "profile": "Token",
+    "signature": "DOMAIN_SEPARATOR()",
+    "method": "DOMAIN_SEPARATOR_938df508",
+    "mutability": "view"
+  },
+  {
+    "profile": "Token",
+    "signature": "MAX_CRR()",
+    "method": "MAX_CRR_10a84436",
+    "mutability": "view"
+  },
+  {
+    "profile": "Token",
+    "signature": "MAX_TOTAL_SUPPLY()",
+    "method": "MAX_TOTAL_SUPPLY_f3c7ba70",
+    "mutability": "view"
+  },
+  {
+    "profile": "Token",
+    "signature": "MIN_CRR()",
+    "method": "MIN_CRR_cca74325",
+    "mutability": "view"
+  },
+  {
+    "profile": "Token",
+    "signature": "MIN_RESERVE()",
+    "method": "MIN_RESERVE_a38c31df",
+    "mutability": "view"
+  },
+  {
+    "profile": "Token",
+    "signature": "MIN_TOTAL_SUPPLY()",
+    "method": "MIN_TOTAL_SUPPLY_02b6a4da",
+    "mutability": "view"
+  },
+  {
+    "profile": "Token",
+    "signature": "PERMIT_TYPEHASH()",
+    "method": "PERMIT_TYPEHASH_afb8417d",
+    "mutability": "view"
+  },
+  {
+    "profile": "Token",
+    "signature": "allowance(address,address)",
+    "method": "allowance_d864b7ca",
+    "mutability": "view"
+  },
+  {
+    "profile": "Token",
+    "signature": "approve(address,uint256)",
+    "method": "approve_9f0bb8a9",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Token",
+    "signature": "balanceOf(address)",
+    "method": "balanceOf_5b46f8f6",
+    "mutability": "view"
+  },
+  {
+    "profile": "Token",
+    "signature": "burn(uint256)",
+    "method": "burn_308dce5f",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Token",
+    "signature": "buy(uint256,address)",
+    "method": "buy_a5b98b17",
+    "mutability": "payable"
+  },
+  {
+    "profile": "Token",
+    "signature": "buyExactTokenForDEL(uint256,address)",
+    "method": "buyExactTokenForDEL_16dfd027",
+    "mutability": "payable"
+  },
+  {
+    "profile": "Token",
+    "signature": "buyTokenForExactDEL(uint256,address)",
+    "method": "buyTokenForExactDEL_637814aa",
+    "mutability": "payable"
+  },
+  {
+    "profile": "Token",
+    "signature": "calculateBuyInput(uint256,uint256,uint256,uint256)",
+    "method": "calculateBuyInput_b0131551",
+    "mutability": "pure"
+  },
+  {
+    "profile": "Token",
+    "signature": "calculateBuyInput(uint256)",
+    "method": "calculateBuyInput_00e8c110",
+    "mutability": "view"
+  },
+  {
+    "profile": "Token",
+    "signature": "calculateBuyOutput(uint256,uint256,uint256,uint256)",
+    "method": "calculateBuyOutput_7a67108a",
+    "mutability": "pure"
+  },
+  {
+    "profile": "Token",
+    "signature": "calculateBuyOutput(uint256)",
+    "method": "calculateBuyOutput_095bb7df",
+    "mutability": "view"
+  },
+  {
+    "profile": "Token",
+    "signature": "calculateSellInput(uint256,uint256,uint256,uint256)",
+    "method": "calculateSellInput_ad8e466b",
+    "mutability": "pure"
+  },
+  {
+    "profile": "Token",
+    "signature": "calculateSellInput(uint256)",
+    "method": "calculateSellInput_9791c88c",
+    "mutability": "view"
+  },
+  {
+    "profile": "Token",
+    "signature": "calculateSellOutput(uint256,uint256,uint256,uint256)",
+    "method": "calculateSellOutput_d4a33917",
+    "mutability": "pure"
+  },
+  {
+    "profile": "Token",
+    "signature": "calculateSellOutput(uint256)",
+    "method": "calculateSellOutput_5f92b4b2",
+    "mutability": "view"
+  },
+  {
+    "profile": "Token",
+    "signature": "creator()",
+    "method": "creator_1c2bc0d9",
+    "mutability": "view"
+  },
+  {
+    "profile": "Token",
+    "signature": "crr()",
+    "method": "crr_98a0f895",
+    "mutability": "view"
+  },
+  {
+    "profile": "Token",
+    "signature": "decimals()",
+    "method": "decimals_bb844440",
+    "mutability": "view"
+  },
+  {
+    "profile": "Token",
+    "signature": "eip712Domain()",
+    "method": "eip712Domain_18c03e44",
+    "mutability": "view"
+  },
+  {
+    "profile": "Token",
+    "signature": "getCurrentPrice()",
+    "method": "getCurrentPrice_cb5a7aa6",
+    "mutability": "view"
+  },
+  {
+    "profile": "Token",
+    "signature": "identity()",
+    "method": "identity_db4a3e42",
+    "mutability": "view"
+  },
+  {
+    "profile": "Token",
+    "signature": "initialize(string,string,address,uint8,uint256,uint256,uint256,string)",
+    "method": "initialize_b82ea6b8",
+    "mutability": "payable"
+  },
+  {
+    "profile": "Token",
+    "signature": "maxTotalSupply()",
+    "method": "maxTotalSupply_6e0f2263",
+    "mutability": "view"
+  },
+  {
+    "profile": "Token",
+    "signature": "minTotalSupply()",
+    "method": "minTotalSupply_25c7f2dd",
+    "mutability": "view"
+  },
+  {
+    "profile": "Token",
+    "signature": "name()",
+    "method": "name_1581f81c",
+    "mutability": "view"
+  },
+  {
+    "profile": "Token",
+    "signature": "nonces(address)",
+    "method": "nonces_3d75dace",
+    "mutability": "view"
+  },
+  {
+    "profile": "Token",
+    "signature": "permit(address,address,uint256,uint256,uint8,bytes32,bytes32)",
+    "method": "permit_c6c5ac5c",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Token",
+    "signature": "permitHash(address,address,uint256,uint256,uint256)",
+    "method": "permitHash_a7e7745e",
+    "mutability": "view"
+  },
+  {
+    "profile": "Token",
+    "signature": "reserve()",
+    "method": "reserve_606ad618",
+    "mutability": "view"
+  },
+  {
+    "profile": "Token",
+    "signature": "sell(uint256,uint256,address)",
+    "method": "sell_024d6d90",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Token",
+    "signature": "sellExactTokensForDEL(uint256,uint256,address)",
+    "method": "sellExactTokensForDEL_1ea83d04",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Token",
+    "signature": "sellTokensForExactDEL(uint256,uint256,address)",
+    "method": "sellTokensForExactDEL_628377ec",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Token",
+    "signature": "symbol()",
+    "method": "symbol_25967ca5",
+    "mutability": "view"
+  },
+  {
+    "profile": "Token",
+    "signature": "totalSupply()",
+    "method": "totalSupply_a368022e",
+    "mutability": "view"
+  },
+  {
+    "profile": "Token",
+    "signature": "transfer(address,uint256)",
+    "method": "transfer_3b88ef57",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Token",
+    "signature": "transferFrom(address,address,uint256)",
+    "method": "transferFrom_4b6685e7",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Token",
+    "signature": "updateDetails(string,uint256)",
+    "method": "updateDetails_431cc129",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TokenCenter",
+    "signature": "calculateBuyInput(uint256,uint256,uint256,uint256)",
+    "method": "calculateBuyInput_b0131551",
+    "mutability": "pure"
+  },
+  {
+    "profile": "TokenCenter",
+    "signature": "calculateBuyOutput(uint256,uint256,uint256,uint256)",
+    "method": "calculateBuyOutput_7a67108a",
+    "mutability": "pure"
+  },
+  {
+    "profile": "TokenCenter",
+    "signature": "calculateSellInput(uint256,uint256,uint256,uint256)",
+    "method": "calculateSellInput_ad8e466b",
+    "mutability": "pure"
+  },
+  {
+    "profile": "TokenCenter",
+    "signature": "calculateSellOutput(uint256,uint256,uint256,uint256)",
+    "method": "calculateSellOutput_d4a33917",
+    "mutability": "pure"
+  },
+  {
+    "profile": "TokenCenter",
+    "signature": "convert(address,address,uint256,uint256,address)",
+    "method": "convert_5b2597b2",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TokenCenter",
+    "signature": "convert(address,address,uint256,uint256,address,uint256,uint8,bytes32,bytes32)",
+    "method": "convert_129631f1",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TokenCenter",
+    "signature": "createToken((uint256,uint256,uint256,address,uint8,string,string,string))",
+    "method": "createToken_91a97727",
+    "mutability": "payable"
+  },
+  {
+    "profile": "TokenCenter",
+    "signature": "createTokenReserveless(string,string,bool,bool,uint256,uint256,string)",
+    "method": "createTokenReserveless_143072b2",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TokenCenter",
+    "signature": "getCommissionSymbol(string)",
+    "method": "getCommissionSymbol_9a413d00",
+    "mutability": "pure"
+  },
+  {
+    "profile": "TokenCenter",
+    "signature": "getContractCenter()",
+    "method": "getContractCenter_69bca3eb",
+    "mutability": "view"
+  },
+  {
+    "profile": "TokenCenter",
+    "signature": "getImpl()",
+    "method": "getImpl_fc0160fa",
+    "mutability": "view"
+  },
+  {
+    "profile": "TokenCenter",
+    "signature": "implementation()",
+    "method": "implementation_9fc9e0bd",
+    "mutability": "view"
+  },
+  {
+    "profile": "TokenCenter",
+    "signature": "implementationReserveless()",
+    "method": "implementationReserveless_1c96fdfd",
+    "mutability": "view"
+  },
+  {
+    "profile": "TokenCenter",
+    "signature": "initialize()",
+    "method": "initialize_cf705883",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TokenCenter",
+    "signature": "isTokenExists(address)",
+    "method": "isTokenExists_5397fcfc",
+    "mutability": "view"
+  },
+  {
+    "profile": "TokenCenter",
+    "signature": "owner()",
+    "method": "owner_3fc2bcdd",
+    "mutability": "view"
+  },
+  {
+    "profile": "TokenCenter",
+    "signature": "pause()",
+    "method": "pause_2138ec0c",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TokenCenter",
+    "signature": "paused()",
+    "method": "paused_5c0ff0ee",
+    "mutability": "view"
+  },
+  {
+    "profile": "TokenCenter",
+    "signature": "predict(address,bytes32,bytes)",
+    "method": "predict_99709a90",
+    "mutability": "view"
+  },
+  {
+    "profile": "TokenCenter",
+    "signature": "renounceOwnership()",
+    "method": "renounceOwnership_2e0a1389",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TokenCenter",
+    "signature": "setContractCenter(address)",
+    "method": "setContractCenter_cecbece4",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TokenCenter",
+    "signature": "tokens(string)",
+    "method": "tokens_719893ad",
+    "mutability": "view"
+  },
+  {
+    "profile": "TokenCenter",
+    "signature": "transferOwnership(address)",
+    "method": "transferOwnership_f1dcac99",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TokenCenter",
+    "signature": "unpause()",
+    "method": "unpause_8144711b",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TokenCenter",
+    "signature": "upgrade(address,bytes)",
+    "method": "upgrade_132856f5",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TokenCenter",
+    "signature": "upgradeToken(address)",
+    "method": "upgradeToken_04602fc3",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "TokenCenter",
+    "signature": "upgradeTokenReserveless(address)",
+    "method": "upgradeTokenReserveless_e4a3e13a",
+    "mutability": "nonpayable"
+  }
+]

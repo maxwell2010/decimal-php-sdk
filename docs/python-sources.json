@@ -1,0 +1,32 @@
+[
+  {
+    "path": "src/decimal_web3_sdk/bridge.py",
+    "sha256": "5c7584c470287604dba7785405eb5c4820dec91ee6eb6dbef5385c01c735ad18",
+    "repository": "https://github.com/maxwell2010/decimal-web3-sdk",
+    "note": "Local reference snapshot; working tree may include unreleased changes"
+  },
+  {
+    "path": "src/decimal_web3_sdk/checks.py",
+    "sha256": "f484a50a5bd98908bbd0583c6233771aa09ac07106c86d6ffb9fcdcd1fa63b45",
+    "repository": "https://github.com/maxwell2010/decimal-web3-sdk",
+    "note": "Local reference snapshot; working tree may include unreleased changes"
+  },
+  {
+    "path": "src/decimal_web3_sdk/erc20.py",
+    "sha256": "b167b64ba701eac17d9c6161c8f711a47c97dfb5e9120ee0bab05146af310e4f",
+    "repository": "https://github.com/maxwell2010/decimal-web3-sdk",
+    "note": "Local reference snapshot; working tree may include unreleased changes"
+  },
+  {
+    "path": "src/decimal_web3_sdk/contracts.py",
+    "sha256": "a9234ac843f723bc6441d37239fff78756d3b6078b311d8df0fc53525f96c82d",
+    "repository": "https://github.com/maxwell2010/decimal-web3-sdk",
+    "note": "Local reference snapshot; working tree may include unreleased changes"
+  },
+  {
+    "path": "src/decimal_web3_sdk/nft.py",
+    "sha256": "decd239dd77803149a706f6e5177bd10b2d86ad7d7d06ae358b939e044efbb3f",
+    "repository": "https://github.com/maxwell2010/decimal-web3-sdk",
+    "note": "Local reference snapshot; working tree may include unreleased changes"
+  }
+]
