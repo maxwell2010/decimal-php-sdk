@@ -39,11 +39,11 @@ def main():
         elif candidate.suffix.lower()=='.phar':command=php+[str(candidate)]
         else:command=[composer]
     else:raise RuntimeError('Composer required')
-    env=dict(os.environ,COMPOSER_MAX_PARALLEL_HTTP='1',COMPOSER_NO_INTERACTION='1')
+    env=dict(os.environ,COMPOSER_MAX_PARALLEL_HTTP='1',COMPOSER_IPRESOLVE='4',COMPOSER_NO_INTERACTION='1',COMPOSER_NO_AUDIT='1')
     try:
         with tempfile.TemporaryDirectory(prefix='decimal-install-') as tmp:
             destination=Path(tmp)/'sdk'
-            run=subprocess.run(command+['create-project','--repository='+base+'/packages.json','--no-secure-http','--prefer-dist','--no-interaction','mintcandy/decimal-web3-sdk',str(destination)],env=env,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))
+            run=subprocess.run(command+['create-project','--repository='+base+'/packages.json','--no-secure-http','--prefer-dist','--no-interaction','mintcandy/decimal-web3-sdk',str(destination)],env=env,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=180,creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))
             if run.returncode:raise RuntimeError(run.stdout[-10000:])
             assert (destination/'vendor/autoload.php').is_file()
             assert (destination/'VERSION').read_text().strip()==release.VERSION
