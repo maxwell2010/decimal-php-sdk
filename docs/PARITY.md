@@ -1,6 +1,6 @@
 # SDK coverage and compatibility
 
-Release 0.1.4 covers the source-evidenced SDK interfaces listed below. ABI bindings, complete guarded workflows, stateless node validation and live execution are separate evidence levels. Function/schema counts are not a parity percentage or distinct transaction count.
+Release 0.1.5 covers the source-evidenced SDK interfaces listed below. ABI bindings, complete guarded workflows, stateless node validation and live execution are separate evidence levels. Function/schema counts are not a parity percentage or distinct transaction count.
 
 | Area | Released implementation and checks | Boundary |
 | --- | --- | --- |
@@ -38,3 +38,5 @@ Additional Go/C# quote/read/permit/management/receipt/DTO mappings are documente
 Earlier fixes remain included: [0.1.1 audit](FINAL_AUDIT_0_1_1.md) and [0.1.2 staking upgrade](STAKING_COMPATIBILITY_0_1_2.md). Network execution/settlement acceptance remains distinct from source/API parity; no transactions were submitted.
 
 Current recovery-014 request variants and explicit current/raw factory routing are recorded in [CURRENT_PARITY_0_1_4.md](CURRENT_PARITY_0_1_4.md). Current token/NFT factories, additional staking/validator requests, legacy NFT reset/read methods, result refresh and non-atomic sequence execution are included. Source hashes and independent regression fixtures accompany the domain reports.
+
+The [0.1.5 live RPC audit](LIVE_RPC_AUDIT_0_1_5.md) validates actual mainnet/testnet reads and eth_call separately from offline source/API parity. Deployment coverage limits remain explicit; no blockchain transaction was submitted.

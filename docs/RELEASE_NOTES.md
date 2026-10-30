@@ -1,24 +1,19 @@
-# Decimal PHP SDK v0.1.4
+# Decimal PHP SDK v0.1.5
 
-Source/API parity release covering the original matrix and the current recovery-014 Python request profiles, independently implemented and cross-reviewed against Go/Python/C#. No blockchain transactions or deployments were submitted. Explicit legacy/raw APIs and original position addresses remain available.
+Read-only mainnet/testnet validation and RPC transport diagnostics patch. No blockchain transactions, actual approvals, signing or deployments were performed.
 
-## Added
+## Fixed
 
-- Current token/NFT factories, testnet fee/symbol/reserve rules, checked NFT mint/delegate permits and whole-position exits, structured validator metadata and additional legacy/reset/completion requests.
-- Fee budget/actual fee aliases, transaction refresh without resending, checks signer/hash helpers and confirmed non-atomic sequence execution with state refresh.
+RPC failures now preserve cURL errno/error, HTTP status and response-limit details in RpcTransportException::rpcData. A TLS failure no longer appears as an unexplained status 0. TLS verification, read failover and write retry policy are unchanged.
 
-- Close all 55 entries of the operation matrix: 54 named request workflows and one intentional rejection of unsafe generic Multicall ERC20 allowance, with verified RestrictedMultisend retained.
-- ERC20 and token economy services, reserve state/quotes, exact-input/output trades, creation fees, approval/reset/permit plans and creation reports.
-- Staking/reset/transfer/withdraw services, validator reads/management, pinned snapshots, frozen records and withdrawal receipts.
-- NFT collection/mint/reserve/batch/stake/exit APIs, ordered movement/URI reports and distinct unified NFTStake10 reads.
-- ERC20/DRC721/DRC1155 external permit preparation and signature/domain/nonce/owner validation.
-- Bridge/checks services, common TransactionPlan/TransactionExecutor, fee quotes, registry snapshots and portable transaction/receipt reports.
+## Verified
 
-## Validation
+- 429 recorded guarded RPC attempts and 159 passed checks across mainnet/testnet.
+- Active Stake8, validator/state/quote/NFT/Checks reads, legacy getter selection, actual historical receipt and event decoding.
+- Nonpersistent zero-value ERC20 approve/transfer eth_call successes and expected over-balance reverts.
+- 7947 offline checks, recorded response replays and loopback transport diagnostics. CI gates publication on PHP 8.2-8.5 and Linux/Windows/macOS.
 
-7872 offline checks, independent calldata/digest fixtures, injected approval/cancellation/error sequences and installed-package tests. Publication is gated on Linux, Windows and macOS with PHP 8.2-8.5. Composer audit is a required independent check. Stake7/8, old/new events, original legacy exits and explicit unified NFT deposits remain supported.
-
-[Parity acceptance and evidence](https://github.com/maxwell2010/decimal-php-sdk/blob/main/docs/CURRENT_PARITY_0_1_4.md) links the complete matrix and domain reports. The acceptance scope is source/API behavior. Mutable roles/balances, funded lifecycle execution and cross-chain settlement require separate application acceptance.
+[Live audit and captured evidence](https://github.com/maxwell2010/decimal-php-sdk/blob/main/docs/LIVE_RPC_AUDIT_0_1_5.md) records block snapshots, actual coverage and limits. Missing bridge registry targets and unsupported optional legacy views remain explicit; a funded NFT lifecycle or bridge settlement is not claimed.
 
 ## Install the latest stable release
 
@@ -26,23 +21,15 @@ Source/API parity release covering the original matrix and the current recovery-
 composer create-project --repository=https://github.com/maxwell2010/decimal-php-sdk/releases/latest/download/packages.json mintcandy/decimal-web3-sdk decimal-php-sdk
 ```
 
-Composer 2, PHP 8.2+ and curl/bcmath/gmp/mbstring are required; ZIP extraction needs PHP zip or unzip/7z. The command creates a new directory. Existing lockfiles remain pinned until explicitly updated.
-
-## Offline example
+Composer 2, PHP 8.2+ and curl/bcmath/gmp/mbstring are required; ZIP extraction needs PHP zip or unzip/7z. Configure a trusted curl.cainfo bundle when your PHP installation lacks CA trust. Do not disable TLS verification.
 
 ```php
 require 'vendor/autoload.php';
 
-$client = new Decimal\Client(Decimal\Network::testnet());
-$bridge = new Decimal\BridgeService($client, '0x3333333333333333333333333333333333333333');
-$draft = $bridge->transferNative(
-    '0x1111111111111111111111111111111111111111',
-    '0x2222222222222222222222222222222222222222',
-    '1000000000000000000', '1000', '75', '42'
-);
-echo json_encode($draft->rpc()); // Encoding only; no RPC or broadcast.
+$client = new Decimal\Client(Decimal\Network::mainnet());
+$client->verifyChain();
+$contracts = $client->resolveSystemContracts(); // Read-only, pinned registry snapshot.
+echo json_encode($contracts);
 ```
 
-Addresses above are placeholders. See examples/parity-offline.php and docs/EXAMPLES.md for service planning and common execution.
-
-[Permanent ZIP](https://github.com/maxwell2010/decimal-php-sdk/releases/latest/download/decimal-php-sdk.zip) and [SHA256SUMS](https://github.com/maxwell2010/decimal-php-sdk/releases/latest/download/SHA256SUMS) follow the latest stable release. Versioned ZIP, alias ZIP, packages.json and SHA256SUMS are attached. Existing release assets remain immutable.
+[Permanent ZIP](https://github.com/maxwell2010/decimal-php-sdk/releases/latest/download/decimal-php-sdk.zip) and [SHA256SUMS](https://github.com/maxwell2010/decimal-php-sdk/releases/latest/download/SHA256SUMS) follow the latest stable release. Versioned ZIP, alias ZIP, packages.json and SHA256SUMS are attached. Prior versioned assets remain immutable.

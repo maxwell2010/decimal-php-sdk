@@ -1,0 +1,1692 @@
+{
+    "audit": "NFT mainnet/testnet real read acceptance",
+    "sdk_version": "0.1.4",
+    "checked_utc": "2026-10-30T06:27:59+00:00",
+    "policy": "read RPC and eth_call only; no estimates, signing, approvals or sends",
+    "request_count": 100,
+    "checks": [
+        {
+            "name": "mainnet.block",
+            "status": "passed",
+            "value": "0x20c266a"
+        },
+        {
+            "name": "mainnet.resolve_nft_center",
+            "status": "passed",
+            "value": "0x443cc8ac24630be9257483a09c34ffa81608eace"
+        },
+        {
+            "name": "mainnet.center.owner()",
+            "status": "passed",
+            "value": [
+                "0x8c91c1bd5fed8efb46ae3b5802510187aea084db"
+            ]
+        },
+        {
+            "name": "mainnet.center.paused()",
+            "status": "passed",
+            "value": [
+                false
+            ]
+        },
+        {
+            "name": "mainnet.center.getImpl()",
+            "status": "passed",
+            "value": [
+                "0xced55da70f42ab101b4ce10aa9e767607cef5146"
+            ]
+        },
+        {
+            "name": "mainnet.symbol.Candy_Status",
+            "status": "passed",
+            "value": "0x0000000000000000000000000000000000000000"
+        },
+        {
+            "name": "mainnet.symbol.candy_status",
+            "status": "passed",
+            "value": "0x0000000000000000000000000000000000000000"
+        },
+        {
+            "name": "mainnet.0x9b1129ec66afd4b7d20f95de078126853695ccfe.code",
+            "status": "passed",
+            "value": "0x6080604052600436106100225760003560e01c80632d6b3a6b1461003357610029565b3661002957005b61003161007d565b005b34801561003f57600080fd5b507f0000000000000000000000000c9e3122785c4af58cebd67f5d4891addd985fd96040516001600160a01b03909116815260200160405180910390f35b61008d610088610094565b610118565b565b905090565b60007f0000000000000000000000000c9e3122785c4af58cebd67f5d4891addd985fd96001600160a01b0316635c60da1b6040518163ffffffff1660e01b8152600401602060405180830381865afa1580156100f4573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061008f919061013c565b3660008037600080366000845af43d6000803e808015610137573d6000f35b3d6000fd5b60006020828403121561014e57600080fd5b81516001600160a01b038116811461016557600080fd5b939250505056fea2646970667358221220836b4e2d7ad18398974f9eeb7323581a69cbd6e35a714fa96e4ea23570bfc99f64736f6c63430008140033"
+        },
+        {
+            "name": "mainnet.0x9b1129ec66afd4b7d20f95de078126853695ccfe.name",
+            "status": "passed",
+            "value": "test nft"
+        },
+        {
+            "name": "mainnet.0x9b1129ec66afd4b7d20f95de078126853695ccfe.symbol",
+            "status": "passed",
+            "value": "tttest"
+        },
+        {
+            "name": "mainnet.0x9b1129ec66afd4b7d20f95de078126853695ccfe.contractUri",
+            "status": "passed",
+            "value": "ipfs://QmTQvfUCexqWhV4YNQTSRZQ6YChmtjbTBd8tDFtghPoq7h"
+        },
+        {
+            "name": "mainnet.0x9b1129ec66afd4b7d20f95de078126853695ccfe.allowMint",
+            "status": "passed",
+            "value": true
+        },
+        {
+            "name": "mainnet.0x9b1129ec66afd4b7d20f95de078126853695ccfe.refundable",
+            "status": "unsupported-deployment-view",
+            "error": {
+                "type": "Decimal\\RpcException",
+                "code": 3,
+                "message": "execution reverted"
+            },
+            "classification": "Mainnet reserveless implementation does not expose the selected optional getter. RPC error propagates; no value inferred."
+        },
+        {
+            "name": "mainnet.0x9b1129ec66afd4b7d20f95de078126853695ccfe.nftType",
+            "status": "unsupported-deployment-view",
+            "error": {
+                "type": "Decimal\\RpcException",
+                "code": 3,
+                "message": "execution reverted"
+            },
+            "classification": "Mainnet reserveless implementation does not expose the selected optional getter. RPC error propagates; no value inferred."
+        },
+        {
+            "name": "mainnet.0x9b1129ec66afd4b7d20f95de078126853695ccfe.collectionState",
+            "status": "passed",
+            "value": {
+                "active": true,
+                "standard": 721,
+                "withReserve": false
+            }
+        },
+        {
+            "name": "mainnet.0x9b1129ec66afd4b7d20f95de078126853695ccfe.emptyCreatorBalance",
+            "status": "passed",
+            "value": "0"
+        },
+        {
+            "name": "mainnet.0x9b1129ec66afd4b7d20f95de078126853695ccfe.ownedNFTCoverage",
+            "status": "limited",
+            "value": "Known reserveless collection; no owned token assumed"
+        },
+        {
+            "name": "mainnet.0x9b1129ec66afd4b7d20f95de078126853695ccfe.DOMAIN_SEPARATOR",
+            "status": "passed",
+            "value": "0x1b2299ad668fec560a5d376e310cdac70427fb34ce8fd2e42b6eb993c9fcbef2"
+        },
+        {
+            "name": "testnet.block",
+            "status": "passed",
+            "value": "0x157368f"
+        },
+        {
+            "name": "testnet.resolve_nft_center",
+            "status": "passed",
+            "value": "0x11ae5297d0b5886914661938fcb8aedc08622194"
+        },
+        {
+            "name": "testnet.center.owner()",
+            "status": "passed",
+            "value": [
+                "0x35119df12afdf848b7ef2536af2411ab0a611c45"
+            ]
+        },
+        {
+            "name": "testnet.center.paused()",
+            "status": "passed",
+            "value": [
+                false
+            ]
+        },
+        {
+            "name": "testnet.center.getImpl()",
+            "status": "passed",
+            "value": [
+                "0xa12ffd3f622e5399274e4ad13032a5cacce02916"
+            ]
+        },
+        {
+            "name": "testnet.public1155mint_receipt",
+            "status": "passed",
+            "value": {
+                "blockHash": "0x8ddd856dbc1b884eb3051ce8ab2cf94da60a9096fc622b729f36329e50476dbd",
+                "blockNumber": "0x156faea",
+                "contractAddress": null,
+                "cumulativeGasUsed": "0x4dac9",
+                "from": "0xb92bd490c8e9e5d9c46d71666418d4e7ae4534e9",
+                "gasUsed": "0x4dac9",
+                "logs": [
+                    {
+                        "address": "0x2fe4562b26b6545fdbcf5a77e920d2a1236e5905",
+                        "topics": [
+                            "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
+                            "0x000000000000000000000000b92bd490c8e9e5d9c46d71666418d4e7ae4534e9",
+                            "0x000000000000000000000000918e742d8dd0de7e7930fe0489cdbce1701fb29d"
+                        ],
+                        "data": "0x00000000000000000000000000000000000000000000000000038d7ea4c68000",
+                        "blockNumber": "0x156faea",
+                        "transactionHash": "0x6196a0e9c610c4c0d2ddfbb35096ab8c15fb06e9f9f0bd3a7ed6ec10a73271ee",
+                        "transactionIndex": "0x0",
+                        "blockHash": "0x8ddd856dbc1b884eb3051ce8ab2cf94da60a9096fc622b729f36329e50476dbd",
+                        "logIndex": "0x0",
+                        "removed": false
+                    },
+                    {
+                        "address": "0x2fe4562b26b6545fdbcf5a77e920d2a1236e5905",
+                        "topics": [
+                            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+                            "0x000000000000000000000000b92bd490c8e9e5d9c46d71666418d4e7ae4534e9",
+                            "0x000000000000000000000000918e742d8dd0de7e7930fe0489cdbce1701fb29d"
+                        ],
+                        "data": "0x00000000000000000000000000000000000000000000000000038d7ea4c68000",
+                        "blockNumber": "0x156faea",
+                        "transactionHash": "0x6196a0e9c610c4c0d2ddfbb35096ab8c15fb06e9f9f0bd3a7ed6ec10a73271ee",
+                        "transactionIndex": "0x0",
+                        "blockHash": "0x8ddd856dbc1b884eb3051ce8ab2cf94da60a9096fc622b729f36329e50476dbd",
+                        "logIndex": "0x1",
+                        "removed": false
+                    },
+                    {
+                        "address": "0x918e742d8dd0de7e7930fe0489cdbce1701fb29d",
+                        "topics": [
+                            "0x6bb7ff708619ba0610cba295a58592e0451dee2622938c8755667688daf3529b",
+                            "0x00000000000000000000000000000000000000000000000000000000000f1206"
+                        ],
+                        "data": "0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000011697066733a2f2f73696d756c6174696f6e000000000000000000000000000000",
+                        "blockNumber": "0x156faea",
+                        "transactionHash": "0x6196a0e9c610c4c0d2ddfbb35096ab8c15fb06e9f9f0bd3a7ed6ec10a73271ee",
+                        "transactionIndex": "0x0",
+                        "blockHash": "0x8ddd856dbc1b884eb3051ce8ab2cf94da60a9096fc622b729f36329e50476dbd",
+                        "logIndex": "0x2",
+                        "removed": false
+                    },
+                    {
+                        "address": "0x918e742d8dd0de7e7930fe0489cdbce1701fb29d",
+                        "topics": [
+                            "0x416c94fe34624b6660ef8d22d507994befd5eee563a60424df0bc5a7e51262d7"
+                        ],
+                        "data": "0x00000000000000000000000000000000000000000000000000000000000f120600000000000000000000000000000000000000000000000000000000000000000000000000000000000000002fe4562b26b6545fdbcf5a77e920d2a1236e590500000000000000000000000000000000000000000000000000038d7ea4c680000000000000000000000000000000000000000000000000000000000000000002",
+                        "blockNumber": "0x156faea",
+                        "transactionHash": "0x6196a0e9c610c4c0d2ddfbb35096ab8c15fb06e9f9f0bd3a7ed6ec10a73271ee",
+                        "transactionIndex": "0x0",
+                        "blockHash": "0x8ddd856dbc1b884eb3051ce8ab2cf94da60a9096fc622b729f36329e50476dbd",
+                        "logIndex": "0x3",
+                        "removed": false
+                    },
+                    {
+                        "address": "0x918e742d8dd0de7e7930fe0489cdbce1701fb29d",
+                        "topics": [
+                            "0xc3d58168c5ae7397731d063d5bbf3d657854427343f4c083240f7aacaa2d0f62",
+                            "0x000000000000000000000000b92bd490c8e9e5d9c46d71666418d4e7ae4534e9",
+                            "0x0000000000000000000000000000000000000000000000000000000000000000",
+                            "0x000000000000000000000000b92bd490c8e9e5d9c46d71666418d4e7ae4534e9"
+                        ],
+                        "data": "0x00000000000000000000000000000000000000000000000000000000000f12060000000000000000000000000000000000000000000000000000000000000001",
+                        "blockNumber": "0x156faea",
+                        "transactionHash": "0x6196a0e9c610c4c0d2ddfbb35096ab8c15fb06e9f9f0bd3a7ed6ec10a73271ee",
+                        "transactionIndex": "0x0",
+                        "blockHash": "0x8ddd856dbc1b884eb3051ce8ab2cf94da60a9096fc622b729f36329e50476dbd",
+                        "logIndex": "0x4",
+                        "removed": false
+                    }
+                ],
+                "logsBloom": "0x00000000000000000000000000000000000000000000008000000000000000004000000000020000000000000000000000000000000000010000000000202000000000000000010000000028000000000040000000001000100000000000000000001000020200000000000000004800000000000008000000000010000000000000000000000000020000080000001000000001000000000000000000000000020000000000000000000000000001000000000000004000000000000000000000000002000000000000020080000000000000000008000000000000000020000010000000000000000000000000000000000000000000000000080000000000",
+                "status": "0x1",
+                "to": "0x918e742d8dd0de7e7930fe0489cdbce1701fb29d",
+                "transactionHash": "0x6196a0e9c610c4c0d2ddfbb35096ab8c15fb06e9f9f0bd3a7ed6ec10a73271ee",
+                "transactionIndex": "0x0",
+                "type": "0x0"
+            }
+        },
+        {
+            "name": "testnet.0xfdA7f75A7eE1dB6d7Eba2E924B74D727E8532890.code",
+            "status": "passed",
+            "value": "0x6080604052600436106100225760003560e01c80632d6b3a6b1461003357610029565b3661002957005b61003161007d565b005b34801561003f57600080fd5b507f000000000000000000000000f8c97167dabdde739457eb2b7cddaa8dfbba78886040516001600160a01b03909116815260200160405180910390f35b61008d610088610094565b610118565b565b905090565b60007f000000000000000000000000f8c97167dabdde739457eb2b7cddaa8dfbba78886001600160a01b0316635c60da1b6040518163ffffffff1660e01b8152600401602060405180830381865afa1580156100f4573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061008f919061013c565b3660008037600080366000845af43d6000803e808015610137573d6000f35b3d6000fd5b60006020828403121561014e57600080fd5b81516001600160a01b038116811461016557600080fd5b939250505056fea2646970667358221220836b4e2d7ad18398974f9eeb7323581a69cbd6e35a714fa96e4ea23570bfc99f64736f6c63430008140033"
+        },
+        {
+            "name": "testnet.0xfdA7f75A7eE1dB6d7Eba2E924B74D727E8532890.name",
+            "status": "passed",
+            "value": "SDK QA NFT 2026"
+        },
+        {
+            "name": "testnet.0xfdA7f75A7eE1dB6d7Eba2E924B74D727E8532890.symbol",
+            "status": "passed",
+            "value": "sdkqa24n"
+        },
+        {
+            "name": "testnet.0xfdA7f75A7eE1dB6d7Eba2E924B74D727E8532890.contractUri",
+            "status": "passed",
+            "value": "data:application/json,%7B%22name%22%3A%22SDK%20QA%20NFT%22%7D"
+        },
+        {
+            "name": "testnet.0xfdA7f75A7eE1dB6d7Eba2E924B74D727E8532890.allowMint",
+            "status": "passed",
+            "value": true
+        },
+        {
+            "name": "testnet.0xfdA7f75A7eE1dB6d7Eba2E924B74D727E8532890.refundable",
+            "status": "passed",
+            "value": false
+        },
+        {
+            "name": "testnet.0xfdA7f75A7eE1dB6d7Eba2E924B74D727E8532890.nftType",
+            "status": "passed",
+            "value": "0"
+        },
+        {
+            "name": "testnet.0xfdA7f75A7eE1dB6d7Eba2E924B74D727E8532890.collectionState",
+            "status": "passed",
+            "value": {
+                "active": true,
+                "standard": 721,
+                "withReserve": true
+            }
+        },
+        {
+            "name": "testnet.0xfdA7f75A7eE1dB6d7Eba2E924B74D727E8532890.reserve",
+            "status": "passed",
+            "value": {
+                "token": "0x2fe4562b26b6545fdbcf5a77e920d2a1236e5905",
+                "amount": "1000000000000000",
+                "reserveType": "2"
+            }
+        },
+        {
+            "name": "testnet.0xfdA7f75A7eE1dB6d7Eba2E924B74D727E8532890.tokenUri",
+            "status": "passed",
+            "value": "ipfs://simulation"
+        },
+        {
+            "name": "testnet.0xfdA7f75A7eE1dB6d7Eba2E924B74D727E8532890.ownerOf",
+            "status": "passed",
+            "value": "0xb92bd490c8e9e5d9c46d71666418d4e7ae4534e9"
+        },
+        {
+            "name": "testnet.0xfdA7f75A7eE1dB6d7Eba2E924B74D727E8532890.balanceOf",
+            "status": "passed",
+            "value": "1"
+        },
+        {
+            "name": "testnet.0xfdA7f75A7eE1dB6d7Eba2E924B74D727E8532890.getApproved",
+            "status": "passed",
+            "value": "0x0000000000000000000000000000000000000000"
+        },
+        {
+            "name": "testnet.0xfdA7f75A7eE1dB6d7Eba2E924B74D727E8532890.approvedForAll",
+            "status": "passed",
+            "value": false
+        },
+        {
+            "name": "testnet.0xfdA7f75A7eE1dB6d7Eba2E924B74D727E8532890.DOMAIN_SEPARATOR",
+            "status": "passed",
+            "value": "0xbc86ef8e1ec097f37cfcf1c66de2989510cfe1a5f581e7b5c84113cff38edbfe"
+        },
+        {
+            "name": "testnet.0x918e742d8dd0de7e7930fe0489cdbce1701fb29d.code",
+            "status": "passed",
+            "value": "0x6080604052600436106100225760003560e01c80632d6b3a6b1461003357610029565b3661002957005b61003161007d565b005b34801561003f57600080fd5b507f0000000000000000000000001c094210b1d03e4d4a9403c8ffe3273b98574c396040516001600160a01b03909116815260200160405180910390f35b61008d610088610094565b610118565b565b905090565b60007f0000000000000000000000001c094210b1d03e4d4a9403c8ffe3273b98574c396001600160a01b0316635c60da1b6040518163ffffffff1660e01b8152600401602060405180830381865afa1580156100f4573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061008f919061013c565b3660008037600080366000845af43d6000803e808015610137573d6000f35b3d6000fd5b60006020828403121561014e57600080fd5b81516001600160a01b038116811461016557600080fd5b939250505056fea2646970667358221220836b4e2d7ad18398974f9eeb7323581a69cbd6e35a714fa96e4ea23570bfc99f64736f6c63430008140033"
+        },
+        {
+            "name": "testnet.0x918e742d8dd0de7e7930fe0489cdbce1701fb29d.name",
+            "status": "passed",
+            "value": "SDK QA Multi NFT 2026"
+        },
+        {
+            "name": "testnet.0x918e742d8dd0de7e7930fe0489cdbce1701fb29d.symbol",
+            "status": "passed",
+            "value": "sdkqa1155"
+        },
+        {
+            "name": "testnet.0x918e742d8dd0de7e7930fe0489cdbce1701fb29d.contractUri",
+            "status": "passed",
+            "value": "data:application/json,%7B%22name%22%3A%22SDK%20QA%20Multi%20NFT%22%7D"
+        },
+        {
+            "name": "testnet.0x918e742d8dd0de7e7930fe0489cdbce1701fb29d.allowMint",
+            "status": "passed",
+            "value": true
+        },
+        {
+            "name": "testnet.0x918e742d8dd0de7e7930fe0489cdbce1701fb29d.refundable",
+            "status": "passed",
+            "value": false
+        },
+        {
+            "name": "testnet.0x918e742d8dd0de7e7930fe0489cdbce1701fb29d.nftType",
+            "status": "passed",
+            "value": "1"
+        },
+        {
+            "name": "testnet.0x918e742d8dd0de7e7930fe0489cdbce1701fb29d.collectionState",
+            "status": "passed",
+            "value": {
+                "active": true,
+                "standard": 1155,
+                "withReserve": true
+            }
+        },
+        {
+            "name": "testnet.0x918e742d8dd0de7e7930fe0489cdbce1701fb29d.reserve",
+            "status": "passed",
+            "value": {
+                "token": "0x2fe4562b26b6545fdbcf5a77e920d2a1236e5905",
+                "amount": "2000000000000000",
+                "reserveType": "2"
+            }
+        },
+        {
+            "name": "testnet.0x918e742d8dd0de7e7930fe0489cdbce1701fb29d.tokenUri",
+            "status": "passed",
+            "value": "ipfs://simulation"
+        },
+        {
+            "name": "testnet.0x918e742d8dd0de7e7930fe0489cdbce1701fb29d.exists",
+            "status": "passed",
+            "value": true
+        },
+        {
+            "name": "testnet.0x918e742d8dd0de7e7930fe0489cdbce1701fb29d.rate",
+            "status": "passed",
+            "value": "2000000000000000"
+        },
+        {
+            "name": "testnet.0x918e742d8dd0de7e7930fe0489cdbce1701fb29d.DOMAIN_SEPARATOR",
+            "status": "passed",
+            "value": "0xc530608c38207b5ed8cc1a673b45a2f6d8ef1eb8c372169c802f4d2fcd13a9c4"
+        },
+        {
+            "name": "mainnet.0x9b1129ec66afd4b7d20f95de078126853695ccfe.legacyNftType",
+            "status": "passed",
+            "value": "0"
+        }
+    ],
+    "requests": [
+        {
+            "chain_id": 75,
+            "endpoint": "https://node.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:29+00:00",
+            "result": "0x4b",
+            "elapsed_ms": 359
+        },
+        {
+            "chain_id": 75,
+            "endpoint": "https://node.decimalchain.com/web3/",
+            "method": "eth_blockNumber",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:30+00:00",
+            "result": "0x20c266a",
+            "elapsed_ms": 341
+        },
+        {
+            "chain_id": 75,
+            "endpoint": "https://node.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:30+00:00",
+            "result": "0x4b",
+            "elapsed_ms": 353
+        },
+        {
+            "chain_id": 75,
+            "endpoint": "https://node.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0xc108715a06f76caa96fa2c943ebf05159c29a87d",
+                    "data": "0x04433bbc0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000a6e66742d63656e74657200000000000000000000000000000000000000000000"
+                },
+                "0x20c266a"
+            ],
+            "checked_utc": "2026-10-30T06:27:30+00:00",
+            "result": "0x000000000000000000000000443cc8ac24630be9257483a09c34ffa81608eace",
+            "elapsed_ms": 412
+        },
+        {
+            "chain_id": 75,
+            "endpoint": "https://node.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:31+00:00",
+            "result": "0x4b",
+            "elapsed_ms": 356
+        },
+        {
+            "chain_id": 75,
+            "endpoint": "https://node.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0x443cc8ac24630be9257483a09c34ffa81608eace",
+                    "data": "0x8da5cb5b"
+                },
+                "0x20c266a"
+            ],
+            "checked_utc": "2026-10-30T06:27:31+00:00",
+            "result": "0x0000000000000000000000008c91c1bd5fed8efb46ae3b5802510187aea084db",
+            "elapsed_ms": 383
+        },
+        {
+            "chain_id": 75,
+            "endpoint": "https://node.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:31+00:00",
+            "result": "0x4b",
+            "elapsed_ms": 348
+        },
+        {
+            "chain_id": 75,
+            "endpoint": "https://node.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0x443cc8ac24630be9257483a09c34ffa81608eace",
+                    "data": "0x5c975abb"
+                },
+                "0x20c266a"
+            ],
+            "checked_utc": "2026-10-30T06:27:32+00:00",
+            "result": "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "elapsed_ms": 331
+        },
+        {
+            "chain_id": 75,
+            "endpoint": "https://node.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:32+00:00",
+            "result": "0x4b",
+            "elapsed_ms": 308
+        },
+        {
+            "chain_id": 75,
+            "endpoint": "https://node.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0x443cc8ac24630be9257483a09c34ffa81608eace",
+                    "data": "0xdfb80831"
+                },
+                "0x20c266a"
+            ],
+            "checked_utc": "2026-10-30T06:27:32+00:00",
+            "result": "0x000000000000000000000000ced55da70f42ab101b4ce10aa9e767607cef5146",
+            "elapsed_ms": 333
+        },
+        {
+            "chain_id": 75,
+            "endpoint": "https://node.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:33+00:00",
+            "result": "0x4b",
+            "elapsed_ms": 315
+        },
+        {
+            "chain_id": 75,
+            "endpoint": "https://node.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0x443cc8ac24630be9257483a09c34ffa81608eace",
+                    "data": "0xefa74f1f0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000c43616e64795f5374617475730000000000000000000000000000000000000000"
+                },
+                "0x20c266a"
+            ],
+            "checked_utc": "2026-10-30T06:27:33+00:00",
+            "result": "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "elapsed_ms": 510
+        },
+        {
+            "chain_id": 75,
+            "endpoint": "https://node.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:34+00:00",
+            "result": "0x4b",
+            "elapsed_ms": 303
+        },
+        {
+            "chain_id": 75,
+            "endpoint": "https://node.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0x443cc8ac24630be9257483a09c34ffa81608eace",
+                    "data": "0xefa74f1f0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000c63616e64795f7374617475730000000000000000000000000000000000000000"
+                },
+                "0x20c266a"
+            ],
+            "checked_utc": "2026-10-30T06:27:34+00:00",
+            "result": "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "elapsed_ms": 411
+        },
+        {
+            "chain_id": 75,
+            "endpoint": "https://node.decimalchain.com/web3/",
+            "method": "eth_getCode",
+            "params": [
+                "0x9b1129ec66afd4b7d20f95de078126853695ccfe",
+                "0x20c266a"
+            ],
+            "checked_utc": "2026-10-30T06:27:34+00:00",
+            "result": "0x6080604052600436106100225760003560e01c80632d6b3a6b1461003357610029565b3661002957005b61003161007d565b005b34801561003f57600080fd5b507f0000000000000000000000000c9e3122785c4af58cebd67f5d4891addd985fd96040516001600160a01b03909116815260200160405180910390f35b61008d610088610094565b610118565b565b905090565b60007f0000000000000000000000000c9e3122785c4af58cebd67f5d4891addd985fd96001600160a01b0316635c60da1b6040518163ffffffff1660e01b8152600401602060405180830381865afa1580156100f4573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061008f919061013c565b3660008037600080366000845af43d6000803e808015610137573d6000f35b3d6000fd5b60006020828403121561014e57600080fd5b81516001600160a01b038116811461016557600080fd5b939250505056fea2646970667358221220836b4e2d7ad18398974f9eeb7323581a69cbd6e35a714fa96e4ea23570bfc99f64736f6c63430008140033",
+            "elapsed_ms": 337
+        },
+        {
+            "chain_id": 75,
+            "endpoint": "https://node.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:35+00:00",
+            "result": "0x4b",
+            "elapsed_ms": 356
+        },
+        {
+            "chain_id": 75,
+            "endpoint": "https://node.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0x9b1129ec66afd4b7d20f95de078126853695ccfe",
+                    "data": "0x06fdde03"
+                },
+                "0x20c266a"
+            ],
+            "checked_utc": "2026-10-30T06:27:35+00:00",
+            "result": "0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000874657374206e6674000000000000000000000000000000000000000000000000",
+            "elapsed_ms": 505
+        },
+        {
+            "chain_id": 75,
+            "endpoint": "https://node.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:35+00:00",
+            "result": "0x4b",
+            "elapsed_ms": 298
+        },
+        {
+            "chain_id": 75,
+            "endpoint": "https://node.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0x9b1129ec66afd4b7d20f95de078126853695ccfe",
+                    "data": "0x95d89b41"
+                },
+                "0x20c266a"
+            ],
+            "checked_utc": "2026-10-30T06:27:36+00:00",
+            "result": "0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000067474746573740000000000000000000000000000000000000000000000000000",
+            "elapsed_ms": 331
+        },
+        {
+            "chain_id": 75,
+            "endpoint": "https://node.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:36+00:00",
+            "result": "0x4b",
+            "elapsed_ms": 327
+        },
+        {
+            "chain_id": 75,
+            "endpoint": "https://node.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0x9b1129ec66afd4b7d20f95de078126853695ccfe",
+                    "data": "0xe8a3d485"
+                },
+                "0x20c266a"
+            ],
+            "checked_utc": "2026-10-30T06:27:36+00:00",
+            "result": "0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000035697066733a2f2f516d54517666554365787157685634594e515453525a51365943686d746a6254426438744446746768506f7137680000000000000000000000",
+            "elapsed_ms": 318
+        },
+        {
+            "chain_id": 75,
+            "endpoint": "https://node.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:37+00:00",
+            "result": "0x4b",
+            "elapsed_ms": 335
+        },
+        {
+            "chain_id": 75,
+            "endpoint": "https://node.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0x9b1129ec66afd4b7d20f95de078126853695ccfe",
+                    "data": "0xa6fde7ab"
+                },
+                "0x20c266a"
+            ],
+            "checked_utc": "2026-10-30T06:27:37+00:00",
+            "result": "0x0000000000000000000000000000000000000000000000000000000000000001",
+            "elapsed_ms": 321
+        },
+        {
+            "chain_id": 75,
+            "endpoint": "https://node.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:37+00:00",
+            "result": "0x4b",
+            "elapsed_ms": 330
+        },
+        {
+            "chain_id": 75,
+            "endpoint": "https://node.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0x9b1129ec66afd4b7d20f95de078126853695ccfe",
+                    "data": "0x02912524"
+                },
+                "0x20c266a"
+            ],
+            "checked_utc": "2026-10-30T06:27:38+00:00",
+            "error": {
+                "type": "Decimal\\RpcException",
+                "code": 3,
+                "message": "execution reverted",
+                "data": "0x"
+            },
+            "elapsed_ms": 327
+        },
+        {
+            "chain_id": 75,
+            "endpoint": "https://node.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:38+00:00",
+            "result": "0x4b",
+            "elapsed_ms": 327
+        },
+        {
+            "chain_id": 75,
+            "endpoint": "https://node.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0x9b1129ec66afd4b7d20f95de078126853695ccfe",
+                    "data": "0xcc3e7516"
+                },
+                "0x20c266a"
+            ],
+            "checked_utc": "2026-10-30T06:27:38+00:00",
+            "error": {
+                "type": "Decimal\\RpcException",
+                "code": 3,
+                "message": "execution reverted",
+                "data": "0x"
+            },
+            "elapsed_ms": 423
+        },
+        {
+            "chain_id": 75,
+            "endpoint": "https://node.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:39+00:00",
+            "result": "0x4b",
+            "elapsed_ms": 320
+        },
+        {
+            "chain_id": 75,
+            "endpoint": "https://node.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0x443cc8ac24630be9257483a09c34ffa81608eace",
+                    "data": "0x377cf68d0000000000000000000000009b1129ec66afd4b7d20f95de078126853695ccfe"
+                },
+                "0x20c266a"
+            ],
+            "checked_utc": "2026-10-30T06:27:39+00:00",
+            "result": "0x000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "elapsed_ms": 313
+        },
+        {
+            "chain_id": 75,
+            "endpoint": "https://node.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:39+00:00",
+            "result": "0x4b",
+            "elapsed_ms": 349
+        },
+        {
+            "chain_id": 75,
+            "endpoint": "https://node.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0x9b1129ec66afd4b7d20f95de078126853695ccfe",
+                    "data": "0x70a0823100000000000000000000000040900a48273644768c09183e00e43528c17a29f6"
+                },
+                "0x20c266a"
+            ],
+            "checked_utc": "2026-10-30T06:27:40+00:00",
+            "result": "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "elapsed_ms": 378
+        },
+        {
+            "chain_id": 75,
+            "endpoint": "https://node.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:40+00:00",
+            "result": "0x4b",
+            "elapsed_ms": 320
+        },
+        {
+            "chain_id": 75,
+            "endpoint": "https://node.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0x9b1129ec66afd4b7d20f95de078126853695ccfe",
+                    "data": "0x3644e515"
+                },
+                "0x20c266a"
+            ],
+            "checked_utc": "2026-10-30T06:27:41+00:00",
+            "result": "0x1b2299ad668fec560a5d376e310cdac70427fb34ce8fd2e42b6eb993c9fcbef2",
+            "elapsed_ms": 319
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:41+00:00",
+            "result": "0x31524",
+            "elapsed_ms": 296
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_blockNumber",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:41+00:00",
+            "result": "0x157368f",
+            "elapsed_ms": 279
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:41+00:00",
+            "result": "0x31524",
+            "elapsed_ms": 272
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0xbC96b61F137F28F0Da47Cc4Ef06e5f984B565A2E",
+                    "data": "0x04433bbc0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000a6e66742d63656e74657200000000000000000000000000000000000000000000"
+                },
+                "0x157368f"
+            ],
+            "checked_utc": "2026-10-30T06:27:42+00:00",
+            "result": "0x00000000000000000000000011ae5297d0b5886914661938fcb8aedc08622194",
+            "elapsed_ms": 281
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:42+00:00",
+            "result": "0x31524",
+            "elapsed_ms": 288
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0x11ae5297d0b5886914661938fcb8aedc08622194",
+                    "data": "0x8da5cb5b"
+                },
+                "0x157368f"
+            ],
+            "checked_utc": "2026-10-30T06:27:42+00:00",
+            "result": "0x00000000000000000000000035119df12afdf848b7ef2536af2411ab0a611c45",
+            "elapsed_ms": 364
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:43+00:00",
+            "result": "0x31524",
+            "elapsed_ms": 279
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0x11ae5297d0b5886914661938fcb8aedc08622194",
+                    "data": "0x5c975abb"
+                },
+                "0x157368f"
+            ],
+            "checked_utc": "2026-10-30T06:27:43+00:00",
+            "result": "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "elapsed_ms": 277
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:43+00:00",
+            "result": "0x31524",
+            "elapsed_ms": 279
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0x11ae5297d0b5886914661938fcb8aedc08622194",
+                    "data": "0xdfb80831"
+                },
+                "0x157368f"
+            ],
+            "checked_utc": "2026-10-30T06:27:43+00:00",
+            "result": "0x000000000000000000000000a12ffd3f622e5399274e4ad13032a5cacce02916",
+            "elapsed_ms": 266
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_getTransactionReceipt",
+            "params": [
+                "0x6196a0e9c610c4c0d2ddfbb35096ab8c15fb06e9f9f0bd3a7ed6ec10a73271ee"
+            ],
+            "checked_utc": "2026-10-30T06:27:44+00:00",
+            "result": {
+                "blockHash": "0x8ddd856dbc1b884eb3051ce8ab2cf94da60a9096fc622b729f36329e50476dbd",
+                "blockNumber": "0x156faea",
+                "contractAddress": null,
+                "cumulativeGasUsed": "0x4dac9",
+                "from": "0xb92bd490c8e9e5d9c46d71666418d4e7ae4534e9",
+                "gasUsed": "0x4dac9",
+                "logs": [
+                    {
+                        "address": "0x2fe4562b26b6545fdbcf5a77e920d2a1236e5905",
+                        "topics": [
+                            "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
+                            "0x000000000000000000000000b92bd490c8e9e5d9c46d71666418d4e7ae4534e9",
+                            "0x000000000000000000000000918e742d8dd0de7e7930fe0489cdbce1701fb29d"
+                        ],
+                        "data": "0x00000000000000000000000000000000000000000000000000038d7ea4c68000",
+                        "blockNumber": "0x156faea",
+                        "transactionHash": "0x6196a0e9c610c4c0d2ddfbb35096ab8c15fb06e9f9f0bd3a7ed6ec10a73271ee",
+                        "transactionIndex": "0x0",
+                        "blockHash": "0x8ddd856dbc1b884eb3051ce8ab2cf94da60a9096fc622b729f36329e50476dbd",
+                        "logIndex": "0x0",
+                        "removed": false
+                    },
+                    {
+                        "address": "0x2fe4562b26b6545fdbcf5a77e920d2a1236e5905",
+                        "topics": [
+                            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+                            "0x000000000000000000000000b92bd490c8e9e5d9c46d71666418d4e7ae4534e9",
+                            "0x000000000000000000000000918e742d8dd0de7e7930fe0489cdbce1701fb29d"
+                        ],
+                        "data": "0x00000000000000000000000000000000000000000000000000038d7ea4c68000",
+                        "blockNumber": "0x156faea",
+                        "transactionHash": "0x6196a0e9c610c4c0d2ddfbb35096ab8c15fb06e9f9f0bd3a7ed6ec10a73271ee",
+                        "transactionIndex": "0x0",
+                        "blockHash": "0x8ddd856dbc1b884eb3051ce8ab2cf94da60a9096fc622b729f36329e50476dbd",
+                        "logIndex": "0x1",
+                        "removed": false
+                    },
+                    {
+                        "address": "0x918e742d8dd0de7e7930fe0489cdbce1701fb29d",
+                        "topics": [
+                            "0x6bb7ff708619ba0610cba295a58592e0451dee2622938c8755667688daf3529b",
+                            "0x00000000000000000000000000000000000000000000000000000000000f1206"
+                        ],
+                        "data": "0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000011697066733a2f2f73696d756c6174696f6e000000000000000000000000000000",
+                        "blockNumber": "0x156faea",
+                        "transactionHash": "0x6196a0e9c610c4c0d2ddfbb35096ab8c15fb06e9f9f0bd3a7ed6ec10a73271ee",
+                        "transactionIndex": "0x0",
+                        "blockHash": "0x8ddd856dbc1b884eb3051ce8ab2cf94da60a9096fc622b729f36329e50476dbd",
+                        "logIndex": "0x2",
+                        "removed": false
+                    },
+                    {
+                        "address": "0x918e742d8dd0de7e7930fe0489cdbce1701fb29d",
+                        "topics": [
+                            "0x416c94fe34624b6660ef8d22d507994befd5eee563a60424df0bc5a7e51262d7"
+                        ],
+                        "data": "0x00000000000000000000000000000000000000000000000000000000000f120600000000000000000000000000000000000000000000000000000000000000000000000000000000000000002fe4562b26b6545fdbcf5a77e920d2a1236e590500000000000000000000000000000000000000000000000000038d7ea4c680000000000000000000000000000000000000000000000000000000000000000002",
+                        "blockNumber": "0x156faea",
+                        "transactionHash": "0x6196a0e9c610c4c0d2ddfbb35096ab8c15fb06e9f9f0bd3a7ed6ec10a73271ee",
+                        "transactionIndex": "0x0",
+                        "blockHash": "0x8ddd856dbc1b884eb3051ce8ab2cf94da60a9096fc622b729f36329e50476dbd",
+                        "logIndex": "0x3",
+                        "removed": false
+                    },
+                    {
+                        "address": "0x918e742d8dd0de7e7930fe0489cdbce1701fb29d",
+                        "topics": [
+                            "0xc3d58168c5ae7397731d063d5bbf3d657854427343f4c083240f7aacaa2d0f62",
+                            "0x000000000000000000000000b92bd490c8e9e5d9c46d71666418d4e7ae4534e9",
+                            "0x0000000000000000000000000000000000000000000000000000000000000000",
+                            "0x000000000000000000000000b92bd490c8e9e5d9c46d71666418d4e7ae4534e9"
+                        ],
+                        "data": "0x00000000000000000000000000000000000000000000000000000000000f12060000000000000000000000000000000000000000000000000000000000000001",
+                        "blockNumber": "0x156faea",
+                        "transactionHash": "0x6196a0e9c610c4c0d2ddfbb35096ab8c15fb06e9f9f0bd3a7ed6ec10a73271ee",
+                        "transactionIndex": "0x0",
+                        "blockHash": "0x8ddd856dbc1b884eb3051ce8ab2cf94da60a9096fc622b729f36329e50476dbd",
+                        "logIndex": "0x4",
+                        "removed": false
+                    }
+                ],
+                "logsBloom": "0x00000000000000000000000000000000000000000000008000000000000000004000000000020000000000000000000000000000000000010000000000202000000000000000010000000028000000000040000000001000100000000000000000001000020200000000000000004800000000000008000000000010000000000000000000000000020000080000001000000001000000000000000000000000020000000000000000000000000001000000000000004000000000000000000000000002000000000000020080000000000000000008000000000000000020000010000000000000000000000000000000000000000000000000080000000000",
+                "status": "0x1",
+                "to": "0x918e742d8dd0de7e7930fe0489cdbce1701fb29d",
+                "transactionHash": "0x6196a0e9c610c4c0d2ddfbb35096ab8c15fb06e9f9f0bd3a7ed6ec10a73271ee",
+                "transactionIndex": "0x0",
+                "type": "0x0"
+            },
+            "elapsed_ms": 292
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_getCode",
+            "params": [
+                "0xfdA7f75A7eE1dB6d7Eba2E924B74D727E8532890",
+                "0x157368f"
+            ],
+            "checked_utc": "2026-10-30T06:27:44+00:00",
+            "result": "0x6080604052600436106100225760003560e01c80632d6b3a6b1461003357610029565b3661002957005b61003161007d565b005b34801561003f57600080fd5b507f000000000000000000000000f8c97167dabdde739457eb2b7cddaa8dfbba78886040516001600160a01b03909116815260200160405180910390f35b61008d610088610094565b610118565b565b905090565b60007f000000000000000000000000f8c97167dabdde739457eb2b7cddaa8dfbba78886001600160a01b0316635c60da1b6040518163ffffffff1660e01b8152600401602060405180830381865afa1580156100f4573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061008f919061013c565b3660008037600080366000845af43d6000803e808015610137573d6000f35b3d6000fd5b60006020828403121561014e57600080fd5b81516001600160a01b038116811461016557600080fd5b939250505056fea2646970667358221220836b4e2d7ad18398974f9eeb7323581a69cbd6e35a714fa96e4ea23570bfc99f64736f6c63430008140033",
+            "elapsed_ms": 271
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:44+00:00",
+            "result": "0x31524",
+            "elapsed_ms": 282
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0xfdA7f75A7eE1dB6d7Eba2E924B74D727E8532890",
+                    "data": "0x06fdde03"
+                },
+                "0x157368f"
+            ],
+            "checked_utc": "2026-10-30T06:27:45+00:00",
+            "result": "0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000f53444b205141204e465420323032360000000000000000000000000000000000",
+            "elapsed_ms": 271
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:45+00:00",
+            "result": "0x31524",
+            "elapsed_ms": 272
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0xfdA7f75A7eE1dB6d7Eba2E924B74D727E8532890",
+                    "data": "0x95d89b41"
+                },
+                "0x157368f"
+            ],
+            "checked_utc": "2026-10-30T06:27:45+00:00",
+            "result": "0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000873646b716132346e000000000000000000000000000000000000000000000000",
+            "elapsed_ms": 265
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:45+00:00",
+            "result": "0x31524",
+            "elapsed_ms": 279
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0xfdA7f75A7eE1dB6d7Eba2E924B74D727E8532890",
+                    "data": "0xe8a3d485"
+                },
+                "0x157368f"
+            ],
+            "checked_utc": "2026-10-30T06:27:46+00:00",
+            "result": "0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000003d646174613a6170706c69636174696f6e2f6a736f6e2c2537422532326e616d6525323225334125323253444b25323051412532304e4654253232253744000000",
+            "elapsed_ms": 273
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:46+00:00",
+            "result": "0x31524",
+            "elapsed_ms": 277
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0xfdA7f75A7eE1dB6d7Eba2E924B74D727E8532890",
+                    "data": "0xa6fde7ab"
+                },
+                "0x157368f"
+            ],
+            "checked_utc": "2026-10-30T06:27:46+00:00",
+            "result": "0x0000000000000000000000000000000000000000000000000000000000000001",
+            "elapsed_ms": 280
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:46+00:00",
+            "result": "0x31524",
+            "elapsed_ms": 281
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0xfdA7f75A7eE1dB6d7Eba2E924B74D727E8532890",
+                    "data": "0x02912524"
+                },
+                "0x157368f"
+            ],
+            "checked_utc": "2026-10-30T06:27:47+00:00",
+            "result": "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "elapsed_ms": 290
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:47+00:00",
+            "result": "0x31524",
+            "elapsed_ms": 269
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0xfdA7f75A7eE1dB6d7Eba2E924B74D727E8532890",
+                    "data": "0xcc3e7516"
+                },
+                "0x157368f"
+            ],
+            "checked_utc": "2026-10-30T06:27:47+00:00",
+            "result": "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "elapsed_ms": 279
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:48+00:00",
+            "result": "0x31524",
+            "elapsed_ms": 281
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0x11ae5297d0b5886914661938fcb8aedc08622194",
+                    "data": "0x377cf68d000000000000000000000000fda7f75a7ee1db6d7eba2e924b74d727e8532890"
+                },
+                "0x157368f"
+            ],
+            "checked_utc": "2026-10-30T06:27:48+00:00",
+            "result": "0x000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001",
+            "elapsed_ms": 285
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:48+00:00",
+            "result": "0x31524",
+            "elapsed_ms": 272
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0xfdA7f75A7eE1dB6d7Eba2E924B74D727E8532890",
+                    "data": "0x77778db30000000000000000000000000000000000000000000000000000000000000002"
+                },
+                "0x157368f"
+            ],
+            "checked_utc": "2026-10-30T06:27:48+00:00",
+            "result": "0x0000000000000000000000002fe4562b26b6545fdbcf5a77e920d2a1236e590500000000000000000000000000000000000000000000000000038d7ea4c680000000000000000000000000000000000000000000000000000000000000000002",
+            "elapsed_ms": 282
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:49+00:00",
+            "result": "0x31524",
+            "elapsed_ms": 285
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0xfdA7f75A7eE1dB6d7Eba2E924B74D727E8532890",
+                    "data": "0xc87b56dd0000000000000000000000000000000000000000000000000000000000000002"
+                },
+                "0x157368f"
+            ],
+            "checked_utc": "2026-10-30T06:27:49+00:00",
+            "result": "0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000011697066733a2f2f73696d756c6174696f6e000000000000000000000000000000",
+            "elapsed_ms": 281
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:49+00:00",
+            "result": "0x31524",
+            "elapsed_ms": 282
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0xfdA7f75A7eE1dB6d7Eba2E924B74D727E8532890",
+                    "data": "0x6352211e0000000000000000000000000000000000000000000000000000000000000002"
+                },
+                "0x157368f"
+            ],
+            "checked_utc": "2026-10-30T06:27:50+00:00",
+            "result": "0x000000000000000000000000b92bd490c8e9e5d9c46d71666418d4e7ae4534e9",
+            "elapsed_ms": 273
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:50+00:00",
+            "result": "0x31524",
+            "elapsed_ms": 288
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0xfdA7f75A7eE1dB6d7Eba2E924B74D727E8532890",
+                    "data": "0x70a08231000000000000000000000000b92bd490c8e9e5d9c46d71666418d4e7ae4534e9"
+                },
+                "0x157368f"
+            ],
+            "checked_utc": "2026-10-30T06:27:50+00:00",
+            "result": "0x0000000000000000000000000000000000000000000000000000000000000001",
+            "elapsed_ms": 274
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:50+00:00",
+            "result": "0x31524",
+            "elapsed_ms": 266
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0xfdA7f75A7eE1dB6d7Eba2E924B74D727E8532890",
+                    "data": "0x081812fc0000000000000000000000000000000000000000000000000000000000000002"
+                },
+                "0x157368f"
+            ],
+            "checked_utc": "2026-10-30T06:27:51+00:00",
+            "result": "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "elapsed_ms": 283
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:51+00:00",
+            "result": "0x31524",
+            "elapsed_ms": 286
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0xfdA7f75A7eE1dB6d7Eba2E924B74D727E8532890",
+                    "data": "0xe985e9c5000000000000000000000000b92bd490c8e9e5d9c46d71666418d4e7ae4534e900000000000000000000000011ae5297d0b5886914661938fcb8aedc08622194"
+                },
+                "0x157368f"
+            ],
+            "checked_utc": "2026-10-30T06:27:51+00:00",
+            "result": "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "elapsed_ms": 277
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:52+00:00",
+            "result": "0x31524",
+            "elapsed_ms": 278
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0xfdA7f75A7eE1dB6d7Eba2E924B74D727E8532890",
+                    "data": "0x3644e515"
+                },
+                "0x157368f"
+            ],
+            "checked_utc": "2026-10-30T06:27:52+00:00",
+            "result": "0xbc86ef8e1ec097f37cfcf1c66de2989510cfe1a5f581e7b5c84113cff38edbfe",
+            "elapsed_ms": 281
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_getCode",
+            "params": [
+                "0x918e742d8dd0de7e7930fe0489cdbce1701fb29d",
+                "0x157368f"
+            ],
+            "checked_utc": "2026-10-30T06:27:52+00:00",
+            "result": "0x6080604052600436106100225760003560e01c80632d6b3a6b1461003357610029565b3661002957005b61003161007d565b005b34801561003f57600080fd5b507f0000000000000000000000001c094210b1d03e4d4a9403c8ffe3273b98574c396040516001600160a01b03909116815260200160405180910390f35b61008d610088610094565b610118565b565b905090565b60007f0000000000000000000000001c094210b1d03e4d4a9403c8ffe3273b98574c396001600160a01b0316635c60da1b6040518163ffffffff1660e01b8152600401602060405180830381865afa1580156100f4573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061008f919061013c565b3660008037600080366000845af43d6000803e808015610137573d6000f35b3d6000fd5b60006020828403121561014e57600080fd5b81516001600160a01b038116811461016557600080fd5b939250505056fea2646970667358221220836b4e2d7ad18398974f9eeb7323581a69cbd6e35a714fa96e4ea23570bfc99f64736f6c63430008140033",
+            "elapsed_ms": 279
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:52+00:00",
+            "result": "0x31524",
+            "elapsed_ms": 267
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0x918e742d8dd0de7e7930fe0489cdbce1701fb29d",
+                    "data": "0x06fdde03"
+                },
+                "0x157368f"
+            ],
+            "checked_utc": "2026-10-30T06:27:53+00:00",
+            "result": "0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001553444b205141204d756c7469204e465420323032360000000000000000000000",
+            "elapsed_ms": 268
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:53+00:00",
+            "result": "0x31524",
+            "elapsed_ms": 273
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0x918e742d8dd0de7e7930fe0489cdbce1701fb29d",
+                    "data": "0x95d89b41"
+                },
+                "0x157368f"
+            ],
+            "checked_utc": "2026-10-30T06:27:53+00:00",
+            "result": "0x0000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000973646b7161313135350000000000000000000000000000000000000000000000",
+            "elapsed_ms": 285
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:53+00:00",
+            "result": "0x31524",
+            "elapsed_ms": 264
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0x918e742d8dd0de7e7930fe0489cdbce1701fb29d",
+                    "data": "0xe8a3d485"
+                },
+                "0x157368f"
+            ],
+            "checked_utc": "2026-10-30T06:27:54+00:00",
+            "result": "0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000045646174613a6170706c69636174696f6e2f6a736f6e2c2537422532326e616d6525323225334125323253444b25323051412532304d756c74692532304e4654253232253744000000000000000000000000000000000000000000000000000000",
+            "elapsed_ms": 280
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:54+00:00",
+            "result": "0x31524",
+            "elapsed_ms": 294
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0x918e742d8dd0de7e7930fe0489cdbce1701fb29d",
+                    "data": "0xa6fde7ab"
+                },
+                "0x157368f"
+            ],
+            "checked_utc": "2026-10-30T06:27:54+00:00",
+            "result": "0x0000000000000000000000000000000000000000000000000000000000000001",
+            "elapsed_ms": 283
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:55+00:00",
+            "result": "0x31524",
+            "elapsed_ms": 273
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0x918e742d8dd0de7e7930fe0489cdbce1701fb29d",
+                    "data": "0x02912524"
+                },
+                "0x157368f"
+            ],
+            "checked_utc": "2026-10-30T06:27:55+00:00",
+            "result": "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "elapsed_ms": 271
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:55+00:00",
+            "result": "0x31524",
+            "elapsed_ms": 268
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0x918e742d8dd0de7e7930fe0489cdbce1701fb29d",
+                    "data": "0xcc3e7516"
+                },
+                "0x157368f"
+            ],
+            "checked_utc": "2026-10-30T06:27:55+00:00",
+            "result": "0x0000000000000000000000000000000000000000000000000000000000000001",
+            "elapsed_ms": 281
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:56+00:00",
+            "result": "0x31524",
+            "elapsed_ms": 266
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0x11ae5297d0b5886914661938fcb8aedc08622194",
+                    "data": "0x377cf68d000000000000000000000000918e742d8dd0de7e7930fe0489cdbce1701fb29d"
+                },
+                "0x157368f"
+            ],
+            "checked_utc": "2026-10-30T06:27:56+00:00",
+            "result": "0x000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000001",
+            "elapsed_ms": 274
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:56+00:00",
+            "result": "0x31524",
+            "elapsed_ms": 263
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0x918e742d8dd0de7e7930fe0489cdbce1701fb29d",
+                    "data": "0x77778db300000000000000000000000000000000000000000000000000000000000f1206"
+                },
+                "0x157368f"
+            ],
+            "checked_utc": "2026-10-30T06:27:56+00:00",
+            "result": "0x0000000000000000000000002fe4562b26b6545fdbcf5a77e920d2a1236e590500000000000000000000000000000000000000000000000000071afd498d00000000000000000000000000000000000000000000000000000000000000000002",
+            "elapsed_ms": 295
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:57+00:00",
+            "result": "0x31524",
+            "elapsed_ms": 272
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0x918e742d8dd0de7e7930fe0489cdbce1701fb29d",
+                    "data": "0x0e89341c00000000000000000000000000000000000000000000000000000000000f1206"
+                },
+                "0x157368f"
+            ],
+            "checked_utc": "2026-10-30T06:27:57+00:00",
+            "result": "0x00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000011697066733a2f2f73696d756c6174696f6e000000000000000000000000000000",
+            "elapsed_ms": 290
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:57+00:00",
+            "result": "0x31524",
+            "elapsed_ms": 274
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0x918e742d8dd0de7e7930fe0489cdbce1701fb29d",
+                    "data": "0x4f558e7900000000000000000000000000000000000000000000000000000000000f1206"
+                },
+                "0x157368f"
+            ],
+            "checked_utc": "2026-10-30T06:27:58+00:00",
+            "result": "0x0000000000000000000000000000000000000000000000000000000000000001",
+            "elapsed_ms": 306
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:58+00:00",
+            "result": "0x31524",
+            "elapsed_ms": 274
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0x918e742d8dd0de7e7930fe0489cdbce1701fb29d",
+                    "data": "0xe7ee6ad600000000000000000000000000000000000000000000000000000000000f1206"
+                },
+                "0x157368f"
+            ],
+            "checked_utc": "2026-10-30T06:27:58+00:00",
+            "result": "0x00000000000000000000000000000000000000000000000000071afd498d0000",
+            "elapsed_ms": 282
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:27:58+00:00",
+            "result": "0x31524",
+            "elapsed_ms": 268
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0x918e742d8dd0de7e7930fe0489cdbce1701fb29d",
+                    "data": "0x3644e515"
+                },
+                "0x157368f"
+            ],
+            "checked_utc": "2026-10-30T06:27:59+00:00",
+            "result": "0xc530608c38207b5ed8cc1a673b45a2f6d8ef1eb8c372169c802f4d2fcd13a9c4",
+            "elapsed_ms": 292
+        },
+        {
+            "chain_id": 75,
+            "endpoint": "https://node.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:30:54+00:00",
+            "result": "0x4b",
+            "elapsed_ms": 488
+        },
+        {
+            "chain_id": 75,
+            "endpoint": "https://node.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0x9b1129ec66afd4b7d20f95de078126853695ccfe",
+                    "data": "0x5bfb797f"
+                },
+                "0x20c266a"
+            ],
+            "checked_utc": "2026-10-30T06:30:54+00:00",
+            "result": "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "elapsed_ms": 621
+        }
+    ],
+    "supplement_checked_utc": "2026-10-30T06:30:55+00:00"
+}

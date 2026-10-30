@@ -1,0 +1,44 @@
+{
+    "audit": "Default local CA configuration diagnostic",
+    "sdk_version": "0.1.4",
+    "checked_utc": "2026-10-30T06:39:29+00:00",
+    "policy": "read RPC and eth_call only; no estimates, signing, approvals or sends",
+    "request_count": 1,
+    "checks": [
+        {
+            "name": "default_trust_store",
+            "status": "expected-environment-tls-failure",
+            "value": {
+                "message": "RPC transport failed (cURL 60: SSL certificate problem: unable to get local issuer certificate)",
+                "diagnostics": {
+                    "http_status": 0,
+                    "curl_errno": 60,
+                    "curl_error": "SSL certificate problem: unable to get local issuer certificate",
+                    "response_limit_exceeded": false
+                },
+                "resolution": "Configure a trusted CA bundle using curl.cainfo; certificate verification remains enabled"
+            }
+        }
+    ],
+    "requests": [
+        {
+            "chain_id": 75,
+            "endpoint": "https://node.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T06:39:29+00:00",
+            "error": {
+                "type": "Decimal\\RpcTransportException",
+                "code": 0,
+                "message": "RPC transport failed (cURL 60: SSL certificate problem: unable to get local issuer certificate)",
+                "data": {
+                    "http_status": 0,
+                    "curl_errno": 60,
+                    "curl_error": "SSL certificate problem: unable to get local issuer certificate",
+                    "response_limit_exceeded": false
+                }
+            },
+            "elapsed_ms": 170
+        }
+    ]
+}

@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.5 - 2026-10-30
+
+- Preserve cURL errno/error, HTTP status and response-limit diagnostics before closing the RPC handle. TLS verification and retry behavior remain unchanged.
+- Record mainnet/testnet read-only acceptance: 429 guarded RPC attempts, 159 passed checks, current stake/event/token/NFT/Checks reads and nonpersistent ERC20 eth_call probes.
+- Add replay fixtures, a strict live-audit method guard and loopback HTTP/connection/size/failover regressions. The offline suite passes 7947 checks.
+
+No actual approvals, signatures, transaction broadcasts or deployment were performed. Optional legacy getters, missing registry slugs and unfunded NFT/bridge coverage limits are documented in docs/LIVE_RPC_AUDIT_0_1_5.md.
+
 ## 0.1.4 - 2026-10-30
 
 - Extend completed operation parity to the newer recovery-014 Python request branches and guards.

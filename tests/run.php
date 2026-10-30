@@ -110,6 +110,16 @@ require __DIR__.'/nft-current-parity.php';
 
 require __DIR__.'/common-current-parity.php';
 
+require __DIR__.'/live-staking-regressions.php';
+
+require __DIR__.'/live-token-regressions.php';
+
+require __DIR__.'/live-nft-regressions.php';
+
+require __DIR__.'/live-audit-policy.php';
+
+require __DIR__.'/live-eth-call-regressions.php';
+
 require __DIR__.'/parity-manifest.php';
 
 echo "OK: $count checks; no remote RPC requests or blockchain broadcasts\n";

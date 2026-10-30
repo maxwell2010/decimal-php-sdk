@@ -2,10 +2,11 @@
 
 Независимый SDK для Decimal от [MintCandy](https://mintcandy.ru/) и [@Maxwell2019](https://t.me/Maxwell2019). PHP 8.2+, MIT.
 
-**v0.1.4 - релиз с закрытием матрицы операций и актуальных recovery-вариантов.** Включены 28 ABI-профилей, 654 функции, кошельки mnemonic/BIP32, EVM-подпись, проверяемые сценарии Safe/NFT/staking/checks и Cosmos validation/signing/query. [Матрица покрытия](docs/PARITY.md) фиксирует поддерживаемые интерфейсы и границы совместимости.
+**v0.1.5 - выпуск по результатам live-аудита mainnet/testnet с улучшенной диагностикой RPC.** Включены 28 ABI-профилей, 654 функции, кошельки mnemonic/BIP32, EVM-подпись, проверяемые сценарии Safe/NFT/staking/checks и Cosmos validation/signing/query. [Матрица покрытия](docs/PARITY.md) фиксирует поддерживаемые интерфейсы и границы совместимости.
 
+[Текущий паритет API](docs/CURRENT_PARITY_0_1_4.md) содержит соответствия всех 55 операций Go/Python/C#. В текущем релизе проходят 7947 offline-проверок. Добавлены сервисы token economy, staking/validators, NFT, bridge и checks. Небезопасный ERC20 allowance для generic Multicall остается отключенным; доступна проверенная альтернатива RestrictedMultisend.
 
-[Текущий паритет 0.1.4](docs/CURRENT_PARITY_0_1_4.md) содержит соответствия всех 55 операций Go/Python/C# и результаты 7872 offline-проверок. Добавлены сервисы token economy, staking/validators, NFT, bridge и checks. Небезопасный ERC20 allowance для generic Multicall остается отключенным; доступна проверенная альтернатива RestrictedMultisend.
+[Live-аудит mainnet/testnet](docs/LIVE_RPC_AUDIT_0_1_5.md): 429 сохраненных RPC-попыток, 159 успешных проверок, реальные eth_call и улучшенная диагностика cURL/HTTP. Транзакции в сеть не отправлялись.
 
 ## Последняя стабильная версия одной командой
 

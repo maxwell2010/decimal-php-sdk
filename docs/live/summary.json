@@ -1,0 +1,82 @@
+{
+  "audited_release": "0.1.4",
+  "fix_release": "0.1.5",
+  "recorded_attempts": 429,
+  "passed_checks": 159,
+  "rpc_methods": {
+    "eth_chainId": 206,
+    "eth_blockNumber": 12,
+    "eth_getCode": 12,
+    "eth_call": 187,
+    "eth_gasPrice": 2,
+    "eth_getBalance": 2,
+    "eth_getStorageAt": 2,
+    "eth_getTransactionReceipt": 3,
+    "eth_getBlockByNumber": 2,
+    "eth_getLogs": 1
+  },
+  "artifacts": [
+    {
+      "file": "checks.json",
+      "request_count": 22,
+      "statuses": {
+        "passed": 12,
+        "observed": 2
+      }
+    },
+    {
+      "file": "core.json",
+      "request_count": 48,
+      "statuses": {
+        "passed": 14,
+        "observed": 2,
+        "unregistered-system-slug": 4,
+        "limitation": 4,
+        "expected-revert": 2
+      }
+    },
+    {
+      "file": "eth-call.json",
+      "request_count": 24,
+      "statuses": {
+        "observed": 2,
+        "passed": 4,
+        "expected-revert": 2
+      }
+    },
+    {
+      "file": "nft.json",
+      "request_count": 100,
+      "statuses": {
+        "passed": 50,
+        "unsupported-deployment-view": 2,
+        "limited": 1
+      }
+    },
+    {
+      "file": "staking.json",
+      "request_count": 63,
+      "statuses": {
+        "passed": 35,
+        "observed": 2,
+        "limitation": 2
+      }
+    },
+    {
+      "file": "tokens.json",
+      "request_count": 171,
+      "statuses": {
+        "passed": 44
+      }
+    },
+    {
+      "file": "transport.json",
+      "request_count": 1,
+      "statuses": {
+        "expected-environment-tls-failure": 1
+      }
+    }
+  ],
+  "scope": "Read RPC and nonpersistent eth_call only; no signing, estimates, broadcasts or deployment. Counts refer to the saved final runs, including one expected unconfigured-CA diagnostic attempt.",
+  "transport_note": "Token/NFT/staking acceptance ran against 0.1.4. Supplemental core/checks/eth_call probes used the same API with the transport error diagnostics patch; successful response decoding and TLS verification were unchanged."
+}

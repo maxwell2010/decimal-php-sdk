@@ -17,10 +17,13 @@ final class Rpc
     private function request(string $url,array $request): mixed
     {
         if($this->transport)return ($this->transport)($request,$url);
-        $curl=curl_init($url);$raw='';
-        curl_setopt_array($curl,[CURLOPT_POST=>true,CURLOPT_POSTFIELDS=>json_encode($request,JSON_THROW_ON_ERROR),CURLOPT_HTTPHEADER=>['Content-Type: application/json'],CURLOPT_CONNECTTIMEOUT=>min(10,$this->timeoutSeconds),CURLOPT_TIMEOUT=>$this->timeoutSeconds,CURLOPT_FOLLOWLOCATION=>false,CURLOPT_WRITEFUNCTION=>function($c,$part)use(&$raw){if(strlen($raw)+strlen($part)>$this->maxResponseBytes)return 0;$raw.=$part;return strlen($part);}]);
-        $ok=curl_exec($curl);$status=(int)curl_getinfo($curl,CURLINFO_RESPONSE_CODE);curl_close($curl);
-        if($ok===false||$status!==200)throw new RpcTransportException('RPC transport failed',$status);
+        $curl=curl_init($url);$raw='';$overflow=false;
+        curl_setopt_array($curl,[CURLOPT_POST=>true,CURLOPT_POSTFIELDS=>json_encode($request,JSON_THROW_ON_ERROR),CURLOPT_HTTPHEADER=>['Content-Type: application/json'],CURLOPT_CONNECTTIMEOUT=>min(10,$this->timeoutSeconds),CURLOPT_TIMEOUT=>$this->timeoutSeconds,CURLOPT_FOLLOWLOCATION=>false,CURLOPT_WRITEFUNCTION=>function($c,$part)use(&$raw,&$overflow){if(strlen($raw)+strlen($part)>$this->maxResponseBytes){$overflow=true;return 0;}$raw.=$part;return strlen($part);}]);
+        $ok=curl_exec($curl);$status=(int)curl_getinfo($curl,CURLINFO_RESPONSE_CODE);$errno=curl_errno($curl);$error=curl_error($curl);curl_close($curl);
+        if($ok===false||$status!==200){
+            $reason=$overflow?'response size limit exceeded':($errno!==0?'cURL '.$errno.': '.$error:'HTTP '.$status);
+            throw new RpcTransportException('RPC transport failed ('.$reason.')',$status,['http_status'=>$status,'curl_errno'=>$errno,'curl_error'=>$error,'response_limit_exceeded'=>$overflow]);
+        }
         try{return json_decode($raw,true,512,JSON_THROW_ON_ERROR|JSON_BIGINT_AS_STRING);}catch(\JsonException){throw new RpcException('Invalid RPC JSON');}
     }
     private function result(mixed $response,int $id): mixed
