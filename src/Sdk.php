@@ -22,5 +22,7 @@ final readonly class Sdk
     public function stakingReader(string $deployment,string $profile='Delegation'): StakingReader { return new StakingReader($this->client,Contract::profile($deployment,$profile)); }
     public function validators(string $deployment): ValidatorService { return new ValidatorService($this->client,$deployment); }
     public function bridge(string $deployment): BridgeService { return new BridgeService($this->client,$deployment); }
+    public function verifiedBridge(string $deployment,string $runtimeHash,string $toChainId,?string $implementation=null,?string $implementationRuntimeHash=null): BridgeService
+    { return BridgeService::verified($this->client,$deployment,$runtimeHash,$toChainId,$implementation,$implementationRuntimeHash); }
     public function checks(string $deployment): ChecksService { return new ChecksService($this->client,$deployment); }
 }

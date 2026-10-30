@@ -1,0 +1,81 @@
+{
+  "release": "0.1.6",
+  "recorded_rpc_attempts": 195,
+  "methods": {
+    "eth_chainId": 95,
+    "eth_blockNumber": 8,
+    "eth_call": 78,
+    "eth_getCode": 8,
+    "eth_getStorageAt": 3,
+    "eth_getLogs": 2,
+    "eth_getBlockByNumber": 1
+  },
+  "artifacts": [
+    {
+      "file": "bridge-discovery.json",
+      "sdk_version": "0.1.5",
+      "requests": 25,
+      "statuses": {
+        "observed": 4,
+        "unregistered-or-unavailable": 4,
+        "passed": 2,
+        "rejected-unrelated-token-abi": 1,
+        "unsupported-view": 2
+      }
+    },
+    {
+      "file": "bridge-implementation.json",
+      "sdk_version": "0.1.6",
+      "requests": 2,
+      "statuses": {
+        "passed": 1
+      }
+    },
+    {
+      "file": "bridge-binding.json",
+      "sdk_version": "0.1.6",
+      "requests": 18,
+      "statuses": {
+        "passed": 1
+      }
+    },
+    {
+      "file": "nft-extended.json",
+      "sdk_version": "0.1.5",
+      "requests": 76,
+      "statuses": {
+        "passed": 20,
+        "observed": 3
+      }
+    },
+    {
+      "file": "nft-positions.json",
+      "sdk_version": "0.1.5",
+      "requests": 50,
+      "statuses": {
+        "observed": 5,
+        "passed": 19,
+        "limitation": 3,
+        "expected-revert": 2,
+        "node-revert-unresolved": 1
+      }
+    },
+    {
+      "file": "nft-legacy-exit-asset.json",
+      "sdk_version": "0.1.5",
+      "requests": 24,
+      "statuses": {
+        "observed": 1,
+        "passed": 9,
+        "view-revert-observed": 3,
+        "unresolved-contract-state": 1
+      }
+    }
+  ],
+  "scope": "Read RPC and eth_call only. No transaction, signature, estimate or state override. Source/API HTTP discovery recorded separately.",
+  "remaining_limits": [
+    "Current mainnet Bridge and complete source-matched candidate ABI not established",
+    "Mature legacy NFT completion reverted; exact cause unresolved",
+    "Separate successful NFT eth_call actions do not compose a persisted lifecycle"
+  ]
+}

@@ -1,0 +1,408 @@
+{
+    "audit": "Bridge source/discovery candidate characterization",
+    "sdk_version": "0.1.5",
+    "checked_utc": "2026-10-30T07:09:20+00:00",
+    "policy": "read RPC and eth_call only; no estimates, signing, approvals or sends",
+    "request_count": 25,
+    "checks": [
+        {
+            "name": "mainnet.snapshot",
+            "status": "observed",
+            "value": "0x20c2830"
+        },
+        {
+            "name": "mainnet.registry.bridge",
+            "status": "unregistered-or-unavailable",
+            "value": {
+                "class": "RuntimeException",
+                "message": "System contract is not registered"
+            }
+        },
+        {
+            "name": "mainnet.registry.bridge-v2",
+            "status": "unregistered-or-unavailable",
+            "value": {
+                "class": "RuntimeException",
+                "message": "System contract is not registered"
+            }
+        },
+        {
+            "name": "testnet.snapshot",
+            "status": "observed",
+            "value": "0x1573860"
+        },
+        {
+            "name": "testnet.registry.bridge",
+            "status": "unregistered-or-unavailable",
+            "value": {
+                "class": "RuntimeException",
+                "message": "System contract is not registered"
+            }
+        },
+        {
+            "name": "testnet.registry.bridge-v2",
+            "status": "unregistered-or-unavailable",
+            "value": {
+                "class": "RuntimeException",
+                "message": "System contract is not registered"
+            }
+        },
+        {
+            "name": "testnet.candidate.runtime",
+            "status": "passed",
+            "value": {
+                "code": "0x6080604052600a600c565b005b60186014601a565b605e565b565b600060597f360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc5473ffffffffffffffffffffffffffffffffffffffff1690565b905090565b3660008037600080366000845af43d6000803e808015607c573d6000f35b3d6000fdfea2646970667358221220e8ac10136de7daeee9ac9c4ff839f340f7426b057912eb3f6aae8ce968dbd00564736f6c63430008140033",
+                "keccak": "0xb199d4e593e9c2c68b5500d4a59173e0f583d6223ae9b968998fd5e1faac4b78"
+            }
+        },
+        {
+            "name": "testnet.candidate.implementation",
+            "status": "passed",
+            "value": "0x06d7ac3874adc1f773c5165e91077c8037b789ff"
+        },
+        {
+            "name": "testnet.candidate.token_metadata",
+            "status": "rejected-unrelated-token-abi",
+            "error": {
+                "type": "Decimal\\RpcException",
+                "code": 3,
+                "message": "execution reverted"
+            }
+        },
+        {
+            "name": "testnet.candidate.minimalServiceFees(uint16)",
+            "status": "unsupported-view",
+            "value": {
+                "code": 3,
+                "message": "execution reverted",
+                "data": "0x"
+            }
+        },
+        {
+            "name": "testnet.candidate.minimalServiceFees(uint256)",
+            "status": "observed",
+            "value": [
+                "0"
+            ]
+        },
+        {
+            "name": "testnet.candidate.chainId()",
+            "status": "observed",
+            "value": [
+                "202020"
+            ]
+        },
+        {
+            "name": "testnet.candidate.wormhole()",
+            "status": "unsupported-view",
+            "value": {
+                "code": 3,
+                "message": "execution reverted",
+                "data": "0x"
+            }
+        }
+    ],
+    "requests": [
+        {
+            "chain_id": 75,
+            "endpoint": "https://node.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T07:09:13+00:00",
+            "result": "0x4b",
+            "elapsed_ms": 356
+        },
+        {
+            "chain_id": 75,
+            "endpoint": "https://node.decimalchain.com/web3/",
+            "method": "eth_blockNumber",
+            "params": [],
+            "checked_utc": "2026-10-30T07:09:13+00:00",
+            "result": "0x20c2830",
+            "elapsed_ms": 374
+        },
+        {
+            "chain_id": 75,
+            "endpoint": "https://node.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T07:09:13+00:00",
+            "result": "0x4b",
+            "elapsed_ms": 302
+        },
+        {
+            "chain_id": 75,
+            "endpoint": "https://node.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0xc108715a06f76caa96fa2c943ebf05159c29a87d",
+                    "data": "0x04433bbc000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000066272696467650000000000000000000000000000000000000000000000000000"
+                },
+                "0x20c2830"
+            ],
+            "checked_utc": "2026-10-30T07:09:14+00:00",
+            "result": "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "elapsed_ms": 323
+        },
+        {
+            "chain_id": 75,
+            "endpoint": "https://node.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T07:09:14+00:00",
+            "result": "0x4b",
+            "elapsed_ms": 370
+        },
+        {
+            "chain_id": 75,
+            "endpoint": "https://node.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0xc108715a06f76caa96fa2c943ebf05159c29a87d",
+                    "data": "0x04433bbc000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000096272696467652d76320000000000000000000000000000000000000000000000"
+                },
+                "0x20c2830"
+            ],
+            "checked_utc": "2026-10-30T07:09:14+00:00",
+            "result": "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "elapsed_ms": 329
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T07:09:15+00:00",
+            "result": "0x31524",
+            "elapsed_ms": 276
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_blockNumber",
+            "params": [],
+            "checked_utc": "2026-10-30T07:09:15+00:00",
+            "result": "0x1573860",
+            "elapsed_ms": 266
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T07:09:15+00:00",
+            "result": "0x31524",
+            "elapsed_ms": 273
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0xbC96b61F137F28F0Da47Cc4Ef06e5f984B565A2E",
+                    "data": "0x04433bbc000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000066272696467650000000000000000000000000000000000000000000000000000"
+                },
+                "0x1573860"
+            ],
+            "checked_utc": "2026-10-30T07:09:15+00:00",
+            "result": "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "elapsed_ms": 290
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T07:09:16+00:00",
+            "result": "0x31524",
+            "elapsed_ms": 318
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0xbC96b61F137F28F0Da47Cc4Ef06e5f984B565A2E",
+                    "data": "0x04433bbc000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000096272696467652d76320000000000000000000000000000000000000000000000"
+                },
+                "0x1573860"
+            ],
+            "checked_utc": "2026-10-30T07:09:16+00:00",
+            "result": "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "elapsed_ms": 295
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_getCode",
+            "params": [
+                "0x827ea5381adb912ed0befda26afe8cdc5a5e050a",
+                "0x1573860"
+            ],
+            "checked_utc": "2026-10-30T07:09:16+00:00",
+            "result": "0x6080604052600a600c565b005b60186014601a565b605e565b565b600060597f360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc5473ffffffffffffffffffffffffffffffffffffffff1690565b905090565b3660008037600080366000845af43d6000803e808015607c573d6000f35b3d6000fdfea2646970667358221220e8ac10136de7daeee9ac9c4ff839f340f7426b057912eb3f6aae8ce968dbd00564736f6c63430008140033",
+            "elapsed_ms": 287
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T07:09:17+00:00",
+            "result": "0x31524",
+            "elapsed_ms": 323
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_getStorageAt",
+            "params": [
+                "0x827ea5381adb912ed0befda26afe8cdc5a5e050a",
+                "0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc",
+                "0x1573860"
+            ],
+            "checked_utc": "2026-10-30T07:09:17+00:00",
+            "result": "0x00000000000000000000000006d7ac3874adc1f773c5165e91077c8037b789ff",
+            "elapsed_ms": 299
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T07:09:17+00:00",
+            "result": "0x31524",
+            "elapsed_ms": 284
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0x827ea5381adb912ed0befda26afe8cdc5a5e050a",
+                    "data": "0x06fdde03"
+                },
+                "0x1573860"
+            ],
+            "checked_utc": "2026-10-30T07:09:18+00:00",
+            "error": {
+                "type": "Decimal\\RpcException",
+                "code": 3,
+                "message": "execution reverted",
+                "data": "0x"
+            },
+            "elapsed_ms": 386
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T07:09:18+00:00",
+            "result": "0x31524",
+            "elapsed_ms": 298
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0x827ea5381adb912ed0befda26afe8cdc5a5e050a",
+                    "data": "0x5cd9d57e0000000000000000000000000000000000000000000000000000000000000002"
+                },
+                "0x1573860"
+            ],
+            "checked_utc": "2026-10-30T07:09:18+00:00",
+            "error": {
+                "type": "Decimal\\RpcException",
+                "code": 3,
+                "message": "execution reverted",
+                "data": "0x"
+            },
+            "elapsed_ms": 315
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T07:09:19+00:00",
+            "result": "0x31524",
+            "elapsed_ms": 297
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0x827ea5381adb912ed0befda26afe8cdc5a5e050a",
+                    "data": "0x165e0d720000000000000000000000000000000000000000000000000000000000000002"
+                },
+                "0x1573860"
+            ],
+            "checked_utc": "2026-10-30T07:09:19+00:00",
+            "result": "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "elapsed_ms": 306
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T07:09:19+00:00",
+            "result": "0x31524",
+            "elapsed_ms": 282
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0x827ea5381adb912ed0befda26afe8cdc5a5e050a",
+                    "data": "0x9a8a0592"
+                },
+                "0x1573860"
+            ],
+            "checked_utc": "2026-10-30T07:09:19+00:00",
+            "result": "0x0000000000000000000000000000000000000000000000000000000000031524",
+            "elapsed_ms": 307
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_chainId",
+            "params": [],
+            "checked_utc": "2026-10-30T07:09:20+00:00",
+            "result": "0x31524",
+            "elapsed_ms": 283
+        },
+        {
+            "chain_id": 202020,
+            "endpoint": "https://testnet-val.decimalchain.com/web3/",
+            "method": "eth_call",
+            "params": [
+                {
+                    "to": "0x827ea5381adb912ed0befda26afe8cdc5a5e050a",
+                    "data": "0x84acd1bb"
+                },
+                "0x1573860"
+            ],
+            "checked_utc": "2026-10-30T07:09:20+00:00",
+            "error": {
+                "type": "Decimal\\RpcException",
+                "code": 3,
+                "message": "execution reverted",
+                "data": "0x"
+            },
+            "elapsed_ms": 286
+        }
+    ]
+}

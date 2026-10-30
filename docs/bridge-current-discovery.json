@@ -1,0 +1,186 @@
+{
+  "official_js_query": "{ bridges { id implementation } }",
+  "graphql": [
+    {
+      "url": "https://mainnet-thegraph.decimalchain.com/subgraphs/name/bridge",
+      "http_status": 200,
+      "body": {
+        "errors": [
+          {
+            "message": "deployment `bridge` does not exist"
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://mainnet-thegraph.decimalchain.com/subgraphs/name/bridgeETH",
+      "http_status": 200,
+      "body": {
+        "errors": [
+          {
+            "message": "deployment `bridgeETH` does not exist"
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://mainnet-thegraph.decimalchain.com/subgraphs/name/bridgeBSC",
+      "http_status": 200,
+      "body": {
+        "errors": [
+          {
+            "message": "deployment `bridgeBSC` does not exist"
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://testnet-thegraph.decimalchain.com/subgraphs/name/bridge",
+      "error": "<urlopen error _ssl.c:983: The handshake operation timed out>"
+    },
+    {
+      "url": "https://testnet-thegraph.decimalchain.com/subgraphs/name/bridgeETH",
+      "error": "<urlopen error _ssl.c:983: The handshake operation timed out>"
+    },
+    {
+      "url": "https://testnet-thegraph.decimalchain.com/subgraphs/name/bridgeBSC",
+      "error": "<urlopen error _ssl.c:983: The handshake operation timed out>"
+    }
+  ],
+  "node_tree": {
+    "current_master": "a46cb48d7965c1a64a495cebb22e735dfe4b9da3",
+    "pinned_commit": "a46cb48d7965c1a64a495cebb22e735dfe4b9da3",
+    "bridge_paths": []
+  },
+  "historical_sources": [
+    {
+      "url": "https://api.bitbucket.org/2.0/repositories/decimalteam/decimal-contracts/src/018a6c6d00616c3e24ae44a8fac429b2ccabbd12/bridgeBsc.sol",
+      "sha256": "b7bd4e925a74c5d1c0652a9dc5bfe8bd50b8a4def4ce834767181c39e5c08f81",
+      "function_declarations": [
+        "function _msgSender()",
+        "function _msgData()",
+        "function toString(uint256 value)",
+        "function toHexString(uint256 value)",
+        "function toHexString(uint256 value, uint256 length)",
+        "function supportsInterface(bytes4 interfaceId)",
+        "function supportsInterface(bytes4 interfaceId)",
+        "function supportsInterface(bytes4 interfaceId)",
+        "function hasRole(bytes32 role, address account)",
+        "function getRoleAdmin(bytes32 role)",
+        "function grantRole(bytes32 role, address account)",
+        "function revokeRole(bytes32 role, address account)",
+        "function renounceRole(bytes32 role, address account)",
+        "function foo()",
+        "function supportsInterface(bytes4 interfaceId)",
+        "function hasRole(bytes32 role, address account)",
+        "function _checkRole(bytes32 role, address account)",
+        "function getRoleAdmin(bytes32 role)",
+        "function grantRole(bytes32 role, address account)",
+        "function revokeRole(bytes32 role, address account)",
+        "function renounceRole(bytes32 role, address account)",
+        "function _setupRole(bytes32 role, address account)",
+        "function _setRoleAdmin(bytes32 role, bytes32 adminRole)",
+        "function _grantRole(bytes32 role, address account)",
+        "function _revokeRole(bytes32 role, address account)",
+        "function recover(\n        bytes32 hashedMsg,\n        uint8 v,\n        bytes32 r,\n        bytes32 s\n    )",
+        "function totalSupply()",
+        "function balanceOf(address account)",
+        "function transfer(address recipient, uint256 amount)",
+        "function allowance(address owner, address spender)",
+        "function approve(address spender, uint256 amount)",
+        "function transferFrom(address sender, address recipient, uint256 amount)",
+        "function name()",
+        "function symbol()",
+        "function decimals()",
+        "function name()",
+        "function symbol()",
+        "function decimals()",
+        "function totalSupply()",
+        "function balanceOf(address account)",
+        "function transfer(address recipient, uint256 amount)",
+        "function allowance(address owner, address spender)",
+        "function approve(address spender, uint256 amount)",
+        "function transferFrom(address sender, address recipient, uint256 amount)",
+        "function increaseAllowance(address spender, uint256 addedValue)",
+        "function decreaseAllowance(address spender, uint256 subtractedValue)",
+        "function _transfer(address sender, address recipient, uint256 amount)",
+        "function _mint(address account, uint256 amount)",
+        "function _burn(address account, uint256 amount)",
+        "function _approve(address owner, address spender, uint256 amount)",
+        "function _beforeTokenTransfer(address from, address to, uint256 amount)",
+        "function paused()",
+        "function _pause()",
+        "function _unpause()",
+        "function _beforeTokenTransfer(address from, address to, uint256 amount)",
+        "function getOwner()",
+        "function name()",
+        "function mint(address to, uint256 amount)",
+        "function burn(address from, uint256 amount)",
+        "function pause()",
+        "function unpause()",
+        "function addBlockList(address user)",
+        "function removeBlockList(address user)",
+        "function updateName(string memory name_)",
+        "function _beforeTokenTransfer(\n        address from,\n        address to,\n        uint256 amount\n    )",
+        "function getTokenList()",
+        "function swap(\n        uint256 amount,\n        uint256 nonce,\n        address recipient,\n        uint256 chainTo,\n        string memory tokenSymbol\n    )",
+        "function swapToDecimal(\n        uint256 amount,\n        uint256 nonce,\n        string memory recipient,\n        string memory tokenSymbol\n    )",
+        "function redeem(\n        uint256 amount,\n        address recipient,\n        uint256 nonce,\n        uint256 chainFrom,\n        uint8 _v,\n        bytes32 _r,\n        bytes32 _s,\n        string memory tokenSymbol\n    )",
+        "function getSwapState(bytes32 hashedSecret)",
+        "function addToken(string memory symbol)",
+        "function updateToken(string memory symbol, address newToken)",
+        "function mintToken(\n        string memory symbol,\n        address to,\n        uint256 amount\n    )",
+        "function burnToken(\n        string memory symbol,\n        address from,\n        uint256 amount\n    )",
+        "function grantRoleToken(\n        string memory symbol,\n        bytes32 role,\n        address user\n    )",
+        "function updateChain(uint256 _chainId, bool enabled)",
+        "function updateTokenName(string memory symbol, string memory name)",
+        "function pauseToken(string memory symbol)",
+        "function unpauseToken(string memory symbol)"
+      ],
+      "address_literals": [
+        "0x7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5D576E73"
+      ]
+    },
+    {
+      "url": "https://api.bitbucket.org/2.0/repositories/decimalteam/decimal-contracts/src/018a6c6d00616c3e24ae44a8fac429b2ccabbd12/bridgeEth",
+      "sha256": "37737175595d5249036321b035b4db6f346375f3ebd6c18ef121960e031f8bbb",
+      "function_declarations": [],
+      "address_literals": []
+    }
+  ],
+  "source_snapshots": [
+    {
+      "path": "C:\\Users\\Maximus\\.codex\\worktrees\\0046\\PythonSDK\\gosdk\\docs\\ADDITIONAL_ABI_EVIDENCE.md",
+      "sha256": "38a399a91a9fbbf679b7778382af2609613071516b144ac585dfd94ce19d235d"
+    },
+    {
+      "path": "C:\\Users\\Maximus\\.codex\\worktrees\\0046\\PythonSDK\\gosdk\\docs\\deployments\\testnet-2026-10-29-bridge\\metadata.json",
+      "sha256": "16fc00956de0b63999bac800fac8bc1cc025fd1a305dcbdc42f840a22a2360ef"
+    },
+    {
+      "path": "C:\\Users\\Maximus\\PycharmProjects\\Decimal-js-sdk\\src\\decimalevm\\call.ts",
+      "sha256": "b815567cce24d33983597aae6c7bdfb6e14bd1f11990ddf59cd123cec8d3ec23"
+    },
+    {
+      "path": "C:\\Users\\Maximus\\.codex\\worktrees\\sdk-release-014\\PythonSDK\\src\\decimal_web3_sdk\\bridge.py",
+      "sha256": "8f5e78bdbf1ebcc1032d7ce15f0f17db394b27691e94834db8bfc88965492de1"
+    },
+    {
+      "path": "C:\\Users\\Maximus\\PycharmProjects\\PythonSDK\\csharp\\src\\Decimal.Web3\\Bridge\\BridgeDrafts.cs",
+      "sha256": "65f45c1a88574db8ad07a0a529422609069063eff87327125456cdbbd6507a7f"
+    }
+  ],
+  "conclusion": {
+    "mainnet": "No current bridge deployment was verified: exact registry slugs returned zero and all three official JS GraphQL datasets were unavailable. This does not prove absence of a bridge.",
+    "testnet": "Official-JS-discovered candidate proxy persists with the prior implementation. Actual runtime rejects Token metadata and uint16 fee getter, accepts uint256 fee getter and chainId(). Full current protocol ABI is not established by selector probes.",
+    "candidate": "0x827ea5381adb912ed0befda26afe8cdc5a5e050a",
+    "implementation": "0x06d7ac3874adc1f773c5165e91077c8037b789ff",
+    "forbidden_assumptions": [
+      "Do not treat compact API Token ABI as bridge ABI",
+      "Do not silently replace uint16 with uint256 on all bridge methods",
+      "Do not label registry zero as proof of no deployed bridge",
+      "Do not guess a mainnet address from testnet or historical Ethereum/BSC source"
+    ],
+    "rpc_evidence": "live/bridge-discovery.json"
+  }
+}

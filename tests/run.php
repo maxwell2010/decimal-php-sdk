@@ -120,6 +120,12 @@ require __DIR__.'/live-audit-policy.php';
 
 require __DIR__.'/live-eth-call-regressions.php';
 
+require __DIR__.'/nft-live-extended-regressions.php';
+
+require __DIR__.'/nft-position-live-regressions.php';
+
+require __DIR__.'/bridge-profile-regressions.php';
+
 require __DIR__.'/parity-manifest.php';
 
 echo "OK: $count checks; no remote RPC requests or blockchain broadcasts\n";

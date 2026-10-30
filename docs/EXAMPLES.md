@@ -137,3 +137,13 @@ $legacy = $sdk->legacyNftStaking($originalLegacyDelegation); // Original positio
 Current staking/conversion/NFT request methods default to no automatic approval. Choose it explicitly to obtain approval drafts. CurrentTokenEconomy::updateDetails returns two ordered actions; TransactionExecutor::executeSequence defaults to an unsigned non-atomic plan. Submission requires an explicit broadcast flag and refresh callback between confirmed steps. The result retains per-step receipts and sums budget/paid fees, without claiming rollback of earlier successful actions.
 
 Client::refreshResult updates an existing result without signing/resending, preserves the original fee budget and obtains actual fees only from a receipt or the source-supported legacy transaction price fallback. Unknown dynamic paid prices remain null. See CURRENT_PARITY_0_1_4.md and domain manifests for exact current request correspondence.
+
+
+## Verified Bridge approval planning
+
+```php
+$bridge = $sdk->verifiedBridge($address, $reviewedRuntimeHash, '75', $implementation, $reviewedImplementationRuntimeHash);
+$plan = $bridge->transferToken($sender, $token, $recipient, '100', $serviceFeeWei, '75', '0', autoApprove: true);
+```
+
+Supply reviewed deployment evidence and the intended uint16 protocol destination, not a chain ID truncated into uint16. The factory probes the fee interface, binds the route and rechecks runtime before drafts. Fees below the reported minimum reject before allowance reads. Raw Sdk::bridge remains usable for deliberate unsigned encoding with autoApprove=false; requesting autoApprove=true on that raw instance now rejects. The known testnet candidate does not satisfy this profile. Neither a matching fee getter nor a zero fee establishes an enabled peer or settlement.

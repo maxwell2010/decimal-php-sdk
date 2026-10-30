@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.6 - 2026-10-30
+
+- Add caller-reviewed runtime/implementation-bound Bridge factory, route binding, concrete verified quote block and reported-minimum service-fee guards.
+- Require verified deployment binding for Bridge auto-approval plans; raw builders remain available without automatic approval. No global uint256 ABI rewrite is performed.
+- Capture current bridge discovery and 195 bounded read/eth_call attempts, including actual NFT mint/transfer/burn/approval/batch calls and legacy/unified position reads.
+- Add recorded-response and binding regressions: 8095 offline checks.
+
+No transactions or account signatures were performed in the live audit. A current mainnet Bridge/full testnet ABI remain unconfirmed; mature legacy NFT completion revert remains unresolved. See docs/BRIDGE_NFT_AUDIT_0_1_6.md.
+
 ## 0.1.5 - 2026-10-30
 
 - Preserve cURL errno/error, HTTP status and response-limit diagnostics before closing the RPC handle. TLS verification and retry behavior remain unchanged.

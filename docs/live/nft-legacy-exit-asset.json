@@ -1,0 +1,417 @@
+{
+  "audit": "Legacy mature NFT exit asset diagnosis",
+  "sdk_version": "0.1.5",
+  "checked_utc": "2026-10-30T07:12:18+00:00",
+  "policy": "read RPC and eth_call only; no estimates, signing, approvals or sends",
+  "request_count": 24,
+  "checks": [
+    {
+      "name": "snapshot",
+      "status": "observed",
+      "value": {
+        "block": "0x20c281d",
+        "asset": "0xd5224d2e0f46171eb24a7134ab2accccd2303f9b",
+        "legacy": "0xe45adfcc739a0d10ce9462b58866c9a1a06035e2",
+        "delegator": "0x68e4f512b4e3bf368e910908541994ea3c7e9fc9"
+      }
+    },
+    {
+      "name": "asset.runtime",
+      "status": "passed",
+      "value": "0x6080604052600436106100225760003560e01c80632d6b3a6b1461003357610029565b3661002957005b61003161007d565b005b34801561003f57600080fd5b507f000000000000000000000000d2f60b34f7a70229c1556d4e0705f9b8f7b107b36040516001600160a01b03909116815260200160405180910390f35b61008d610088610094565b610118565b565b905090565b60007f000000000000000000000000d2f60b34f7a70229c1556d4e0705f9b8f7b107b36001600160a01b0316635c60da1b6040518163ffffffff1660e01b8152600401602060405180830381865afa1580156100f4573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061008f919061013c565b3660008037600080366000845af43d6000803e808015610137573d6000f35b3d6000fd5b60006020828403121561014e57600080fd5b81516001600160a01b038116811461016557600080fd5b939250505056fea2646970667358221220836b4e2d7ad18398974f9eeb7323581a69cbd6e35a714fa96e4ea23570bfc99f64736f6c63430008140033"
+    },
+    {
+      "name": "asset.ownerOf1",
+      "status": "view-revert-observed",
+      "error": {
+        "type": "Decimal\\RpcException",
+        "code": 3,
+        "message": "execution reverted"
+      }
+    },
+    {
+      "name": "asset.legacyBalance",
+      "status": "passed",
+      "value": "0"
+    },
+    {
+      "name": "asset.delegatorBalance",
+      "status": "passed",
+      "value": "0"
+    },
+    {
+      "name": "asset.creator",
+      "status": "passed",
+      "value": "0x68e4f512b4e3bf368e910908541994ea3c7e9fc9"
+    },
+    {
+      "name": "asset.allowMint",
+      "status": "passed",
+      "value": true
+    },
+    {
+      "name": "asset.refundable",
+      "status": "passed",
+      "value": true
+    },
+    {
+      "name": "asset.legacyNftType",
+      "status": "view-revert-observed",
+      "error": {
+        "type": "Decimal\\RpcException",
+        "code": 3,
+        "message": "execution reverted"
+      }
+    },
+    {
+      "name": "asset.reserve1",
+      "status": "passed",
+      "value": {
+        "token": "0x0000000000000000000000000000000000000000",
+        "amount": "1000000000000000",
+        "reserveType": "1"
+      }
+    },
+    {
+      "name": "legacy.frozen0",
+      "status": "passed",
+      "value": {
+        "index": "0",
+        "stake": {
+          "validator": "0x0866d8f1fa44b6773b25187237e229d9e4b1d528",
+          "delegator": "0x68e4f512b4e3bf368e910908541994ea3c7e9fc9",
+          "token": "0xd5224d2e0f46171eb24a7134ab2accccd2303f9b",
+          "amount": "1000000000000000000",
+          "tokenId": "1",
+          "tokenType": "2",
+          "holdTimestamp": "0"
+        },
+        "status": "1",
+        "freezeType": "1",
+        "unfreezeTimestamp": "1725518223",
+        "block": "0x20c281d"
+      }
+    },
+    {
+      "name": "asset.supportsERC1155",
+      "status": "passed",
+      "value": false
+    },
+    {
+      "name": "asset.legacyERC1155BalanceId1",
+      "status": "view-revert-observed",
+      "error": {
+        "type": "Decimal\\RpcException",
+        "code": 3,
+        "message": "execution reverted"
+      }
+    },
+    {
+      "name": "completion_cause",
+      "status": "unresolved-contract-state",
+      "value": "Pinned asset ownerOf(1) reverts; legacy and delegator ERC721 balances are both zero. ERC1155 support is false. Legacy frozen metadata remains active/mature and reserve metadata exists. These facts do not prove why completion reverts or whether the token was burned/migrated. No SDK defect established."
+    }
+  ],
+  "requests": [
+    {
+      "chain_id": 75,
+      "endpoint": "https://node.decimalchain.com/web3/",
+      "method": "eth_chainId",
+      "params": [],
+      "checked_utc": "2026-10-30T07:12:11+00:00",
+      "result": "0x4b",
+      "elapsed_ms": 400
+    },
+    {
+      "chain_id": 75,
+      "endpoint": "https://node.decimalchain.com/web3/",
+      "method": "eth_getCode",
+      "params": [
+        "0xd5224d2e0f46171eb24a7134ab2accccd2303f9b",
+        "0x20c281d"
+      ],
+      "checked_utc": "2026-10-30T07:12:11+00:00",
+      "result": "0x6080604052600436106100225760003560e01c80632d6b3a6b1461003357610029565b3661002957005b61003161007d565b005b34801561003f57600080fd5b507f000000000000000000000000d2f60b34f7a70229c1556d4e0705f9b8f7b107b36040516001600160a01b03909116815260200160405180910390f35b61008d610088610094565b610118565b565b905090565b60007f000000000000000000000000d2f60b34f7a70229c1556d4e0705f9b8f7b107b36001600160a01b0316635c60da1b6040518163ffffffff1660e01b8152600401602060405180830381865afa1580156100f4573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061008f919061013c565b3660008037600080366000845af43d6000803e808015610137573d6000f35b3d6000fd5b60006020828403121561014e57600080fd5b81516001600160a01b038116811461016557600080fd5b939250505056fea2646970667358221220836b4e2d7ad18398974f9eeb7323581a69cbd6e35a714fa96e4ea23570bfc99f64736f6c63430008140033",
+      "elapsed_ms": 318
+    },
+    {
+      "chain_id": 75,
+      "endpoint": "https://node.decimalchain.com/web3/",
+      "method": "eth_chainId",
+      "params": [],
+      "checked_utc": "2026-10-30T07:12:11+00:00",
+      "result": "0x4b",
+      "elapsed_ms": 333
+    },
+    {
+      "chain_id": 75,
+      "endpoint": "https://node.decimalchain.com/web3/",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xd5224d2e0f46171eb24a7134ab2accccd2303f9b",
+          "data": "0x6352211e0000000000000000000000000000000000000000000000000000000000000001"
+        },
+        "0x20c281d"
+      ],
+      "checked_utc": "2026-10-30T07:12:12+00:00",
+      "error": {
+        "type": "Decimal\\RpcException",
+        "code": 3,
+        "message": "execution reverted",
+        "data": "0x7e2732890000000000000000000000000000000000000000000000000000000000000001"
+      },
+      "elapsed_ms": 355
+    },
+    {
+      "chain_id": 75,
+      "endpoint": "https://node.decimalchain.com/web3/",
+      "method": "eth_chainId",
+      "params": [],
+      "checked_utc": "2026-10-30T07:12:12+00:00",
+      "result": "0x4b",
+      "elapsed_ms": 308
+    },
+    {
+      "chain_id": 75,
+      "endpoint": "https://node.decimalchain.com/web3/",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xd5224d2e0f46171eb24a7134ab2accccd2303f9b",
+          "data": "0x70a08231000000000000000000000000e45adfcc739a0d10ce9462b58866c9a1a06035e2"
+        },
+        "0x20c281d"
+      ],
+      "checked_utc": "2026-10-30T07:12:12+00:00",
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "elapsed_ms": 370
+    },
+    {
+      "chain_id": 75,
+      "endpoint": "https://node.decimalchain.com/web3/",
+      "method": "eth_chainId",
+      "params": [],
+      "checked_utc": "2026-10-30T07:12:13+00:00",
+      "result": "0x4b",
+      "elapsed_ms": 320
+    },
+    {
+      "chain_id": 75,
+      "endpoint": "https://node.decimalchain.com/web3/",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xd5224d2e0f46171eb24a7134ab2accccd2303f9b",
+          "data": "0x70a0823100000000000000000000000068e4f512b4e3bf368e910908541994ea3c7e9fc9"
+        },
+        "0x20c281d"
+      ],
+      "checked_utc": "2026-10-30T07:12:13+00:00",
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "elapsed_ms": 389
+    },
+    {
+      "chain_id": 75,
+      "endpoint": "https://node.decimalchain.com/web3/",
+      "method": "eth_chainId",
+      "params": [],
+      "checked_utc": "2026-10-30T07:12:14+00:00",
+      "result": "0x4b",
+      "elapsed_ms": 331
+    },
+    {
+      "chain_id": 75,
+      "endpoint": "https://node.decimalchain.com/web3/",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xd5224d2e0f46171eb24a7134ab2accccd2303f9b",
+          "data": "0x02d05d3f"
+        },
+        "0x20c281d"
+      ],
+      "checked_utc": "2026-10-30T07:12:14+00:00",
+      "result": "0x00000000000000000000000068e4f512b4e3bf368e910908541994ea3c7e9fc9",
+      "elapsed_ms": 322
+    },
+    {
+      "chain_id": 75,
+      "endpoint": "https://node.decimalchain.com/web3/",
+      "method": "eth_chainId",
+      "params": [],
+      "checked_utc": "2026-10-30T07:12:14+00:00",
+      "result": "0x4b",
+      "elapsed_ms": 324
+    },
+    {
+      "chain_id": 75,
+      "endpoint": "https://node.decimalchain.com/web3/",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xd5224d2e0f46171eb24a7134ab2accccd2303f9b",
+          "data": "0xa6fde7ab"
+        },
+        "0x20c281d"
+      ],
+      "checked_utc": "2026-10-30T07:12:15+00:00",
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000001",
+      "elapsed_ms": 321
+    },
+    {
+      "chain_id": 75,
+      "endpoint": "https://node.decimalchain.com/web3/",
+      "method": "eth_chainId",
+      "params": [],
+      "checked_utc": "2026-10-30T07:12:15+00:00",
+      "result": "0x4b",
+      "elapsed_ms": 315
+    },
+    {
+      "chain_id": 75,
+      "endpoint": "https://node.decimalchain.com/web3/",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xd5224d2e0f46171eb24a7134ab2accccd2303f9b",
+          "data": "0x02912524"
+        },
+        "0x20c281d"
+      ],
+      "checked_utc": "2026-10-30T07:12:15+00:00",
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000001",
+      "elapsed_ms": 365
+    },
+    {
+      "chain_id": 75,
+      "endpoint": "https://node.decimalchain.com/web3/",
+      "method": "eth_chainId",
+      "params": [],
+      "checked_utc": "2026-10-30T07:12:16+00:00",
+      "result": "0x4b",
+      "elapsed_ms": 384
+    },
+    {
+      "chain_id": 75,
+      "endpoint": "https://node.decimalchain.com/web3/",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xd5224d2e0f46171eb24a7134ab2accccd2303f9b",
+          "data": "0x5bfb797f"
+        },
+        "0x20c281d"
+      ],
+      "checked_utc": "2026-10-30T07:12:16+00:00",
+      "error": {
+        "type": "Decimal\\RpcException",
+        "code": 3,
+        "message": "execution reverted",
+        "data": "0x"
+      },
+      "elapsed_ms": 329
+    },
+    {
+      "chain_id": 75,
+      "endpoint": "https://node.decimalchain.com/web3/",
+      "method": "eth_chainId",
+      "params": [],
+      "checked_utc": "2026-10-30T07:12:16+00:00",
+      "result": "0x4b",
+      "elapsed_ms": 366
+    },
+    {
+      "chain_id": 75,
+      "endpoint": "https://node.decimalchain.com/web3/",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xd5224d2e0f46171eb24a7134ab2accccd2303f9b",
+          "data": "0x77778db30000000000000000000000000000000000000000000000000000000000000001"
+        },
+        "0x20c281d"
+      ],
+      "checked_utc": "2026-10-30T07:12:17+00:00",
+      "result": "0x000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000038d7ea4c680000000000000000000000000000000000000000000000000000000000000000001",
+      "elapsed_ms": 370
+    },
+    {
+      "chain_id": 75,
+      "endpoint": "https://node.decimalchain.com/web3/",
+      "method": "eth_chainId",
+      "params": [],
+      "checked_utc": "2026-10-30T07:12:17+00:00",
+      "result": "0x4b",
+      "elapsed_ms": 355
+    },
+    {
+      "chain_id": 75,
+      "endpoint": "https://node.decimalchain.com/web3/",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xe45adfcc739a0d10ce9462b58866c9a1a06035e2",
+          "data": "0xd8f06a8f0000000000000000000000000000000000000000000000000000000000000000"
+        },
+        "0x20c281d"
+      ],
+      "checked_utc": "2026-10-30T07:12:17+00:00",
+      "result": "0x0000000000000000000000000866d8f1fa44b6773b25187237e229d9e4b1d52800000000000000000000000068e4f512b4e3bf368e910908541994ea3c7e9fc9000000000000000000000000d5224d2e0f46171eb24a7134ab2accccd2303f9b0000000000000000000000000000000000000000000000000de0b6b3a7640000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000066d9518f",
+      "elapsed_ms": 347
+    },
+    {
+      "chain_id": 75,
+      "endpoint": "https://node.decimalchain.com/web3/",
+      "method": "eth_chainId",
+      "params": [],
+      "checked_utc": "2026-10-30T07:12:59+00:00",
+      "result": "0x4b",
+      "elapsed_ms": 329
+    },
+    {
+      "chain_id": 75,
+      "endpoint": "https://node.decimalchain.com/web3/",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xd5224d2e0f46171eb24a7134ab2accccd2303f9b",
+          "data": "0x01ffc9a7d9b67a2600000000000000000000000000000000000000000000000000000000"
+        },
+        "0x20c281d"
+      ],
+      "checked_utc": "2026-10-30T07:12:59+00:00",
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "elapsed_ms": 332
+    },
+    {
+      "chain_id": 75,
+      "endpoint": "https://node.decimalchain.com/web3/",
+      "method": "eth_chainId",
+      "params": [],
+      "checked_utc": "2026-10-30T07:13:00+00:00",
+      "result": "0x4b",
+      "elapsed_ms": 313
+    },
+    {
+      "chain_id": 75,
+      "endpoint": "https://node.decimalchain.com/web3/",
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xd5224d2e0f46171eb24a7134ab2accccd2303f9b",
+          "data": "0x00fdd58e000000000000000000000000e45adfcc739a0d10ce9462b58866c9a1a06035e20000000000000000000000000000000000000000000000000000000000000001"
+        },
+        "0x20c281d"
+      ],
+      "checked_utc": "2026-10-30T07:13:00+00:00",
+      "error": {
+        "type": "Decimal\\RpcException",
+        "code": 3,
+        "message": "execution reverted",
+        "data": "0x"
+      },
+      "elapsed_ms": 329
+    }
+  ]
+}

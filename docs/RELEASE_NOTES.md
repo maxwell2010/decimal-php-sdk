@@ -1,35 +1,34 @@
-# Decimal PHP SDK v0.1.5
+# Decimal PHP SDK v0.1.6
 
-Read-only mainnet/testnet validation and RPC transport diagnostics patch. No blockchain transactions, actual approvals, signing or deployments were performed.
+Bridge discovery, extended NFT eth_call validation and verified Bridge approval planning. Live validation used read RPC and eth_call only, without transaction sends, signatures, estimates or deployment.
 
-## Fixed
+## Added and changed
 
-RPC failures now preserve cURL errno/error, HTTP status and response-limit details in RpcTransportException::rpcData. A TLS failure no longer appears as an unexplained status 0. TLS verification, read failover and write retry policy are unchanged.
+- BridgeService::verified / Sdk::verifiedBridge: caller-reviewed runtime and implementation evidence, exact outgoing route binding and an actual uint16 fee-interface probe.
+- Bridge auto-approval now requires the verified binding. Fees below the reported minimum, another route, changed runtime or an incompatible fee interface reject before an approval plan. Raw unsigned builders remain available with autoApprove=false.
+- Recorded 195 additional bounded RPC attempts, including successful mainnet/testnet NFT action simulations and legacy/unified NFT reads. Source/metadata discovery requests are recorded separately.
+- 8095 offline checks, new real-response replays and verified-binding regressions.
 
-## Verified
+## Explicit remaining limits
 
-- 429 recorded guarded RPC attempts and 159 passed checks across mainnet/testnet.
-- Active Stake8, validator/state/quote/NFT/Checks reads, legacy getter selection, actual historical receipt and event decoding.
-- Nonpersistent zero-value ERC20 approve/transfer eth_call successes and expected over-balance reverts.
-- 7947 offline checks, recorded response replays and loopback transport diagnostics. CI gates publication on PHP 8.2-8.5 and Linux/Windows/macOS.
+A current mainnet Bridge and a complete authenticated ABI for the testnet candidate were not established. The candidate rejects uint16 fee calls, accepts an exploratory uint256 fee call, and is not the Token implementation claimed by the compact API metadata. No ABI is silently rewritten and no address is guessed.
 
-[Live audit and captured evidence](https://github.com/maxwell2010/decimal-php-sdk/blob/main/docs/LIVE_RPC_AUDIT_0_1_5.md) records block snapshots, actual coverage and limits. Missing bridge registry targets and unsupported optional legacy views remain explicit; a funded NFT lifecycle or bridge settlement is not claimed.
+Mainnet legacy NFT frozen index 0 is mature but complete([0]) reverts; asset reads also show ownerOf(1) reverting while frozen/reserve metadata remain. The exact cause is unresolved and the exit is not reported successful. Independent NFT action eth_call successes do not compose a persisted lifecycle.
 
-## Install the latest stable release
+[Full findings, sources and raw RPC evidence](https://github.com/maxwell2010/decimal-php-sdk/blob/main/docs/BRIDGE_NFT_AUDIT_0_1_6.md).
+
+## Install the latest stable SDK
 
 ```sh
 composer create-project --repository=https://github.com/maxwell2010/decimal-php-sdk/releases/latest/download/packages.json mintcandy/decimal-web3-sdk decimal-php-sdk
 ```
 
-Composer 2, PHP 8.2+ and curl/bcmath/gmp/mbstring are required; ZIP extraction needs PHP zip or unzip/7z. Configure a trusted curl.cainfo bundle when your PHP installation lacks CA trust. Do not disable TLS verification.
+Composer 2, PHP 8.2+, curl/bcmath/gmp/mbstring and a ZIP extractor are required. Configure a trusted curl.cainfo bundle when needed; TLS verification stays enabled. Release CI covers Linux/Windows/macOS and PHP 8.2-8.5, Composer audit and installed-package tests. Prior versioned assets remain immutable; permanent latest links remain unchanged.
 
 ```php
 require 'vendor/autoload.php';
-
-$client = new Decimal\Client(Decimal\Network::mainnet());
+$client = new Decimal\Client(Decimal\Network::testnet());
 $client->verifyChain();
-$contracts = $client->resolveSystemContracts(); // Read-only, pinned registry snapshot.
+$contracts = $client->resolveSystemContracts(); // Read-only snapshot; not Bridge discovery.
 echo json_encode($contracts);
 ```
-
-[Permanent ZIP](https://github.com/maxwell2010/decimal-php-sdk/releases/latest/download/decimal-php-sdk.zip) and [SHA256SUMS](https://github.com/maxwell2010/decimal-php-sdk/releases/latest/download/SHA256SUMS) follow the latest stable release. Versioned ZIP, alias ZIP, packages.json and SHA256SUMS are attached. Prior versioned assets remain immutable.

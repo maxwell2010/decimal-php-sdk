@@ -1,0 +1,33 @@
+{
+  "candidate_implementation": "0x06d7ac3874adc1f773c5165e91077c8037b789ff",
+  "metadata_cid": "QmbxENjmADRrrpHeQS4NKKM3sModCiQKy472rnDupWTp8G",
+  "ipfs_metadata_digest": "ca45531f338c2f064eb197a35139b88c46573f9b8a4c201804748688e4637481",
+  "additional_gateway_attempts": [
+    {
+      "url": "https://gateway.pinata.cloud/ipfs/QmbxENjmADRrrpHeQS4NKKM3sModCiQKy472rnDupWTp8G",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://ipfs.filebase.io/ipfs/QmbxENjmADRrrpHeQS4NKKM3sModCiQKy472rnDupWTp8G",
+      "error": "The read operation timed out"
+    },
+    {
+      "url": "https://cloudflare-ipfs.com/ipfs/QmbxENjmADRrrpHeQS4NKKM3sModCiQKy472rnDupWTp8G",
+      "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)>"
+    }
+  ],
+  "previous_attempts": [
+    {
+      "source": "Sourcify full/partial match chain202020",
+      "result": "HTTP404 both"
+    },
+    {
+      "source": "ipfs.io CIDv0",
+      "result": "HTTP429"
+    },
+    {
+      "source": "dweb.link CIDv0",
+      "result": "TLS expired certificate; verification retained"
+    }
+  ]
+}
