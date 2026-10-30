@@ -1,5 +1,7 @@
 # Bridge discovery and extended NFT eth_call audit
 
+Follow-up correction: the [0.1.7 diagnosis](NFT_LEGACY_CUSTODY_DIAGNOSIS.md) interprets custom error bytes already preserved below and independently confirms paused() = true. Legacy completion returns EnforcedPause(); asset owner/transfer probes return ERC721NonexistentToken(1). The earlier unresolved narrative is historical and superseded by that diagnosis; no repair or successful completion is claimed.
+
 Three agents investigated public Bridge sources/deployments, NFT collection actions and NFT position/exits. All live RPC calls used the strict read-only harness and verified TLS. No transaction, gas estimate, account signature, paid lifecycle or deployment was performed. Existing NFT ownership was read from chain; no private keys or public fixture credentials were used.
 
 ## Bridge result

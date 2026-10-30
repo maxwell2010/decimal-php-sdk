@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.7 - 2026-10-30
+
+- Reject ignored ERC721 transfer amounts/data before RPC; preserve explicit data-bearing transfers and validate ERC1155 amounts.
+- Add an optional pinned block to Client::simulate and strict Solidity Error/Panic/custom-ABI diagnostics through RpcException::revertReason and RevertReason, preserving raw RPC errors.
+- Diagnose the legacy mainnet completion as paused and the observed NFT as nonexistent at the pinned state; correct the earlier narrative's failure to interpret already captured custom errors.
+- Verify a real historical funded unified ERC721 withdrawal through testnet eth_call. Record 42 additional permitted requests and extend offline replays and input/collision regressions to 8195 checks.
+
+No transactions or account signatures were performed. Bridge provenance and remaining funded lifecycle limits are explicit in docs/NFT_FOLLOWUP_0_1_7.md. Existing versioned assets remain immutable.
+
 ## 0.1.6 - 2026-10-30
 
 - Add caller-reviewed runtime/implementation-bound Bridge factory, route binding, concrete verified quote block and reported-minimum service-fee guards.

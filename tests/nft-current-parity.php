@@ -8,12 +8,24 @@ $ncRpc=new Decimal\Rpc('http://unused',function($r)use(&$ncOwner,&$ncStandard,&$
  elseif($sel===$sig('MIN_RESERVE()'))$v=$c->encodeParameters(['uint256'],[$ncMinimum]);
  elseif($sel===$sig('rate(uint256)'))$v=$c->encodeParameters(['uint256'],[$ncRate]);
  elseif($sel===$sig('ownerOf(uint256)'))$v=$c->encodeParameters(['address'],[$ncOwner]);
+ elseif($sel===$sig('balanceOf(address,uint256)'))$v=$c->encodeParameters(['uint256'],['10']);
  elseif($sel===$sig('checkToken(address)')){if(!$ncTokenAllowed)throw new RuntimeException('Token forbidden');$v='0x';}
  elseif($sel===$sig('getNFTStake(address,uint256,address,address,uint256)'))$v=$c->encodeParameters(['(address,uint256,uint256,uint8,address,address,address,uint256,uint256,bool)'],[[$ncB,'7',$ncPositionAmount,'2',$ncA,$ncA,$ncA,'20','0',true]]);
  else throw new RuntimeException('Unexpected current NFT read '.$sel);
  return ['jsonrpc'=>'2.0','id'=>$r['id'],'result'=>$v];
 });$ncClient=new Decimal\Client(Decimal\Network::testnet(),$ncRpc);$nc721=new Decimal\NftCurrentOperations($ncClient,$ncB,721,$ncC);$nc1155=new Decimal\NftCurrentOperations($ncClient,$ncB,1155,$ncC);
 $ncPermit=['deadline'=>'4000000000','v'=>'27','r'=>'0x'.str_repeat('00',31).'01','s'=>'0x'.str_repeat('00',31).'01'];
+$ncBeforeTransfer=$ncChecks;
+foreach(['0','2','01','-1',bcpow('2','256',0)]as $badAmount)rejects(fn()=>$nc721->transfer($ncA,$ncC,'7',$badAmount));
+same($ncChecks,$ncBeforeTransfer); // Invalid ERC721 amounts must reject before ownership RPC, not silently transfer one token.
+foreach(['0','01','-1',bcpow('2','256',0)]as $badAmount)rejects(fn()=>$nc1155->transfer($ncA,$ncC,'7',$badAmount));
+rejects(fn()=>$nc721->transfer($ncA,$ncC,'7','1','0xabcd'));
+same($ncChecks,$ncBeforeTransfer);
+$ncTransfer=$nc721->transfer($ncA,$ncC,'7');same($ncTransfer->to,$ncB);
+$ncCodec=new Decimal\AbiCodec();
+same($ncTransfer->data,$ncCodec->encodeFunctionSignature('safeTransferFrom(address,address,uint256)').substr($ncCodec->encodeParameters(['address','address','uint256'],[$ncA,$ncC,'7']),2));
+same($nc1155->transfer($ncA,$ncC,'7','2','0xabcd')->data,$ncCodec->encodeFunctionSignature('safeTransferFrom(address,address,uint256,uint256,bytes)').substr($ncCodec->encodeParameters(['address','address','uint256','uint256','bytes'],[$ncA,$ncC,'7','2','0xabcd']),2));
+same($nc721->transferFrom($ncA,$ncA,$ncC,'7','1','0xabcd')->data,$ncCodec->encodeFunctionSignature('safeTransferFrom(address,address,uint256,bytes)').substr($ncCodec->encodeParameters(['address','address','uint256','bytes'],[$ncA,$ncC,'7','0xabcd']),2));
 foreach(json_decode(file_get_contents(__DIR__.'/nft-current-permit-vectors.json'),true) as $row){
  if($row['standard']==='delegate'){$ncStandard='0';$d=$nc721->delegatePermit($ncA,$ncC,$ncA,'7',$ncPermit);}
  else{$ncStandard=$row['standard']===721?'0':'1';$svc=$row['standard']===721?$nc721:$nc1155;$d=$svc->mint($ncA,$ncC,'uri',$row['standard']===721?null:'7',$row['standard']===721?'1':'2','0','20',$ncA,$ncPermit);}

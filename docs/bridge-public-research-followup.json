@@ -1,0 +1,65 @@
+{
+  "utc": "2026-10-30T08:01:00.300463+00:00",
+  "metadata_digest_expected": "ca45531f338c2f064eb197a35139b88c46573f9b8a4c201804748688e4637481",
+  "attempts": [
+    {
+      "url": "https://testnet-nft-ipfs.decimalchain.com/ipfs/QmbxENjmADRrrpHeQS4NKKM3sModCiQKy472rnDupWTp8G",
+      "error": "<urlopen error _ssl.c:983: The handshake operation timed out>"
+    },
+    {
+      "url": "https://w3s.link/ipfs/QmbxENjmADRrrpHeQS4NKKM3sModCiQKy472rnDupWTp8G",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1000)>"
+    },
+    {
+      "url": "https://ipfs.io/ipfs/QmbxENjmADRrrpHeQS4NKKM3sModCiQKy472rnDupWTp8G?filename=metadata.json",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    {
+      "url": "https://gateway.ipfs.io/ipfs/QmbxENjmADRrrpHeQS4NKKM3sModCiQKy472rnDupWTp8G",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    {
+      "url": "https://4everland.io/ipfs/QmbxENjmADRrrpHeQS4NKKM3sModCiQKy472rnDupWTp8G",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1000)>"
+    }
+  ],
+  "official_repositories": [
+    {
+      "repository": "decimalteam/dsc-evm-docs",
+      "tree_sha": "a3ca4ca70e1e6406c1e4df3fbb3465ca797c0129",
+      "truncated": false,
+      "bridge_paths": []
+    },
+    {
+      "repository": "decimalteam/decimal-testnet-test-sub",
+      "tree_sha": "a9d783e26cb6e70aeed63ba532e0457df80bf10e",
+      "truncated": false,
+      "bridge_paths": []
+    },
+    {
+      "repository": "decimalteam/dsc-go-sdk",
+      "tree_sha": "b3fdd10a8c3957d6843fb0d7c14b25575b50cbaa",
+      "truncated": false,
+      "bridge_paths": []
+    },
+    {
+      "repository": "decimalteam/decimal-php-sdk",
+      "tree_sha": "92a88f33c5c2d578df3ea613b1085903727e2f7c",
+      "truncated": false,
+      "bridge_paths": []
+    }
+  ],
+  "erc20_abi_review": {
+    "repository": "decimalteam/decimal-testnet-test-sub",
+    "commit": "a9d783e26cb6e70aeed63ba532e0457df80bf10e",
+    "path": "abis/Contract.json",
+    "result": "Standard ERC20/Ownable ABI; not the candidate Bridge ABI."
+  },
+  "official_js_ipfs_provenance": {
+    "repository": "decimalteam/dsc-js-sdk",
+    "commit": "c7a72278551c517d3c0a37e170f844e8176e385f",
+    "path": "src/endpoints.ts",
+    "symbol": "ipfsEndpoints",
+    "url": "https://testnet-nft-ipfs.decimalchain.com/"
+  }
+}

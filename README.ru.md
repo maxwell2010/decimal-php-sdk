@@ -2,14 +2,14 @@
 
 Независимый SDK для Decimal от [MintCandy](https://mintcandy.ru/) и [@Maxwell2019](https://t.me/Maxwell2019). PHP 8.2+, MIT.
 
-**v0.1.6 - выпуск по результатам live-аудита mainnet/testnet с улучшенной диагностикой RPC.** Включены 28 ABI-профилей, 654 функции, кошельки mnemonic/BIP32, EVM-подпись, проверяемые сценарии Safe/NFT/staking/checks и Cosmos validation/signing/query. [Матрица покрытия](docs/PARITY.md) фиксирует поддерживаемые интерфейсы и границы совместимости.
+**v0.1.7 - исправлены параметры NFT transfer, добавлены симуляция на выбранном блоке и расшифровка ошибок Solidity.** Включены 28 ABI-профилей, 654 функции, кошельки mnemonic/BIP32, EVM-подпись, проверяемые сценарии Safe/NFT/staking/checks и Cosmos validation/signing/query. [Матрица покрытия](docs/PARITY.md) фиксирует поддерживаемые интерфейсы и границы совместимости.
 
-[Текущий паритет API](docs/CURRENT_PARITY_0_1_4.md) содержит соответствия всех 55 операций Go/Python/C#. В текущем релизе проходят 8095 offline-проверок. Добавлены сервисы token economy, staking/validators, NFT, bridge и checks. Небезопасный ERC20 allowance для generic Multicall остается отключенным; доступна проверенная альтернатива RestrictedMultisend.
+[Текущий паритет API](docs/CURRENT_PARITY_0_1_4.md) содержит соответствия всех 55 операций Go/Python/C#. В текущем релизе проходят 8195 offline-проверок. Добавлены сервисы token economy, staking/validators, NFT, bridge и checks. Небезопасный ERC20 allowance для generic Multicall остается отключенным; доступна проверенная альтернатива RestrictedMultisend.
 
 [Live-аудит mainnet/testnet](docs/LIVE_RPC_AUDIT_0_1_5.md): 429 сохраненных RPC-попыток, 159 успешных проверок, реальные eth_call и улучшенная диагностика cURL/HTTP. Транзакции в сеть не отправлялись.
 
 
-[Bridge и расширенный NFT-аудит](docs/BRIDGE_NFT_AUDIT_0_1_6.md): проверены кандидат Bridge и реальные NFT eth_call; добавлена проверяемая привязка Bridge перед approval-планом. Mainnet Bridge и полный ABI testnet пока не подтверждены; выход одной зрелой legacy NFT-позиции остается с revert.
+[Продолжение NFT-аудита](docs/NFT_FOLLOWUP_0_1_7.md): успешно проверен исторический testnet withdrawal; для legacy mainnet выявлены пауза и отсутствующий NFT на проверенном блоке. Mainnet Bridge и полный ABI testnet пока не подтверждены.
 
 ## Последняя стабильная версия одной командой
 

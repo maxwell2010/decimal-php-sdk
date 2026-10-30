@@ -2,16 +2,16 @@
 
 Independent Decimal SDK by [MintCandy](https://mintcandy.ru/) and [@Maxwell2019](https://t.me/Maxwell2019). PHP 8.2+, MIT license.
 
-**v0.1.6 validates mainnet/testnet RPC reads and improves transport diagnostics.** Includes 28 ABI profiles, 654 generated function bindings, guarded EVM workflows, wallets, transaction signing, and source-backed Cosmos validation/signing/query codecs. The [coverage matrix](docs/PARITY.md) defines supported interfaces and deployment boundaries.
+**v0.1.7 fixes NFT transfer input handling and adds pinned simulation with Solidity revert diagnostics.** Includes 28 ABI profiles, 654 generated function bindings, guarded EVM workflows, wallets, transaction signing, and source-backed Cosmos validation/signing/query codecs. The [coverage matrix](docs/PARITY.md) defines supported interfaces and deployment boundaries.
 
 [Русский README](README.ru.md) | [Examples](examples) | [Release notes](CHANGELOG.md) | [Security](SECURITY.md)
 
-[Current source/API parity](docs/CURRENT_PARITY_0_1_4.md) records all 55 operations and source-backed Go/Python/C# mappings. The current release passes 8095 offline checks. Named services cover token economy, staking/validators, NFT, bridge and checks. Generic Multicall ERC20 allowance remains intentionally disabled; verified RestrictedMultisend is the supported alternative.
+[Current source/API parity](docs/CURRENT_PARITY_0_1_4.md) records all 55 operations and source-backed Go/Python/C# mappings. The current release passes 8195 offline checks. Named services cover token economy, staking/validators, NFT, bridge and checks. Generic Multicall ERC20 allowance remains intentionally disabled; verified RestrictedMultisend is the supported alternative.
 
 [Read-only mainnet/testnet audit](docs/LIVE_RPC_AUDIT_0_1_5.md): 429 recorded RPC attempts, 159 passed checks, actual eth_call validation and improved cURL/HTTP failure diagnostics. No blockchain transactions were sent.
 
 
-[Bridge and extended NFT audit](docs/BRIDGE_NFT_AUDIT_0_1_6.md) adds source-backed candidate characterization, actual NFT action calls and verified Bridge approval guards. A current mainnet Bridge/full testnet ABI remain unconfirmed; one real mature legacy NFT completion still reverts.
+[NFT follow-up](docs/NFT_FOLLOWUP_0_1_7.md) adds a real historical testnet withdrawal simulation and identifies pause/missing-token errors for the legacy mainnet case. The [Bridge audit](docs/BRIDGE_NFT_AUDIT_0_1_6.md) provides candidate characterization and verified approval guards. A current mainnet Bridge/full testnet ABI remain unconfirmed.
 
 ## Install the latest stable release with one command
 

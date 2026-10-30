@@ -126,6 +126,12 @@ require __DIR__.'/nft-position-live-regressions.php';
 
 require __DIR__.'/bridge-profile-regressions.php';
 
+require __DIR__.'/revert-reason-regressions.php';
+
+require __DIR__.'/nft-legacy-custody-regressions.php';
+
+require __DIR__.'/nft-historical-position-regressions.php';
+
 require __DIR__.'/parity-manifest.php';
 
 echo "OK: $count checks; no remote RPC requests or blockchain broadcasts\n";

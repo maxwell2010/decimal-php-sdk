@@ -1,0 +1,23 @@
+{
+  "release": "0.1.7",
+  "policy": "read RPC and eth_call only; no signatures, estimates, sends, deployments or state overrides",
+  "request_count": 42,
+  "methods": {
+    "eth_getCode": 2,
+    "eth_chainId": 12,
+    "eth_call": 10,
+    "eth_blockNumber": 2,
+    "eth_getLogs": 16
+  },
+  "sources": [
+    {
+      "artifact": "nft-legacy-exit-custody.json",
+      "requests": 12
+    },
+    {
+      "artifact": "nft-position-search.json",
+      "requests": 30
+    }
+  ],
+  "public_http": "Separate public repository and metadata GET evidence in ../bridge-public-research-followup.json"
+}

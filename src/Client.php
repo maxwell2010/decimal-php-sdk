@@ -12,7 +12,11 @@ final class Client
     { TransactionDraft::address($address); $this->verifyChain(); return Units::decimal($this->rpc->call('eth_getBalance', [$address, $block])); }
     public function call(array $transaction, string $block = 'latest'): string
     { $this->verifyChain(); return $this->rpc->call('eth_call', [$transaction, $block]); }
-    public function simulate(TransactionDraft $draft): string { return $this->call($draft->rpc(), 'pending'); }
+    public function simulate(TransactionDraft $draft, string $block = 'pending'): string
+    {
+        if (!in_array($block,['latest','pending','earliest','safe','finalized'],true)) Units::decimal($block);
+        return $this->call($draft->rpc(), $block);
+    }
     public function resolveSystemContract(string $slug,string $block='latest'): string
     {
         if(trim($slug)==='')throw new \InvalidArgumentException('Contract slug required');

@@ -147,3 +147,7 @@ $plan = $bridge->transferToken($sender, $token, $recipient, '100', $serviceFeeWe
 ```
 
 Supply reviewed deployment evidence and the intended uint16 protocol destination, not a chain ID truncated into uint16. The factory probes the fee interface, binds the route and rechecks runtime before drafts. Fees below the reported minimum reject before allowance reads. Raw Sdk::bridge remains usable for deliberate unsigned encoding with autoApprove=false; requesting autoApprove=true on that raw instance now rejects. The known testnet candidate does not satisfy this profile. Neither a matching fee getter nor a zero fee establishes an enabled peer or settlement.
+
+## Simulation on a chosen block
+
+See [pinned simulation and Solidity revert decoding](SIMULATION.md) for Client::simulate and RpcException::revertReason. No wallet or private key is required.

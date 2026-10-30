@@ -1,34 +1,40 @@
-# Decimal PHP SDK v0.1.6
+# Decimal PHP SDK v0.1.7
 
-Bridge discovery, extended NFT eth_call validation and verified Bridge approval planning. Live validation used read RPC and eth_call only, without transaction sends, signatures, estimates or deployment.
+NFT transfer input fixes, simulation on a chosen block, strict Solidity revert decoding and further real read-only NFT validation. All live checks used reads and eth_call, without transactions, signatures, estimates or state overrides.
 
-## Added and changed
+## Changes
 
-- BridgeService::verified / Sdk::verifiedBridge: caller-reviewed runtime and implementation evidence, exact outgoing route binding and an actual uint16 fee-interface probe.
-- Bridge auto-approval now requires the verified binding. Fees below the reported minimum, another route, changed runtime or an incompatible fee interface reject before an approval plan. Raw unsigned builders remain available with autoApprove=false.
-- Recorded 195 additional bounded RPC attempts, including successful mainnet/testnet NFT action simulations and legacy/unified NFT reads. Source/metadata discovery requests are recorded separately.
-- 8095 offline checks, new real-response replays and verified-binding regressions.
+- Reject ignored ERC721 transfer amounts and nonempty data before RPC. Explicit transferFrom retains the data-bearing safe-transfer variant; ERC1155 amounts must be positive canonical integers.
+- Client::simulate accepts an optional block, preserving pending as the default.
+- RpcException::revertReason and RevertReason decode Error(string), Panic(uint256) and caller-supplied custom error ABI, preserve raw errors and distinguish malformed, empty, unknown and ambiguous custom payloads.
+- Identify mainnet legacy complete([0]) pause blocker and absent NFT at the pinned block. Correct the 0.1.6 narrative: custom error bytes were already present in the earlier raw captures.
+- Successfully simulate withdrawal of a real historical funded unified ERC721 position on testnet. Preserve 42 additional permitted RPC requests and exact offline replays.
+- 8195 offline checks; CI covers Linux/Windows/macOS and PHP 8.2-8.5, Composer audit and installed-package validation.
 
-## Explicit remaining limits
+## Example
 
-A current mainnet Bridge and a complete authenticated ABI for the testnet candidate were not established. The candidate rejects uint16 fee calls, accepts an exploratory uint256 fee call, and is not the Token implementation claimed by the compact API metadata. No ABI is silently rewritten and no address is guessed.
+```php
+// Existing client and unsigned draft; no wallet or key is required.
+$errors = [['type'=>'error', 'name'=>'EnforcedPause', 'inputs'=>[]]];
+try {
+    $bytes = $client->simulate($draft, '0x20c281d');
+} catch (Decimal\RpcException $error) {
+    echo json_encode($error->revertReason($errors));
+}
+```
 
-Mainnet legacy NFT frozen index 0 is mature but complete([0]) reverts; asset reads also show ownerOf(1) reverting while frozen/reserve metadata remain. The exact cause is unresolved and the exit is not reported successful. Independent NFT action eth_call successes do not compose a persisted lifecycle.
+Choose a block and draft appropriate to your selected network. [Simulation usage and limitations](https://github.com/maxwell2010/decimal-php-sdk/blob/v0.1.7/docs/SIMULATION.md).
 
-[Full findings, sources and raw RPC evidence](https://github.com/maxwell2010/decimal-php-sdk/blob/main/docs/BRIDGE_NFT_AUDIT_0_1_6.md).
+## Remaining limits
 
-## Install the latest stable SDK
+A current mainnet Bridge and authenticated full testnet candidate ABI remain unconfirmed after further public-source research. Legacy completion is paused in the observed state; unpausing is not a demonstrated repair for the absent token. The historical testnet withdrawal does not establish a current funded exit, held/ERC1155 coverage or a persisted lifecycle.
+
+[Full audit and evidence](https://github.com/maxwell2010/decimal-php-sdk/blob/v0.1.7/docs/NFT_FOLLOWUP_0_1_7.md).
+
+## Install the latest stable version
 
 ```sh
 composer create-project --repository=https://github.com/maxwell2010/decimal-php-sdk/releases/latest/download/packages.json mintcandy/decimal-web3-sdk decimal-php-sdk
 ```
 
-Composer 2, PHP 8.2+, curl/bcmath/gmp/mbstring and a ZIP extractor are required. Configure a trusted curl.cainfo bundle when needed; TLS verification stays enabled. Release CI covers Linux/Windows/macOS and PHP 8.2-8.5, Composer audit and installed-package tests. Prior versioned assets remain immutable; permanent latest links remain unchanged.
-
-```php
-require 'vendor/autoload.php';
-$client = new Decimal\Client(Decimal\Network::testnet());
-$client->verifyChain();
-$contracts = $client->resolveSystemContracts(); // Read-only snapshot; not Bridge discovery.
-echo json_encode($contracts);
-```
+Composer 2, PHP 8.2+, curl/bcmath/gmp/mbstring and a ZIP extractor are required. Configure a trusted curl.cainfo bundle when needed; TLS verification stays enabled. Permanent latest links stay unchanged; prior versioned assets remain immutable.
