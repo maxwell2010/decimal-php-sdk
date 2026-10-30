@@ -86,4 +86,8 @@ require __DIR__.'/transport_audit.php';
 
 require __DIR__.'/audit-cosmos-differential.php';
 
+require __DIR__.'/stake-upgrade.php';
+
+require __DIR__.'/staking-events-nft-upgrade.php';
+
 echo "OK: $count checks; no remote RPC requests or blockchain broadcasts\n";

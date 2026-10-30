@@ -24,20 +24,27 @@ final class NftService
         $balance=$token->call($this->client,'balanceOf(address,uint256)',[$sender,$tokenId],$block)[0];if(bccomp($balance,$amount,0)<0)throw new \RuntimeException('Insufficient NFT balance');
         return $token->draft($sender,'safeTransferFrom(address,address,uint256,uint256,bytes)',[$sender,$recipient,$tokenId,$amount,$data]);
     }
-    public function delegate721(string $sender,string $delegation,string $validator,string $tokenId,string $block='latest'): array
+    public function delegate721(string $sender,string $delegation,string $validator,string $tokenId,string $block='latest',string $profile='DelegationNFT'): array
     {
+        $this->delegationProfile($profile);
         $token=Contract::profile($this->address,'ERC721');$owner=$token->call($this->client,'ownerOf(uint256)',[$tokenId],$block)[0];
         if(TransactionDraft::address($owner)!==TransactionDraft::address($sender))throw new \RuntimeException('Sender does not own NFT');
         $approved=$token->call($this->client,'getApproved(uint256)',[$tokenId],$block)[0];$steps=[];
         if(TransactionDraft::address($approved)!==TransactionDraft::address($delegation)&&!$token->call($this->client,'isApprovedForAll(address,address)',[$sender,$delegation],$block)[0])$steps[]=$token->draft($sender,'approve(address,uint256)',[$delegation,$tokenId]);
-        $action=Contract::profile($delegation,'DelegationNFT')->draft($sender,'delegateDRC721(address,address,uint256)',[$validator,$this->address,$tokenId]);
+        $action=Contract::profile($delegation,$profile)->draft($sender,$profile==='Delegation20261030'?'delegateNFT(address,address,uint256)':'delegateDRC721(address,address,uint256)',[$validator,$this->address,$tokenId]);
         return ['approvals'=>$steps,'action'=>$action];
     }
-    public function delegate1155(string $sender,string $delegation,string $validator,string $tokenId,string $amount,string $block='latest'): array
+    public function delegate1155(string $sender,string $delegation,string $validator,string $tokenId,string $amount,string $block='latest',string $profile='DelegationNFT'): array
     {
+        $this->delegationProfile($profile);
         Units::uint($amount);if($amount==='0')throw new \InvalidArgumentException('Positive NFT amount required');$token=Contract::profile($this->address,'ERC1155');
         if(bccomp($token->call($this->client,'balanceOf(address,uint256)',[$sender,$tokenId],$block)[0],$amount,0)<0)throw new \RuntimeException('Insufficient NFT balance');
         $steps=[];if(!$token->call($this->client,'isApprovedForAll(address,address)',[$sender,$delegation],$block)[0])$steps[]=$token->draft($sender,'setApprovalForAll(address,bool)',[$delegation,true]);
-        return ['approvals'=>$steps,'action'=>Contract::profile($delegation,'DelegationNFT')->draft($sender,'delegateDRC1155(address,address,uint256,uint256)',[$validator,$this->address,$tokenId,$amount])];
+        return ['approvals'=>$steps,'action'=>Contract::profile($delegation,$profile)->draft($sender,$profile==='Delegation20261030'?'delegateNFT1155(address,address,uint256,uint256)':'delegateDRC1155(address,address,uint256,uint256)',[$validator,$this->address,$tokenId,$amount])];
+    }
+    private function delegationProfile(string $profile): void
+    {
+        if(!in_array($profile,['DelegationNFT','Delegation20261030'],true))throw new \InvalidArgumentException('Explicit NFT delegation profile required');
+        if($this->client->network->chainId===75 && $profile==='DelegationNFT')throw new \RuntimeException('Legacy NFT deposits are inactive on upgraded mainnet; explicitly select the unified Delegation20261030 deployment');
     }
 }

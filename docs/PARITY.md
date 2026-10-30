@@ -1,10 +1,10 @@
 # SDK coverage and compatibility
 
-Release 0.1.1 covers the source-evidenced SDK interfaces listed below. ABI bindings, complete guarded workflows, stateless node validation and live execution are separate evidence levels. Function/schema counts are not a parity percentage or distinct transaction count.
+Release 0.1.2 covers the source-evidenced SDK interfaces listed below. ABI bindings, complete guarded workflows, stateless node validation and live execution are separate evidence levels. Function/schema counts are not a parity percentage or distinct transaction count.
 
 | Area | Released implementation and checks | Boundary |
 | --- | --- | --- |
-| Contract ABI | 27 profiles and 577 typed bindings; every function checked against independent Python calldata and decode fixtures | Select an ABI matching the actual deployment; source URLs and hashes are recorded separately from packaged normalized files |
+| Contract ABI | 28 profiles and 654 typed bindings; original 577 bindings have independent Python calldata/decode fixtures, with dedicated upgrade regressions for current staking | Select an ABI matching the actual deployment; source URLs and hashes are recorded separately from packaged normalized files |
 | Wallet and EVM envelopes | English BIP39/BIP32/NFKD, address sequences, exact units, EIP-55, EIP-155/2930/1559, contract creation and sender/hash recovery | Other mnemonic languages require explicit future wordlists; never infer a legacy address hash from an EVM key |
 | Fees and signing | Buffered gas reserve versus effective estimate, explicit dynamic caps, callback/hardware signer adapter with exact unsigned-hash binding, cancellation between bounded operations | External signer transport is supplied by the application; unknown dynamic base fee is represented by null estimate |
 | Nonce coordination | Explicit locked reservations with fsynced snapshots and atomic replace, corrupt-state rejection, 100 cross-process reservations tested | Reserved nonces are not automatically released; network filesystems and recovery after lost storage require application reconciliation |
@@ -34,3 +34,5 @@ The old web3.php/ethereum-util dependency chain required phpseclib 2.x and trigg
 The final audit compares all 55 Python catalog entries with current local Go/C# references and PHP routes. See [AUDIT_OPERATION_PARITY.md](AUDIT_OPERATION_PARITY.md) and [audit-operation-parity.json](audit-operation-parity.json). Direct helpers, partial checked helpers and ABI-only builders are explicitly different categories. Full automatic economic/staking/bridge orchestration and language-specific DTO/report equivalence are not inferred from matching selectors.
 
 0.1.1 additionally includes a codehash-bound sender-restricted ERC20 multisend planner and source-profile-restricted NFT URI helper. See [FINAL_AUDIT_0_1_1.md](FINAL_AUDIT_0_1_1.md) for concrete fixes and independent protobuf coverage.
+
+0.1.2 adds strict compatibility with seven/eight-field Decimal stake outputs, including nested frozen stakes. See [STAKING_COMPATIBILITY_0_1_2.md](STAKING_COMPATIBILITY_0_1_2.md). Existing operation-level orchestration boundaries still apply.

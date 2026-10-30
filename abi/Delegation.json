@@ -1308,6 +1308,11 @@
                 "internalType": "uint256",
                 "name": "holdTimestamp",
                 "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "holdStartTime",
+                "type": "uint256"
               }
             ],
             "internalType": "struct IDecimalDelegationCommon.Stake",
@@ -1385,6 +1390,11 @@
               {
                 "internalType": "uint256",
                 "name": "holdTimestamp",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "holdStartTime",
                 "type": "uint256"
               }
             ],
@@ -1477,6 +1487,11 @@
             "internalType": "uint256",
             "name": "holdTimestamp",
             "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "holdStartTime",
+            "type": "uint256"
           }
         ],
         "internalType": "struct IDecimalDelegationCommon.Stake",
@@ -1542,6 +1557,11 @@
           {
             "internalType": "uint256",
             "name": "holdTimestamp",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "holdStartTime",
             "type": "uint256"
           }
         ],
@@ -1656,6 +1676,11 @@
             "internalType": "uint256",
             "name": "holdTimestamp",
             "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "holdStartTime",
+            "type": "uint256"
           }
         ],
         "internalType": "struct IDecimalDelegationCommon.Stake",
@@ -1759,6 +1784,11 @@
           {
             "internalType": "uint256",
             "name": "holdTimestamp",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "holdStartTime",
             "type": "uint256"
           }
         ],

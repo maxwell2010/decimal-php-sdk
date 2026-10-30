@@ -12,7 +12,9 @@ final class StakingReader
         $components=$entry['outputs'][0]['components'];$result=[];
         foreach ($components as $i=>$component) {
             if($component['type']==='tuple') {
-                $inner=[];foreach($component['components'] as $j=>$child)$inner[$child['name']]=$tuple[$i][$j];$result[$component['name']]=$inner;
+                $inner=[];foreach($component['components'] as $j=>$child)if(array_key_exists($j,$tuple[$i]))$inner[$child['name']]=$tuple[$i][$j];
+                if(count($tuple[$i])===8 && array_keys($inner)===['validator','delegator','token','amount','tokenId','tokenType','holdTimestamp'])$inner['holdStartTime']=$tuple[$i][7];
+                $result[$component['name']]=$inner;
             } else $result[$component['name']]=$tuple[$i];
         }
         if(!isset($result['stake']['delegator'],$result['stake']['amount'],$result['freezeStatus'],$result['freezeType'],$result['unfreezeTimestamp']))throw new \RuntimeException('Unsupported frozen stake ABI');

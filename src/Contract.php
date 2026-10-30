@@ -55,7 +55,34 @@ class Contract
     }
     private static function addressValue(string $value): void { TransactionDraft::address($value); }
     public function decode(string $signature, string $data): array
-    { return $this->codec->decodeParameters(array_map(self::type(...), $this->function($signature)['outputs']), $data); }
+    {
+        $changed = false; $outputs = [];
+        foreach ($this->function($signature)['outputs'] as $output) $outputs[] = self::stakeOutput($output, $changed, false);
+        try { return $this->codec->decodeParameters(array_map(self::type(...), $outputs), $data); }
+        catch (\InvalidArgumentException $error) {
+            $changed = false;
+            $legacy = [];
+            foreach ($outputs as $output) $legacy[] = self::stakeOutput($output, $changed, true);
+            if (!$changed) throw $error;
+            return $this->codec->decodeParameters(array_map(self::type(...), $legacy), $data);
+        }
+    }
+    /** Only the explicitly identified Decimal Stake output has a legacy layout. */
+    private static function stakeOutput(array $output, bool &$changed, bool $legacy): array
+    {
+        if (!str_starts_with($output['type'], 'tuple')) return $output;
+        $components = $output['components'];
+        $names = ['validator','delegator','token','amount','tokenId','tokenType','holdTimestamp','holdStartTime'];
+        $types = ['address','address','address','uint256','uint256','uint8','uint256','uint256'];
+        if ((count($components) === 7 || count($components) === 8) && array_column($components, 'name') === array_slice($names, 0, count($components)) && array_column($components, 'type') === array_slice($types, 0, count($components))) {
+            if ($legacy && count($components) === 8) { array_pop($components); $changed = true; }
+            elseif (!$legacy && count($components) === 7) { $components[] = ['name'=>'holdStartTime','type'=>'uint256']; $changed = true; }
+        } else {
+            foreach ($components as $i => $component) $components[$i] = self::stakeOutput($component, $changed, $legacy);
+        }
+        $output['components'] = $components;
+        return $output;
+    }
     public function draft(string $from, string $signature, array $args = [], string $value = '0'): TransactionDraft
     {
         $entry = $this->function($signature);

@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.2 - 2026-10-30
+
+- Support the updated Decimal stake output with holdStartTime at index 7, preserving holdTimestamp at index 6 and legacy seven-field responses.
+- Keep strict canonical ABI validation for old and new stake layouts; never replace an unavailable or malformed stake with zero.
+- Cover generated contract reads, StakingReader and nested frozen stake outputs with offline regression tests.
+
+See docs/STAKING_COMPATIBILITY_0_1_2.md for pinned upstream evidence and compatibility boundaries. No blockchain transactions were submitted. Published 0.1.0 and 0.1.1 assets remain unchanged.
+
 ## 0.1.1 - 2026-10-29
 
 Audited patch release. The immutable 0.1.0 release remains available.

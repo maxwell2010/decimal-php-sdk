@@ -486,6 +486,468 @@
     "mutability": "nonpayable"
   },
   {
+    "profile": "Delegation20261030",
+    "signature": "WETH()",
+    "method": "WETH_84c24fe1",
+    "mutability": "view"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "applyPenaltiesToNFTStakes(bytes32[])",
+    "method": "applyPenaltiesToNFTStakes_f55e249b",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "applyPenaltiesToStakes(bytes32[])",
+    "method": "applyPenaltiesToStakes_788b0e68",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "applyPenaltiesToValidator((address,address,uint256)[])",
+    "method": "applyPenaltiesToValidator_1a5e5b45",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "autoUnbondEnqueue(address,address,uint256,address,uint256)",
+    "method": "autoUnbondEnqueue_a3512244",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "autoUnbondQueueLength()",
+    "method": "autoUnbondQueueLength_d4f66e97",
+    "mutability": "view"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "changeStake(address[],address[],uint256[],address[])",
+    "method": "changeStake_3dfda6b0",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "complete(uint256[])",
+    "method": "complete_d9be85b1",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "delegate(address,address,uint256)",
+    "method": "delegate_805bacde",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "delegateByPermit(address,address,uint256,uint256,uint8,bytes32,bytes32)",
+    "method": "delegateByPermit_c9c2f1b3",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "delegateDEL(address)",
+    "method": "delegateDEL_569c6330",
+    "mutability": "payable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "delegateDELTo(address,address)",
+    "method": "delegateDELTo_c593ba90",
+    "mutability": "payable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "delegateHold(address,address,uint256,uint256)",
+    "method": "delegateHold_2a861c02",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "delegateHoldByPermit(address,address,uint256,uint256,uint256,uint8,bytes32,bytes32)",
+    "method": "delegateHoldByPermit_f0344209",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "delegateHoldDEL(address,uint256)",
+    "method": "delegateHoldDEL_81f81a7c",
+    "mutability": "payable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "delegateNFT(address,address,uint256)",
+    "method": "delegateNFT_7d6783f0",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "delegateNFT1155(address,address,uint256,uint256)",
+    "method": "delegateNFT1155_910212c6",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "delegateNFT1155Hold(address,address,uint256,uint256,uint256)",
+    "method": "delegateNFT1155Hold_c15a84af",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "delegateNFTByPermit(address,address,uint256,uint256,uint8,bytes32,bytes32)",
+    "method": "delegateNFTByPermit_cbe514e0",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "delegateNFTHold(address,address,uint256,uint256)",
+    "method": "delegateNFTHold_c711b672",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "delegateTo(address,address,address,uint256)",
+    "method": "delegateTo_70c2f5d6",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "forcedNFT1155Withdrawal(address,address,address,uint256,uint256)",
+    "method": "forcedNFT1155Withdrawal_90e8f841",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "forcedNFTWithdrawal(address,address,address,uint256,uint256)",
+    "method": "forcedNFTWithdrawal_e5fc1bda",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "forcedWithdrawal(address,address,uint256,address)",
+    "method": "forcedWithdrawal_089848e7",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "forcedWithdrawalBatch(address[],address[],uint256[],address[])",
+    "method": "forcedWithdrawalBatch_eb930fdc",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "getAutoUnbondEntry(uint256)",
+    "method": "getAutoUnbondEntry_b69d5f03",
+    "mutability": "view"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "getAvailableCoinAmount(address,address,address,uint256)",
+    "method": "getAvailableCoinAmount_b1d37a67",
+    "mutability": "view"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "getContractCenter()",
+    "method": "getContractCenter_69bca3eb",
+    "mutability": "view"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "getFreezeTime(uint8)",
+    "method": "getFreezeTime_8c70b76e",
+    "mutability": "view"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "getFrozenStake(uint256)",
+    "method": "getFrozenStake_9561eec7",
+    "mutability": "view"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "getFrozenStakes(uint256[])",
+    "method": "getFrozenStakes_9f3eaaf8",
+    "mutability": "view"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "getHoldStake(address,address,address,uint256)",
+    "method": "getHoldStake_90d0c921",
+    "mutability": "view"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "getHoldStakeDEL(address,address,uint256)",
+    "method": "getHoldStakeDEL_481058b0",
+    "mutability": "view"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "getHoldStakeId(address,address,address,uint256)",
+    "method": "getHoldStakeId_36174265",
+    "mutability": "pure"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "getImpl()",
+    "method": "getImpl_fc0160fa",
+    "mutability": "view"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "getNFTBackedAmount(address,address,address,uint256)",
+    "method": "getNFTBackedAmount_932a0174",
+    "mutability": "view"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "getNFTStake(address,uint256,address,address,uint256)",
+    "method": "getNFTStake_872f2586",
+    "mutability": "view"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "getNFTStakeId(address,uint256,address,address,uint256)",
+    "method": "getNFTStakeId_aa0c9b74",
+    "mutability": "pure"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "getNFTStakePenaltyIndex(bytes32)",
+    "method": "getNFTStakePenaltyIndex_11d24ca4",
+    "mutability": "view"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "getStake(address,address,address)",
+    "method": "getStake_973ee776",
+    "mutability": "view"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "getStakeId(address,address,address)",
+    "method": "getStakeId_caa07c0f",
+    "mutability": "pure"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "getStakePenaltyIndex(bytes32)",
+    "method": "getStakePenaltyIndex_41a8cfef",
+    "mutability": "view"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "getStakes(bytes32[])",
+    "method": "getStakes_232623f3",
+    "mutability": "view"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "getValidatorReserve(address,address)",
+    "method": "getValidatorReserve_d477d42e",
+    "mutability": "view"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "hold(address,address,uint256,uint256,uint256)",
+    "method": "hold_79ac3b6c",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "holdWithReset(address,address,uint256,uint256,uint256[])",
+    "method": "holdWithReset_5d5dc5e6",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "migrateStakes(address[],address[],address[],address[])",
+    "method": "migrateStakes_92c844b1",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "onERC1155BatchReceived(address,address,uint256[],uint256[],bytes)",
+    "method": "onERC1155BatchReceived_79acc49f",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "onERC1155Received(address,address,uint256,uint256,bytes)",
+    "method": "onERC1155Received_5ab320ec",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "onERC721Received(address,address,uint256,bytes)",
+    "method": "onERC721Received_a1ec0770",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "owner()",
+    "method": "owner_3fc2bcdd",
+    "mutability": "view"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "pause()",
+    "method": "pause_2138ec0c",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "paused()",
+    "method": "paused_5c0ff0ee",
+    "mutability": "view"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "processAutoUnbond(uint256)",
+    "method": "processAutoUnbond_98031a45",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "renounceOwnership()",
+    "method": "renounceOwnership_2e0a1389",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "resetHold(address,address,address,uint256)",
+    "method": "resetHold_5c5d3de7",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "resetHolds(address,address,address,uint256[])",
+    "method": "resetHolds_d162cb1b",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "setContractCenter(address)",
+    "method": "setContractCenter_cecbece4",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "setFreezeTime(uint256,uint256)",
+    "method": "setFreezeTime_0da9829b",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "supportsInterface(bytes4)",
+    "method": "supportsInterface_0e2b7fe2",
+    "mutability": "view"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "transfer(address,address,uint256,address)",
+    "method": "transfer_77749fed",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "transferHold(address,address,uint256,uint256,address)",
+    "method": "transferHold_698c6382",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "transferNFT(address,address,uint256,address)",
+    "method": "transferNFT_ed2795d8",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "transferNFT1155(address,address,uint256,address)",
+    "method": "transferNFT1155_ff14f8d5",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "transferNFT1155Hold(address,address,uint256,uint256,address)",
+    "method": "transferNFT1155Hold_662b0cba",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "transferNFTHold(address,address,uint256,uint256,address)",
+    "method": "transferNFTHold_49488fd5",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "transferOwnership(address)",
+    "method": "transferOwnership_f1dcac99",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "transferWithReset(address,address,uint256,address,uint256[])",
+    "method": "transferWithReset_a3890bcc",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "unpause()",
+    "method": "unpause_8144711b",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "upgrade(address,bytes)",
+    "method": "upgrade_132856f5",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "withdraw(address,address,uint256)",
+    "method": "withdraw_45fd8373",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "withdrawHold(address,address,uint256,uint256)",
+    "method": "withdrawHold_19cc92ac",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "withdrawNFT(address,address,uint256)",
+    "method": "withdrawNFT_5079dcdd",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "withdrawNFT1155(address,address,uint256)",
+    "method": "withdrawNFT1155_7a24486e",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "withdrawNFT1155Hold(address,address,uint256,uint256)",
+    "method": "withdrawNFT1155Hold_e8cd6358",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "withdrawNFTHold(address,address,uint256,uint256)",
+    "method": "withdrawNFTHold_a73ff7ea",
+    "mutability": "nonpayable"
+  },
+  {
+    "profile": "Delegation20261030",
+    "signature": "withdrawWithReset(address,address,uint256,uint256[])",
+    "method": "withdrawWithReset_19aa53ad",
+    "mutability": "nonpayable"
+  },
+  {
     "profile": "DelegationNFT",
     "signature": "applyPenaltiesToValidator((address,address,uint256)[])",
     "method": "applyPenaltiesToValidator_1a5e5b45",

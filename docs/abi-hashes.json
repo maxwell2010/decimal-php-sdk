@@ -1,8 +1,9 @@
 {
   "Checks.json": "9615d2cb220b8b860cc1517d0b06f512ce7fb4a9616b5b229168278685db1fdb",
   "ContractCenter.json": "49facf8dea844bc5692af6608376cb80c883dd5434d987eb56437cc8031d0381",
-  "Delegation.json": "e96258cd485759c7042da16cbb6cb7679b1e9d630479d8723b00718f234a25ba",
-  "DelegationNFT.json": "c5af5c5fc36144945932e87c299276bb40ebef9727fcf93bef27b46d7265e522",
+  "Delegation.json": "8611899ef8021f2b7382f9d44828dcd9a7ef9db79a1ac08948407b7fbbea22ee",
+  "Delegation20261030.json": "96e52fc18f02fdc454e07fee6ecf5107d44c3db5cd2dafa3b4bda516fa4531da",
+  "DelegationNFT.json": "492998c0cbc07719bfa6ea4b41c2a1dcc6cbb30216b4d5a2bcc1dde58145dcb3",
   "ERC1155.json": "4b049d43d665e1cd8776f99852d31ccceaf7dbf6aea111c34570ef36387c6e3a",
   "ERC721.json": "04410eee7bea4e7ceff2590849709cd6b8f5de8234f103285cfc8ecaa9767eea",
   "MasterValidator.json": "8154b3220697cd770bb3838ae1cd9008e2efdf64cfdc179d90ce5b3f5e035e3d",

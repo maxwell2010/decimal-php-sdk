@@ -2,7 +2,7 @@
 
 Independent Decimal SDK by [MintCandy](https://mintcandy.ru/) and [@Maxwell2019](https://t.me/Maxwell2019). PHP 8.2+, MIT license.
 
-**v0.1.1 is the audited patch release.** Includes 27 ABI profiles, 577 generated function bindings, guarded EVM workflows, wallets, transaction signing, and source-backed Cosmos validation/signing/query codecs. The [coverage matrix](docs/PARITY.md) defines supported interfaces and deployment boundaries.
+**v0.1.2 is the audited patch release with updated staking compatibility.** Includes 28 ABI profiles, 654 generated function bindings, guarded EVM workflows, wallets, transaction signing, and source-backed Cosmos validation/signing/query codecs. The [coverage matrix](docs/PARITY.md) defines supported interfaces and deployment boundaries.
 
 [Русский README](README.ru.md) | [Examples](examples) | [Release notes](CHANGELOG.md) | [Security](SECURITY.md)
 

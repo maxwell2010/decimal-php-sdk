@@ -1,0 +1,20 @@
+{
+  "upstream_commit": "a46cb48d7965c1a64a495cebb22e735dfe4b9da3",
+  "upstream_url": "https://github.com/decimalteam/go-smart-node/blob/a46cb48d7965c1a64a495cebb22e735dfe4b9da3/contracts/delegation/DecimalDelegation.go",
+  "current_profile": "Delegation20261030",
+  "legacy_profile_transform": "Only matching function output Stake components append uint256 holdStartTime. Original event and input schemas preserved. Legacy output payloads retain seven fields; no synthetic holdStartTime.",
+  "profiles": {
+    "Delegation": {
+      "sha256": "8611899ef8021f2b7382f9d44828dcd9a7ef9db79a1ac08948407b7fbbea22ee",
+      "original_v0_1_1_sha256": "e96258cd485759c7042da16cbb6cb7679b1e9d630479d8723b00718f234a25ba"
+    },
+    "DelegationNFT": {
+      "sha256": "492998c0cbc07719bfa6ea4b41c2a1dcc6cbb30216b4d5a2bcc1dde58145dcb3",
+      "original_v0_1_1_sha256": "c5af5c5fc36144945932e87c299276bb40ebef9727fcf93bef27b46d7265e522"
+    },
+    "Delegation20261030": {
+      "sha256": "96e52fc18f02fdc454e07fee6ecf5107d44c3db5cd2dafa3b4bda516fa4531da"
+    }
+  },
+  "upstream_source_sha256": "889f4c0293970f7e7e5c3608ff651075155d727c5d6728d43e2d2f7670cc5fb6"
+}
