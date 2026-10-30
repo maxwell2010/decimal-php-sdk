@@ -1,6 +1,6 @@
 # SDK coverage and compatibility
 
-Release 0.1.2 covers the source-evidenced SDK interfaces listed below. ABI bindings, complete guarded workflows, stateless node validation and live execution are separate evidence levels. Function/schema counts are not a parity percentage or distinct transaction count.
+Release 0.1.3 covers the source-evidenced SDK interfaces listed below. ABI bindings, complete guarded workflows, stateless node validation and live execution are separate evidence levels. Function/schema counts are not a parity percentage or distinct transaction count.
 
 | Area | Released implementation and checks | Boundary |
 | --- | --- | --- |
@@ -9,8 +9,8 @@ Release 0.1.2 covers the source-evidenced SDK interfaces listed below. ABI bindi
 | Fees and signing | Buffered gas reserve versus effective estimate, explicit dynamic caps, callback/hardware signer adapter with exact unsigned-hash binding, cancellation between bounded operations | External signer transport is supplied by the application; unknown dynamic base fee is represented by null estimate |
 | Nonce coordination | Explicit locked reservations with fsynced snapshots and atomic replace, corrupt-state rejection, 100 cross-process reservations tested | Reserved nonces are not automatically released; network filesystems and recovery after lost storage require application reconciliation |
 | Native/ERC20/NFT | Transfers, memo, ABI operations, allowance/reset plans, NFT owner/balance checks, separate delegation approvals, deployed native-reserve mint/create and unambiguous creation events | Approval steps require confirmed success and state refresh; deployment/role/economic checks remain mutable |
-| Staking | ABI routes plus authoritative frozen index reads, owner/type/status/amount/maturity checks and pinned-time completion builders | Indexer-derived indices require freshness/authority validation; node state may change before execution |
-| Token economy, bridge, validators | Typed source ABI routes, Go reference-operation contract-family restrictions, checked reserveless cap/burn/create helpers | Specialized application reports and automatic multi-transaction economic orchestration are separate from ABI interface parity |
+| Staking | StakingService request variants, regular/held/frozen snapshots, DTOs and pinned completion builders | Indexer-derived indices require freshness/authority validation; node state may change before execution |
+| Token economy, bridge, validators | Named economics/bridge/validator services, reserve quotes, managed approval/permit plans and receipt records | TokenEconomy, StakingService, ValidatorService and common TransactionPlan/Executor cover source-level orchestration; deployment state remains authoritative |
 | Checks | Official JS-compatible password key and redeem digest, sender-scoped nonce, native value multiplication, token allowance plan and redemption | Tokens/centers must match selected source ABI; password signatures are authorization material |
 | Safe | Weighted pinned-block policy, typed/personal EOA signatures, explicit modern/legacy EIP-1271 validation, prevalidated approvals, sorted dynamic signature tails and reviewed delegatecall guards | Signatures must be checked against current policy/deployment before execution; caller-reviewed trust evidence is mandatory for delegatecall |
 | Deployments/events | Runtime and implementation runtime hashes, EIP-1967/beacon checks, pinned verified reads, ABI event decoding | Nonstandard embedded-beacon proxies need explicit evidence rather than guessed bytecode inference |
@@ -29,10 +29,10 @@ Further evidence: [EVM_SCOPE.md](EVM_SCOPE.md), [COSMOS_VALIDATION.md](COSMOS_VA
 
 The old web3.php/ethereum-util dependency chain required phpseclib 2.x and triggered PKSA-12sz-bcny-pk4m. Those packages and phpseclib were removed; no audit exceptions or replacement packages hide the advisory. The SDK owns its strict ABI/RLP codecs and uses the reviewed secp256k1 dependency directly. RLP leading-zero byte preservation, independent signature recovery and malformed-envelope regression tests cover the replacement paths.
 
-## Operation-level audit
+## Operation-level acceptance
 
-The final audit compares all 55 Python catalog entries with current local Go/C# references and PHP routes. See [AUDIT_OPERATION_PARITY.md](AUDIT_OPERATION_PARITY.md) and [audit-operation-parity.json](audit-operation-parity.json). Direct helpers, partial checked helpers and ABI-only builders are explicitly different categories. Full automatic economic/staking/bridge orchestration and language-specific DTO/report equivalence are not inferred from matching selectors.
+The 0.1.3 release closes the remaining named operation gaps. [AUDIT_OPERATION_PARITY.md](AUDIT_OPERATION_PARITY.md) records 54 implemented request workflows and one intentionally disabled unsafe generic Multicall ERC20 spender path, with the verified sender-restricted alternative retained. The JSON companion preserves exact source evidence and links each operation to its implementation/tests.
 
-0.1.1 additionally includes a codehash-bound sender-restricted ERC20 multisend planner and source-profile-restricted NFT URI helper. See [FINAL_AUDIT_0_1_1.md](FINAL_AUDIT_0_1_1.md) for concrete fixes and independent protobuf coverage.
+Additional Go/C# quote/read/permit/management/receipt/DTO mappings are documented in [FINAL_PARITY_0_1_3.md](FINAL_PARITY_0_1_3.md) and the domain reports. Common TransactionPlan/TransactionExecutor connects service drafts to preparation, signing, opt-in submission and receipt reporting. Approval-dependent actions require confirmed prerequisites and a state refresh. Language-specific API class names, runtime scheduling and application telemetry are not the acceptance unit.
 
-0.1.2 adds strict compatibility with seven/eight-field Decimal stake outputs, including nested frozen stakes. See [STAKING_COMPATIBILITY_0_1_2.md](STAKING_COMPATIBILITY_0_1_2.md). Existing operation-level orchestration boundaries still apply.
+Earlier fixes remain included: [0.1.1 audit](FINAL_AUDIT_0_1_1.md) and [0.1.2 staking upgrade](STAKING_COMPATIBILITY_0_1_2.md). Network execution/settlement acceptance remains distinct from source/API parity; no transactions were submitted.

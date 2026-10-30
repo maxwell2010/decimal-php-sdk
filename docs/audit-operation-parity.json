@@ -1,5 +1,5 @@
 {
-  "reference_note": "Local working-tree snapshots, not assertions of released upstream version equivalence. C# quoted signature occurrences are source evidence, not workflow-equivalence proof. Go operation names come from current local operation-matrix.",
+  "reference_note": "Pinned source snapshots and exact request/draft/read/report semantics. Common TransactionExecutor supplies prepare/sign/explicit-broadcast/receipt orchestration. Funded node admission is outside offline acceptance. Unsafe generic ERC20 Multicall allowance remains intentionally disabled, with a verified RestrictedMultisend alternative.",
   "operations": [
     {
       "python_operation": "tx.approve_erc20",
@@ -9,8 +9,10 @@
         "line": 802,
         "sha256": "571e12af7013a174c1486decf540adcce3538842902aebb077944e68e698fd59"
       },
-      "status": "abi-builder-only",
-      "php_helpers": [],
+      "status": "implemented-workflow",
+      "php_helpers": [
+        "Erc20Service::approve"
+      ],
       "php_abi_signatures": [
         {
           "profile": "PythonErc20",
@@ -49,7 +51,13 @@
           "code": "[Function(\"approve\", \"bool\")]"
         }
       ],
-      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-tokens.json",
+        "tests": [
+          "tests/token-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "tx.send_del",
@@ -59,14 +67,21 @@
         "line": 737,
         "sha256": "571e12af7013a174c1486decf540adcce3538842902aebb077944e68e698fd59"
       },
-      "status": "direct-native-helper",
+      "status": "implemented-workflow",
       "php_helpers": [
         "TransactionDraft::del"
       ],
       "php_abi_signatures": [],
       "go_reference_operations": [],
       "csharp_signature_occurrences": [],
-      "semantic_boundary": "Checked helper covers its explicit profile/preconditions; variants, approvals, economic state and receipt semantics must be compared separately."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/PARITY_COMMON.md",
+        "tests": [
+          "tests/bridge-checks-parity.php",
+          "tests/executor-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "tx.send_erc20",
@@ -76,8 +91,10 @@
         "line": 773,
         "sha256": "571e12af7013a174c1486decf540adcce3538842902aebb077944e68e698fd59"
       },
-      "status": "abi-builder-only",
-      "php_helpers": [],
+      "status": "implemented-workflow",
+      "php_helpers": [
+        "Erc20Service::transfer"
+      ],
       "php_abi_signatures": [
         {
           "profile": "PythonErc20",
@@ -126,7 +143,13 @@
           "code": "[Function(\"transfer\", \"bool\")]"
         }
       ],
-      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-tokens.json",
+        "tests": [
+          "tests/token-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "tx.transfer_from_erc20",
@@ -136,8 +159,10 @@
         "line": 814,
         "sha256": "571e12af7013a174c1486decf540adcce3538842902aebb077944e68e698fd59"
       },
-      "status": "abi-builder-only",
-      "php_helpers": [],
+      "status": "implemented-workflow",
+      "php_helpers": [
+        "Erc20Service::transferFrom"
+      ],
       "php_abi_signatures": [
         {
           "profile": "PythonErc20",
@@ -176,7 +201,13 @@
           "code": "[Function(\"transferFrom\", \"bool\")]"
         }
       ],
-      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-tokens.json",
+        "tests": [
+          "tests/token-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "decimal.delegate_del",
@@ -186,8 +217,10 @@
         "line": 979,
         "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
       },
-      "status": "abi-builder-only",
-      "php_helpers": [],
+      "status": "implemented-workflow",
+      "php_helpers": [
+        "StakingService::plan"
+      ],
       "php_abi_signatures": [
         {
           "profile": "Delegation",
@@ -208,7 +241,14 @@
           "code": "[Function(\"delegateDEL\")]"
         }
       ],
-      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-staking.json",
+        "tests": [
+          "tests/staking-parity.php",
+          "tests/staking-reads-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "decimal.delegate_erc20",
@@ -218,8 +258,10 @@
         "line": 1209,
         "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
       },
-      "status": "abi-builder-only",
-      "php_helpers": [],
+      "status": "implemented-workflow",
+      "php_helpers": [
+        "StakingService::plan"
+      ],
       "php_abi_signatures": [
         {
           "profile": "Delegation",
@@ -249,7 +291,14 @@
           "code": "[Function(\"delegateByPermit\")]"
         }
       ],
-      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-staking.json",
+        "tests": [
+          "tests/staking-parity.php",
+          "tests/staking-reads-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "decimal.hold_del",
@@ -259,8 +308,10 @@
         "line": 1013,
         "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
       },
-      "status": "abi-builder-only",
-      "php_helpers": [],
+      "status": "implemented-workflow",
+      "php_helpers": [
+        "StakingService::plan"
+      ],
       "php_abi_signatures": [
         {
           "profile": "Delegation",
@@ -277,7 +328,14 @@
           "code": "[Function(\"delegateHoldDEL\")]"
         }
       ],
-      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-staking.json",
+        "tests": [
+          "tests/staking-parity.php",
+          "tests/staking-reads-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "decimal.hold_erc20",
@@ -287,8 +345,10 @@
         "line": 1230,
         "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
       },
-      "status": "abi-builder-only",
-      "php_helpers": [],
+      "status": "implemented-workflow",
+      "php_helpers": [
+        "StakingService::plan"
+      ],
       "php_abi_signatures": [
         {
           "profile": "Delegation",
@@ -314,7 +374,14 @@
           "code": "[Function(\"delegateHoldByPermit\")]"
         }
       ],
-      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-staking.json",
+        "tests": [
+          "tests/staking-parity.php",
+          "tests/staking-reads-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "decimal.hold_stake_with_reset",
@@ -324,8 +391,10 @@
         "line": 1605,
         "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
       },
-      "status": "abi-builder-only",
-      "php_helpers": [],
+      "status": "implemented-workflow",
+      "php_helpers": [
+        "StakingService::plan"
+      ],
       "php_abi_signatures": [
         {
           "profile": "Delegation",
@@ -343,7 +412,14 @@
           "code": "[Function(\"holdWithReset\")]"
         }
       ],
-      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-staking.json",
+        "tests": [
+          "tests/staking-parity.php",
+          "tests/staking-reads-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "decimal.multisend_del",
@@ -353,9 +429,9 @@
         "line": 1120,
         "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
       },
-      "status": "partial-checked-helper",
+      "status": "implemented-workflow",
       "php_helpers": [
-        "Workflows::multisendDel"
+        "StakingService::plan"
       ],
       "php_abi_signatures": [
         {
@@ -374,7 +450,14 @@
           "code": "[Function(\"aggregate\")]"
         }
       ],
-      "semantic_boundary": "Checked helper covers its explicit profile/preconditions; variants, approvals, economic state and receipt semantics must be compared separately."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-staking.json",
+        "tests": [
+          "tests/staking-parity.php",
+          "tests/staking-reads-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "decimal.multisend_erc20",
@@ -384,20 +467,28 @@
         "line": 1189,
         "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
       },
-      "status": "partial-checked-helper",
+      "status": "disabled-unsafe-reference",
       "php_helpers": [
+        "StakingService::plan",
         "RestrictedMultisend::plan",
         "RestrictedMultisend::withPermit"
       ],
       "php_abi_signatures": [],
       "go_reference_operations": [],
       "csharp_signature_occurrences": [],
-      "semantic_boundary": "Explicit caller-reviewed runtime/chain/implementation binding, checked total/balance, separate allowance/reset plan or checked permit. Generic Multicall ERC20 allowance remains rejected. Reverify mutable deployment before execution.",
+      "semantic_boundary": "Arbitrary Multicall ERC20 allowance is disabled, matching the maintained Python and Go safety policy. Recovery Python differs here; its unsafe spender path is not copied. An explicitly verified sender-restricted multisend is supported separately.",
       "php_explicit_signatures": [
         "sendToken(address,address[],uint256[],bytes)",
         "sendTokenWithPermit(address,address[],uint256[],bytes,uint256,uint8,bytes32,bytes32)"
       ],
-      "go_source": "gosdk/restricted_multisend.go"
+      "go_source": "gosdk/restricted_multisend.go",
+      "implementation_evidence": {
+        "manifest": "docs/parity-staking.json",
+        "tests": [
+          "tests/staking-parity.php",
+          "tests/staking-reads-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "decimal.pause_self_validator",
@@ -407,8 +498,10 @@
         "line": 1631,
         "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
       },
-      "status": "abi-builder-only",
-      "php_helpers": [],
+      "status": "implemented-workflow",
+      "php_helpers": [
+        "StakingService::plan"
+      ],
       "php_abi_signatures": [
         {
           "profile": "MasterValidator",
@@ -427,7 +520,14 @@
           "code": "[Function(\"pauseSelf\")]"
         }
       ],
-      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-staking.json",
+        "tests": [
+          "tests/staking-parity.php",
+          "tests/staking-reads-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "decimal.pause_validator",
@@ -437,8 +537,10 @@
         "line": 1669,
         "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
       },
-      "status": "abi-builder-only",
-      "php_helpers": [],
+      "status": "implemented-workflow",
+      "php_helpers": [
+        "StakingService::plan"
+      ],
       "php_abi_signatures": [
         {
           "profile": "MasterValidator",
@@ -459,7 +561,14 @@
           "code": "[Function(\"pauseValidator\")]"
         }
       ],
-      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-staking.json",
+        "tests": [
+          "tests/staking-parity.php",
+          "tests/staking-reads-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "decimal.reset_stake_hold",
@@ -469,8 +578,10 @@
         "line": 1436,
         "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
       },
-      "status": "abi-builder-only",
-      "php_helpers": [],
+      "status": "implemented-workflow",
+      "php_helpers": [
+        "StakingService::plan"
+      ],
       "php_abi_signatures": [
         {
           "profile": "Delegation",
@@ -497,7 +608,14 @@
           "code": "[Function(\"resetHolds\")]"
         }
       ],
-      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-staking.json",
+        "tests": [
+          "tests/staking-parity.php",
+          "tests/staking-reads-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "decimal.stake_token_to_hold",
@@ -507,8 +625,10 @@
         "line": 1410,
         "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
       },
-      "status": "abi-builder-only",
-      "php_helpers": [],
+      "status": "implemented-workflow",
+      "php_helpers": [
+        "StakingService::plan"
+      ],
       "php_abi_signatures": [
         {
           "profile": "Delegation",
@@ -526,7 +646,14 @@
           "code": "[Function(\"hold\")]"
         }
       ],
-      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-staking.json",
+        "tests": [
+          "tests/staking-parity.php",
+          "tests/staking-reads-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "decimal.transfer_del_stake_with_reset",
@@ -536,8 +663,10 @@
         "line": 1575,
         "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
       },
-      "status": "abi-builder-only",
-      "php_helpers": [],
+      "status": "implemented-workflow",
+      "php_helpers": [
+        "StakingService::plan"
+      ],
       "php_abi_signatures": [
         {
           "profile": "Delegation",
@@ -555,7 +684,14 @@
           "code": "[Function(\"transferWithReset\")]"
         }
       ],
-      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-staking.json",
+        "tests": [
+          "tests/staking-parity.php",
+          "tests/staking-reads-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "decimal.transfer_stake_del",
@@ -565,8 +701,10 @@
         "line": 1385,
         "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
       },
-      "status": "abi-builder-only",
-      "php_helpers": [],
+      "status": "implemented-workflow",
+      "php_helpers": [
+        "StakingService::plan"
+      ],
       "php_abi_signatures": [
         {
           "profile": "Delegation",
@@ -604,7 +742,14 @@
           "code": "[Function(\"transfer\", \"bool\")]"
         }
       ],
-      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-staking.json",
+        "tests": [
+          "tests/staking-parity.php",
+          "tests/staking-reads-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "decimal.transfer_stake_erc20",
@@ -614,8 +759,10 @@
         "line": 1360,
         "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
       },
-      "status": "abi-builder-only",
-      "php_helpers": [],
+      "status": "implemented-workflow",
+      "php_helpers": [
+        "StakingService::plan"
+      ],
       "php_abi_signatures": [
         {
           "profile": "Delegation",
@@ -653,7 +800,14 @@
           "code": "[Function(\"transfer\", \"bool\")]"
         }
       ],
-      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-staking.json",
+        "tests": [
+          "tests/staking-parity.php",
+          "tests/staking-reads-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "decimal.transfer_stake_with_reset",
@@ -663,8 +817,10 @@
         "line": 1540,
         "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
       },
-      "status": "abi-builder-only",
-      "php_helpers": [],
+      "status": "implemented-workflow",
+      "php_helpers": [
+        "StakingService::plan"
+      ],
       "php_abi_signatures": [
         {
           "profile": "Delegation",
@@ -682,7 +838,14 @@
           "code": "[Function(\"transferWithReset\")]"
         }
       ],
-      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-staking.json",
+        "tests": [
+          "tests/staking-parity.php",
+          "tests/staking-reads-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "decimal.unbond_del",
@@ -692,8 +855,10 @@
         "line": 1050,
         "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
       },
-      "status": "abi-builder-only",
-      "php_helpers": [],
+      "status": "implemented-workflow",
+      "php_helpers": [
+        "StakingService::plan"
+      ],
       "php_abi_signatures": [
         {
           "profile": "Delegation",
@@ -721,7 +886,14 @@
           "code": "[Function(\"withdraw\")]"
         }
       ],
-      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-staking.json",
+        "tests": [
+          "tests/staking-parity.php",
+          "tests/staking-reads-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "decimal.unbond_erc20",
@@ -731,8 +903,10 @@
         "line": 1251,
         "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
       },
-      "status": "abi-builder-only",
-      "php_helpers": [],
+      "status": "implemented-workflow",
+      "php_helpers": [
+        "StakingService::plan"
+      ],
       "php_abi_signatures": [
         {
           "profile": "Delegation",
@@ -760,7 +934,14 @@
           "code": "[Function(\"withdraw\")]"
         }
       ],
-      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-staking.json",
+        "tests": [
+          "tests/staking-parity.php",
+          "tests/staking-reads-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "decimal.unpause_self_validator",
@@ -770,8 +951,10 @@
         "line": 1650,
         "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
       },
-      "status": "abi-builder-only",
-      "php_helpers": [],
+      "status": "implemented-workflow",
+      "php_helpers": [
+        "StakingService::plan"
+      ],
       "php_abi_signatures": [
         {
           "profile": "MasterValidator",
@@ -790,7 +973,14 @@
           "code": "[Function(\"unpauseSelf\")]"
         }
       ],
-      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-staking.json",
+        "tests": [
+          "tests/staking-parity.php",
+          "tests/staking-reads-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "decimal.unpause_validator",
@@ -800,8 +990,10 @@
         "line": 1690,
         "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
       },
-      "status": "abi-builder-only",
-      "php_helpers": [],
+      "status": "implemented-workflow",
+      "php_helpers": [
+        "StakingService::plan"
+      ],
       "php_abi_signatures": [
         {
           "profile": "MasterValidator",
@@ -822,7 +1014,14 @@
           "code": "[Function(\"unpauseValidator\")]"
         }
       ],
-      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-staking.json",
+        "tests": [
+          "tests/staking-parity.php",
+          "tests/staking-reads-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "decimal.withdraw_del_stake_with_reset",
@@ -832,8 +1031,10 @@
         "line": 1496,
         "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
       },
-      "status": "abi-builder-only",
-      "php_helpers": [],
+      "status": "implemented-workflow",
+      "php_helpers": [
+        "StakingService::plan"
+      ],
       "php_abi_signatures": [
         {
           "profile": "Delegation",
@@ -851,7 +1052,14 @@
           "code": "[Function(\"withdrawWithReset\")]"
         }
       ],
-      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-staking.json",
+        "tests": [
+          "tests/staking-parity.php",
+          "tests/staking-reads-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "decimal.withdraw_hold_del",
@@ -861,8 +1069,10 @@
         "line": 1070,
         "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
       },
-      "status": "abi-builder-only",
-      "php_helpers": [],
+      "status": "implemented-workflow",
+      "php_helpers": [
+        "StakingService::plan"
+      ],
       "php_abi_signatures": [
         {
           "profile": "Delegation",
@@ -890,7 +1100,14 @@
           "code": "[Function(\"withdrawHold\")]"
         }
       ],
-      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-staking.json",
+        "tests": [
+          "tests/staking-parity.php",
+          "tests/staking-reads-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "decimal.withdraw_hold_erc20",
@@ -900,8 +1117,10 @@
         "line": 1307,
         "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
       },
-      "status": "abi-builder-only",
-      "php_helpers": [],
+      "status": "implemented-workflow",
+      "php_helpers": [
+        "StakingService::plan"
+      ],
       "php_abi_signatures": [
         {
           "profile": "Delegation",
@@ -929,7 +1148,14 @@
           "code": "[Function(\"withdrawHold\")]"
         }
       ],
-      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-staking.json",
+        "tests": [
+          "tests/staking-parity.php",
+          "tests/staking-reads-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "decimal.withdraw_stake_with_reset",
@@ -939,8 +1165,10 @@
         "line": 1463,
         "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
       },
-      "status": "abi-builder-only",
-      "php_helpers": [],
+      "status": "implemented-workflow",
+      "php_helpers": [
+        "StakingService::plan"
+      ],
       "php_abi_signatures": [
         {
           "profile": "Delegation",
@@ -958,7 +1186,14 @@
           "code": "[Function(\"withdrawWithReset\")]"
         }
       ],
-      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-staking.json",
+        "tests": [
+          "tests/staking-parity.php",
+          "tests/staking-reads-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "token.burn",
@@ -968,9 +1203,9 @@
         "line": 429,
         "sha256": "43c41a2d7b7363492ba22d1d9448620e3082d44a15577f3cf868a523cc568e94"
       },
-      "status": "partial-checked-helper",
+      "status": "implemented-workflow",
       "php_helpers": [
-        "TokenService::burn"
+        "TokenEconomy::burn"
       ],
       "php_abi_signatures": [
         {
@@ -1006,7 +1241,13 @@
           "code": "[Function(\"burn\")]"
         }
       ],
-      "semantic_boundary": "Checked helper covers its explicit profile/preconditions; variants, approvals, economic state and receipt semantics must be compared separately."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-tokens.json",
+        "tests": [
+          "tests/token-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "token.buy",
@@ -1016,8 +1257,10 @@
         "line": 277,
         "sha256": "43c41a2d7b7363492ba22d1d9448620e3082d44a15577f3cf868a523cc568e94"
       },
-      "status": "abi-builder-only",
-      "php_helpers": [],
+      "status": "implemented-workflow",
+      "php_helpers": [
+        "TokenEconomy::buy"
+      ],
       "php_abi_signatures": [
         {
           "profile": "TestnetReserveToken20261029",
@@ -1065,7 +1308,13 @@
           "code": "[Function(\"buyExactTokenForDEL\")]"
         }
       ],
-      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-tokens.json",
+        "tests": [
+          "tests/token-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "token.convert",
@@ -1075,8 +1324,10 @@
         "line": 317,
         "sha256": "43c41a2d7b7363492ba22d1d9448620e3082d44a15577f3cf868a523cc568e94"
       },
-      "status": "abi-builder-only",
-      "php_helpers": [],
+      "status": "implemented-workflow",
+      "php_helpers": [
+        "TokenEconomy::convert"
+      ],
       "php_abi_signatures": [
         {
           "profile": "TestnetTokenCenter20261029",
@@ -1110,7 +1361,13 @@
           "code": "[Function(\"convert\")]"
         }
       ],
-      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-tokens.json",
+        "tests": [
+          "tests/token-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "token.create",
@@ -1120,8 +1377,10 @@
         "line": 481,
         "sha256": "43c41a2d7b7363492ba22d1d9448620e3082d44a15577f3cf868a523cc568e94"
       },
-      "status": "abi-builder-only",
-      "php_helpers": [],
+      "status": "implemented-workflow",
+      "php_helpers": [
+        "TokenEconomy::create"
+      ],
       "php_abi_signatures": [
         {
           "profile": "TestnetTokenCenter20261029",
@@ -1142,7 +1401,13 @@
           "code": "[Function(\"createToken\")]"
         }
       ],
-      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-tokens.json",
+        "tests": [
+          "tests/token-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "token.create_reserveless",
@@ -1152,9 +1417,9 @@
         "line": 456,
         "sha256": "43c41a2d7b7363492ba22d1d9448620e3082d44a15577f3cf868a523cc568e94"
       },
-      "status": "partial-checked-helper",
+      "status": "implemented-workflow",
       "php_helpers": [
-        "TokenService::createReserveless"
+        "TokenEconomy::createReserveless"
       ],
       "php_abi_signatures": [
         {
@@ -1176,7 +1441,13 @@
           "code": "[Function(\"createTokenReserveless\")]"
         }
       ],
-      "semantic_boundary": "Checked helper covers its explicit profile/preconditions; variants, approvals, economic state and receipt semantics must be compared separately."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-tokens.json",
+        "tests": [
+          "tests/token-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "token.mint",
@@ -1186,9 +1457,9 @@
         "line": 441,
         "sha256": "43c41a2d7b7363492ba22d1d9448620e3082d44a15577f3cf868a523cc568e94"
       },
-      "status": "partial-checked-helper",
+      "status": "implemented-workflow",
       "php_helpers": [
-        "TokenService::mint"
+        "TokenEconomy::mint"
       ],
       "php_abi_signatures": [
         {
@@ -1239,7 +1510,13 @@
           "code": "[Function(\"mint\")]"
         }
       ],
-      "semantic_boundary": "Checked helper covers its explicit profile/preconditions; variants, approvals, economic state and receipt semantics must be compared separately."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-tokens.json",
+        "tests": [
+          "tests/token-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "token.sell",
@@ -1249,8 +1526,10 @@
         "line": 296,
         "sha256": "43c41a2d7b7363492ba22d1d9448620e3082d44a15577f3cf868a523cc568e94"
       },
-      "status": "abi-builder-only",
-      "php_helpers": [],
+      "status": "implemented-workflow",
+      "php_helpers": [
+        "TokenEconomy::sell"
+      ],
       "php_abi_signatures": [
         {
           "profile": "TestnetReserveToken20261029",
@@ -1298,7 +1577,13 @@
           "code": "[Function(\"sellTokensForExactDEL\")]"
         }
       ],
-      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-tokens.json",
+        "tests": [
+          "tests/token-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "token.update_details",
@@ -1308,8 +1593,10 @@
         "line": 449,
         "sha256": "43c41a2d7b7363492ba22d1d9448620e3082d44a15577f3cf868a523cc568e94"
       },
-      "status": "abi-builder-only",
-      "php_helpers": [],
+      "status": "implemented-workflow",
+      "php_helpers": [
+        "TokenEconomy::updateDetails"
+      ],
       "php_abi_signatures": [
         {
           "profile": "TestnetReserveToken20261029",
@@ -1359,7 +1646,13 @@
           "code": "[Function(\"updateMinTotalSupply\")]"
         }
       ],
-      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-tokens.json",
+        "tests": [
+          "tests/token-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "nft.add_del_reserve",
@@ -1369,9 +1662,9 @@
         "line": 750,
         "sha256": "decd239dd77803149a706f6e5177bd10b2d86ad7d7d06ae358b939e044efbb3f"
       },
-      "status": "partial-checked-helper",
+      "status": "implemented-workflow",
       "php_helpers": [
-        "DeployedNft::addDelReserve"
+        "NftOperations::addDelReserve"
       ],
       "php_abi_signatures": [
         {
@@ -1406,7 +1699,13 @@
           "code": "[Function(\"addReserveByETH\")]"
         }
       ],
-      "semantic_boundary": "Checked helper covers its explicit profile/preconditions; variants, approvals, economic state and receipt semantics must be compared separately."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-nft.json",
+        "tests": [
+          "tests/nft-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "nft.approve",
@@ -1416,8 +1715,10 @@
         "line": 696,
         "sha256": "decd239dd77803149a706f6e5177bd10b2d86ad7d7d06ae358b939e044efbb3f"
       },
-      "status": "abi-builder-only",
-      "php_helpers": [],
+      "status": "implemented-workflow",
+      "php_helpers": [
+        "NftOperations::approve"
+      ],
       "php_abi_signatures": [
         {
           "profile": "ERC721",
@@ -1448,7 +1749,13 @@
           "code": "[Function(\"approve\", \"bool\")]"
         }
       ],
-      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-nft.json",
+        "tests": [
+          "tests/nft-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "nft.burn",
@@ -1458,8 +1765,10 @@
         "line": 712,
         "sha256": "decd239dd77803149a706f6e5177bd10b2d86ad7d7d06ae358b939e044efbb3f"
       },
-      "status": "abi-builder-only",
-      "php_helpers": [],
+      "status": "implemented-workflow",
+      "php_helpers": [
+        "NftOperations::burn"
+      ],
       "php_abi_signatures": [
         {
           "profile": "ERC1155",
@@ -1498,7 +1807,13 @@
           "code": "[Function(\"burn\")]"
         }
       ],
-      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-nft.json",
+        "tests": [
+          "tests/nft-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "nft.create_collection",
@@ -1508,10 +1823,9 @@
         "line": 557,
         "sha256": "decd239dd77803149a706f6e5177bd10b2d86ad7d7d06ae358b939e044efbb3f"
       },
-      "status": "partial-checked-helper",
+      "status": "implemented-workflow",
       "php_helpers": [
-        "DeployedNft::createCollection",
-        "DeployedNft::createdCollection"
+        "NftOperations::createCollection"
       ],
       "php_abi_signatures": [
         {
@@ -1549,7 +1863,13 @@
           "code": "[Function(\"createDRC1155\")]"
         }
       ],
-      "semantic_boundary": "Checked helper covers its explicit profile/preconditions; variants, approvals, economic state and receipt semantics must be compared separately."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-nft.json",
+        "tests": [
+          "tests/nft-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "nft.delegate",
@@ -1559,10 +1879,9 @@
         "line": 768,
         "sha256": "decd239dd77803149a706f6e5177bd10b2d86ad7d7d06ae358b939e044efbb3f"
       },
-      "status": "partial-checked-helper",
+      "status": "implemented-workflow",
       "php_helpers": [
-        "NftService::delegate721",
-        "NftService::delegate1155"
+        "NftOperations::delegate"
       ],
       "php_abi_signatures": [
         {
@@ -1626,7 +1945,13 @@
           "code": "[Function(\"delegateDRC1155ByPermit\")]"
         }
       ],
-      "semantic_boundary": "Checked helper covers its explicit profile/preconditions; variants, approvals, economic state and receipt semantics must be compared separately."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-nft.json",
+        "tests": [
+          "tests/nft-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "nft.disable_mint",
@@ -1636,8 +1961,10 @@
         "line": 729,
         "sha256": "decd239dd77803149a706f6e5177bd10b2d86ad7d7d06ae358b939e044efbb3f"
       },
-      "status": "abi-builder-only",
-      "php_helpers": [],
+      "status": "implemented-workflow",
+      "php_helpers": [
+        "NftOperations::disableMint"
+      ],
       "php_abi_signatures": [
         {
           "profile": "ERC1155",
@@ -1666,7 +1993,13 @@
           "code": "[Function(\"disableMint\")]"
         }
       ],
-      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-nft.json",
+        "tests": [
+          "tests/nft-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "nft.hold",
@@ -1676,8 +2009,10 @@
         "line": 776,
         "sha256": "decd239dd77803149a706f6e5177bd10b2d86ad7d7d06ae358b939e044efbb3f"
       },
-      "status": "abi-builder-only",
-      "php_helpers": [],
+      "status": "implemented-workflow",
+      "php_helpers": [
+        "NftOperations::hold"
+      ],
       "php_abi_signatures": [
         {
           "profile": "DelegationNFT",
@@ -1732,7 +2067,13 @@
           "code": "[Function(\"delegateHoldDRC1155\")]"
         }
       ],
-      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-nft.json",
+        "tests": [
+          "tests/nft-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "nft.mint",
@@ -1742,9 +2083,9 @@
         "line": 577,
         "sha256": "decd239dd77803149a706f6e5177bd10b2d86ad7d7d06ae358b939e044efbb3f"
       },
-      "status": "partial-checked-helper",
+      "status": "implemented-workflow",
       "php_helpers": [
-        "DeployedNft::mint"
+        "NftOperations::mint"
       ],
       "php_abi_signatures": [
         {
@@ -1835,7 +2176,13 @@
           "code": "[Function(\"mint\")]"
         }
       ],
-      "semantic_boundary": "Checked helper covers its explicit profile/preconditions; variants, approvals, economic state and receipt semantics must be compared separately."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-nft.json",
+        "tests": [
+          "tests/nft-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "nft.set_approval_for_all",
@@ -1845,8 +2192,10 @@
         "line": 684,
         "sha256": "decd239dd77803149a706f6e5177bd10b2d86ad7d7d06ae358b939e044efbb3f"
       },
-      "status": "abi-builder-only",
-      "php_helpers": [],
+      "status": "implemented-workflow",
+      "php_helpers": [
+        "NftOperations::setApprovalForAll"
+      ],
       "php_abi_signatures": [
         {
           "profile": "ERC1155",
@@ -1890,7 +2239,13 @@
           "code": "Function(collection, \"setApprovalForAll\").GetData(operatorAddress, approved));"
         }
       ],
-      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-nft.json",
+        "tests": [
+          "tests/nft-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "nft.set_token_uri",
@@ -1900,9 +2255,9 @@
         "line": 738,
         "sha256": "decd239dd77803149a706f6e5177bd10b2d86ad7d7d06ae358b939e044efbb3f"
       },
-      "status": "partial-checked-helper",
+      "status": "implemented-workflow",
       "php_helpers": [
-        "NftService::setTokenUri"
+        "NftOperations::setTokenUri"
       ],
       "php_abi_signatures": [
         {
@@ -1924,7 +2279,13 @@
           "code": "[Function(\"setTokenURI\")]"
         }
       ],
-      "semantic_boundary": "Bundled PythonErc721/PythonErc1155 source profiles contain exact setTokenURI(uint256,string). Helper restricts those profiles and simulates role checks; actual deployed ABI/runtime compatibility remains explicit."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-nft.json",
+        "tests": [
+          "tests/nft-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "nft.transfer",
@@ -1934,10 +2295,11 @@
         "line": 617,
         "sha256": "decd239dd77803149a706f6e5177bd10b2d86ad7d7d06ae358b939e044efbb3f"
       },
-      "status": "partial-checked-helper",
+      "status": "implemented-workflow",
       "php_helpers": [
         "NftService::transfer721",
-        "NftService::transfer1155"
+        "NftService::transfer1155",
+        "NftOperations::transferFrom"
       ],
       "php_abi_signatures": [
         {
@@ -2016,7 +2378,13 @@
           "code": "[Function(\"safeTransferFrom\")]"
         }
       ],
-      "semantic_boundary": "Checked helper covers its explicit profile/preconditions; variants, approvals, economic state and receipt semantics must be compared separately."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/PARITY_COMMON.md",
+        "tests": [
+          "tests/nft-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "nft.transfer_batch_erc1155",
@@ -2026,8 +2394,10 @@
         "line": 644,
         "sha256": "decd239dd77803149a706f6e5177bd10b2d86ad7d7d06ae358b939e044efbb3f"
       },
-      "status": "abi-builder-only",
-      "php_helpers": [],
+      "status": "implemented-workflow",
+      "php_helpers": [
+        "NftOperations::transferBatch1155"
+      ],
       "php_abi_signatures": [
         {
           "profile": "ERC1155",
@@ -2053,7 +2423,13 @@
           "code": "Function(collection, \"safeBatchTransferFrom\").GetData("
         }
       ],
-      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-nft.json",
+        "tests": [
+          "tests/nft-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "nft.transfer_stake",
@@ -2063,8 +2439,10 @@
         "line": 784,
         "sha256": "decd239dd77803149a706f6e5177bd10b2d86ad7d7d06ae358b939e044efbb3f"
       },
-      "status": "abi-builder-only",
-      "php_helpers": [],
+      "status": "implemented-workflow",
+      "php_helpers": [
+        "NftOperations::transferStake"
+      ],
       "php_abi_signatures": [
         {
           "profile": "DelegationNFT",
@@ -2129,7 +2507,13 @@
           "code": "[Function(\"transfer\", \"bool\")]"
         }
       ],
-      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-nft.json",
+        "tests": [
+          "tests/nft-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "nft.withdraw",
@@ -2139,8 +2523,10 @@
         "line": 810,
         "sha256": "decd239dd77803149a706f6e5177bd10b2d86ad7d7d06ae358b939e044efbb3f"
       },
-      "status": "abi-builder-only",
-      "php_helpers": [],
+      "status": "implemented-workflow",
+      "php_helpers": [
+        "NftOperations::withdraw"
+      ],
       "php_abi_signatures": [
         {
           "profile": "DelegationNFT",
@@ -2195,7 +2581,13 @@
           "code": "[Function(\"withdrawHold\")]"
         }
       ],
-      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/parity-nft.json",
+        "tests": [
+          "tests/nft-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "checks.create_del",
@@ -2205,8 +2597,9 @@
         "line": 108,
         "sha256": "f484a50a5bd98908bbd0583c6233771aa09ac07106c86d6ffb9fcdcd1fa63b45"
       },
-      "status": "partial-checked-helper",
+      "status": "implemented-workflow",
       "php_helpers": [
+        "ChecksService::createDelForSigners",
         "ChecksService::createDel"
       ],
       "php_abi_signatures": [
@@ -2229,7 +2622,14 @@
           "code": "[Function(\"createChecksDEL\", \"bytes32[]\")]"
         }
       ],
-      "semantic_boundary": "Checked helper covers its explicit profile/preconditions; variants, approvals, economic state and receipt semantics must be compared separately."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/PARITY_COMMON.md",
+        "tests": [
+          "tests/bridge-checks-parity.php",
+          "tests/executor-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "checks.create_token",
@@ -2239,8 +2639,9 @@
         "line": 125,
         "sha256": "f484a50a5bd98908bbd0583c6233771aa09ac07106c86d6ffb9fcdcd1fa63b45"
       },
-      "status": "partial-checked-helper",
+      "status": "implemented-workflow",
       "php_helpers": [
+        "ChecksService::createTokenForSigners",
         "ChecksService::createToken"
       ],
       "php_abi_signatures": [
@@ -2276,7 +2677,14 @@
           "code": "[Function(\"createChecksTokenByPermit\", \"bytes32[]\")]"
         }
       ],
-      "semantic_boundary": "Checked helper covers its explicit profile/preconditions; variants, approvals, economic state and receipt semantics must be compared separately."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/PARITY_COMMON.md",
+        "tests": [
+          "tests/bridge-checks-parity.php",
+          "tests/executor-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "checks.redeem",
@@ -2286,8 +2694,9 @@
         "line": 156,
         "sha256": "f484a50a5bd98908bbd0583c6233771aa09ac07106c86d6ffb9fcdcd1fa63b45"
       },
-      "status": "partial-checked-helper",
+      "status": "implemented-workflow",
       "php_helpers": [
+        "ChecksService::redeemSignatures",
         "ChecksService::redeem"
       ],
       "php_abi_signatures": [
@@ -2310,7 +2719,14 @@
           "code": "[Function(\"redeemChecks\")]"
         }
       ],
-      "semantic_boundary": "Checked helper covers its explicit profile/preconditions; variants, approvals, economic state and receipt semantics must be compared separately."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/PARITY_COMMON.md",
+        "tests": [
+          "tests/bridge-checks-parity.php",
+          "tests/executor-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "bridge.complete_transfer",
@@ -2320,8 +2736,10 @@
         "line": 121,
         "sha256": "5c7584c470287604dba7785405eb5c4820dec91ee6eb6dbef5385c01c735ad18"
       },
-      "status": "abi-builder-only",
-      "php_helpers": [],
+      "status": "implemented-workflow",
+      "php_helpers": [
+        "BridgeService::completeTransfer"
+      ],
       "php_abi_signatures": [
         {
           "profile": "PythonBridgeV2",
@@ -2336,7 +2754,14 @@
           "code": "[Function(\"completeTransfer\")]"
         }
       ],
-      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/PARITY_COMMON.md",
+        "tests": [
+          "tests/bridge-checks-parity.php",
+          "tests/executor-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "bridge.transfer_native",
@@ -2346,8 +2771,10 @@
         "line": 84,
         "sha256": "5c7584c470287604dba7785405eb5c4820dec91ee6eb6dbef5385c01c735ad18"
       },
-      "status": "abi-builder-only",
-      "php_helpers": [],
+      "status": "implemented-workflow",
+      "php_helpers": [
+        "BridgeService::transferNative"
+      ],
       "php_abi_signatures": [
         {
           "profile": "PythonBridgeV2",
@@ -2362,7 +2789,14 @@
           "code": "[Function(\"wrapAndTransferETH\")]"
         }
       ],
-      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/PARITY_COMMON.md",
+        "tests": [
+          "tests/bridge-checks-parity.php",
+          "tests/executor-parity.php"
+        ]
+      }
     },
     {
       "python_operation": "bridge.transfer_token",
@@ -2372,8 +2806,10 @@
         "line": 99,
         "sha256": "5c7584c470287604dba7785405eb5c4820dec91ee6eb6dbef5385c01c735ad18"
       },
-      "status": "abi-builder-only",
-      "php_helpers": [],
+      "status": "implemented-workflow",
+      "php_helpers": [
+        "BridgeService::transferToken"
+      ],
       "php_abi_signatures": [
         {
           "profile": "PythonBridgeV2",
@@ -2388,7 +2824,15 @@
           "code": "[Function(\"transferTokens\")]"
         }
       ],
-      "semantic_boundary": "No equivalent PHP end-to-end orchestration/receipt DTO is inferred from a matching selector."
+      "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
+      "implementation_evidence": {
+        "manifest": "docs/PARITY_COMMON.md",
+        "tests": [
+          "tests/bridge-checks-parity.php",
+          "tests/executor-parity.php"
+        ]
+      }
     }
-  ]
+  ],
+  "release": "0.1.3"
 }

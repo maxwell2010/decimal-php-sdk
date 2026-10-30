@@ -48,6 +48,7 @@ def main():
             assert (destination/'vendor/autoload.php').is_file()
             assert (destination/'VERSION').read_text().strip()==release.VERSION
             subprocess.run(php+[str(destination/'examples/offline.php')],check=True,stdout=subprocess.DEVNULL)
+            subprocess.run(php+[str(destination/'examples/parity-offline.php')],check=True,stdout=subprocess.DEVNULL)
             subprocess.run(php+[str(destination/'tests/run.php')],check=True)
     finally:server.shutdown();server.server_close()
     print('Single-command Composer installation and installed package tests passed')

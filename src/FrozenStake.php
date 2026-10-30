@@ -8,4 +8,8 @@ final readonly class FrozenStake
     public function active(): bool { return $this->freezeType==='1' && $this->status==='1' && $this->stake['amount']!=='0'; }
     public function matured(string $unixSeconds): bool
     { Units::uint($unixSeconds); return $this->active() && $this->unfreezeTimestamp!=='0' && bccomp($this->unfreezeTimestamp,$unixSeconds,0)<=0; }
+
+    public function activeTransfer(): bool {return $this->freezeType==='2'&&$this->status==='1'&&$this->stake['amount']!=='0';}
+    public function reachedCompletionTime(string $timestamp): bool
+    { Units::uint($timestamp);return $this->unfreezeTimestamp!=='0'&&bccomp($this->unfreezeTimestamp,$timestamp,0)<=0; }
 }

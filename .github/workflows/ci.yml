@@ -28,6 +28,7 @@ jobs:
         with:
           python-version: '3.12'
       - run: python tools/generate.py
+      - run: python tools/update_parity.py --check
       - run: git diff --exit-code -- src/Contracts docs/operations.json docs/abi-hashes.json
       - run: python tools/test_local_transports.py
       - run: python tools/test_websocket_queue.py

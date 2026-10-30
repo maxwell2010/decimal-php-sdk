@@ -6,6 +6,7 @@ final class Events
     public static function decode(array $abi,array $log,?string $expectedAddress=null): array
     {
         if($expectedAddress!==null&&TransactionDraft::address($log['address']??'')!==TransactionDraft::address($expectedAddress)) throw new \InvalidArgumentException('Unexpected log emitter');
+        if(($log['removed']??false)!==false)throw new \InvalidArgumentException('Removed event log');
         $topics=$log['topics']??[];$codec=new AbiCodec();
         foreach(self::stakeEventLayouts($abi) as $event) {
             if(($event['type']??'')!=='event'||($event['anonymous']??false)) continue;
@@ -31,11 +32,21 @@ final class Events
     {
         if(!preg_match('/^[A-Za-z0-9]+$/D',$profile)) throw new \InvalidArgumentException('Invalid profile');
         $path=dirname(__DIR__).'/abi/'.$profile.'.json';if(!is_file($path)) throw new \InvalidArgumentException('Unknown profile');
+        return self::receiptWithAbi(json_decode(file_get_contents($path),true,512,JSON_THROW_ON_ERROR),$receipt,$address);
+    }
+    public static function receiptWithAbi(array $abi,array $receipt,string $address): array
+    {
+        TransactionDraft::address($address);
         if(($receipt['status']??'')!=='0x1') throw new \InvalidArgumentException('Receipt not successful');
-        $abi=self::stakeEventLayouts(json_decode(file_get_contents($path),true,512,JSON_THROW_ON_ERROR));$out=[];
+        if(!is_array($receipt['logs']??[])||!array_is_list($receipt['logs']??[]))throw new \InvalidArgumentException('Positional receipt logs required');
+        $abi=self::stakeEventLayouts($abi);$out=[];
         foreach($receipt['logs']??[] as $log) if(strtolower($log['address']??'')===strtolower($address)) {
             $known=false;foreach($abi as $e) if(($e['type']??'')==='event'&&'0x'.\kornrunner\Keccak::hash(Contract::signature($e),256)===strtolower($log['topics'][0]??'')) $known=true;
-            if($known) $out[]=self::decode($abi,$log,$address);
+            if($known){
+                foreach(['transactionHash','blockHash','blockNumber','transactionIndex'] as $key)if(isset($log[$key],$receipt[$key])&&strtolower($log[$key])!==strtolower($receipt[$key]))throw new \InvalidArgumentException('Event receipt metadata mismatch');
+                foreach(['blockNumber','transactionIndex','logIndex'] as $key)if(isset($log[$key]))Units::decimal($log[$key]);
+                $out[]=self::decode($abi,$log,$address);
+            }
         }
         return $out;
     }

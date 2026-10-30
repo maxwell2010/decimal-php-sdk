@@ -18,6 +18,8 @@ final readonly class TransactionDraft
     { return new self($from, $to, Units::parse($amount), '0x' . bin2hex($memo)); }
     public static function deploy(string $from,string $initCode,string $value='0'): self
     { return new self($from,null,$value,$initCode); }
+    public static function burnDel(string $from,string $amount): self
+    { return new self($from,'0x'.str_repeat('0',40),Units::parse($amount)); }
     public function rpc(): array
     {
         $request=['from'=>$this->from, 'value'=>Units::hex($this->value), 'data'=>$this->data];

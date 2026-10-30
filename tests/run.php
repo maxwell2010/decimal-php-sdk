@@ -90,4 +90,18 @@ require __DIR__.'/stake-upgrade.php';
 
 require __DIR__.'/staking-events-nft-upgrade.php';
 
+require __DIR__.'/staking-parity.php';
+
+require __DIR__.'/staking-reads-parity.php';
+
+require __DIR__.'/token-parity.php';
+
+require __DIR__.'/nft-parity.php';
+
+require __DIR__.'/bridge-checks-parity.php';
+
+require __DIR__.'/executor-parity.php';
+
+require __DIR__.'/parity-manifest.php';
+
 echo "OK: $count checks; no remote RPC requests or blockchain broadcasts\n";

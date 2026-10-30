@@ -1,0 +1,87 @@
+{
+  "python_source": {
+    "path": "src/decimal_web3_sdk/nft.py",
+    "sha256": "decd239dd77803149a706f6e5177bd10b2d86ad7d7d06ae358b939e044efbb3f"
+  },
+  "vector_generator": "eth_abi5.2.0 and eth_utils.keccak independent encoding",
+  "operations": {
+    "nft.approve": "NftOperations::approve",
+    "nft.burn": "NftOperations::burn",
+    "nft.create_collection": "NftOperations::createCollection",
+    "nft.disable_mint": "NftOperations::disableMint",
+    "nft.mint": "NftOperations::mint",
+    "nft.hold": "NftOperations::hold",
+    "nft.delegate": "NftOperations::delegate",
+    "nft.withdraw": "NftOperations::withdraw",
+    "nft.transfer_stake": "NftOperations::transferStake",
+    "nft.transfer_batch_erc1155": "NftOperations::transferBatch1155",
+    "nft.set_approval_for_all": "NftOperations::setApprovalForAll",
+    "nft.set_token_uri": "NftOperations::setTokenUri",
+    "nft.add_del_reserve": "NftOperations::addDelReserve",
+    "nft.transfer": "NftService::transfer721 / NftService::transfer1155"
+  },
+  "csharp_sources": [
+    {
+      "path": "DecimalNftDeployedDrafts.cs",
+      "sha256": "5f40dada726d11131df2c2f8ca8fc9f67ea458d79b03337aa51984980538db80"
+    },
+    {
+      "path": "DecimalNftDrafts.cs",
+      "sha256": "170721f668264291714009092235881a85e4bd14c8244af0a09cdb155a302abd"
+    },
+    {
+      "path": "DecimalNftReserveReader.cs",
+      "sha256": "58dad1e17627d00d89cdaad8c39fa3b591d6f2dbb8b917bfb40617f72654a6d2"
+    },
+    {
+      "path": "DeployedNftReceiptReader.cs",
+      "sha256": "3341e68bf34cfd5c969099211b6bac875679d22c997090583b6588edbdb218b4"
+    },
+    {
+      "path": "Drc1155PermitService.cs",
+      "sha256": "0da4007fd68625a62a5b9c6bfcc29522148e2cc42a5df0f2c0ed848f00f0c33e"
+    },
+    {
+      "path": "Drc721PermitDrafts.cs",
+      "sha256": "d7f497cbd7e063d4971e957d2860dffab45d3716c71dd2e446f111d8bba67dfa"
+    },
+    {
+      "path": "Drc721PermitService.cs",
+      "sha256": "ea847e92510d82cedb331cfa0e88824fdff86f6a40cbb4d9d020a37fa0d623d0"
+    },
+    {
+      "path": "Erc1155Service.cs",
+      "sha256": "b78b70f08c47a420134d4516e2186079230b7f98f925dec14a96d8c1df380204"
+    },
+    {
+      "path": "Erc721Service.cs",
+      "sha256": "ca337ddd69c27b6188aae943ab0c6df975fdfb70f1f9e3ed7d666e570827dbe8"
+    },
+    {
+      "path": "NftReceiptReader.cs",
+      "sha256": "2c79b04cf281287d33f848eb4710bb6652f632c11de6c20aefe271fc36986eeb"
+    },
+    {
+      "path": "ReservelessNftDrafts.cs",
+      "sha256": "e1dd8a06a3fb49095521ef0d91c58c11938863bcd003dc8cb89806cb30dcc576"
+    }
+  ],
+  "additional_helpers": [
+    "NftReader",
+    "NftStakingReader::stake",
+    "NftStakingReader::stakeId",
+    "NftStakingReader::penaltyIndex",
+    "NftReceipts::created",
+    "NftReceipts::movements",
+    "NftReceipts::uriUpdates",
+    "NftOperations::createReservelessCollection",
+    "NftOperations::addReserve",
+    "NftOperations::addEthReserve",
+    "NftOperations::transferFrom",
+    "NftPermitService::typedData",
+    "NftPermitService::prepare",
+    "NftPermitService::sign",
+    "NftPermitService::verifyExternal",
+    "NftPermitService::draft"
+  ]
+}

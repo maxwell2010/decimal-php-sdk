@@ -1,0 +1,287 @@
+{
+  "operations": [
+    {
+      "operation": "decimal.delegate_del",
+      "php_helper": "StakingService::plan",
+      "python_source": {
+        "path": "C:\\Users\\Maximus\\PycharmProjects\\PythonSDK\\src\\decimal_web3_sdk\\decimal.py",
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea",
+        "line": 979
+      },
+      "evidence": "Independent eth_abi calldata/value fixtures, injected state; generic ERC20 multisend disabled as Python"
+    },
+    {
+      "operation": "decimal.hold_del",
+      "php_helper": "StakingService::plan",
+      "python_source": {
+        "path": "C:\\Users\\Maximus\\PycharmProjects\\PythonSDK\\src\\decimal_web3_sdk\\decimal.py",
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea",
+        "line": 1013
+      },
+      "evidence": "Independent eth_abi calldata/value fixtures, injected state; generic ERC20 multisend disabled as Python"
+    },
+    {
+      "operation": "decimal.unbond_del",
+      "php_helper": "StakingService::plan",
+      "python_source": {
+        "path": "C:\\Users\\Maximus\\PycharmProjects\\PythonSDK\\src\\decimal_web3_sdk\\decimal.py",
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea",
+        "line": 1050
+      },
+      "evidence": "Independent eth_abi calldata/value fixtures, injected state; generic ERC20 multisend disabled as Python"
+    },
+    {
+      "operation": "decimal.withdraw_hold_del",
+      "php_helper": "StakingService::plan",
+      "python_source": {
+        "path": "C:\\Users\\Maximus\\PycharmProjects\\PythonSDK\\src\\decimal_web3_sdk\\decimal.py",
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea",
+        "line": 1070
+      },
+      "evidence": "Independent eth_abi calldata/value fixtures, injected state; generic ERC20 multisend disabled as Python"
+    },
+    {
+      "operation": "decimal.transfer_stake_del",
+      "php_helper": "StakingService::plan",
+      "python_source": {
+        "path": "C:\\Users\\Maximus\\PycharmProjects\\PythonSDK\\src\\decimal_web3_sdk\\decimal.py",
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea",
+        "line": 1385
+      },
+      "evidence": "Independent eth_abi calldata/value fixtures, injected state; generic ERC20 multisend disabled as Python"
+    },
+    {
+      "operation": "decimal.withdraw_del_stake_with_reset",
+      "php_helper": "StakingService::plan",
+      "python_source": {
+        "path": "C:\\Users\\Maximus\\PycharmProjects\\PythonSDK\\src\\decimal_web3_sdk\\decimal.py",
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea",
+        "line": 1496
+      },
+      "evidence": "Independent eth_abi calldata/value fixtures, injected state; generic ERC20 multisend disabled as Python"
+    },
+    {
+      "operation": "decimal.transfer_del_stake_with_reset",
+      "php_helper": "StakingService::plan",
+      "python_source": {
+        "path": "C:\\Users\\Maximus\\PycharmProjects\\PythonSDK\\src\\decimal_web3_sdk\\decimal.py",
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea",
+        "line": 1575
+      },
+      "evidence": "Independent eth_abi calldata/value fixtures, injected state; generic ERC20 multisend disabled as Python"
+    },
+    {
+      "operation": "decimal.delegate_erc20",
+      "php_helper": "StakingService::plan",
+      "python_source": {
+        "path": "C:\\Users\\Maximus\\PycharmProjects\\PythonSDK\\src\\decimal_web3_sdk\\decimal.py",
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea",
+        "line": 1209
+      },
+      "evidence": "Independent eth_abi calldata/value fixtures, injected state; generic ERC20 multisend disabled as Python"
+    },
+    {
+      "operation": "decimal.hold_erc20",
+      "php_helper": "StakingService::plan",
+      "python_source": {
+        "path": "C:\\Users\\Maximus\\PycharmProjects\\PythonSDK\\src\\decimal_web3_sdk\\decimal.py",
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea",
+        "line": 1230
+      },
+      "evidence": "Independent eth_abi calldata/value fixtures, injected state; generic ERC20 multisend disabled as Python"
+    },
+    {
+      "operation": "decimal.unbond_erc20",
+      "php_helper": "StakingService::plan",
+      "python_source": {
+        "path": "C:\\Users\\Maximus\\PycharmProjects\\PythonSDK\\src\\decimal_web3_sdk\\decimal.py",
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea",
+        "line": 1251
+      },
+      "evidence": "Independent eth_abi calldata/value fixtures, injected state; generic ERC20 multisend disabled as Python"
+    },
+    {
+      "operation": "decimal.withdraw_hold_erc20",
+      "php_helper": "StakingService::plan",
+      "python_source": {
+        "path": "C:\\Users\\Maximus\\PycharmProjects\\PythonSDK\\src\\decimal_web3_sdk\\decimal.py",
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea",
+        "line": 1307
+      },
+      "evidence": "Independent eth_abi calldata/value fixtures, injected state; generic ERC20 multisend disabled as Python"
+    },
+    {
+      "operation": "decimal.transfer_stake_erc20",
+      "php_helper": "StakingService::plan",
+      "python_source": {
+        "path": "C:\\Users\\Maximus\\PycharmProjects\\PythonSDK\\src\\decimal_web3_sdk\\decimal.py",
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea",
+        "line": 1360
+      },
+      "evidence": "Independent eth_abi calldata/value fixtures, injected state; generic ERC20 multisend disabled as Python"
+    },
+    {
+      "operation": "decimal.withdraw_stake_with_reset",
+      "php_helper": "StakingService::plan",
+      "python_source": {
+        "path": "C:\\Users\\Maximus\\PycharmProjects\\PythonSDK\\src\\decimal_web3_sdk\\decimal.py",
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea",
+        "line": 1463
+      },
+      "evidence": "Independent eth_abi calldata/value fixtures, injected state; generic ERC20 multisend disabled as Python"
+    },
+    {
+      "operation": "decimal.transfer_stake_with_reset",
+      "php_helper": "StakingService::plan",
+      "python_source": {
+        "path": "C:\\Users\\Maximus\\PycharmProjects\\PythonSDK\\src\\decimal_web3_sdk\\decimal.py",
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea",
+        "line": 1540
+      },
+      "evidence": "Independent eth_abi calldata/value fixtures, injected state; generic ERC20 multisend disabled as Python"
+    },
+    {
+      "operation": "decimal.stake_token_to_hold",
+      "php_helper": "StakingService::plan",
+      "python_source": {
+        "path": "C:\\Users\\Maximus\\PycharmProjects\\PythonSDK\\src\\decimal_web3_sdk\\decimal.py",
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea",
+        "line": 1410
+      },
+      "evidence": "Independent eth_abi calldata/value fixtures, injected state; generic ERC20 multisend disabled as Python"
+    },
+    {
+      "operation": "decimal.hold_stake_with_reset",
+      "php_helper": "StakingService::plan",
+      "python_source": {
+        "path": "C:\\Users\\Maximus\\PycharmProjects\\PythonSDK\\src\\decimal_web3_sdk\\decimal.py",
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea",
+        "line": 1605
+      },
+      "evidence": "Independent eth_abi calldata/value fixtures, injected state; generic ERC20 multisend disabled as Python"
+    },
+    {
+      "operation": "decimal.reset_stake_hold",
+      "php_helper": "StakingService::plan",
+      "python_source": {
+        "path": "C:\\Users\\Maximus\\PycharmProjects\\PythonSDK\\src\\decimal_web3_sdk\\decimal.py",
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea",
+        "line": 1436
+      },
+      "evidence": "Independent eth_abi calldata/value fixtures, injected state; generic ERC20 multisend disabled as Python"
+    },
+    {
+      "operation": "decimal.pause_self_validator",
+      "php_helper": "StakingService::plan",
+      "python_source": {
+        "path": "C:\\Users\\Maximus\\PycharmProjects\\PythonSDK\\src\\decimal_web3_sdk\\decimal.py",
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea",
+        "line": 1631
+      },
+      "evidence": "Independent eth_abi calldata/value fixtures, injected state; generic ERC20 multisend disabled as Python"
+    },
+    {
+      "operation": "decimal.unpause_self_validator",
+      "php_helper": "StakingService::plan",
+      "python_source": {
+        "path": "C:\\Users\\Maximus\\PycharmProjects\\PythonSDK\\src\\decimal_web3_sdk\\decimal.py",
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea",
+        "line": 1650
+      },
+      "evidence": "Independent eth_abi calldata/value fixtures, injected state; generic ERC20 multisend disabled as Python"
+    },
+    {
+      "operation": "decimal.pause_validator",
+      "php_helper": "StakingService::plan",
+      "python_source": {
+        "path": "C:\\Users\\Maximus\\PycharmProjects\\PythonSDK\\src\\decimal_web3_sdk\\decimal.py",
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea",
+        "line": 1669
+      },
+      "evidence": "Independent eth_abi calldata/value fixtures, injected state; generic ERC20 multisend disabled as Python"
+    },
+    {
+      "operation": "decimal.unpause_validator",
+      "php_helper": "StakingService::plan",
+      "python_source": {
+        "path": "C:\\Users\\Maximus\\PycharmProjects\\PythonSDK\\src\\decimal_web3_sdk\\decimal.py",
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea",
+        "line": 1690
+      },
+      "evidence": "Independent eth_abi calldata/value fixtures, injected state; generic ERC20 multisend disabled as Python"
+    },
+    {
+      "operation": "decimal.multisend_del",
+      "php_helper": "StakingService::plan",
+      "python_source": {
+        "path": "C:\\Users\\Maximus\\PycharmProjects\\PythonSDK\\src\\decimal_web3_sdk\\decimal.py",
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea",
+        "line": 1120
+      },
+      "evidence": "Independent eth_abi calldata/value fixtures, injected state; generic ERC20 multisend disabled as Python"
+    },
+    {
+      "operation": "decimal.multisend_erc20",
+      "php_helper": "StakingService::plan",
+      "python_source": {
+        "path": "C:\\Users\\Maximus\\PycharmProjects\\PythonSDK\\src\\decimal_web3_sdk\\decimal.py",
+        "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea",
+        "line": 1189
+      },
+      "evidence": "Independent eth_abi calldata/value fixtures, injected state; generic ERC20 multisend disabled as Python"
+    }
+  ],
+  "source_snapshots": [
+    {
+      "path": "C:/Users/Maximus/PycharmProjects/PythonSDK/src/decimal_web3_sdk/decimal.py",
+      "sha256": "0e50599503e0bec787af307da39541ceba95f511c96dffaa291d84812e7252ea"
+    },
+    {
+      "path": "C:/Users/Maximus/.codex/worktrees/sdk-release-014/PythonSDK/src/decimal_web3_sdk/decimal.py",
+      "sha256": "318b80b8d8e769a5a551c9ba9e4ab170094926967f63b93d59968d97b2b49773"
+    },
+    {
+      "path": "C:/Users/Maximus/PycharmProjects/PythonSDK/csharp/src/Decimal.Web3/Staking/DelegationDrafts.cs",
+      "sha256": "64cc295f210ddd37757787097c73cdf95e6776677bb8c8a0d8ad46b3b21daa49"
+    },
+    {
+      "path": "C:/Users/Maximus/.codex/worktrees/0046/PythonSDK/gosdk/docs/operation-matrix.json",
+      "sha256": "640532a429c18dd3bf369db487b82e5a3c729c4bcd93943063bb1d8c29a7b56b"
+    },
+    {
+      "path": "C:\\Users\\Maximus\\PycharmProjects\\PythonSDK\\csharp\\src\\Decimal.Web3\\Staking\\StakeReader.cs",
+      "sha256": "fb79eabdd56ce5a49d2385da9db381793d5192d22cfd7373457f30ac286290c3"
+    },
+    {
+      "path": "C:\\Users\\Maximus\\PycharmProjects\\PythonSDK\\csharp\\src\\Decimal.Web3\\Staking\\FrozenStakeReader.cs",
+      "sha256": "c2688fe5d1258295c4501b5136bc9f6d64e38ae59005077edc5a0f6742dcf96a"
+    },
+    {
+      "path": "C:\\Users\\Maximus\\PycharmProjects\\PythonSDK\\csharp\\src\\Decimal.Web3\\Staking\\WithdrawalReceiptReader.cs",
+      "sha256": "b8b23ce5268d7605e08a17f64ec23e78092fcd7fb901504dd8aa244672aa7848"
+    },
+    {
+      "path": "C:\\Users\\Maximus\\PycharmProjects\\PythonSDK\\csharp\\src\\Decimal.Web3\\Staking\\DelegationMaintenanceDrafts.cs",
+      "sha256": "4dd9ff34cecffe8c0db9f33ebb40f63e1261f03fdfa6d2741f0ef5295e30b03f"
+    },
+    {
+      "path": "C:\\Users\\Maximus\\PycharmProjects\\PythonSDK\\csharp\\src\\Decimal.Web3\\Validators\\ValidatorService.cs",
+      "sha256": "a19e844f95ed67cd518789eb7335724b95bca4e67f36858a594d1ac2aabeac03"
+    }
+  ],
+  "intentional_deviation": "Recovery worktree Python enables unsafe arbitrary Multicall ERC20 spender; maintained Python and Go disable it. PHP requires verified RestrictedMultisend instead.",
+  "additional_helpers": [
+    "StakePosition",
+    "StakingReader::stake",
+    "StakingReader::holdStake",
+    "StakingReader::snapshot",
+    "StakingReader::frozenPosition",
+    "StakingReader::frozenPositions",
+    "StakingReader::withdrawalReceipt",
+    "StakingReader::applyPenalties",
+    "ValidatorService::read",
+    "ValidatorService::draft",
+    "ValidatorService::resolved",
+    "StakingService::separateResetTransfer"
+  ]
+}

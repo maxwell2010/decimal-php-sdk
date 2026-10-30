@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.1.3 - 2026-10-30
+
+- Close the remaining 55-entry operation matrix with 54 named request workflows and an explicit safe-policy rejection of arbitrary Multicall ERC20 allowance; retain verified RestrictedMultisend.
+- Add ERC20/token economy/quotes, staking/validator management and snapshots, NFT collection/reserve/stake/receipt operations, external permit services, bridge and checks APIs.
+- Add common transaction plans, explicit execution/reporting, fee quotes, registry snapshots, confirmation/state-refresh sequencing and receipt metadata validation.
+- Preserve upgraded Stake7/8, distinct NFTStake10, legacy exit routes and explicit unified NFT deposits.
+- Add independent calldata/digest fixtures, cross-reviewed negative checks and reproducible operation evidence: 7680 offline checks.
+
+No blockchain transactions were submitted. Source/API acceptance and deployment boundaries are recorded in docs/FINAL_PARITY_0_1_3.md. Existing versioned assets remain unchanged.
+
 ## 0.1.2 - 2026-10-30
 
 - Support the updated Decimal stake output with holdStartTime at index 7, preserving holdTimestamp at index 6 and legacy seven-field responses.

@@ -1,0 +1,393 @@
+{
+  "sources": [
+    {
+      "path": "src/decimal_web3_sdk/token.py",
+      "sha256": "43c41a2d7b7363492ba22d1d9448620e3082d44a15577f3cf868a523cc568e94",
+      "public_methods": [
+        {
+          "line": 277,
+          "declaration": "async def buy("
+        },
+        {
+          "line": 296,
+          "declaration": "async def sell("
+        },
+        {
+          "line": 317,
+          "declaration": "async def convert("
+        },
+        {
+          "line": 429,
+          "declaration": "async def burn(self, request: BurnTokenRequest, broadcast: bool = False, wait_receipt: bool = False) -> TransactionResult:"
+        },
+        {
+          "line": 441,
+          "declaration": "async def mint(self, request: MintTokenRequest, broadcast: bool = False, wait_receipt: bool = False) -> TransactionResult:"
+        },
+        {
+          "line": 449,
+          "declaration": "async def update_details(self, request: UpdateTokenDetailsRequest, broadcast: bool = False, wait_receipt: bool = False) -> TransactionResult:"
+        },
+        {
+          "line": 456,
+          "declaration": "async def create_reserveless("
+        },
+        {
+          "line": 481,
+          "declaration": "async def create("
+        }
+      ]
+    },
+    {
+      "path": "src/decimal_web3_sdk/transactions.py",
+      "sha256": "571e12af7013a174c1486decf540adcce3538842902aebb077944e68e698fd59",
+      "public_methods": []
+    },
+    {
+      "path": "src/decimal_web3_sdk/erc20.py",
+      "sha256": "b167b64ba701eac17d9c6161c8f711a47c97dfb5e9120ee0bab05146af310e4f",
+      "public_methods": []
+    },
+    {
+      "path": "csharp/src/Decimal.Web3/Tokens/Erc20Contracts.cs",
+      "sha256": "99c57421cbfeab02f74bc44b5aa63505464664ad222bc10f2e9194b6ebb235bf",
+      "public_methods": []
+    },
+    {
+      "path": "csharp/src/Decimal.Web3/Tokens/Erc20PermitService.cs",
+      "sha256": "97c80bfa60045ead0eac907117b7172f10c7e6d82eebe7246bd50c3b191f5339",
+      "public_methods": [
+        {
+          "line": 36,
+          "declaration": "public async Task<Erc20PermitData> PrepareAsync("
+        },
+        {
+          "line": 123,
+          "declaration": "public async Task<Erc20PermitSignature> SignAsync("
+        },
+        {
+          "line": 139,
+          "declaration": "public static byte[] CalculateDomainSeparator(Erc20PermitData data)"
+        },
+        {
+          "line": 146,
+          "declaration": "public static byte[] CalculateDigest(Erc20PermitData data)"
+        }
+      ]
+    },
+    {
+      "path": "csharp/src/Decimal.Web3/Tokens/Erc20Service.cs",
+      "sha256": "f604994f2c3026e2f9e78f6a8fe8d3254aaede5f94550de46dffafc9f936e957",
+      "public_methods": [
+        {
+          "line": 26,
+          "declaration": "public async Task<Erc20Metadata> GetMetadataAsync(BlockParameter? block = null)"
+        },
+        {
+          "line": 37,
+          "declaration": "public Task<string> GetNameAsync(BlockParameter? block = null) =>"
+        },
+        {
+          "line": 40,
+          "declaration": "public Task<string> GetSymbolAsync(BlockParameter? block = null) =>"
+        },
+        {
+          "line": 43,
+          "declaration": "public Task<byte> GetDecimalsAsync(BlockParameter? block = null) =>"
+        },
+        {
+          "line": 46,
+          "declaration": "public Task<BigInteger> GetTotalSupplyRawAsync(BlockParameter? block = null) =>"
+        },
+        {
+          "line": 49,
+          "declaration": "public Task<string> GetVersionAsync(BlockParameter? block = null) =>"
+        },
+        {
+          "line": 52,
+          "declaration": "public Task<byte[]> GetDomainSeparatorAsync(BlockParameter? block = null) =>"
+        },
+        {
+          "line": 55,
+          "declaration": "public Task<BigInteger> GetNonceAsync(string owner, BlockParameter? block = null)"
+        },
+        {
+          "line": 61,
+          "declaration": "public Task<BigInteger> GetBalanceRawAsync(string account, BlockParameter? block = null)"
+        },
+        {
+          "line": 67,
+          "declaration": "public Task<BigInteger> GetAllowanceRawAsync(string owner, string spender, BlockParameter? block = null)"
+        },
+        {
+          "line": 74,
+          "declaration": "public TransactionDraft BuildTransferDraft(string from, string to, BigInteger amountRaw)"
+        },
+        {
+          "line": 81,
+          "declaration": "public TransactionDraft BuildTransferDraft(string from, string to, string amount, int decimals) =>"
+        },
+        {
+          "line": 84,
+          "declaration": "public TransactionDraft BuildApproveDraft(string from, string spender, BigInteger amountRaw)"
+        },
+        {
+          "line": 91,
+          "declaration": "public TransactionDraft BuildApproveDraft(string from, string spender, string amount, int decimals) =>"
+        },
+        {
+          "line": 94,
+          "declaration": "public TransactionDraft BuildTransferFromDraft(string sender, string owner, string to, BigInteger amountRaw)"
+        },
+        {
+          "line": 102,
+          "declaration": "public TransactionDraft BuildTransferFromDraft(string sender, string owner, string to, string amount, int decimals) =>"
+        }
+      ]
+    },
+    {
+      "path": "csharp/src/Decimal.Web3/Tokens/ReservableTokenService.cs",
+      "sha256": "f7362c1fcd783396006b682cd36c65c3b526cade96968b0ed34c973c81b722b2",
+      "public_methods": [
+        {
+          "line": 33,
+          "declaration": "public async Task<ReservableTokenState> GetStateAsync(BlockParameter? block = null)"
+        },
+        {
+          "line": 48,
+          "declaration": "public Task<string> GetCreatorAsync(BlockParameter? block = null) =>"
+        },
+        {
+          "line": 51,
+          "declaration": "public Task<string> GetIdentityAsync(BlockParameter? block = null) =>"
+        },
+        {
+          "line": 54,
+          "declaration": "public Task<BigInteger> GetReserveWeiAsync(BlockParameter? block = null) =>"
+        },
+        {
+          "line": 57,
+          "declaration": "public Task<BigInteger> GetCrrAsync(BlockParameter? block = null) =>"
+        },
+        {
+          "line": 60,
+          "declaration": "public Task<BigInteger> GetMinTotalSupplyRawAsync(BlockParameter? block = null) =>"
+        },
+        {
+          "line": 63,
+          "declaration": "public Task<BigInteger> GetMaxTotalSupplyRawAsync(BlockParameter? block = null) =>"
+        },
+        {
+          "line": 66,
+          "declaration": "public Task<BigInteger> GetCurrentPriceRawAsync(BlockParameter? block = null) =>"
+        },
+        {
+          "line": 69,
+          "declaration": "public Task<BigInteger> CalculateBuyInputWeiAsync(BigInteger amountOutRaw, BlockParameter? block = null) =>"
+        },
+        {
+          "line": 73,
+          "declaration": "public Task<BigInteger> CalculateBuyOutputRawAsync(BigInteger valueWei, BlockParameter? block = null) =>"
+        },
+        {
+          "line": 77,
+          "declaration": "public Task<BigInteger> CalculateSellInputRawAsync(BigInteger amountOutWei, BlockParameter? block = null) =>"
+        },
+        {
+          "line": 81,
+          "declaration": "public Task<BigInteger> CalculateSellOutputWeiAsync(BigInteger amountInRaw, BlockParameter? block = null) =>"
+        },
+        {
+          "line": 85,
+          "declaration": "public Task<BigInteger> CalculateBuyInputWeiAsync(BigInteger supplyRaw, BigInteger reserveWei,"
+        },
+        {
+          "line": 95,
+          "declaration": "public Task<BigInteger> CalculateBuyOutputRawAsync(BigInteger supplyRaw, BigInteger reserveWei,"
+        },
+        {
+          "line": 105,
+          "declaration": "public Task<BigInteger> CalculateSellInputRawAsync(BigInteger supplyRaw, BigInteger reserveWei,"
+        },
+        {
+          "line": 115,
+          "declaration": "public Task<BigInteger> CalculateSellOutputWeiAsync(BigInteger supplyRaw, BigInteger reserveWei,"
+        }
+      ]
+    },
+    {
+      "path": "csharp/src/Decimal.Web3/Tokens/ReservelessTokenService.cs",
+      "sha256": "3eedd7b564ab43b454bd04c7ec02127bf3638ed115ed5b3ed9a4815f83cc97c6",
+      "public_methods": [
+        {
+          "line": 34,
+          "declaration": "public async Task<ReservelessTokenInfo> GetInfoAsync(BlockParameter? block = null)"
+        },
+        {
+          "line": 48,
+          "declaration": "public Task<BigInteger> GetCapRawAsync(BlockParameter? block = null) =>"
+        },
+        {
+          "line": 51,
+          "declaration": "public Task<bool> GetMintableAsync(BlockParameter? block = null) =>"
+        },
+        {
+          "line": 54,
+          "declaration": "public Task<bool> GetBurnableAsync(BlockParameter? block = null) =>"
+        },
+        {
+          "line": 57,
+          "declaration": "public Task<string> GetOwnerAsync(BlockParameter? block = null) =>"
+        },
+        {
+          "line": 60,
+          "declaration": "public Task<string> GetIdentityAsync(BlockParameter? block = null) =>"
+        },
+        {
+          "line": 63,
+          "declaration": "public TransactionDraft BuildMintDraft(string from, string recipient, BigInteger amountRaw)"
+        },
+        {
+          "line": 70,
+          "declaration": "public async Task<TransactionDraft> BuildMintCheckedAsync("
+        },
+        {
+          "line": 89,
+          "declaration": "public TransactionDraft BuildBurnDraft(string from, BigInteger amountRaw)"
+        },
+        {
+          "line": 95,
+          "declaration": "public async Task<TransactionDraft> BuildBurnCheckedAsync("
+        }
+      ]
+    },
+    {
+      "path": "csharp/src/Decimal.Web3/TokenEconomy/TokenEconomyDrafts.cs",
+      "sha256": "6f55766e6c251b699c514fc572b534cf5fc15ce37cc9846a055a748439b68fde",
+      "public_methods": [
+        {
+          "line": 22,
+          "declaration": "public TransactionDraft BuildBuyDraft(string from, string token, BigInteger valueWei,"
+        },
+        {
+          "line": 31,
+          "declaration": "public TransactionDraft BuildSellDraft(string from, string token, BigInteger amountInRaw,"
+        },
+        {
+          "line": 44,
+          "declaration": "public TransactionDraft BuildBuyTokenForExactDelDraft(string from, string token,"
+        },
+        {
+          "line": 57,
+          "declaration": "public TransactionDraft BuildBuyExactTokenForDelDraft(string from, string token,"
+        },
+        {
+          "line": 70,
+          "declaration": "public TransactionDraft BuildSellExactTokensForDelDraft(string from, string token,"
+        },
+        {
+          "line": 83,
+          "declaration": "public TransactionDraft BuildSellTokensForExactDelDraft(string from, string token,"
+        },
+        {
+          "line": 95,
+          "declaration": "public TransactionDraft BuildConvertDraft(string from, string tokenIn, string tokenOut,"
+        },
+        {
+          "line": 106,
+          "declaration": "public TransactionDraft BuildConvertWithPermitDraft(string from, string tokenIn, string tokenOut,"
+        },
+        {
+          "line": 122,
+          "declaration": "public TransactionDraft BuildBurnDraft(string from, string token, BigInteger amountRaw)"
+        },
+        {
+          "line": 129,
+          "declaration": "public TransactionDraft BuildUpdateDetailsDraft(string from, string token, string newIdentity,"
+        },
+        {
+          "line": 142,
+          "declaration": "public TransactionDraft BuildMintDraft(string from, string token, string to, BigInteger amountRaw) =>"
+        },
+        {
+          "line": 146,
+          "declaration": "public TransactionDraft BuildMintReservelessDraft(string from, string token, string to, BigInteger amountRaw)"
+        }
+      ]
+    },
+    {
+      "path": "csharp/src/Decimal.Web3/TokenEconomy/TokenMaintenanceDrafts.cs",
+      "sha256": "617ce461d6637d8949afce6088e4f3b175ae53aa6f090950e68ae361a201173a",
+      "public_methods": [
+        {
+          "line": 38,
+          "declaration": "public TransactionDraft BuildUpdateIdentityDraft(string from, string newIdentity)"
+        },
+        {
+          "line": 46,
+          "declaration": "public TransactionDraft BuildUpdateMaxTotalSupplyDraft(string from, BigInteger newMaxTotalSupply)"
+        },
+        {
+          "line": 54,
+          "declaration": "public TransactionDraft BuildUpdateMinTotalSupplyDraft(string from, BigInteger newMinTotalSupply)"
+        }
+      ]
+    },
+    {
+      "path": "csharp/src/Decimal.Web3/TokenCreation/TokenCreationDrafts.cs",
+      "sha256": "28cd9bf9d8d43999d35f1619d5c6a9bad1cfd3120d9dc9a9c7242f0b192f030f",
+      "public_methods": [
+        {
+          "line": 22,
+          "declaration": "public TransactionDraft BuildCreateTokenDraft(string from, string name, string symbol,"
+        },
+        {
+          "line": 49,
+          "declaration": "public TransactionDraft BuildCreateReservelessTokenDraft(string from, string name, string symbol,"
+        },
+        {
+          "line": 66,
+          "declaration": "public TransactionDraft BuildUpdateDetailsDraft(string from, string token,"
+        }
+      ]
+    },
+    {
+      "path": "csharp/src/Decimal.Web3/TokenCreation/TokenCreationReceiptReader.cs",
+      "sha256": "cbfb0ccc0d68e8f6741675327f5fa1ba3497371ebfc05fd07662daa124973918",
+      "public_methods": [
+        {
+          "line": 24,
+          "declaration": "public static class TokenCreationReceiptReader"
+        },
+        {
+          "line": 26,
+          "declaration": "public static async Task<IReadOnlyList<CreatedToken>> ReadAsync("
+        },
+        {
+          "line": 42,
+          "declaration": "public static IReadOnlyList<CreatedToken> DecodeReceipt(TransactionReceipt receipt, string tokenCenter)"
+        }
+      ]
+    }
+  ],
+  "operations": {
+    "tx.approve_erc20": "Erc20Service::approve",
+    "tx.send_erc20": "Erc20Service::transfer",
+    "tx.transfer_from_erc20": "Erc20Service::transferFrom",
+    "token.buy": "TokenEconomy::buy",
+    "token.sell": "TokenEconomy::sell",
+    "token.convert": "TokenEconomy::convert",
+    "token.create": "TokenEconomy::create",
+    "token.create_reserveless": "TokenEconomy::createReserveless",
+    "token.mint": "TokenEconomy::mint",
+    "token.burn": "TokenEconomy::burn",
+    "token.update_details": "TokenEconomy::updateDetails"
+  },
+  "additional_csharp_equivalents": {
+    "TokenMaintenanceDrafts": "TokenEconomy::maintain explicit profile",
+    "ReservableTokenService": "TokenReader::state/read/quote all 8 quote overloads",
+    "Erc20Service": "Erc20Service::info/read/balance/allowance/approve/transferRaw/transferFromRaw",
+    "TokenCreationReceiptReader": "TokenEconomy::createdToken plus Events::receipt",
+    "Erc20PermitService": "PermitService::prepare/verify canonical external signer data, narrow version getter revert classification; TypedData checkedPermit/hash/permit"
+  }
+}

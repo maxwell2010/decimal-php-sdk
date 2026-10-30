@@ -2,7 +2,10 @@
 
 Независимый SDK для Decimal от [MintCandy](https://mintcandy.ru/) и [@Maxwell2019](https://t.me/Maxwell2019). PHP 8.2+, MIT.
 
-**v0.1.2 - обновление по результатам независимого аудита с поддержкой новой структуры стейков.** Включены 28 ABI-профилей, 654 функции, кошельки mnemonic/BIP32, EVM-подпись, проверяемые сценарии Safe/NFT/staking/checks и Cosmos validation/signing/query. [Матрица покрытия](docs/PARITY.md) фиксирует поддерживаемые интерфейсы и границы совместимости.
+**v0.1.3 - релиз с закрытием оставшихся пробелов матрицы операций.** Включены 28 ABI-профилей, 654 функции, кошельки mnemonic/BIP32, EVM-подпись, проверяемые сценарии Safe/NFT/staking/checks и Cosmos validation/signing/query. [Матрица покрытия](docs/PARITY.md) фиксирует поддерживаемые интерфейсы и границы совместимости.
+
+
+[Отчет о паритете 0.1.3](docs/FINAL_PARITY_0_1_3.md) содержит соответствия всех 55 операций Go/Python/C# и результаты 7680 offline-проверок. Добавлены сервисы token economy, staking/validators, NFT, bridge и checks. Небезопасный ERC20 allowance для generic Multicall остается отключенным; доступна проверенная альтернатива RestrictedMultisend.
 
 ## Последняя стабильная версия одной командой
 

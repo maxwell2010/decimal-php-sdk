@@ -16,11 +16,12 @@ final class Workflows
         }
         return ['approvals'=>$steps,'action'=>$action];
     }
-    public static function multisendDel(string $from,string $multicall,array $recipients): TransactionDraft
+    public static function multisendDel(string $from,string $multicall,array $recipients,string $memo=''): TransactionDraft
     {
-        if(!$recipients)throw new \InvalidArgumentException('Recipients required');$total='0';$calls=[];
+        if(!array_is_list($recipients)||!$recipients||!mb_check_encoding($memo,'UTF-8'))throw new \InvalidArgumentException('Recipients required');$total='0';$calls=[];
         foreach($recipients as $r){TransactionDraft::address($r['address']);Units::uint($r['amount']);if($r['amount']==='0')throw new \InvalidArgumentException('Positive amount required');$total=bcadd($total,$r['amount'], 0);$calls[]=[$r['address'],$r['amount'],'0x'];}
-        Units::uint($total);if(count($calls)===1)return new TransactionDraft($from,$calls[0][0],$total);
+        Units::uint($total);if(count($calls)===1)return new TransactionDraft($from,$calls[0][0],$total,'0x'.bin2hex($memo));
+        if($memo!=='')$calls[]=['0x'.str_repeat('0',40),'0','0x'.bin2hex($memo)];
         return Contract::profile($multicall,'Multicall')->draft($from,'aggregate((address,uint256,bytes)[])',[$calls],$total);
     }
     public static function safeMultisendData(array $calls): string

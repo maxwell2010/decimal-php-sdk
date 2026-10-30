@@ -13,6 +13,28 @@ final class Client
     public function call(array $transaction, string $block = 'latest'): string
     { $this->verifyChain(); return $this->rpc->call('eth_call', [$transaction, $block]); }
     public function simulate(TransactionDraft $draft): string { return $this->call($draft->rpc(), 'pending'); }
+    public function resolveSystemContract(string $slug,string $block='latest'): string
+    {
+        if(trim($slug)==='')throw new \InvalidArgumentException('Contract slug required');
+        $address=Contract::profile($this->network->contractCenter,'ContractCenter')->call($this,'getContractAddress(string)',[$slug],$block)[0];
+        if(TransactionDraft::address($address)==='0x'.str_repeat('0',40))throw new \RuntimeException('System contract is not registered');
+        return $address;
+    }
+    /** Return a snapshot; never mutate the caller's legacy/unified routing configuration. */
+    public function resolveSystemContracts(string $block='latest'): array
+    {
+        if($block==='latest'){$this->verifyChain();$block=$this->rpc->call('eth_blockNumber');Units::decimal($block);}
+        $out=['block'=>$block];foreach(['delegation','token-center','nft-center','wdel'] as $slug)$out[$slug]=$this->resolveSystemContract($slug,$block);return $out;
+    }
+    public function estimateFee(TransactionDraft $draft,bool $exact=false): FeeQuote
+    {
+        $this->verifyChain();$price=Units::decimal($this->rpc->call('eth_gasPrice'));$request=$draft->rpc()+['gasPrice'=>Units::hex($price)];
+        $gas=Units::decimal($this->rpc->call('eth_estimateGas',[$request]));
+        $limit=$exact?$gas:bcdiv(bcadd(bcmul($gas,'110',0),'99',0),'100',0);
+        return new FeeQuote($draft,$gas,$limit,$price,$this->balance($draft->from,'pending'),$exact);
+    }
+    public function transactionResult(string $hash): TransactionResult
+    { return TransactionResult::fromReceipt($hash,$this->receipt($hash)); }
     public function prepare(TransactionDraft $draft, int $type=0, array $accessList=[], ?string $maxFeePerGas=null, string $maxPriorityFee='0', ?string $feeCap=null, ?NonceManager $nonces=null, ?string $baseFeeEstimate=null, ?CancellationToken $cancellation=null): PreparedTransaction
     {
         $cancellation?->throwIfCancelled();

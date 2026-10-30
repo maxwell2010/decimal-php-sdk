@@ -1,0 +1,49 @@
+{
+  "sources": [
+    {
+      "path": "src/decimal_web3_sdk/bridge.py",
+      "sha256": "5c7584c470287604dba7785405eb5c4820dec91ee6eb6dbef5385c01c735ad18"
+    },
+    {
+      "path": "src/decimal_web3_sdk/checks.py",
+      "sha256": "f484a50a5bd98908bbd0583c6233771aa09ac07106c86d6ffb9fcdcd1fa63b45"
+    },
+    {
+      "path": "src/decimal_web3_sdk/transactions.py",
+      "sha256": "571e12af7013a174c1486decf540adcce3538842902aebb077944e68e698fd59"
+    },
+    {
+      "path": "csharp/src/Decimal.Web3/Bridge/BridgeDrafts.cs",
+      "sha256": "65f45c1a88574db8ad07a0a529422609069063eff87327125456cdbbd6507a7f"
+    },
+    {
+      "path": "csharp/src/Decimal.Web3/Bridge/BridgeQueries.cs",
+      "sha256": "73e411aaed8e8d75eb53c54380a3e275c99c94f131ea5e03624906bc073989b6"
+    },
+    {
+      "path": "csharp/src/Decimal.Web3/Checks/ChecksService.cs",
+      "sha256": "24b9b7a69a4cb93830c9dafa82b3d44d8b2b7b26c273aa68348d15bfb8b10e27"
+    },
+    {
+      "path": "csharp/src/Decimal.Web3/Checks/ChecksReceiptReader.cs",
+      "sha256": "19fa87674f46abeba5c5d2fd147d6d29b735c4404853328c6bdad5598946f813"
+    },
+    {
+      "path": "csharp/src/Decimal.Web3/Transactions/FeeQuote.cs",
+      "sha256": "cbfc25ce87cac6344867f85b256bfa37e2ccd24ad28a477d6fada4dc21919f6e"
+    },
+    {
+      "path": "csharp/src/Decimal.Web3/Transactions/SignedTransaction.cs",
+      "sha256": "91ac73695b076e926f5bb5844163dfb246d15fd8b66ca4348269ea8e5fd584c0"
+    },
+    {
+      "path": "csharp/src/Decimal.Web3/DecimalClient.cs",
+      "sha256": "fe84271e0c722fbbd8a51a8af61dec123c161c7fd0c5a1edb3afc650b3d42ece"
+    }
+  ],
+  "tests": [
+    "tests/bridge-checks-parity.php",
+    "tests/executor-parity.php"
+  ],
+  "execution_policy": "All new methods default to drafts, plans or nonbroadcast execution. Tests inject every RPC, including any broadcast-method simulation."
+}

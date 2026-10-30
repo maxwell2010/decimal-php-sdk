@@ -1,0 +1,12 @@
+[
+  {
+    "standard": 721,
+    "domain": "0xe2fd9efd6915a009e48324366f3c74fa61e954ce65b4a47f238d2a2289ba2a0d",
+    "digest": "0xb96c3b933b15928c6723f6d472571534c6b980badb60212f78708f5a5ff8cab5"
+  },
+  {
+    "standard": 1155,
+    "domain": "0xe2fd9efd6915a009e48324366f3c74fa61e954ce65b4a47f238d2a2289ba2a0d",
+    "digest": "0x465fbb8985a3ff4aa5300f75a2c78adb9441c946466f99063f4c7935e47c5a4d"
+  }
+]

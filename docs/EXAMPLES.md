@@ -99,3 +99,28 @@ The callback must return the raw signed transaction or a SignedTransaction insta
 ## Weighted Safe policy and mixed signatures
 
 Read SafePolicy at a pinned block, then use SafeSignatures to validate and pack typed/personal EOA signatures, explicitly selected EIP-1271 interfaces, or prevalidated approvals. The threshold uses the sum of owner weights, not the number of signatures. Guarded delegatecall additionally requires caller-reviewed target runtime and implementation evidence. See docs/EVM_SCOPE.md and tests/evm_release.php for executable examples.
+
+
+## Named operation services and plans
+
+The runnable examples/parity-offline.php encodes ERC20, bridge and checks requests with an RPC that rejects every call. Named service/read/permit correspondence is listed in FINAL_PARITY_0_1_3.md and the linked domain reports.
+
+```php
+use Decimal\{StakingService, TransactionExecutor, TransactionPlan};
+
+// Supply the actual original position/deposit deployment, wrapped DEL and validator center.
+$staking = new StakingService($client, $delegation, $wdel, $masterValidator, 'Delegation');
+$rebuild = fn() => $staking->plan('decimal.delegate_erc20', $wallet->address, [
+    'validator' => $validator,
+    'token' => $token,
+    'amount' => '1.25',
+    'auto_approve' => true,
+]);
+$plan = TransactionPlan::from($rebuild());
+$executor = new TransactionExecutor($client);
+$result = $executor->executePlan($plan, $wallet); // No broadcast by default.
+```
+
+Planning performs read/simulation calls. A plan needing approvals returns requires_approvals without preparing/signing the dependent action. executePlan accepts an explicit refresh callback and broadcast flag for applications that later enable submission: it confirms each prerequisite, rebuilds state and rejects a changed action before signing. This release validation does not enable submission or run that mode against a node.
+
+TokenEconomy uses human strings for buy/sell/convert and explicit Raw/Wei creation fields. NFT exits require the original deployment/profile; new upgraded mainnet NFT deposits explicitly select Delegation20261030. NftStakingReader uses the distinct NFTStake10 layout, while StakingReader retains fungible Stake7/8. PermitService and NftPermitService prepare data for external signers without needing private keys; provided signatures are bound to the actual typed request.
