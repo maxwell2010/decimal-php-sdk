@@ -18,7 +18,7 @@ $spRpc=new Decimal\Rpc('http://unused',function($r)use(&$spAllowance,&$spBalance
 $spService=new Decimal\StakingService(new Decimal\Client(Decimal\Network::testnet(),$spRpc),$spD,$spT,$spM);
 $spRows=json_decode(file_get_contents(__DIR__.'/staking-parity-vectors.json'),true,512,JSON_THROW_ON_ERROR);
 foreach($spRows as $row){$plan=$spService->plan($row['operation'],$spA,$row['request'],'0x10');same($plan['action']->data,$row['data']);same($plan['action']->value,$row['value']);same($plan['approvals'],[]);same($plan['action']->to,str_contains($row['operation'],'validator')?$spM:$spD);}
-$spRequest=$spRows[1]['request'];$spAllowance='1';$plan=$spService->plan('delegate_erc20',$spA,$spRequest+['reset_existing'=>true]);same(count($plan['approvals']),2);same($plan['requires_refresh'],true);same($plan['approvals'][0]->data,Decimal\Contract::profile($spT,'Token')->encode('approve(address,uint256)',[$spD,'0']));
+$spRequest=$spRows[1]['request'];$spAllowance='1';$plan=$spService->plan('delegate_erc20',$spA,$spRequest+['reset_existing'=>true,'auto_approve'=>true]);same(count($plan['approvals']),2);same($plan['requires_refresh'],true);same($plan['approvals'][0]->data,Decimal\Contract::profile($spT,'Token')->encode('approve(address,uint256)',[$spD,'0']));
 rejects(fn()=>$spService->plan('delegate_erc20',$spA,$spRequest+['auto_approve'=>false]));
 $spBalance='0';rejects(fn()=>$spService->plan('delegate_erc20',$spA,$spRequest));$spBalance='999999999999999999999';$spAllowance=$spBalance;
 $spRevert=true;rejects(fn()=>$spService->plan('pause_validator',$spA,$spRequest));rejects(fn()=>$spService->plan('unbond_erc20',$spA,$spRequest));$spRevert=false;

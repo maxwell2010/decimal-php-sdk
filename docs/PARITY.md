@@ -1,6 +1,6 @@
 # SDK coverage and compatibility
 
-Release 0.1.3 covers the source-evidenced SDK interfaces listed below. ABI bindings, complete guarded workflows, stateless node validation and live execution are separate evidence levels. Function/schema counts are not a parity percentage or distinct transaction count.
+Release 0.1.4 covers the source-evidenced SDK interfaces listed below. ABI bindings, complete guarded workflows, stateless node validation and live execution are separate evidence levels. Function/schema counts are not a parity percentage or distinct transaction count.
 
 | Area | Released implementation and checks | Boundary |
 | --- | --- | --- |
@@ -36,3 +36,5 @@ The 0.1.3 release closes the remaining named operation gaps. [AUDIT_OPERATION_PA
 Additional Go/C# quote/read/permit/management/receipt/DTO mappings are documented in [FINAL_PARITY_0_1_3.md](FINAL_PARITY_0_1_3.md) and the domain reports. Common TransactionPlan/TransactionExecutor connects service drafts to preparation, signing, opt-in submission and receipt reporting. Approval-dependent actions require confirmed prerequisites and a state refresh. Language-specific API class names, runtime scheduling and application telemetry are not the acceptance unit.
 
 Earlier fixes remain included: [0.1.1 audit](FINAL_AUDIT_0_1_1.md) and [0.1.2 staking upgrade](STAKING_COMPATIBILITY_0_1_2.md). Network execution/settlement acceptance remains distinct from source/API parity; no transactions were submitted.
+
+Current recovery-014 request variants and explicit current/raw factory routing are recorded in [CURRENT_PARITY_0_1_4.md](CURRENT_PARITY_0_1_4.md). Current token/NFT factories, additional staking/validator requests, legacy NFT reset/read methods, result refresh and non-atomic sequence execution are included. Source hashes and independent regression fixtures accompany the domain reports.

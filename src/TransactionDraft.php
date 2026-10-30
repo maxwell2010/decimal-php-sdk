@@ -19,7 +19,7 @@ final readonly class TransactionDraft
     public static function deploy(string $from,string $initCode,string $value='0'): self
     { return new self($from,null,$value,$initCode); }
     public static function burnDel(string $from,string $amount): self
-    { return new self($from,'0x'.str_repeat('0',40),Units::parse($amount)); }
+    { $raw=Units::parse($amount);if($raw==='0')throw new \InvalidArgumentException('Positive DEL burn amount required');return new self($from,'0x'.str_repeat('0',40),$raw); }
     public function rpc(): array
     {
         $request=['from'=>$this->from, 'value'=>Units::hex($this->value), 'data'=>$this->data];

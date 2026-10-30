@@ -83,5 +83,48 @@
     "NftPermitService::sign",
     "NftPermitService::verifyExternal",
     "NftPermitService::draft"
+  ],
+  "python_current_sources": [
+    {
+      "path": "src/decimal_web3_sdk/nft.py",
+      "sha256": "a70989896aaa2a4f79ed606a9d241626ada45bddadc7fe5aa8ac4137b81723c3",
+      "snapshot": "sdk-release-014"
+    },
+    {
+      "path": "src/decimal_web3_sdk/nft_operations.py",
+      "sha256": "b447e94dcc188d7de1d84e167159b9a9feae5a6cb6e032ea44839740a37a5087",
+      "snapshot": "sdk-release-014"
+    },
+    {
+      "path": "src/decimal_web3_sdk/_contract_operations.py",
+      "sha256": "45d15f493f1c811c991f83b8fbf2c0b6a738ec5632ec7005ef8eb70eea6e1eda",
+      "snapshot": "sdk-release-014"
+    }
+  ],
+  "current_helpers": [
+    "NftCurrentOperations::mint",
+    "NftCurrentOperations::delegatePermit",
+    "NftCurrentOperations::delegatePermitChecked",
+    "NftCurrentOperations::mintPermitChecked",
+    "NftCurrentOperations::addTokenReserve",
+    "NftCurrentOperations::collectionState",
+    "NftCurrentOperations::checkReserveToken",
+    "NftCurrentOperations::reserve",
+    "NftCurrentOperations::createCollection",
+    "NftCurrentOperations::createReservelessCollection",
+    "NftCurrentOperations::createdCollections",
+    "NftCurrentOperations::withdraw",
+    "NftCurrentOperations::transferStake",
+    "NftCurrentOperations::setTokenUri",
+    "NftLegacyStaking::plan",
+    "NftLegacyStaking::stake",
+    "NftLegacyStaking::holdStake",
+    "NftLegacyStaking::stakeId",
+    "NftLegacyStaking::frozen",
+    "NftLegacyStaking::frozenMany",
+    "NftLegacyStaking::freezeTime",
+    "NftStakingReader::frozenMany",
+    "NftStakingReader::freezeTime",
+    "NftStakingReader::complete"
   ]
 }

@@ -1,0 +1,36 @@
+{
+  "snapshot": "sdk-release-014",
+  "sources": [
+    {
+      "path": "token.py",
+      "sha256": "a1cab628ef32ec3b46000c927befdaa7b57074f6bd48e59f6289ae49fc9e4f50"
+    },
+    {
+      "path": "token_operations.py",
+      "sha256": "835a1db010bd262c309a45d4d2a08c85efd0d67d438314a15a8c3be63da197fa"
+    },
+    {
+      "path": "transactions.py",
+      "sha256": "cf074bee2ce73c1e65964f423f29d9d072184e7f8cbc7eea34b98fefe574ced2"
+    },
+    {
+      "path": "erc20.py",
+      "sha256": "2b265419cf546fd0f110561cb167dbe67d0406bca95143bd29091d2d75bb431a"
+    },
+    {
+      "path": "abi/gas_center.json",
+      "sha256": "28492a9b3e2c657c781d6304cd47945565475af9a5914e62b74992854cc5a70e"
+    }
+  ],
+  "php_class": "CurrentTokenEconomy",
+  "delta": [
+    "buy/sell exact selectors",
+    "convert autoApprove default false",
+    "testnet lowercase symbols and minimum reserve tiers",
+    "two-step detail update with MIN_RESERVE preflight",
+    "mintable preflight",
+    "GasCenter owner-supplied permit convertToDEL",
+    "minimum-supply legacy opt-in",
+    "explicit-kind TokenProperties report"
+  ]
+}

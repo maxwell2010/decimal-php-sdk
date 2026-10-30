@@ -13,3 +13,8 @@ foreach(['erc20'=>$transfer,'bridge'=>$bridge,'checks'=>$checks] as $name=>$draf
     $plan=TransactionPlan::from($draft);
     echo $name,': ',json_encode($plan->action->rpc(),JSON_THROW_ON_ERROR),PHP_EOL;
 }
+
+// Current token profile factory and testnet creation encoding also stay completely offline.
+$sdk=new Decimal\Sdk($client);
+$created=$sdk->tokenEconomy($deployment)->create($sender,'Example Token','example','1000000000000000000','0','10000000000000000000',50,'offline');
+echo 'current-token-create: ',json_encode($created->rpc(),JSON_THROW_ON_ERROR),PHP_EOL;

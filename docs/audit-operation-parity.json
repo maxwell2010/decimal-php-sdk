@@ -1205,6 +1205,7 @@
       },
       "status": "implemented-workflow",
       "php_helpers": [
+        "CurrentTokenEconomy::burn",
         "TokenEconomy::burn"
       ],
       "php_abi_signatures": [
@@ -1243,9 +1244,10 @@
       ],
       "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
       "implementation_evidence": {
-        "manifest": "docs/parity-tokens.json",
+        "manifest": "docs/PARITY_TOKENS_CURRENT.md",
         "tests": [
-          "tests/token-parity.php"
+          "tests/token-parity.php",
+          "tests/token-current-parity.php"
         ]
       }
     },
@@ -1259,6 +1261,7 @@
       },
       "status": "implemented-workflow",
       "php_helpers": [
+        "CurrentTokenEconomy::buy",
         "TokenEconomy::buy"
       ],
       "php_abi_signatures": [
@@ -1310,9 +1313,10 @@
       ],
       "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
       "implementation_evidence": {
-        "manifest": "docs/parity-tokens.json",
+        "manifest": "docs/PARITY_TOKENS_CURRENT.md",
         "tests": [
-          "tests/token-parity.php"
+          "tests/token-parity.php",
+          "tests/token-current-parity.php"
         ]
       }
     },
@@ -1326,6 +1330,7 @@
       },
       "status": "implemented-workflow",
       "php_helpers": [
+        "CurrentTokenEconomy::convert",
         "TokenEconomy::convert"
       ],
       "php_abi_signatures": [
@@ -1363,9 +1368,10 @@
       ],
       "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
       "implementation_evidence": {
-        "manifest": "docs/parity-tokens.json",
+        "manifest": "docs/PARITY_TOKENS_CURRENT.md",
         "tests": [
-          "tests/token-parity.php"
+          "tests/token-parity.php",
+          "tests/token-current-parity.php"
         ]
       }
     },
@@ -1379,6 +1385,7 @@
       },
       "status": "implemented-workflow",
       "php_helpers": [
+        "CurrentTokenEconomy::create",
         "TokenEconomy::create"
       ],
       "php_abi_signatures": [
@@ -1403,9 +1410,10 @@
       ],
       "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
       "implementation_evidence": {
-        "manifest": "docs/parity-tokens.json",
+        "manifest": "docs/PARITY_TOKENS_CURRENT.md",
         "tests": [
-          "tests/token-parity.php"
+          "tests/token-parity.php",
+          "tests/token-current-parity.php"
         ]
       }
     },
@@ -1419,6 +1427,7 @@
       },
       "status": "implemented-workflow",
       "php_helpers": [
+        "CurrentTokenEconomy::createReserveless",
         "TokenEconomy::createReserveless"
       ],
       "php_abi_signatures": [
@@ -1443,9 +1452,10 @@
       ],
       "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
       "implementation_evidence": {
-        "manifest": "docs/parity-tokens.json",
+        "manifest": "docs/PARITY_TOKENS_CURRENT.md",
         "tests": [
-          "tests/token-parity.php"
+          "tests/token-parity.php",
+          "tests/token-current-parity.php"
         ]
       }
     },
@@ -1459,6 +1469,7 @@
       },
       "status": "implemented-workflow",
       "php_helpers": [
+        "CurrentTokenEconomy::mint",
         "TokenEconomy::mint"
       ],
       "php_abi_signatures": [
@@ -1512,9 +1523,10 @@
       ],
       "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
       "implementation_evidence": {
-        "manifest": "docs/parity-tokens.json",
+        "manifest": "docs/PARITY_TOKENS_CURRENT.md",
         "tests": [
-          "tests/token-parity.php"
+          "tests/token-parity.php",
+          "tests/token-current-parity.php"
         ]
       }
     },
@@ -1528,6 +1540,7 @@
       },
       "status": "implemented-workflow",
       "php_helpers": [
+        "CurrentTokenEconomy::sell",
         "TokenEconomy::sell"
       ],
       "php_abi_signatures": [
@@ -1579,9 +1592,10 @@
       ],
       "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
       "implementation_evidence": {
-        "manifest": "docs/parity-tokens.json",
+        "manifest": "docs/PARITY_TOKENS_CURRENT.md",
         "tests": [
-          "tests/token-parity.php"
+          "tests/token-parity.php",
+          "tests/token-current-parity.php"
         ]
       }
     },
@@ -1595,6 +1609,7 @@
       },
       "status": "implemented-workflow",
       "php_helpers": [
+        "CurrentTokenEconomy::updateDetails",
         "TokenEconomy::updateDetails"
       ],
       "php_abi_signatures": [
@@ -1648,9 +1663,10 @@
       ],
       "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
       "implementation_evidence": {
-        "manifest": "docs/parity-tokens.json",
+        "manifest": "docs/PARITY_TOKENS_CURRENT.md",
         "tests": [
-          "tests/token-parity.php"
+          "tests/token-parity.php",
+          "tests/token-current-parity.php"
         ]
       }
     },
@@ -1664,6 +1680,7 @@
       },
       "status": "implemented-workflow",
       "php_helpers": [
+        "NftCurrentOperations::addDelReserve",
         "NftOperations::addDelReserve"
       ],
       "php_abi_signatures": [
@@ -1701,9 +1718,10 @@
       ],
       "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
       "implementation_evidence": {
-        "manifest": "docs/parity-nft.json",
+        "manifest": "docs/PARITY_NFT.md",
         "tests": [
-          "tests/nft-parity.php"
+          "tests/nft-parity.php",
+          "tests/nft-current-parity.php"
         ]
       }
     },
@@ -1717,6 +1735,7 @@
       },
       "status": "implemented-workflow",
       "php_helpers": [
+        "NftCurrentOperations::approve",
         "NftOperations::approve"
       ],
       "php_abi_signatures": [
@@ -1751,9 +1770,10 @@
       ],
       "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
       "implementation_evidence": {
-        "manifest": "docs/parity-nft.json",
+        "manifest": "docs/PARITY_NFT.md",
         "tests": [
-          "tests/nft-parity.php"
+          "tests/nft-parity.php",
+          "tests/nft-current-parity.php"
         ]
       }
     },
@@ -1767,6 +1787,7 @@
       },
       "status": "implemented-workflow",
       "php_helpers": [
+        "NftCurrentOperations::burn",
         "NftOperations::burn"
       ],
       "php_abi_signatures": [
@@ -1809,9 +1830,10 @@
       ],
       "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
       "implementation_evidence": {
-        "manifest": "docs/parity-nft.json",
+        "manifest": "docs/PARITY_NFT.md",
         "tests": [
-          "tests/nft-parity.php"
+          "tests/nft-parity.php",
+          "tests/nft-current-parity.php"
         ]
       }
     },
@@ -1825,6 +1847,7 @@
       },
       "status": "implemented-workflow",
       "php_helpers": [
+        "NftCurrentOperations::createCollection",
         "NftOperations::createCollection"
       ],
       "php_abi_signatures": [
@@ -1865,9 +1888,10 @@
       ],
       "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
       "implementation_evidence": {
-        "manifest": "docs/parity-nft.json",
+        "manifest": "docs/PARITY_NFT.md",
         "tests": [
-          "tests/nft-parity.php"
+          "tests/nft-parity.php",
+          "tests/nft-current-parity.php"
         ]
       }
     },
@@ -1881,6 +1905,7 @@
       },
       "status": "implemented-workflow",
       "php_helpers": [
+        "NftCurrentOperations::delegate",
         "NftOperations::delegate"
       ],
       "php_abi_signatures": [
@@ -1947,9 +1972,10 @@
       ],
       "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
       "implementation_evidence": {
-        "manifest": "docs/parity-nft.json",
+        "manifest": "docs/PARITY_NFT.md",
         "tests": [
-          "tests/nft-parity.php"
+          "tests/nft-parity.php",
+          "tests/nft-current-parity.php"
         ]
       }
     },
@@ -1963,6 +1989,7 @@
       },
       "status": "implemented-workflow",
       "php_helpers": [
+        "NftCurrentOperations::disableMint",
         "NftOperations::disableMint"
       ],
       "php_abi_signatures": [
@@ -1995,9 +2022,10 @@
       ],
       "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
       "implementation_evidence": {
-        "manifest": "docs/parity-nft.json",
+        "manifest": "docs/PARITY_NFT.md",
         "tests": [
-          "tests/nft-parity.php"
+          "tests/nft-parity.php",
+          "tests/nft-current-parity.php"
         ]
       }
     },
@@ -2011,6 +2039,7 @@
       },
       "status": "implemented-workflow",
       "php_helpers": [
+        "NftCurrentOperations::hold",
         "NftOperations::hold"
       ],
       "php_abi_signatures": [
@@ -2069,9 +2098,10 @@
       ],
       "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
       "implementation_evidence": {
-        "manifest": "docs/parity-nft.json",
+        "manifest": "docs/PARITY_NFT.md",
         "tests": [
-          "tests/nft-parity.php"
+          "tests/nft-parity.php",
+          "tests/nft-current-parity.php"
         ]
       }
     },
@@ -2085,6 +2115,7 @@
       },
       "status": "implemented-workflow",
       "php_helpers": [
+        "NftCurrentOperations::mint",
         "NftOperations::mint"
       ],
       "php_abi_signatures": [
@@ -2178,9 +2209,10 @@
       ],
       "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
       "implementation_evidence": {
-        "manifest": "docs/parity-nft.json",
+        "manifest": "docs/PARITY_NFT.md",
         "tests": [
-          "tests/nft-parity.php"
+          "tests/nft-parity.php",
+          "tests/nft-current-parity.php"
         ]
       }
     },
@@ -2194,6 +2226,7 @@
       },
       "status": "implemented-workflow",
       "php_helpers": [
+        "NftCurrentOperations::setApprovalForAll",
         "NftOperations::setApprovalForAll"
       ],
       "php_abi_signatures": [
@@ -2241,9 +2274,10 @@
       ],
       "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
       "implementation_evidence": {
-        "manifest": "docs/parity-nft.json",
+        "manifest": "docs/PARITY_NFT.md",
         "tests": [
-          "tests/nft-parity.php"
+          "tests/nft-parity.php",
+          "tests/nft-current-parity.php"
         ]
       }
     },
@@ -2257,6 +2291,7 @@
       },
       "status": "implemented-workflow",
       "php_helpers": [
+        "NftCurrentOperations::setTokenUri",
         "NftOperations::setTokenUri"
       ],
       "php_abi_signatures": [
@@ -2281,9 +2316,10 @@
       ],
       "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
       "implementation_evidence": {
-        "manifest": "docs/parity-nft.json",
+        "manifest": "docs/PARITY_NFT.md",
         "tests": [
-          "tests/nft-parity.php"
+          "tests/nft-parity.php",
+          "tests/nft-current-parity.php"
         ]
       }
     },
@@ -2297,6 +2333,7 @@
       },
       "status": "implemented-workflow",
       "php_helpers": [
+        "NftCurrentOperations::transfer",
         "NftService::transfer721",
         "NftService::transfer1155",
         "NftOperations::transferFrom"
@@ -2380,9 +2417,10 @@
       ],
       "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
       "implementation_evidence": {
-        "manifest": "docs/PARITY_COMMON.md",
+        "manifest": "docs/PARITY_NFT.md",
         "tests": [
-          "tests/nft-parity.php"
+          "tests/nft-parity.php",
+          "tests/nft-current-parity.php"
         ]
       }
     },
@@ -2396,6 +2434,7 @@
       },
       "status": "implemented-workflow",
       "php_helpers": [
+        "NftCurrentOperations::transferBatch1155",
         "NftOperations::transferBatch1155"
       ],
       "php_abi_signatures": [
@@ -2425,9 +2464,10 @@
       ],
       "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
       "implementation_evidence": {
-        "manifest": "docs/parity-nft.json",
+        "manifest": "docs/PARITY_NFT.md",
         "tests": [
-          "tests/nft-parity.php"
+          "tests/nft-parity.php",
+          "tests/nft-current-parity.php"
         ]
       }
     },
@@ -2441,6 +2481,7 @@
       },
       "status": "implemented-workflow",
       "php_helpers": [
+        "NftCurrentOperations::transferStake",
         "NftOperations::transferStake"
       ],
       "php_abi_signatures": [
@@ -2509,9 +2550,10 @@
       ],
       "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
       "implementation_evidence": {
-        "manifest": "docs/parity-nft.json",
+        "manifest": "docs/PARITY_NFT.md",
         "tests": [
-          "tests/nft-parity.php"
+          "tests/nft-parity.php",
+          "tests/nft-current-parity.php"
         ]
       }
     },
@@ -2525,6 +2567,7 @@
       },
       "status": "implemented-workflow",
       "php_helpers": [
+        "NftCurrentOperations::withdraw",
         "NftOperations::withdraw"
       ],
       "php_abi_signatures": [
@@ -2583,9 +2626,10 @@
       ],
       "semantic_boundary": "Explicit deployment/profile and current state remain authoritative; amounts are lossless strings. TransactionExecutor prepares/signs and reports the action; approval plans require confirmed prerequisites and explicit state refresh.",
       "implementation_evidence": {
-        "manifest": "docs/parity-nft.json",
+        "manifest": "docs/PARITY_NFT.md",
         "tests": [
-          "tests/nft-parity.php"
+          "tests/nft-parity.php",
+          "tests/nft-current-parity.php"
         ]
       }
     },
@@ -2834,5 +2878,92 @@
       }
     }
   ],
-  "release": "0.1.3"
+  "release": "0.1.4",
+  "additional_current_operations": [
+    {
+      "python_operation": "decimal.complete_stake",
+      "php_helper": "StakingService::plan"
+    },
+    {
+      "python_operation": "decimal.apply_stake_penalty",
+      "php_helper": "StakingService::plan"
+    },
+    {
+      "python_operation": "decimal.apply_stake_penalties",
+      "php_helper": "StakingService::plan"
+    },
+    {
+      "python_operation": "decimal.add_validator_del",
+      "php_helper": "ValidatorService::operation"
+    },
+    {
+      "python_operation": "decimal.add_validator_token",
+      "php_helper": "ValidatorService::operation"
+    },
+    {
+      "python_operation": "decimal.remove_validator",
+      "php_helper": "ValidatorService::operation"
+    },
+    {
+      "python_operation": "decimal.update_validator_metadata",
+      "php_helper": "ValidatorService::operation"
+    },
+    {
+      "python_operation": "nft.stake_to_hold",
+      "php_helper": "NftLegacyStaking::plan"
+    },
+    {
+      "python_operation": "nft.reset_stake_hold",
+      "php_helper": "NftLegacyStaking::plan"
+    },
+    {
+      "python_operation": "nft.reset_stake_holds",
+      "php_helper": "NftLegacyStaking::plan"
+    },
+    {
+      "python_operation": "nft.withdraw_with_reset",
+      "php_helper": "NftLegacyStaking::plan"
+    },
+    {
+      "python_operation": "nft.transfer_with_reset",
+      "php_helper": "NftLegacyStaking::plan"
+    },
+    {
+      "python_operation": "nft.hold_with_reset",
+      "php_helper": "NftLegacyStaking::plan"
+    },
+    {
+      "python_operation": "nft.complete_stake",
+      "php_helper": "NftLegacyStaking::plan"
+    },
+    {
+      "python_operation": "token.convert_to_del",
+      "php_helper": "CurrentTokenEconomy::convertToDel"
+    },
+    {
+      "python_operation": "token.properties",
+      "php_helper": "CurrentTokenEconomy::properties"
+    },
+    {
+      "python_operation": "token.update_min_supply",
+      "php_helper": "CurrentTokenEconomy::updateMinSupply"
+    },
+    {
+      "python_operation": "tx.burn_del",
+      "php_helper": "TransactionExecutor::burnDel"
+    },
+    {
+      "python_operation": "tx.refresh_result",
+      "php_helper": "Client::refreshResult"
+    },
+    {
+      "python_operation": "checks.created_check_hashes",
+      "php_helper": "ChecksService::createdCheckHashes"
+    },
+    {
+      "python_operation": "checks.sign_redemption",
+      "php_helper": "ChecksService::signRedemption"
+    }
+  ],
+  "current_profile_note": "Recovery-014 Python request variants are implemented by CurrentTokenEconomy, NftCurrentOperations, NftLegacyStaking and the expanded staking/validator/common APIs. Sdk factories select current profiles; explicit legacy/raw APIs retain original deployment routes. Ordered multi-action requests use executeSequence with successful receipts and explicit refresh."
 }

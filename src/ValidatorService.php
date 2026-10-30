@@ -57,4 +57,19 @@ final class ValidatorService
         }
         return $this->contract->draft($sender,$sig,$args,$value);
     }
+
+    /** Current Python registration adds a candidate; it never bypasses owner approval. */
+    public function operation(string $name,string $sender,array $request): TransactionDraft
+    {
+        if($name==='remove_validator'){if(!is_string($request['validator']??null)||TransactionDraft::address($request['validator'])==='0x'.str_repeat('0',40))throw new \InvalidArgumentException('Nonzero validator required');return $this->draft('remove',$sender,$request);}
+        $metadata=$request['metadata']??null;
+        if(!$metadata instanceof ValidatorMetadata)throw new \InvalidArgumentException('ValidatorMetadata required');
+        $base=['validator'=>$metadata->operatorAddress,'meta'=>$metadata->toJson()];
+        if($name==='add_validator_token'&&(!is_string($request['token']??null)||TransactionDraft::address($request['token'])==='0x'.str_repeat('0',40)))throw new \InvalidArgumentException('Nonzero token required');
+        return match($name){
+            'add_validator_token'=>$this->draft('add_candidate_token',$sender,$base+['token'=>$request['token']??null,'amount_raw'=>$request['amount_raw']??null]),
+            'add_validator_del'=>$this->draft('add_candidate_del',$sender,$base+['amount_del'=>$request['amount_del']??null]),
+            'update_validator_metadata'=>$this->draft('update_meta',$sender,$base),
+            default=>throw new \InvalidArgumentException('Unknown validator request')};
+    }
 }

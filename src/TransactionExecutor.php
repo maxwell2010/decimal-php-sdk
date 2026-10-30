@@ -6,6 +6,10 @@ namespace Decimal;
 final class TransactionExecutor
 {
     public function __construct(private readonly Client $client) {}
+    public function estimateFeeForBurnDel(string $sender,string $amount,bool $exact=false): FeeQuote
+    { return $this->client->estimateFee(TransactionDraft::burnDel($sender,$amount),$exact); }
+    public function burnDel(string $sender,string $amount,#[\SensitiveParameter] Signer $signer,bool $broadcast=false,bool $waitReceipt=false,array $options=[]): TransactionResult
+    { return $this->execute(TransactionDraft::burnDel($sender,$amount),$signer,$broadcast,$waitReceipt,$options); }
     public function prepare(TransactionDraft $draft,array $options=[]): PreparedTransaction
     {
         $allowed=['type','accessList','maxFeePerGas','maxPriorityFee','feeCap','nonces','baseFeeEstimate','cancellation'];
@@ -46,5 +50,21 @@ final class TransactionExecutor
         if($updated->requiresApprovals())throw new \RuntimeException('Approval remains insufficient after confirmed steps; action was not signed');
         if($updated->action->rpc()!==$plan->action->rpc())throw new \RuntimeException('Action changed after refresh; review a new plan before signing');
         return ['status'=>'action','approvals'=>$results,'action'=>$this->execute($updated->action,$signer,true,$waitReceipt,$options,$eventProfile,$updated->metadata)];
+    }
+    /** Non-atomic multi-action requests such as identity then cap update, or reset then transfer. */
+    public function executeSequence(array $steps,#[\SensitiveParameter] Signer $signer,?\Closure $refresh=null,bool $broadcast=false,array $options=[]): array
+    {
+        if(!array_is_list($steps)||!$steps||count($steps)>500)throw new \InvalidArgumentException('1..500 positional sequence steps required');
+        foreach($steps as $step)if(!$step instanceof TransactionDraft||TransactionDraft::address($step->from)!==TransactionDraft::address($signer->address()))throw new \InvalidArgumentException('Sequence sender mismatch');
+        if(!$broadcast)return ['status'=>'requires_sequential_execution','steps'=>$steps,'atomic'=>false];
+        if(count($steps)>1&&$refresh===null)throw new \InvalidArgumentException('Multi-action execution requires an explicit refresh between confirmed steps');
+        $results=[];$budget='0';$paid='0';
+        foreach($steps as $index=>$step){
+            if($index>0){$updated=$refresh($index,$step);if(!$updated instanceof TransactionDraft||$updated->rpc()!==$step->rpc())throw new \RuntimeException('Sequence step changed after refresh; review remaining actions');$step=$updated;}
+            $result=$this->execute($step,$signer,true,true,$options);$results[]=$result;
+            if(!$result->isSuccessful())throw new \RuntimeException('Sequence step failed; later actions were not signed');
+            $budget=bcadd($budget,$result->feeBudgetWei(),0);$fee=$result->actualFeeWei();$paid=$paid===null||$fee===null?null:bcadd($paid,$fee,0);
+        }
+        return ['status'=>'success','atomic'=>false,'results'=>$results,'fee_budget_wei'=>$budget,'actual_fee_wei'=>$paid];
     }
 }

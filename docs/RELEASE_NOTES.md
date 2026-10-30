@@ -1,8 +1,11 @@
-# Decimal PHP SDK v0.1.3
+# Decimal PHP SDK v0.1.4
 
-Source/API parity release after independent implementation and cross-review against Go, Python and C#. No blockchain transactions or deployments were submitted.
+Source/API parity release covering the original matrix and the current recovery-014 Python request profiles, independently implemented and cross-reviewed against Go/Python/C#. No blockchain transactions or deployments were submitted. Explicit legacy/raw APIs and original position addresses remain available.
 
 ## Added
+
+- Current token/NFT factories, testnet fee/symbol/reserve rules, checked NFT mint/delegate permits and whole-position exits, structured validator metadata and additional legacy/reset/completion requests.
+- Fee budget/actual fee aliases, transaction refresh without resending, checks signer/hash helpers and confirmed non-atomic sequence execution with state refresh.
 
 - Close all 55 entries of the operation matrix: 54 named request workflows and one intentional rejection of unsafe generic Multicall ERC20 allowance, with verified RestrictedMultisend retained.
 - ERC20 and token economy services, reserve state/quotes, exact-input/output trades, creation fees, approval/reset/permit plans and creation reports.
@@ -13,9 +16,9 @@ Source/API parity release after independent implementation and cross-review agai
 
 ## Validation
 
-7680 offline checks, independent calldata/digest fixtures, injected approval/cancellation/error sequences and installed-package tests. Publication is gated on Linux, Windows and macOS with PHP 8.2-8.5. Composer audit is a required independent check. Stake7/8, old/new events, original legacy exits and explicit unified NFT deposits remain supported.
+7872 offline checks, independent calldata/digest fixtures, injected approval/cancellation/error sequences and installed-package tests. Publication is gated on Linux, Windows and macOS with PHP 8.2-8.5. Composer audit is a required independent check. Stake7/8, old/new events, original legacy exits and explicit unified NFT deposits remain supported.
 
-[Parity acceptance and evidence](https://github.com/maxwell2010/decimal-php-sdk/blob/main/docs/FINAL_PARITY_0_1_3.md) links the complete matrix and domain reports. The acceptance scope is source/API behavior. Mutable roles/balances, funded lifecycle execution and cross-chain settlement require separate application acceptance.
+[Parity acceptance and evidence](https://github.com/maxwell2010/decimal-php-sdk/blob/main/docs/CURRENT_PARITY_0_1_4.md) links the complete matrix and domain reports. The acceptance scope is source/API behavior. Mutable roles/balances, funded lifecycle execution and cross-chain settlement require separate application acceptance.
 
 ## Install the latest stable release
 

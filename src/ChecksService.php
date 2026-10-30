@@ -93,4 +93,7 @@ final class ChecksService
     {
         $out=[];foreach($this->receipt($receipt) as $event)if($event['event']==='RedeemCheck')$out[]=$event['args'];return $out;
     }
+    public function createdCheckHashes(array $receipt): array { return array_column($this->createdChecks($receipt),'checkHash'); }
+    public static function signRedemption(#[\SensitiveParameter] Wallet $checkSigner,string $checkHash,string $redeemer): string
+    { return $checkSigner->signHash(self::redeemDigest($checkHash,$redeemer)); }
 }

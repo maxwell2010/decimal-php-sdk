@@ -12,4 +12,5 @@ foreach($parityCatalog['operations'] as $entry){
 }
 same(count(array_unique($parityNames)),55);same($parityDisabled,['decimal.multisend_erc20']);
 same(trim(file_get_contents(dirname(__DIR__).'/VERSION')),$parityCatalog['release']);
+foreach($parityCatalog['additional_current_operations']??[] as $entry){[$class,$method]=explode('::',$entry['php_helper']);same(method_exists('Decimal\\'.$class,$method),true);}
 echo "Complete operation catalog and linked implementation evidence verified\n";

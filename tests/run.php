@@ -102,6 +102,14 @@ require __DIR__.'/bridge-checks-parity.php';
 
 require __DIR__.'/executor-parity.php';
 
+require __DIR__.'/staking-current-parity.php';
+
+require __DIR__.'/token-current-parity.php';
+
+require __DIR__.'/nft-current-parity.php';
+
+require __DIR__.'/common-current-parity.php';
+
 require __DIR__.'/parity-manifest.php';
 
 echo "OK: $count checks; no remote RPC requests or blockchain broadcasts\n";

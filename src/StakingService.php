@@ -19,6 +19,17 @@ final class StakingService
     {
         TransactionDraft::address($sender);
         if(str_starts_with($operation,'decimal.'))$operation=substr($operation,8);
+        if($operation==='complete_stake'){
+            $indexes=$request['indexes']??null;if(!is_array($indexes)||!array_is_list($indexes)||!$indexes||count(array_unique($indexes))!==count($indexes))throw new \InvalidArgumentException('Nonempty positional indexes required');
+            $draft=$this->contract->draft($sender,'complete(uint256[])',[$indexes]);return ['approvals'=>[],'action'=>$draft,'operation'=>$operation];
+        }
+        if(in_array($operation,['apply_stake_penalty','apply_stake_penalties'],true)){
+            if(($request['allow_legacy']??false)!==true)throw new \InvalidArgumentException('Legacy penalty opt-in required');
+            $method=$operation==='apply_stake_penalty'?'applyPenaltyToStake':'applyPenaltiesToStake';
+            $legacy=new Contract($this->contract->address,[['type'=>'function','name'=>$method,'stateMutability'=>'nonpayable','inputs'=>[['type'=>'address'],['type'=>'address'],['type'=>'address']],'outputs'=>[]]]);
+            foreach(['validator','delegator','token'] as $key)if(!is_string($request[$key]??null)||TransactionDraft::address($request[$key])==='0x'.str_repeat('0',40))throw new \InvalidArgumentException('Nonzero '.$key.' required');
+            return ['approvals'=>[],'action'=>$legacy->draft($sender,$method.'(address,address,address)',[$request['validator'],$request['delegator'],$request['token']]),'operation'=>$operation];
+        }
         if(in_array($operation,['pause_self_validator','unpause_self_validator','pause_validator','unpause_validator'],true)){
             $self=str_contains($operation,'self');$unpause=str_starts_with($operation,'unpause');
             $signature=($unpause?'unpause':'pause').($self?'Self()':'Validator(address)');
@@ -85,7 +96,7 @@ final class StakingService
             if(bccomp($erc20->call($this->client,'balanceOf(address)',[$sender],$block)[0],$amount,0)<0)throw new \RuntimeException('Insufficient token balance');
             $allowance=$erc20->call($this->client,'allowance(address,address)',[$sender,$this->contract->address],$block)[0];
             if(bccomp($allowance,$amount,0)<0){
-                if(!($request['auto_approve']??true))throw new \RuntimeException('Approval required');
+                if(!($request['auto_approve']??false))throw new \RuntimeException('Approval required');
                 if($allowance!=='0'&&($request['reset_existing']??false))$approvals[]=$erc20->draft($sender,'approve(address,uint256)',[$this->contract->address,'0']);
                 $approvals[]=$erc20->draft($sender,'approve(address,uint256)',[$this->contract->address,$amount]);
             }
@@ -115,6 +126,20 @@ final class StakingService
         array_push($args,$deadline,$permit['v'],$permit['r'],$permit['s']);
         $signature=$holdTimestamp===null?'delegateByPermit(address,address,uint256,uint256,uint8,bytes32,bytes32)':'delegateHoldByPermit(address,address,uint256,uint256,uint256,uint8,bytes32,bytes32)';
         $draft=$this->contract->draft($wallet->address,$signature,$args);$this->client->simulate($draft);
+        return ['approvals'=>[],'action'=>$draft,'permit'=>$permit];
+    }
+
+    /** Externally signed EIP2612 permit, refreshed against current domain/nonce before planning. */
+    public function withPermitSignature(string $sender,string $token,string $validator,string $amount,int $decimals,string $deadline,string $signature,?string $holdTimestamp=null): array
+    {
+        $raw=$this->positive($amount,$decimals);
+        $prepared=(new PermitService($this->client,$token))->prepare($sender,$this->contract->address,$raw,$deadline);
+        $permit=PermitService::verify($prepared,$signature);
+        if(bccomp(Contract::profile($token,'Token')->call($this->client,'balanceOf(address)',[$sender])[0],$raw,0)<0)throw new \RuntimeException('Insufficient token balance');
+        $args=[$validator,$token,$raw];if($holdTimestamp!==null)$args[]=Units::uint($holdTimestamp);
+        array_push($args,$deadline,$permit['v'],$permit['r'],$permit['s']);
+        $method=$holdTimestamp===null?'delegateByPermit(address,address,uint256,uint256,uint8,bytes32,bytes32)':'delegateHoldByPermit(address,address,uint256,uint256,uint256,uint8,bytes32,bytes32)';
+        $draft=$this->contract->draft($sender,$method,$args);$this->client->simulate($draft);
         return ['approvals'=>[],'action'=>$draft,'permit'=>$permit];
     }
 }

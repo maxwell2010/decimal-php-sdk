@@ -2,12 +2,12 @@
 
 Independent Decimal SDK by [MintCandy](https://mintcandy.ru/) and [@Maxwell2019](https://t.me/Maxwell2019). PHP 8.2+, MIT license.
 
-**v0.1.3 closes the remaining operation-matrix gaps with named services, plans and reports.** Includes 28 ABI profiles, 654 generated function bindings, guarded EVM workflows, wallets, transaction signing, and source-backed Cosmos validation/signing/query codecs. The [coverage matrix](docs/PARITY.md) defines supported interfaces and deployment boundaries.
+**v0.1.4 covers the complete operation matrix and current recovery-profile variants.** Includes 28 ABI profiles, 654 generated function bindings, guarded EVM workflows, wallets, transaction signing, and source-backed Cosmos validation/signing/query codecs. The [coverage matrix](docs/PARITY.md) defines supported interfaces and deployment boundaries.
 
 [Русский README](README.ru.md) | [Examples](examples) | [Release notes](CHANGELOG.md) | [Security](SECURITY.md)
 
 
-[0.1.3 parity acceptance](docs/FINAL_PARITY_0_1_3.md) records all 55 operations, source-backed Go/Python/C# mappings and 7680 offline checks. Named services cover token economy, staking/validators, NFT, bridge and checks. Generic Multicall ERC20 allowance remains intentionally disabled; verified RestrictedMultisend is the supported alternative.
+[Current 0.1.4 parity acceptance](docs/CURRENT_PARITY_0_1_4.md) records all 55 operations, source-backed Go/Python/C# mappings and 7872 offline checks. Named services cover token economy, staking/validators, NFT, bridge and checks. Generic Multicall ERC20 allowance remains intentionally disabled; verified RestrictedMultisend is the supported alternative.
 
 ## Install the latest stable release with one command
 

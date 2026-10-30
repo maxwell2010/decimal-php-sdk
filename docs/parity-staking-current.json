@@ -1,0 +1,52 @@
+{
+  "sources": [
+    {
+      "path": "C:\\Users\\Maximus\\.codex\\worktrees\\sdk-release-014\\PythonSDK\\src\\decimal_web3_sdk\\decimal.py",
+      "sha256": "318b80b8d8e769a5a551c9ba9e4ab170094926967f63b93d59968d97b2b49773"
+    },
+    {
+      "path": "C:\\Users\\Maximus\\.codex\\worktrees\\sdk-release-014\\PythonSDK\\src\\decimal_web3_sdk\\staking_operations.py",
+      "sha256": "19649c5e201ca8853cd51dfa7cbbf3133d8114df340f43e54739a0b774ee27ce"
+    },
+    {
+      "path": "C:\\Users\\Maximus\\.codex\\worktrees\\sdk-release-014\\PythonSDK\\src\\decimal_web3_sdk\\validator_operations.py",
+      "sha256": "2f577c5fac136c314c871c9c84d43bf18f1804452d63a7c4d86e158af550c343"
+    },
+    {
+      "path": "C:\\Users\\Maximus\\.codex\\worktrees\\sdk-release-014\\PythonSDK\\src\\decimal_web3_sdk\\_contract_operations.py",
+      "sha256": "45d15f493f1c811c991f83b8fbf2c0b6a738ec5632ec7005ef8eb70eea6e1eda"
+    }
+  ],
+  "operations": [
+    {
+      "python_operation": "decimal.complete_stake",
+      "php_helper": "StakingService::plan"
+    },
+    {
+      "python_operation": "decimal.apply_stake_penalty",
+      "php_helper": "StakingService::plan"
+    },
+    {
+      "python_operation": "decimal.apply_stake_penalties",
+      "php_helper": "StakingService::plan"
+    },
+    {
+      "python_operation": "decimal.add_validator_del",
+      "php_helper": "ValidatorService::operation"
+    },
+    {
+      "python_operation": "decimal.add_validator_token",
+      "php_helper": "ValidatorService::operation"
+    },
+    {
+      "python_operation": "decimal.remove_validator",
+      "php_helper": "ValidatorService::operation"
+    },
+    {
+      "python_operation": "decimal.update_validator_metadata",
+      "php_helper": "ValidatorService::operation"
+    }
+  ],
+  "permit_helper": "StakingService::withPermitSignature",
+  "safety_deviation": "Unsafe arbitrary Multicall ERC20 approval remains disabled. Verified sender-restricted multisend is supported separately."
+}

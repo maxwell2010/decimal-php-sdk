@@ -1,0 +1,31 @@
+{
+  "snapshot": "sdk-release-014",
+  "sources": [
+    {
+      "path": "src/decimal_web3_sdk/bridge.py",
+      "sha256": "8f5e78bdbf1ebcc1032d7ce15f0f17db394b27691e94834db8bfc88965492de1"
+    },
+    {
+      "path": "src/decimal_web3_sdk/checks.py",
+      "sha256": "d09e69cacd262d1a0e59be1c70b85a4a7ea2115473fb2c831137da4017e525ff"
+    },
+    {
+      "path": "src/decimal_web3_sdk/transactions.py",
+      "sha256": "cf074bee2ce73c1e65964f423f29d9d072184e7f8cbc7eea34b98fefe574ced2"
+    }
+  ],
+  "helpers": [
+    "TransactionDraft::burnDel",
+    "TransactionExecutor::burnDel",
+    "TransactionExecutor::estimateFeeForBurnDel",
+    "TransactionExecutor::executeSequence",
+    "Client::refreshResult",
+    "TransactionResult::feeBudgetWei",
+    "TransactionResult::actualFeeWei",
+    "ChecksService::createdCheckHashes",
+    "ChecksService::signRedemption"
+  ],
+  "tests": [
+    "tests/common-current-parity.php"
+  ]
+}

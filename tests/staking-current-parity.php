@@ -1,0 +1,19 @@
+<?php
+declare(strict_types=1);
+$scMeta=new Decimal\ValidatorMetadata($spA,$spT,'consensus-key',['moniker'=>'Validator'],'12.50');$scService=new Decimal\ValidatorService(new Decimal\Client(Decimal\Network::testnet(),$spRpc),$spM);
+$scDraft=$scService->operation('add_validator_del',$spA,['metadata'=>$scMeta,'amount_del'=>'1.25']);same($scDraft->value,'1250000000000000000');same($scDraft->data,Decimal\Contract::profile($spM,'MasterValidator')->encode('addCandidateDEL(address,string)',[$spA,$scMeta->toJson()]));
+foreach(['100','100.0','1e2','1_0','0.00000000000000000000000001','-0']as $commission)same((new Decimal\ValidatorMetadata($spA,$spT,'key',['moniker'=>'M'],$commission))->commission,$commission);
+foreach(['100.0001','1e3','-1','NaN','INF']as $commission)rejects(fn()=>new Decimal\ValidatorMetadata($spA,$spT,'key',['moniker'=>'M'],$commission));
+rejects(fn()=>new Decimal\ValidatorMetadata($spA,$spT,'key',['moniker'=>' '],'0'));
+$scPlan=$spService->plan('complete_stake',$spA,['indexes'=>['1','2']]);same($scPlan['action']->data,Decimal\Contract::profile($spD,'Delegation')->encode('complete(uint256[])',[['1','2']]));
+foreach(['apply_stake_penalty','apply_stake_penalties']as $name){rejects(fn()=>$spService->plan($name,$spA,['validator'=>$spA,'delegator'=>$spA,'token'=>$spT]));$plan=$spService->plan($name,$spA,['validator'=>$spA,'delegator'=>$spA,'token'=>$spT,'allow_legacy'=>true]);same(substr($plan['action']->data,0,10),'0x'.substr(kornrunner\Keccak::hash(($name==='apply_stake_penalty'?'applyPenaltyToStake':'applyPenaltiesToStake').'(address,address,address)',256),0,8));}
+$spAllowance='0';rejects(fn()=>$spService->plan('delegate_erc20',$spA,$spRequest));$spAllowance=$spBalance;
+echo "Current Python validator metadata and staking request parity passed\n";
+
+$scWallet=new Decimal\Wallet(str_pad('1',64,'0',STR_PAD_LEFT));$scDeadline=(string)(time()+3600);
+$scTypes=['Permit'=>array_map(fn($f)=>['name'=>$f[0],'type'=>$f[1]],[['owner','address'],['spender','address'],['value','uint256'],['nonce','uint256'],['deadline','uint256']])];
+$scDomain=['name'=>'Token','version'=>'1','chainId'=>'202020','verifyingContract'=>$spT];$scMessage=['owner'=>$scWallet->address,'spender'=>$spD,'value'=>'1250000','nonce'=>'7','deadline'=>$scDeadline];$scSeparator='0x'.bin2hex(substr(Decimal\TypedData::preimage($scTypes,'Permit',$scDomain,$scMessage),2,32));
+$scRpc=new Decimal\Rpc('http://unused',function($r)use($spCodec,$scSeparator){if($r['method']==='eth_chainId')return ['jsonrpc'=>'2.0','id'=>$r['id'],'result'=>'0x31524'];$selector=substr($r['params'][0]['data'],0,10);$value=match($selector){'0x06fdde03'=>$spCodec->encodeParameters(['string'],['Token']),'0x54fd4d50'=>$spCodec->encodeParameters(['string'],['1']),'0x7ecebe00'=>$spCodec->encodeParameters(['uint256'],['7']),'0x3644e515'=>$spCodec->encodeParameters(['bytes32'],[$scSeparator]),'0x70a08231'=>$spCodec->encodeParameters(['uint256'],['99999999']),default=>'0x'};return ['jsonrpc'=>'2.0','id'=>$r['id'],'result'=>$value];});
+$scClient=new Decimal\Client(Decimal\Network::testnet(),$scRpc);$scStaking=new Decimal\StakingService($scClient,$spD,$spT,$spM);$scPrepared=(new Decimal\PermitService($scClient,$spT))->prepare($scWallet->address,$spD,'1250000',$scDeadline);$scSignature=$scWallet->signHash($scPrepared['digest']);
+foreach([null,'123']as $hold){$plan=$scStaking->withPermitSignature($scWallet->address,$spT,$spA,'1.25',6,$scDeadline,$scSignature,$hold);same($plan['approvals'],[]);same(substr($plan['action']->data,0,10),'0x'.substr(kornrunner\Keccak::hash($hold===null?'delegateByPermit(address,address,uint256,uint256,uint8,bytes32,bytes32)':'delegateHoldByPermit(address,address,uint256,uint256,uint256,uint8,bytes32,bytes32)',256),0,8));}
+rejects(fn()=>$scStaking->withPermitSignature($scWallet->address,$spT,$spA,'1.26',6,$scDeadline,$scSignature));

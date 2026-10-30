@@ -45,6 +45,19 @@ final readonly class TransactionResult implements \JsonSerializable
     public function isConfirmed(): bool { return ($this->fields['receipt']??null)!==null; }
     public function isSuccessful(): bool { return ($this->fields['status']??null)==='success'; }
     public function isPending(): bool { return ($this->fields['status']??null)==='pending'; }
+    public function feeBudgetWei(): ?string { return $this->fields['fee_wei']??null; }
+    public function feeBudgetDel(): ?string { return $this->fields['fee_del']??null; }
+    public function actualFeeWei(): ?string { return $this->fields['effective_fee_wei']??null; }
+    public function actualFeeDel(): ?string { return $this->fields['effective_fee_del']??null; }
+    public function refreshed(array $receipt,?string $legacyGasPrice=null): self
+    {
+        $fresh=self::fromReceipt($this->fields['tx_hash']??'',$receipt)->toArray();
+        if($fresh['gas_used']!==null&&$fresh['effective_gas_price_wei']===null&&$legacyGasPrice!==null){
+            Units::uint($legacyGasPrice);$fresh['effective_gas_price_wei']=$legacyGasPrice;
+            $fresh['effective_fee_wei']=bcmul($fresh['gas_used'],$legacyGasPrice,0);$fresh['effective_fee_del']=Units::format($fresh['effective_fee_wei']);
+        }
+        return new self(array_replace($this->fields,$fresh,['broadcasted'=>true]));
+    }
     public function toArray(): array { return $this->fields; }
     public function jsonSerialize(): array { return $this->fields; }
 }

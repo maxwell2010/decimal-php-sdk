@@ -37,6 +37,29 @@ def generate():
     for operation, methods in common.items():
         helpers[operation] = methods
         evidence[operation] = dict(manifest='docs/PARITY_COMMON.md', tests=['tests/bridge-checks-parity.php', 'tests/executor-parity.php'] if operation != 'nft.transfer' else ['tests/nft-parity.php'])
+    # Keep the initial snapshot mappings while selecting the newer explicit profiles first.
+    for operation in list(helpers):
+        if operation.startswith('token.'):
+            helpers[operation] = [helpers[operation][0].replace('TokenEconomy::', 'CurrentTokenEconomy::')] + helpers[operation]
+            evidence[operation] = dict(manifest='docs/PARITY_TOKENS_CURRENT.md', tests=['tests/token-parity.php', 'tests/token-current-parity.php'])
+        if operation.startswith('nft.'):
+            method = {'create_collection': 'createCollection', 'transfer_batch_erc1155': 'transferBatch1155', 'set_approval_for_all': 'setApprovalForAll', 'set_token_uri': 'setTokenUri', 'add_del_reserve': 'addDelReserve', 'disable_mint': 'disableMint', 'transfer_stake': 'transferStake'}.get(operation[4:], operation[4:])
+            helpers[operation] = [f'NftCurrentOperations::{method}'] + helpers[operation]
+            evidence[operation] = dict(manifest='docs/PARITY_NFT.md', tests=['tests/nft-parity.php', 'tests/nft-current-parity.php'])
+    current_staking = json.loads((ROOT / 'docs/parity-staking-current.json').read_text(encoding='utf-8'))
+    audit['additional_current_operations'] = current_staking['operations'] + [
+        dict(python_operation='nft.' + name, php_helper='NftLegacyStaking::plan')
+        for name in ['stake_to_hold', 'reset_stake_hold', 'reset_stake_holds', 'withdraw_with_reset', 'transfer_with_reset', 'hold_with_reset', 'complete_stake']
+    ] + [dict(python_operation=name, php_helper=helper) for name, helper in {
+        'token.convert_to_del': 'CurrentTokenEconomy::convertToDel',
+        'token.properties': 'CurrentTokenEconomy::properties',
+        'token.update_min_supply': 'CurrentTokenEconomy::updateMinSupply',
+        'tx.burn_del': 'TransactionExecutor::burnDel',
+        'tx.refresh_result': 'Client::refreshResult',
+        'checks.created_check_hashes': 'ChecksService::createdCheckHashes',
+        'checks.sign_redemption': 'ChecksService::signRedemption',
+    }.items()]
+    audit['current_profile_note'] = 'Recovery-014 Python request variants are implemented by CurrentTokenEconomy, NftCurrentOperations, NftLegacyStaking and the expanded staking/validator/common APIs. Sdk factories select current profiles; explicit legacy/raw APIs retain original deployment routes. Ordered multi-action requests use executeSequence with successful receipts and explicit refresh.'
     names = [row['python_operation'] for row in audit['operations']]
     if len(names) != 55 or len(set(names)) != 55 or set(names) != set(helpers):
         raise ValueError(f'Operation inventory differs: missing={set(names)-set(helpers)}, extra={set(helpers)-set(names)}')
@@ -62,6 +85,10 @@ def generate():
         api = ', '.join(f'`{method}`' for method in row['php_helpers'])
         manifest = row['implementation_evidence']['manifest']
         lines.append(f"| `{row['python_operation']}` | {row['status']} | {api} | [{Path(manifest).stem}]({Path(manifest).name}) |")
+    lines += ['', '## Additional current requests', '',
+              'The newer recovery-014 snapshot adds request variants and operations beyond the original 55-entry catalog. Current-profile factories select these semantics; legacy/raw APIs remain explicit. See [current token behavior](PARITY_TOKENS_CURRENT.md), [current staking/validators](PARITY_STAKING_CURRENT.md), [NFT](PARITY_NFT.md) and [current acceptance](CURRENT_PARITY_0_1_4.md).', '',
+              '| Additional request/capability | PHP API |', '| --- | --- |']
+    lines += [f"| `{entry['python_operation']}` | `{entry['php_helper']}` |" for entry in audit['additional_current_operations']]
     lines += ['', 'Detailed C#/Go read, permit, quote, management, receipt and DTO correspondence is recorded in [staking](PARITY_STAKING.md), [tokens](PARITY_TOKENS.md), [NFT](PARITY_NFT.md) and [common orchestration](PARITY_COMMON.md). Source hashes and original request locations remain in the JSON companion and linked manifests.', '',
               'The upgraded mainnet stake format, original legacy exits and separate unified NFTStake tuple10 remain supported. Unsupported deployment ABIs, stale nonces/domains, insufficient balances, failed approvals, malformed known events and unavailable reads fail explicitly. Receipt availability and successful simulation do not establish cross-chain settlement or funded NFT lifecycle acceptance.', '']
     return {path: json.dumps(audit, indent=2, ensure_ascii=False) + '\n', ROOT / 'docs/AUDIT_OPERATION_PARITY.md': '\n'.join(lines)}

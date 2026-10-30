@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.1.4 - 2026-10-30
+
+- Extend completed operation parity to the newer recovery-014 Python request branches and guards.
+- Add current token/NFT profiles and Sdk factories while retaining explicit original/raw services and legacy position routes.
+- Add current testnet fees/symbols, two-step token updates, GasCenter permits, structured validator metadata, completion/legacy penalty requests and externally supplied staking permits.
+- Add checked NFT reserve/mint/permit/whole-position exits, tuple6 collections and seven legacy NFT hold/reset/complete requests.
+- Add fee aliases, transaction refresh without resending, checks signer/hash helpers and confirmed non-atomic sequence execution with state refresh.
+- Add independent current-profile fixtures and negative regressions: 7872 offline checks.
+
+No blockchain transactions were submitted. See docs/CURRENT_PARITY_0_1_4.md. Published versioned assets remain immutable.
+
 ## 0.1.3 - 2026-10-30
 
 - Close the remaining 55-entry operation matrix with 54 named request workflows and an explicit safe-policy rejection of arbitrary Multicall ERC20 allowance; retain verified RestrictedMultisend.

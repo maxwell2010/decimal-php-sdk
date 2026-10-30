@@ -35,6 +35,17 @@ final class Client
     }
     public function transactionResult(string $hash): TransactionResult
     { return TransactionResult::fromReceipt($hash,$this->receipt($hash)); }
+    public function refreshResult(TransactionResult $result): TransactionResult
+    {
+        $hash=$result->toArray()['tx_hash']??throw new \InvalidArgumentException('Transaction hash required');$receipt=$this->receipt($hash);
+        if($receipt===null)return $result;$price=null;
+        if(isset($receipt['gasUsed'])&&!isset($receipt['effectiveGasPrice'])){
+            $tx=$this->rpc->call('eth_getTransactionByHash',[$hash]);
+            if(!is_array($tx)||isset($tx['hash'])&&strtolower($tx['hash'])!==strtolower($hash))throw new RpcException('Transaction identity mismatch');
+            if(in_array($tx['type']??null,['0x0','0x1'],true)&&isset($tx['gasPrice']))$price=Units::decimal($tx['gasPrice']);
+        }
+        return $result->refreshed($receipt,$price);
+    }
     public function prepare(TransactionDraft $draft, int $type=0, array $accessList=[], ?string $maxFeePerGas=null, string $maxPriorityFee='0', ?string $feeCap=null, ?NonceManager $nonces=null, ?string $baseFeeEstimate=null, ?CancellationToken $cancellation=null): PreparedTransaction
     {
         $cancellation?->throwIfCancelled();

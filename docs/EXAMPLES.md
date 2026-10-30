@@ -124,3 +124,16 @@ $result = $executor->executePlan($plan, $wallet); // No broadcast by default.
 Planning performs read/simulation calls. A plan needing approvals returns requires_approvals without preparing/signing the dependent action. executePlan accepts an explicit refresh callback and broadcast flag for applications that later enable submission: it confirms each prerequisite, rebuilds state and rejects a changed action before signing. This release validation does not enable submission or run that mode against a node.
 
 TokenEconomy uses human strings for buy/sell/convert and explicit Raw/Wei creation fields. NFT exits require the original deployment/profile; new upgraded mainnet NFT deposits explicitly select Delegation20261030. NftStakingReader uses the distinct NFTStake10 layout, while StakingReader retains fungible Stake7/8. PermitService and NftPermitService prepare data for external signers without needing private keys; provided signatures are bound to the actual typed request.
+
+## Current profile factories
+
+```php
+$sdk = new Decimal\Sdk($client);
+$tokens = $sdk->tokenEconomy($tokenCenter); // CurrentTokenEconomy: current selectors and guards.
+$nft = $sdk->nft($collection, 721, $nftCenter); // Current checked mint/reserve/permit/exit rules.
+$legacy = $sdk->legacyNftStaking($originalLegacyDelegation); // Original position route retained.
+```
+
+Current staking/conversion/NFT request methods default to no automatic approval. Choose it explicitly to obtain approval drafts. CurrentTokenEconomy::updateDetails returns two ordered actions; TransactionExecutor::executeSequence defaults to an unsigned non-atomic plan. Submission requires an explicit broadcast flag and refresh callback between confirmed steps. The result retains per-step receipts and sums budget/paid fees, without claiming rollback of earlier successful actions.
+
+Client::refreshResult updates an existing result without signing/resending, preserves the original fee budget and obtains actual fees only from a receipt or the source-supported legacy transaction price fallback. Unknown dynamic paid prices remain null. See CURRENT_PARITY_0_1_4.md and domain manifests for exact current request correspondence.
